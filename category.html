@@ -6,13 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerocery Category</title>
 
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <!-- Font awsome  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css"
+        integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css file -->
     <link rel="stylesheet" href="/css/d_style.css">
 
 </head>
@@ -27,14 +41,14 @@
                 <div class="d_left">
                     <h5 class="mt-0">Category</h5>
                     <div class="d_list">
-                        <ul class="list-unstyled">
-                            <li>Fresh Vegetables</li>
-                            <li>Fresh Fruits</li>
-                            <li>Dairy, Bread and Eggs</li>
-                            <li>Cold Drinks and Juices</li>
-                            <li>Atta, Rice and Dals</li>
-                            <li>Tea and coffee</li>
-                            <li>Sauces and Spreads</li>
+                        <ul class="list-unstyled" id="categoryFilter">
+                            <li data-category="Fresh Vegetables">Fresh Vegetables</li>
+                            <li data-category="Fresh Fruits">Fresh Fruits</li>
+                            <li data-category="Dairy, Bread and Eggs">Dairy, Bread and Eggs</li>
+                            <li data-category="Cold Drinks and Juices">Cold Drinks and Juices</li>
+                            <li data-category="Atta, Rice and Dals">Atta, Rice and Dals</li>
+                            <li data-category="Tea and coffee">Tea and coffee</li>
+                            <li data-category="Sauces and Spreads">Sauces and Spreads</li>
                         </ul>
                     </div>
                     <h5>Filters</h5>
@@ -51,15 +65,15 @@
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="radio-wrapper">
-                                        <input type="radio" id="rating3" class="radio-input">
+                                        <input type="radio" id="rating3" name="rating" value="3" class="radio-input">
                                         <label for="rating3" class="radio-label">Rating 3+</label>
                                     </div>
                                     <div class="radio-wrapper">
-                                        <input type="radio" id="rating4" class="radio-input">
+                                        <input type="radio" id="rating4" name="rating" value="4" class="radio-input">
                                         <label for="rating4" class="radio-label">Rating 4+</label>
                                     </div>
                                     <div class="radio-wrapper">
-                                        <input type="radio" id="rating5" class="radio-input">
+                                        <input type="radio" id="rating5" name="rating" value="5" class="radio-input">
                                         <label for="rating5" class="radio-label">Rating 5</label>
                                     </div>
                                 </div>
@@ -79,51 +93,53 @@
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="checkbox-wrapper">
-                                        <input type="checkbox" id="room-clean" name="room-clean">
-                                        <label for="room-clean">Less than $10</label>
+                                        <input type="checkbox" id="price-10" name="price" value="10">
+                                        <label for="price-10">Less than $10</label>
                                     </div>
                                     <div class="checkbox-wrapper">
-                                        <input type="checkbox" id="room-clean" name="room-clean">
-                                        <label for="room-clean">$11 to $40</label>
+                                        <input type="checkbox" id="price-11-40" name="price" value="11-40">
+                                        <label for="price-11-40">$11 to $40</label>
                                     </div>
                                     <div class="checkbox-wrapper">
-                                        <input type="checkbox" id="room-clean" name="room-clean">
-                                        <label for="room-clean">$41 to $80</label>
+                                        <input type="checkbox" id="price-41-80" name="price" value="41-80">
+                                        <label for="price-41-80">$41 to $80</label>
                                     </div>
                                     <div class="checkbox-wrapper">
-                                        <input type="checkbox" id="room-clean" name="room-clean">
-                                        <label for="room-clean">$81 to $120</label>
+                                        <input type="checkbox" id="price-81-120" name="price" value="81-120">
+                                        <label for="price-81-120">$81 to $120</label>
                                     </div>
                                     <div class="checkbox-wrapper">
-                                        <input type="checkbox" id="room-clean" name="room-clean">
-                                        <label for="room-clean">$121 to $300</label>
+                                        <input type="checkbox" id="price-121-300" name="price" value="121-300">
+                                        <label for="price-121-300">$121 to $300</label>
                                     </div>
                                     <div class="checkbox-wrapper">
-                                        <input type="checkbox" id="room-clean" name="room-clean">
-                                        <label for="room-clean">$301 to $500</label>
+                                        <input type="checkbox" id="price-301-500" name="price" value="301-500">
+                                        <label for="price-301-500">$301 to $500</label>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="accordion d_acc" id="accordionPanelsStayOpenExample">
+                    <div class="accordion d_acc" id="accordionPanelsStayOpenExample3">
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    data-bs-target="#panelsStayOpen-collapseOne3" aria-expanded="true"
                                     aria-controls="panelsStayOpen-collapseOne">
                                     Offers
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                            <div id="panelsStayOpen-collapseOne3" class="accordion-collapse collapse show"
                                 data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
                                     <div class="radio-wrapper">
-                                        <input type="radio" id="discount1" name="discount" class="radio-input">
+                                        <input type="radio" id="discount1" name="discount" value="25-30"
+                                            class="radio-input">
                                         <label for="discount1" class="radio-label">25% - 30%</label>
                                     </div>
                                     <div class="radio-wrapper">
-                                        <input type="radio" id="discount2" name="discount" class="radio-input">
+                                        <input type="radio" id="discount2" name="discount" value="30+"
+                                            class="radio-input">
                                         <label for="discount2" class="radio-label">more than 30%</label>
                                     </div>
                                 </div>
@@ -148,23 +164,28 @@
                                             <hr>
                                             <div class="d_list">
                                                 <div class="radio-wrapper">
-                                                    <input type="radio" id="sort1" name="sort" class="radio-input">
+                                                    <input type="radio" id="sort1" name="sort" value="relevance"
+                                                        class="radio-input" checked>
                                                     <label for="sort1" class="radio-label">Relevance (default)</label>
                                                 </div>
                                                 <div class="radio-wrapper">
-                                                    <input type="radio" id="sort2" name="sort" class="radio-input">
+                                                    <input type="radio" id="sort2" name="sort" value="price-low-high"
+                                                        class="radio-input">
                                                     <label for="sort2" class="radio-label">Price (low to high)</label>
                                                 </div>
                                                 <div class="radio-wrapper">
-                                                    <input type="radio" id="sort3" name="sort" class="radio-input">
+                                                    <input type="radio" id="sort3" name="sort" value="price-high-low"
+                                                        class="radio-input">
                                                     <label for="sort3" class="radio-label">Price (high to low)</label>
                                                 </div>
                                                 <div class="radio-wrapper">
-                                                    <input type="radio" id="sort4" name="sort" class="radio-input">
+                                                    <input type="radio" id="sort4" name="sort" value="rating"
+                                                        class="radio-input">
                                                     <label for="sort4" class="radio-label">Rating 3+</label>
                                                 </div>
                                                 <div class="radio-wrapper">
-                                                    <input type="radio" id="sort5" name="sort" class="radio-input">
+                                                    <input type="radio" id="sort5" name="sort" value="discount"
+                                                        class="radio-input">
                                                     <label for="sort5" class="radio-label">Discount (high to
                                                         low)</label>
                                                 </div>
@@ -188,42 +209,8 @@
                         </div>
                     </div>
                     <section class="d_p-30 d_discount d_grocerylist position-relative">
-                        <div class="row g-4" id="D_discountgrocery">
-                            <!-- <div class="col-sm-6 col-lg-4 col-xl-2 d_lgwidth">
-                                <div class="d_item">
-                                    <div class="d_img">
-                                        <img src="/darshan_img/item5.png" alt="${item.name}">
-                                        <div class="d_overlayimg"></div>
-                                    </div>
-                                    <div class="d_discountvalue">
-                                        <span class="mb-0">Get 30% OFF</span>
-                                    </div>
-                                    <div class="d_iconoverlay">
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <div class="d_icon d-flex align-items-center justify-content-center">
-                                                <img src="/darshan_img/cart.png" alt="Cart">
-                                            </div>
-                                            <div class="d_icon d-flex align-items-center justify-content-center">
-                                                <img src="/darshan_img/wishlist.png" alt="Wishlist">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d_content text-center">
-                                        <div class="d_title">Tea and Coffee</div>
-                                        <div class="d_price">Price : $20</div>
-                                        <div class="d-flex align-items-center justify-content-center">
-                                            <div class="d_star me-3">
-                                                <img src="/darshan_img/Star.png" alt="Full Star">
-                                                <img src="/darshan_img/Star.png" alt="Full Star">
-                                                <img src="/darshan_img/Star.png" alt="Full Star">
-                                                <img src="/darshan_img/Star.png" alt="Full Star">
-                                                <img src="/darshan_img/star1.png" class="d_emptystar" alt="Empty Star">
-                                            </div>
-                                            <div class="d_review">4 Review</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
+                        <div class="row g-4" id="D_categorygrocery">
+
                     </section>
                 </div>
             </div>
@@ -232,11 +219,44 @@
 
     <!-- main section end -->
 
+    <!-- Toast section start -->
+
+    <!-- <section class="d_container d_p-30">
+        <div class="postion-relative">
+            <div class="d_toatify">
+                <div class="d_toast ">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center">
+                            <div class="d_img">
+                                <img src="/darshan_img/check.png" alt="">
+                            </div>
+                            <p class="mb-0">1 item added</p>
+                        </div>
+                        <div class="d_link">
+                            <a href="">View cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Toast section end -->
+
+      
+
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"
+        integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.js"
+        integrity="sha512-Y+cHVeYzi7pamIOGBwYHrynWWTKImI9G78i53+azDb1uPmU1Dz9/r2BLxGXWgOC7FhwAGsy3/9YpNYaoBy7Kzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="/js/darshan.js"></script>
 

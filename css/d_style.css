@@ -1,5 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
 a {
     text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Lato", system-ui;
 }
 
 .d_ws {
@@ -20,6 +37,10 @@ a {
 
 .d_p-30 {
     padding: 30px 0;
+}
+
+.d_p-60 {
+    padding: 60px 0;
 }
 
 .d_container {
@@ -467,7 +488,7 @@ a {
     width: 210px;
     border-radius: 4px;
     box-shadow: 0px 4px 28px 0px #0000000F;
-    --bs-dropdown-border-width:none;
+    --bs-dropdown-border-width: none;
 }
 
 .d_category .d_right .d_drop .btn {
@@ -555,20 +576,464 @@ hr {
     left: 4px;
     transform: translateY(-50%);
 }
-.d_searchlist .d_search{
+
+.d_searchlist .d_search {
     margin-left: 16px;
     border: 0.5px solid #000000;
     border-radius: 8px;
     padding: 5px 20px;
 }
-.d_searchlist .d_search .d_text{
+
+.d_searchlist .d_search .d_text {
     font-size: 16px;
     line-height: 28px;
     font-weight: 500;
 }
-.d_category .d_lgwidth{
-    width: 20% ;
+
+.d_category .d_lgwidth {
+    width: 20%;
 }
+
+.d_category .d_lgwidth .d_img {
+    height: 300px;
+}
+
+.d_category .d_lgwidth .d_title {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.d_category .d_lgwidth .d_price {
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.d_category .d_lgwidth .d_review {
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.d_category .d_lgwidth .d_content {
+    padding: 8px 0 0 0;
+}
+
+.d_category .d_lgwidth .d_iconoverlay {
+    bottom: 125px;
+}
+
+.d_toatify {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    min-width: 985px;
+}
+
+.d_toast {
+    background-color: #66B043;
+    padding: 22px 30px;
+    border-radius: 4px;
+}
+
+.d_toast .d_img {
+    width: 26px;
+    height: 26px;
+    margin-right: 18px;
+}
+
+.d_toast .d_img .img {
+    width: 100%;
+    height: 100%;
+}
+
+.d_toast p {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.d_toast .d_link {
+    padding: 4px 16px;
+    border: 1px solid #FFFFFF;
+    border-radius: 52px;
+}
+
+.d_toast .d_link a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+#categoryFilter li.active {
+    color: #000;
+}
+
+/* Personal css start */
+
+.d_personal .d_m-30 {
+    margin: 0 70px;
+}
+
+.d_personal .sub_img .d_img {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 15px;
+}
+
+.d_personal .sub_img .d_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.d_personal .d_img {
+    width: 100%;
+    height: 100%;
+}
+
+.d_personal .d_img img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-size: cover;
+}
+
+.d_personal .d_content {
+    align-self: center !important;
+}
+
+.d_personal .d_content h2 {
+    font-size: 24px;
+    line-height: 27px;
+    font-weight: 600;
+    color: #000;
+}
+
+.d_personal .d_content .d_price {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_personal .d_content .d_star img {
+    width: 18px;
+    height: 18px;
+}
+
+.d_personal .d_content .d_review {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.d_personal .d_content .d_desc {
+    font-size: 15px;
+    line-height: 22px;
+    font-weight: 400;
+    color: #4c4c4c;
+    max-width: 560px;
+}
+
+.d_personal .d_content .d_cta1 a {
+    padding: 15px 70px;
+    border: 0.5px solid #000000;
+    border-radius: 8px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+}
+
+.d_personal .d_content .d_cta2 a {
+    padding: 15px 70px;
+    border: 0.5px solid #000000;
+    border-radius: 8px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: #fff;
+    background-color: #041527;
+    font-weight: 500;
+}
+
+.d_tab .nav .nav-item {
+    width: 200px;
+    text-align: center;
+    box-shadow: 0px 4px 28px 0px #0000000F;
+
+}
+
+.d_tab .nav a {
+    font-size: 18px;
+    color: #4c4c4c;
+    line-height: 28px;
+    font-weight: 500;
+    border-radius: 0;
+}
+
+.d_tab .nav-pills .nav-link.active {
+    background-color: transparent;
+    color: #000;
+    border-bottom: 4px solid #041527;
+}
+
+.d_tab .d_info {
+    box-shadow: 0px 4px 28px 0px #0000000F;
+}
+
+.d_tab .d_info li {
+    padding: 13px 0 13px 48px;
+    border-right: 1px solid #00000029;
+    border-bottom: 1.7px solid #00000014;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab .d_infodel li {
+    color: #4c4c4c;
+    font-weight: 400;
+    border-right: 0;
+}
+
+.d_tab .d_desciption p {
+    color: #323232;
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 500;
+    text-align: justify;
+}
+
+.d_tab .d_cusreview .d_left h6 {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 40px;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.d_tab .d_cusreview .d_left .d_totalrate {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 26px;
+    border-bottom: 2.5px solid #0000001A;
+}
+
+.d_tab .d_cusreview .d_left .d_rate {
+    margin-top: 26px;
+}
+
+.d_tab .d_cusreview .d_left .d_no {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab .d_cusreview .d_left .d_star img {
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+}
+
+.d_tab .d_cusreview .d_left .d_process {
+    width: 100%;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    height: 13px;
+    overflow: hidden;
+}
+
+.d_tab .d_cusreview .d_left .d_process .d_bar {
+    width: 145px;
+    height: 100%;
+    background-color: #00900E;
+    transition: width 0.5s ease-in-out;
+}
+
+.d_tab .d_cusreview .d_left .d_ratenumber {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 400;
+}
+
+.d_tab .d_cusreview .d_right .d_personaldel {
+    border-bottom: 1.69px solid #0000001A;
+    padding: 12px 0;
+}
+
+.d_tab .d_cusreview .d_right .d_item {
+    width: 53px;
+    background-color: #FBF0D6;
+    border-radius: 5px;
+    padding: 5px 0;
+    margin-bottom: 8px;
+}
+
+.d_tab .d_cusreview .d_right .d_number {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000;
+    line-height: 22px;
+}
+
+.d_tab .d_cusreview .d_right img {
+    width: 18px;
+    height: 18px;
+}
+
+.d_tab .d_cusreview .d_right .d_comment {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000;
+    margin-bottom: 3px;
+}
+
+.d_tab .d_cusreview .d_right .d_custmername {
+    font-size: 15px;
+    line-height: 18px;
+    font-weight: 400;
+    color: #323232;
+}
+
+/* cart css start */
+
+.d_carthead .d_img {
+    width: 30px;
+    height: 30px;
+    margin-right: 14px;
+}
+
+.d_carthead .d_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.d_carthead p {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+}
+
+.d_cart .d_box {
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    padding: 26px;
+}
+
+.d_cart .d_img {
+    width: 200px;
+    height: 230px;
+}
+
+.d_cart .d_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.d_cart .d_text {
+    padding: 26px 0 14px 0;
+}
+
+.d_cart .d_text .d_name {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.d_cart .d_text .d_price {
+    font-size: 18px;
+    color: #000;
+    font-weight: 500;
+}
+
+.d_cart .d_text .d_remove {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.d_cart .d_text .d_increbtn {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    width: 150px;
+    border: 0.5px solid #000000;
+    border-radius: 8px;
+    color: #000;
+}
+
+.d_cart .d_text .d_increbtn .d_itemnum {
+    font-size: 26px;
+    color: #000;
+    font-weight: 500;
+}
+.d_cart .d_billlist{
+    padding: 20px 30px;
+    box-shadow: 0px 4px 28px 0px #0000000F;
+}
+.d_cart .d_billlist .d_delivery{
+    background-color: #f7f7f7;
+    padding: 15px 36px;
+    margin-bottom: 20px;
+}
+.d_cart .d_billlist .d_delivery .d_img{
+    width: 36px;
+    height: 40px;
+    margin-right: 22px;
+}
+.d_cart .d_billlist .d_delivery .d_img img{
+    width: 100%;
+    height: 100%;
+}
+.d_cart .d_billlist .d_delivery p{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.d_cart .d_billlist .d_delivery .d_coupontext{
+    font-size: 14px;
+    color: #323232;
+    font-weight: 400;
+}
+.d_cart .d_billlist .d_billdel{
+    padding-bottom: 18px;
+    border-bottom: 1.69px solid #0000001A;
+}
+.d_cart .d_billlist .d_billdel h5{
+    font-size: 22px;
+    color: #000;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.d_cart .d_billlist .d_billdel .d_billtext,.d_cart .d_billlist .d_fee{
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+}
+.d_cart .d_billlist .d_billdel .d_free{
+    color: #F65959;
+}
+.d_cart .d_billlist .d_final{
+    padding-top: 20px;
+}
+.d_cart .d_billlist .d_final .d_totaltext,.d_cart .d_billlist .d_final .d_totalamt{
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+}
+.d_cart .d_billlist .d_proceedbtn a{
+    background-color: #041527;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding: 15px 0;
+    border-radius: 8px;
+}
+
 
 
 @media(max-width:1920px) {
@@ -580,7 +1045,7 @@ hr {
         top: 35px;
         right: 600px;
     }
-    
+
 }
 
 @media(max-width:1690px) {
@@ -599,10 +1064,23 @@ hr {
         top: 45px;
         right: 420px;
     }
-    .d_category .d_lgwidth{
+
+    .d_category .d_lgwidth {
         width: 25%;
     }
-    
+
+    .d_toatify {
+        min-width: 780px;
+    }
+
+    .d_personal .sub_img .d_img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .d_tab .d_desciption p {
+        line-height: 30px;
+    }
 }
 
 @media(max-width:1199px) {
@@ -635,8 +1113,42 @@ hr {
         top: 45px;
         right: 275px;
     }
-    .d_category .d_lgwidth{
+
+    .d_category .d_lgwidth {
         width: 33.33%;
+    }
+
+    .d_personal .sub_img .d_img {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .d_personal .d_content h2 {
+        font-size: 20px;
+    }
+
+    .d_personal .d_content .d_cta1 a,
+    .d_personal .d_content .d_cta2 a {
+        padding: 10px 30px;
+        font-size: 18px;
+    }
+
+    .d_tab .d_desciption p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .d_cart .d_img{
+        width: 100%;
+        height: 160px;
+    }
+    .d_cart .d_text .d_increbtn{
+        padding-top: 0;
+        padding-bottom: 0;
+        width: 100px;
+    }
+    .d_cart .d_text .d_increbtn .d_itemnum{
+        font-size: 20px;
     }
 }
 
@@ -672,8 +1184,49 @@ hr {
         top: 45px;
         right: 148px;
     }
-    .d_category .d_lgwidth{
+
+    .d_category .d_lgwidth {
         width: 50%;
+    }
+
+    .d_toatify {
+        min-width: 580px;
+    }
+
+    .d_toast {
+        padding: 18px 20px;
+    }
+
+    .d_personal .sub_img .d_img {
+        margin-right: 15px;
+        width: 150px;
+        height: 100px;
+    }
+
+    .d_personal .d_content .d_price {
+        font-size: 18px;
+    }
+
+    .d_personal .d_m-30 {
+        margin: 0 35px;
+    }
+
+    .d_tab .d_info li {
+        padding-left: 25px;
+    }
+
+    .d_p-60 {
+        padding: 25px 0;
+    }
+
+    .d_personal .d_img {
+        height: 350px;
+    }
+
+    .d_cart .d_text .d_increbtn {
+        padding-top: 2px;
+        padding-bottom: 2px;
+        width: 115px;
     }
 }
 
@@ -717,13 +1270,29 @@ hr {
         font-size: 24px;
         line-height: 30px;
     }
-    .d_searchlist .d_search{
+
+    .d_searchlist .d_search {
         margin-left: 8px;
         padding: 5px;
         margin-top: 8px;
     }
-    .d_category .d_lgwidth{
+
+    .d_category .d_lgwidth {
         width: 100%;
+    }
+
+    .d_toatify {
+        min-width: 290px;
+    }
+
+    .d_toast {
+        padding: 10px 10px;
+    }
+
+    .d_personal .sub_img .d_img {
+        width: 80px;
+        height: 80px;
+        margin-right: 10px;
     }
 }
 
@@ -750,12 +1319,133 @@ hr {
         top: 28px;
         right: 56px;
     }
+
+    .d_personal .d_content .d_cta1 {
+        margin-bottom: 15px;
+    }
+
+    .d_personal .d_m-30 {
+        margin: 0 15px;
+    }
+
+    .d_tab .d_info li {
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+    .d_tab .d_desciption p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .d_personal .d_img {
+        height: 285px;
+    }
+
+    .d_tab .d_cusreview .d_left h6 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .d_tab .d_cusreview .d_left .d_totalrate {
+        font-size: 18px;
+    }
+
+    .d_tab .d_cusreview .d_left .d_process {
+        height: 8px;
+    }
+
+    .d_tab .d_cusreview .d_left .d_no {
+        font-size: 16px;
+    }
+
+    .d_tab .d_cusreview .d_left .d_ratenumber {
+        font-size: 16px;
+    }
+
+    .d_tab .d_cusreview .d_right .d_comment {
+        font-size: 16px;
+    }
+
+    .d_tab .d_cusreview .d_right .d_custmername {
+        font-size: 14px;
+    }
+
+    .d_tab .d_cusreview .d_right .d_item {
+        padding: 1px 0; 
+    }
+    .d_carthead .d_img{
+        width: 20px;
+        height: 20px;
+    }
+    .d_carthead p{
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .d_cart .d_img{
+        width: 100%;
+        height: 100%;
+    }
+    .d_cart .d_text{
+        padding-top: 14px;
+    }
+    .d_cart .d_text .d_name{
+        font-size: 20px;
+    }
+    .d_cart .d_text .d_price,.d_cart .d_text .d_remove{
+        font-size: 16px;
+    }
+    .d_cart .d_text .d_increbtn{
+        width: 110px;
+    }
+    .d_cart .d_text .d_increbtn .d_itemnum{
+        font-size: 22px;
+    }
+    .d_cart .d_billlist .d_delivery{
+        padding: 15px;
+    }
+    .d_cart .d_billlist .d_billdel h5{
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+    .d_cart .d_billlist .d_billdel .d_billtext, .d_cart .d_billlist .d_fee{
+        font-size: 18px;
+    }
+    .d_cart .d_billlist .d_final .d_totaltext, .d_cart .d_billlist .d_final .d_totalamt{
+        font-size: 20px;
+    }
+    .d_cart .d_billlist .d_proceedbtn a{
+        padding: 8px 0;
+        font-size: 16px;
+    }
+    .d_cart .d_billlist .d_delivery p{
+        font-size: 16px;
+    }
+    .d_cart .d_billlist .d_delivery .d_img{
+        width: 22px;
+        height: 22px;
+    }
 }
 
 @media(max-width:375px) {
     .d_banner2 .d_discounttext {
         top: 25px;
         right: 32px;
+    }
+
+    .d_personal .sub_img .d_img {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .d_personal .d_content .d_cta1 a,
+    .d_personal .d_content .d_cta2 a {
+        padding: 10px;
+        margin-right: 0;
+    }
+    .d_cart .d_text{
+        padding-bottom: 0;
     }
 }
 
@@ -797,6 +1487,16 @@ hr {
 
     .d_banner2 .d_text h3 {
         font-size: 18px;
+    }
+
+    .d_personal .d_m-30 {
+        margin: 0 5px;
+    }
+    .d_cart .d_text .d_increbtn{
+        width: 100px;
+    }
+    .d_cart .d_billlist .d_delivery p {
+        font-size: 13px;
     }
 }
 
