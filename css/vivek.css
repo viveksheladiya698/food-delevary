@@ -1,0 +1,200 @@
+:root {
+    --theme-bg: #041527;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+.VK_inter {
+    font-family: "Lato", sans-serif;
+}
+
+.VK_lato {
+    font-family: "Lato", system-ui;
+}
+
+.VK_cont {
+    width: 1610px;
+    margin: auto;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.object_cover{
+    object-fit: cover;
+}
+
+.VK_gold_bg{
+    background-color: #CA9F5C !important;
+}
+
+
+/* --------------------------------------------- home page ----------------------------------------------- */
+
+.VK_home_slider {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/vivek/home_bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.VK_page_heading {
+    font-size: clamp(28px, 5vw, 42px);
+}
+
+.VK_section_heading {
+    font-size: clamp(24px, 4vw, 32px);
+}
+
+.VK_sec_desc {
+    font-size: clamp(16px, 2vw + 1rem, 18px);
+    line-height: 1.2;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.VK_home_cate li a {
+    border-bottom: 1px solid #c2bfbf;
+    padding: 10px;
+}
+
+.VK_home_cate li:last-child a {
+    border-bottom: 0;
+}
+
+
+
+.VK_home_cate {
+    border-radius: 5px !important;
+}
+
+.VK_border_right {
+    border-right: 1px solid #ddd !important;
+}
+
+.VK_dd {
+    color: #ddd;
+}
+
+.VK_outlline_none {
+    outline: none;
+}
+
+.VK_sec_padd {
+    padding: 60px 0px;
+}
+
+
+
+.VK_caro_img{
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+}
+
+.VK_caro_text{
+    font-size: 18px;
+}
+
+.VK_best_food_caro{
+    position: relative;
+}
+
+
+.VK_best_food_caro .owl-nav{
+    position: absolute;
+    width: 104%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-100%);
+    top: 45%;
+    left: -2%;
+}
+
+.VK_best_food_caro .owl-nav .owl-next i,.VK_best_food_caro .owl-nav .owl-prev i{
+    font-size: 18px !important;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#CA9F5C !important;
+    border-radius: 50% !important;
+    color: white;
+    &:hover{
+        background-color: black !important;
+    }
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover{
+    background: none !important;
+}
+
+
+
+
+
+
+/* ---------------------------------------------- media query ----------------------------------------------- */
+
+/*  extra small device */
+@media (max-width:480px) {
+    .VK_home_slider {
+        height: 400px;
+    }
+
+    .VK_sec_padd {
+        padding: 30px 0px;
+    }
+}
+
+/* small device */
+@media (max-width:576px) and (min-width:481px) {
+    .VK_home_slider {
+        height: 450px;
+    }
+
+    .VK_sec_padd {
+        padding: 30px 0px;
+    }
+}
+
+/* medium device */
+@media (max-width:768px) and (min-width:577px) {
+
+    .VK_home_slider {
+        height: 500px;
+    }
+
+    .VK_sec_padd {
+        padding: 40px 0px;
+    }
+
+}
+
+/* lg device */
+@media (max-width:992px) and (min-width:769px) {
+    .VK_sec_padd {
+        padding: 40px 0px;
+    }
+}
+
+/* xl device */
+@media (max-width:1200px) and (min-width:993px) {}
+
+/* 2xl device */
+@media (max-width:1440px) and (min-width:1190px) {}
+
+/* 3xl device */
+@media (min-width:1441px) {}
