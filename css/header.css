@@ -1,0 +1,71 @@
+.VK_header1 {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+}
+
+.VK_nav_drop.dropdown-toggle::after {
+    display: none;
+}
+
+.VK_header_location li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.VK_header_login {
+    font-size: 14px;
+    padding: 5px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    transition: 0.2s ease;
+    &:hover{
+        background-color: white !important;
+        color: black;
+    }
+}
+
+.VK_header_logo{
+    width: 250px;
+}
+.VK_white_border{
+    border: 1px solid white;
+}
+.VK_toggle_off{
+    padding: 0px 10px;
+    font-size: 18px;
+}
+.VK_btn{
+    background-color: #041527;
+}
+
+
+
+/* ------------------------------ media query ------------------------------- */
+/* medium device */
+@media (max-width:768px) and (min-width:577px) {
+    .VK_header_login {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+
+}
+
+/* small device */
+@media (max-width:576px) and (min-width:481px) {
+    .VK_header_login {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+}
+
+/*  extra small device */
+@media (max-width:480px) {
+    .VK_header_login {
+        padding: 5px 10px;
+        font-size: 12px;
+    }
+    .VK_header_logo{
+        width: 200px;
+    }
+}

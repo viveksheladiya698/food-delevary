@@ -8,7 +8,7 @@
 
 
 .VK_inter {
-    font-family: "Lato", sans-serif;
+    font-family: "imter", sans-serif;
 }
 
 .VK_lato {
@@ -28,12 +28,16 @@
     font-weight: 600;
 }
 
-.object_cover{
+.object_cover {
     object-fit: cover;
 }
 
-.VK_gold_bg{
+.VK_gold_bg {
     background-color: #CA9F5C !important;
+}
+
+.VK_white_space {
+    white-space: nowrap;
 }
 
 
@@ -97,51 +101,164 @@
 
 
 
-.VK_caro_img{
+.VK_caro_img {
     border-radius: 10px;
     overflow: hidden;
-    height: 300px;
+    height: 250px;
 }
 
-.VK_caro_text{
+.VK_caro_text {
     font-size: 18px;
 }
 
-.VK_best_food_caro{
+.VK_best_food_caro {
     position: relative;
 }
 
 
-.VK_best_food_caro .owl-nav{
+.VK_best_food_caro .owl-nav .owl-prev {
     position: absolute;
-    width: 104%;
-    display: flex;
-    justify-content: space-between;
     transform: translateY(-100%);
     top: 45%;
     left: -2%;
 }
 
-.VK_best_food_caro .owl-nav .owl-next i,.VK_best_food_caro .owl-nav .owl-prev i{
+.VK_best_food_caro .owl-nav .owl-next {
+    position: absolute;
+    transform: translateY(-100%);
+    top: 45%;
+    left: 98%;
+}
+
+.VK_best_food_caro .owl-nav .owl-next i,
+.VK_best_food_caro .owl-nav .owl-prev i {
     font-size: 18px !important;
     height: 40px;
     width: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#CA9F5C !important;
+    background-color: #CA9F5C !important;
     border-radius: 50% !important;
     color: white;
-    &:hover{
+
+    &:hover {
         background-color: black !important;
     }
 }
 
-.owl-theme .owl-nav [class*=owl-]:hover{
+.owl-theme .owl-nav [class*=owl-]:hover {
     background: none !important;
 }
 
 
+.VK_your_food {
+    background-color: rgba(4, 21, 39, 1);
+}
+
+.VK_food_color {
+    background-image: url('/images/vivek/Mask\ group.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+.VK_new_satter {
+    background-image: url('/images/vivek/newsetller.png');
+}
+
+.VK_new_setter_txt {
+    letter-spacing: 5px;
+    font-weight: 900;
+}
+
+.VK_setter_email {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+}
+
+.VK_setter_sub {
+    background: rgba(4, 21, 39, 1);
+    padding: 10px 40px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.VK_delivery_txt {
+    font-size: 14px;
+    font-weight: 900;
+    color: black;
+}
+
+.VK_border_dash:not(:last-child) {
+    border-right: 1px dashed #000;
+}
+
+
+/* model */
+.VK_input_border {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.VK_theme_btn {
+    background-color: #041527;
+    padding: 6px 0px;
+    border-radius: 5px;
+}
+
+.VK_signin_model .modal-dialog {
+    max-width: 50% !important;
+}
+
+.VK_seperators {
+    width: 40%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.14);
+    display: inline-block;
+}
+
+.font_14 {
+    font-size: 14px;
+}
+
+.VK_black_border {
+    border: 1px solid black;
+}
+
+.VK_round {
+    border-radius: 5px;
+}
+
+.VK_gold {
+    color: #CA9F5C;
+}
+
+
+/* otp */
+.otp-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.otp {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* sign up */
+.VK_signup_number{
+    width: 300px !important;
+}
 
 
 
@@ -157,6 +274,33 @@
     .VK_sec_padd {
         padding: 30px 0px;
     }
+
+    .VK_best_food_caro .owl-nav .owl-prev {
+        left: calc(-2% - 3px);
+    }
+
+    .VK_best_food_caro .owl-nav .owl-next {
+        left: calc(88%);
+    }
+
+    .VK_setter_sub {
+        padding: 10px 20px;
+    }
+
+    .VK_border_dash {
+        border-right: none !important;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 100% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 100% !important;
+    }
 }
 
 /* small device */
@@ -167,6 +311,33 @@
 
     .VK_sec_padd {
         padding: 30px 0px;
+    }
+
+    .VK_best_food_caro .owl-nav .owl-prev {
+        left: calc(-2% - 3px);
+    }
+
+    .VK_best_food_caro .owl-nav .owl-next {
+        left: calc(94% - 3px);
+    }
+
+    .VK_border_dash {
+        border-right: none !important;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 100% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_signin_flex {
+        flex-direction: column-reverse;
     }
 }
 
@@ -181,6 +352,29 @@
         padding: 40px 0px;
     }
 
+    .VK_best_food_caro .owl-nav .owl-prev {
+        left: calc(-3% - 3px);
+    }
+
+    .VK_best_food_caro .owl-nav .owl-next {
+        left: calc(100% - 21px);
+    }
+
+    .VK_border_dash:last-child,
+    .VK_border_dash:nth-last-child(3) {
+        border-right: none !important;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 90% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 90% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 90% !important;
+    }
 }
 
 /* lg device */
@@ -188,13 +382,160 @@
     .VK_sec_padd {
         padding: 40px 0px;
     }
+
+    .VK_best_food_caro .owl-nav .owl-prev {
+        left: calc(-3% - 3px);
+    }
+
+    .VK_best_food_caro .owl-nav .owl-next {
+        left: calc(97% - 3px);
+    }
+
+    .VK_settler_imgs {
+        position: relative;
+        top: 60px;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 80% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 80% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 80% !important;
+    }
 }
 
 /* xl device */
-@media (max-width:1200px) and (min-width:993px) {}
+@media (max-width:1200px) and (min-width:993px) {
+    .VK_best_food_caro .owl-nav .owl-prev {
+        left: calc(-2% - 4px);
+    }
+
+    .VK_best_food_caro .owl-nav .owl-next {
+        left: calc(98% - 4px);
+    }
+
+    .VK_settler_imgs {
+        position: relative;
+        top: 60px;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 60% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 60% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 65% !important;
+    }
+    .VK_area_details .modal-dialog {
+        max-width: 50% !important;
+    }
+}
 
 /* 2xl device */
-@media (max-width:1440px) and (min-width:1190px) {}
+@media (max-width:1440px) and (min-width:1190px) {
+    .VK_best_food_caro .owl-nav .owl-prev {
+        left: calc(-2% - 2px);
+    }
+
+    .VK_best_food_caro .owl-nav .owl-next {
+        left: calc(98% - 2px);
+    }
+
+    .VK_settler_imgs {
+        margin-bottom: calc(-6rem + 1rem);
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 50% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 50% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 55% !important;
+    }
+    .VK_area_details .modal-dialog {
+        max-width: 40% !important;
+    }
+}
 
 /* 3xl device */
-@media (min-width:1441px) {}
+@media (min-width:1441px) {
+    .VK_settler_imgs {
+        margin-bottom: calc(-6rem + 2rem);
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 40% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 42% !important;
+    }
+    .VK_signup_model .modal-dialog {
+        max-width: 45% !important;
+    }
+    .VK_area_details .modal-dialog {
+        max-width: 35% !important;
+    }
+}
+
+
+
+
+
+.d_container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* ---------------------- container ---------------------- */
+@media (min-width: 1650px) {
+    .d_container {
+        width: 1620px;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1649px) {
+    .d_container {
+        width: 1199px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .d_container {
+        width: 970px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .d_container {
+        width: 750px;
+        max-width: none;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .d_container {
+        max-width: 750px;
+    }
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+    .d_container {
+        max-width: 750px;
+        padding: 0px 10px;
+    }
+}
