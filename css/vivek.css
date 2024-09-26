@@ -8,7 +8,7 @@
 
 
 .VK_inter {
-    font-family: "imter", sans-serif;
+    font-family: "inter", sans-serif;
 }
 
 .VK_lato {
@@ -55,8 +55,13 @@
     font-size: clamp(28px, 5vw, 42px);
 }
 
+.VK_slider_heading {
+    font-size: clamp(28px, 5vw, 48px);
+}
+
 .VK_section_heading {
-    font-size: clamp(24px, 4vw, 32px);
+    font-size: clamp(24px, 4vw, 30px);
+    font-family: "Lato", system-ui;
 }
 
 .VK_sec_desc {
@@ -198,6 +203,10 @@
     border-right: 1px dashed #000;
 }
 
+.VK_border_dash_white:not(:last-child) {
+    border-right: 1px dashed white;
+}
+
 
 /* model */
 .VK_input_border {
@@ -224,6 +233,10 @@
 
 .font_14 {
     font-size: 14px;
+}
+
+.font_20 {
+    font-size: 20px;
 }
 
 .VK_black_border {
@@ -256,12 +269,311 @@
 }
 
 /* sign up */
-.VK_signup_number{
+.VK_signup_number {
     width: 300px !important;
+}
+
+/* location */
+
+.VK_location_map {
+    position: relative;
+}
+
+.VK_location_close {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.VK_close_span {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
 }
 
 
 
+/* ------------------------------------------------------- food Home  ------------------------------------------------------- */
+
+/* food home poster */
+.VK_food_home_poster {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/images/vivek/food_home1.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.VK_food_home_heading {
+    text-align: center;
+    font-weight: 600;
+    width: 450px;
+    color: white;
+}
+
+.VK_theme_btn {
+    background-color: #CA9F5C;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: 0.2s ease;
+
+    &:hover {
+        background-color: #000;
+    }
+}
+
+.VK_poster_text_parent {
+    padding: 150px 0px;
+}
+
+/* popular foods */
+.VK_popular_foods {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url('/images/vivek/popular_foods.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.VK_popular_food_img {
+    border-radius: 10px;
+    overflow: hidden;
+    height: 300px;
+    position: relative;
+}
+
+.VK_popular_food_title {
+    position: absolute;
+    top: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(4, 21, 39, 0.5);
+    opacity: 0;
+    transition: all 0.2s ease;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.VK_popular_food_caro .owl-nav .owl-next i,
+.VK_popular_food_caro .owl-nav .owl-prev i {
+    font-size: 18px !important;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CA9F5C !important;
+    border-radius: 50% !important;
+    color: white;
+
+    &:hover {
+        background-color: black !important;
+    }
+}
+
+.VK_popular_food_caro .owl-nav {
+    margin: 0px !important;
+}
+
+.VK_popular_food_caro .owl-nav .owl-prev {
+    position: absolute;
+    top: 47%;
+    left: 10px;
+}
+
+.VK_popular_food_caro .owl-nav .owl-next {
+    position: absolute;
+    top: 47%;
+    right: 10px;
+}
+
+/* regular menu */
+
+.VK_regular_menu_img {
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.VK_regular_cart {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(4, 21, 39, 0.5);
+    top: 0%;
+    left: 0%;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.4s ease 0.2s;
+}
+
+.VK_cart_btn {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #CA9F5C;
+    transition: background-color 0.2s ease, transform 0.4s ease 0.2s;
+    transform: translateY(70px);
+}
+
+.VK_cart_btn:hover {
+    background-color: #000;
+}
+
+.VK_regular_cart:hover {
+    opacity: 1;
+}
+
+.VK_regular_cart:hover .VK_cart_btn {
+    transform: translateY(0px);
+}
+
+.VK_regular_cart {
+    transition: opacity 0.2s ease;
+}
+
+
+.font_18 {
+    font-size: 18px;
+}
+
+.VK_review_star {
+    color: #fdc040;
+}
+
+.VK_star {
+    color: #cacaca;
+}
+
+
+/* buy food */
+.VK_buy_food {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.3) 0.21%, rgba(0, 0, 0, 0.6) 100%), url('/images/vivek/buy_food_poster.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.VK_500 {
+    width: 500px;
+}
+
+
+/* resturent with food */
+.VK_resturent_drop.dropdown-toggle::after {
+    display: none;
+}
+
+
+/* flat off */
+.VK_flat_off {
+    background-image: linear-gradient(rgba(4, 21, 39, 0.8), rgba(4, 21, 39, 0.8)), url('/images/vivek/flat_off.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.VK_border_bottom {
+    border-bottom: 1px solid #ddd;
+}
+
+.VK_resturent_txt {
+    text-overflow: ellipsis;
+}
+
+.VK_resturent_food {
+    height: 300px;
+    border-radius: 10px;
+    position: relative;
+}
+
+.VK_resturent_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.VK_resturent_btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    background-color: white;
+    border: none;
+}
+
+.VK_resturent_alert {
+    position: absolute;
+    top: 20px;
+    left: 1px;
+}
+
+.VK_resturent_alert p {
+    background-color: #041527;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+}
+
+
+/* ------------------------------------------------------- popular food ------------------------------------------------------ */
+.VK_popular_food_poster {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/vivek/VK_popular_food.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 500px;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: transparent !important;
+
+}
+
+
+/* ------------------------------------------------------- Resturents ------------------------------------------------------- */
+.VK_restro_grid_container {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+
+}
+
+.img1 {
+    grid-row: 1 / span 2;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+}
+
+.grid-container>div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+
+.item1 {
+    grid-row: 1 / span 2;
+}
 
 /* ---------------------------------------------- media query ----------------------------------------------- */
 
@@ -291,6 +603,10 @@
         border-right: none !important;
     }
 
+    .VK_border_dash_white {
+        border-right: none !important;
+    }
+
     .VK_signin_model .modal-dialog {
         max-width: 100% !important;
     }
@@ -298,8 +614,21 @@
     .VK_otp_model .modal-dialog {
         max-width: 100% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 100% !important;
+    }
+
+    .VK_poster_text_parent {
+        padding: 55px 0px;
+    }
+
+    .VK_500 {
+        width: auto;
+    }
+
+    .VK_popular_food_poster {
+        height: 300px;
     }
 }
 
@@ -325,6 +654,11 @@
         border-right: none !important;
     }
 
+    .VK_border_dash_white:last-child,
+    .VK_border_dash_white:nth-last-child(3) {
+        border-right: none !important;
+    }
+
     .VK_signin_model .modal-dialog {
         max-width: 100% !important;
     }
@@ -332,6 +666,7 @@
     .VK_otp_model .modal-dialog {
         max-width: 100% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 100% !important;
     }
@@ -339,10 +674,22 @@
     .VK_signin_flex {
         flex-direction: column-reverse;
     }
+
+    .VK_poster_text_parent {
+        padding: 75px 0px;
+    }
+
+    .VK_500 {
+        width: auto;
+    }
+
+    .VK_popular_food_poster {
+        height: 400px;
+    }
 }
 
 /* medium device */
-@media (max-width:768px) and (min-width:577px) {
+@media (max-width:767px) and (min-width:577px) {
 
     .VK_home_slider {
         height: 500px;
@@ -365,6 +712,11 @@
         border-right: none !important;
     }
 
+    .VK_border_dash_white:last-child,
+    .VK_border_dash_white:nth-last-child(3) {
+        border-right: none !important;
+    }
+
     .VK_signin_model .modal-dialog {
         max-width: 90% !important;
     }
@@ -372,13 +724,22 @@
     .VK_otp_model .modal-dialog {
         max-width: 90% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 90% !important;
+    }
+
+    .VK_poster_text_parent {
+        padding: 100px 0px;
+    }
+
+    .VK_popular_food_poster {
+        height: 450px;
     }
 }
 
 /* lg device */
-@media (max-width:992px) and (min-width:769px) {
+@media (max-width:992px) and (min-width:768px) {
     .VK_sec_padd {
         padding: 40px 0px;
     }
@@ -403,8 +764,13 @@
     .VK_otp_model .modal-dialog {
         max-width: 80% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 80% !important;
+    }
+
+    .VK_popular_food_poster {
+        height: 450px;
     }
 }
 
@@ -430,16 +796,22 @@
     .VK_otp_model .modal-dialog {
         max-width: 60% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 65% !important;
     }
+
     .VK_area_details .modal-dialog {
         max-width: 50% !important;
+    }
+
+    .VK_popular_food_poster {
+        height: 450px;
     }
 }
 
 /* 2xl device */
-@media (max-width:1440px) and (min-width:1190px) {
+@media (max-width:1440px) and (min-width:1199px) {
     .VK_best_food_caro .owl-nav .owl-prev {
         left: calc(-2% - 2px);
     }
@@ -459,9 +831,11 @@
     .VK_otp_model .modal-dialog {
         max-width: 50% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 55% !important;
     }
+
     .VK_area_details .modal-dialog {
         max-width: 40% !important;
     }
@@ -480,11 +854,36 @@
     .VK_otp_model .modal-dialog {
         max-width: 42% !important;
     }
+
     .VK_signup_model .modal-dialog {
         max-width: 45% !important;
     }
+
     .VK_area_details .modal-dialog {
         max-width: 35% !important;
+    }
+
+    .VK_location_model .modal-dialog {
+        max-width: 30% !important;
+    }
+
+    .VK_p {
+        font-size: 18px;
+    }
+
+}
+
+
+
+@media (max-width:1649px) and (min-width:1441px) {
+    .VK_cole {
+        padding: 0px 30px;
+    }
+}
+
+@media (min-width:1650px) {
+    .VK_cole {
+        padding: 0px 50px;
     }
 }
 
@@ -538,4 +937,70 @@
         max-width: 750px;
         padding: 0px 10px;
     }
+}
+
+
+
+
+
+
+
+
+
+
+.radio-container {
+    margin: 0 auto;
+    max-width: 300px;
+    color: white;
+}
+
+.radio-wrapper {
+    margin-bottom: 20px;
+}
+
+.radio-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+/* .radio-button:hover {
+    transform: translateY(-2px);
+} */
+
+.radio-button input[type="radio"] {
+    display: none;
+}
+
+.radio-checkmark {
+    display: inline-block;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 2px solid #333;
+    border-radius: 50%;
+}
+
+.radio-checkmark:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #333;
+    transition: all 0.2s ease-in-out;
+}
+
+.radio-button input[type="radio"]:checked~.radio-checkmark:before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.radio-label {
+    font-size: 16px;
+    font-weight: 600;
 }

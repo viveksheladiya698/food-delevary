@@ -23,13 +23,14 @@
                                 <i class="fa-solid fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu VK_header_location p-0" aria-labelledby="navbarDropdownMenuLink">
-                                <li class="py-2">
-                                    <a class="dropdown-item" href="#">
+                                <li class="py-2 dropdown-item">
+                                    <button class="bg-transparent border-0" data-bs-toggle="modal"
+                                        data-bs-target="#location" data-bs-dismiss="offcanvas" aria-label="Close">
                                         <i class="fa-solid fa-location-crosshairs"></i>
                                         <span class="d-inline ps-3">
                                             Get current location
                                         </span>
-                                    </a>
+                                    </button>
                                 </li>
                                 <li class="py-2 dropdown-item">
                                     <button class="bg-transparent border-0" data-bs-toggle="modal"
@@ -83,18 +84,20 @@
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body pt-0">
+                                    <div class="accordion-body py-0">
                                         <ul class="VK_header_location list-unstyled">
-                                            <li class="py-2">
-                                                <a class="dropdown-item" href="#">
+                                            <li class="py-2 ">
+                                                <button class="border-0 bg-transparent w-100 text-start" data-bs-toggle="modal"
+                                                    data-bs-target="#location" data-bs-dismiss="offcanvas"
+                                                    aria-label="Close">
                                                     <i class="fa-solid fa-location-crosshairs"></i>
                                                     <span class="d-inline ps-3">
                                                         Get current location
                                                     </span>
-                                                </a>
+                                                </button>
                                             </li>
                                             <li class="py-2">
-                                                <button class="border-0 bg-transparent" data-bs-toggle="modal"
+                                                <button class="border-0 bg-transparent w-100 text-start" data-bs-toggle="modal"
                                                     data-bs-target="#address" data-bs-dismiss="offcanvas"
                                                     aria-label="Close">
                                                     <i class="fa-solid fa-plus"></i>
