@@ -109,6 +109,7 @@ function generateGroceryItems() {
         });
 
         d_grocery.innerHTML = groceryHTML;
+        addCartEventListeners();
     }
 }
 
@@ -230,6 +231,7 @@ function generateDiscountGroceryItems() {
         });
 
         d_discountgrocery.innerHTML = groceryHTML;
+        addCartEventListeners();
     }
 }
 
@@ -274,7 +276,7 @@ const categoryGrocery = [
         price: 110,
         review: 4,
         discount: '30',
-        category:"Atta, Rice and Dals",
+        category: "Atta, Rice and Dals",
     },
     {
         id: 5,
@@ -283,7 +285,7 @@ const categoryGrocery = [
         price: 120,
         review: 4,
         discount: '30',
-        category:"Sauces and Spreads",
+        category: "Sauces and Spreads",
     },
     {
         id: 6,
@@ -292,7 +294,7 @@ const categoryGrocery = [
         price: 70,
         review: 4,
         discount: '10',
-        category:"Dairy, Bread and Eggs",
+        category: "Dairy, Bread and Eggs",
     },
     {
         id: 7,
@@ -301,7 +303,7 @@ const categoryGrocery = [
         price: 20,
         review: 4,
         discount: '',
-        category:"Cold Drinks and Juices"
+        category: "Cold Drinks and Juices"
     },
     {
         id: 7,
@@ -310,7 +312,7 @@ const categoryGrocery = [
         price: 20,
         review: 4,
         discount: '',
-        category:"Fresh Vegetables"
+        category: "Fresh Vegetables"
     },
     {
         id: 1,
@@ -346,7 +348,7 @@ const categoryGrocery = [
         price: 110,
         review: 4,
         discount: '30',
-        category:"Atta, Rice and Dals",
+        category: "Atta, Rice and Dals",
     },
     {
         id: 5,
@@ -355,7 +357,7 @@ const categoryGrocery = [
         price: 120,
         review: 4,
         discount: '30',
-        category:"Sauces and Spreads",
+        category: "Sauces and Spreads",
     },
     {
         id: 6,
@@ -364,7 +366,7 @@ const categoryGrocery = [
         price: 70,
         review: 4,
         discount: '10',
-        category:"Dairy, Bread and Eggs",
+        category: "Dairy, Bread and Eggs",
     },
     {
         id: 7,
@@ -373,7 +375,7 @@ const categoryGrocery = [
         price: 20,
         review: 4,
         discount: '',
-        category:"Cold Drinks and Juices"
+        category: "Cold Drinks and Juices"
     },
     {
         id: 7,
@@ -382,7 +384,7 @@ const categoryGrocery = [
         price: 20,
         review: 4,
         discount: '',
-        category:"Fresh Vegetables"
+        category: "Fresh Vegetables"
     },
 ];
 
@@ -435,6 +437,8 @@ function generateGroceryItemHTML(item) {
 function renderGroceryItems(items) {
     const container = document.getElementById('D_categorygrocery');
     container.innerHTML = items.map(generateGroceryItemHTML).join('');
+       // Call to add event listeners after rendering
+       addCartEventListeners();
 }
 
 // Function to filter grocery items
@@ -444,7 +448,7 @@ function filterGroceryItems() {
     // Category filter
     const selectedCategory = document.querySelector('#categoryFilter li.active');
     if (selectedCategory && selectedCategory.dataset.category.toLowerCase() !== 'all') {
-        filteredItems = filteredItems.filter(item => 
+        filteredItems = filteredItems.filter(item =>
             item.category.toLowerCase() === selectedCategory.dataset.category.toLowerCase()
         );
     }
@@ -479,7 +483,13 @@ function filterGroceryItems() {
 
 // Function to sort grocery items
 function sortGroceryItems(items) {
-    const sortMethod = document.querySelector('input[name="sort"]:checked').value;
+    const sortInput = document.querySelector('input[name="sort"]:checked');
+    const sortMethod = sortInput ? sortInput.value : null; // Safely access the value
+
+    if (!sortMethod) {
+        return items; // If no sort method is selected, return items as is
+    }
+
     switch (sortMethod) {
         case 'price-low-high':
             return items.sort((a, b) => a.price - b.price);
@@ -493,7 +503,6 @@ function sortGroceryItems(items) {
             return items;
     }
 }
-
 // Function to update the display
 function updateDisplay() {
     let items = filterGroceryItems();
@@ -508,18 +517,20 @@ document.querySelectorAll('#categoryFilter input, input[name="rating"], input[na
     });
 
 // Category filter functionality
-document.getElementById('categoryFilter').addEventListener('click', function(e) {
-    if (e.target.tagName === 'LI') {
-        const activeItem = this.querySelector('li.active');
-        if (activeItem) {
-            activeItem.classList.remove('active');
-            activeItem.style.backgroundColor = '';
-        }
-        e.target.classList.add('active');
-        e.target.style.backgroundColor = '#f5f5f5';
-        updateDisplay();
-    }
-});
+
+// document.getElementById('categoryFilter').addEventListener('click', function (e) {
+//     if (e.target.tagName === 'LI') {
+//         const activeItem = this.querySelector('li.active');
+//         if (activeItem) {
+//             activeItem.classList.remove('active');
+//             activeItem.style.backgroundColor = '';
+//         }
+//         e.target.classList.add('active');
+//         e.target.style.backgroundColor = '#f5f5f5';
+//         updateDisplay();
+//     }
+// });
+
 
 // Function to show toast
 
@@ -560,15 +571,133 @@ function showToast(message) {
         }
     }, 3000);
 }
-// Cart functionality
-document.getElementById('D_categorygrocery').addEventListener('click', function(e) {
+
+// Function to handle cart icon click
+function handleCartClick(e) {
     if (e.target.closest('.cart-icon')) {
         const itemId = e.target.closest('.cart-icon').dataset.id;
         cartItems++;
         showToast(`${cartItems} item${cartItems > 1 ? 's' : ''} added`);
     }
-});
+}
 
+// Function to add click event listeners to cart icons
+function addCartEventListeners() {
+    const cartIcons = document.querySelectorAll('.cart-icon');
+    cartIcons.forEach(icon => {
+        icon.addEventListener('click', handleCartClick);
+    });
+}
 
 // Initial render
 updateDisplay();
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     generateGroceryItems();
+
+//     const productContainer = document.querySelector('.d_categorygrocery');
+//     if (productContainer) {
+//         debugger
+//         productContainer.addEventListener('click', (e) => {
+//             const productItem = e.target.closest('.d_item');
+//             if (productItem) {
+//                 const productId = parseInt(productItem.dataset.productId);
+//                 const product = categoryGrocery.find(p => p.id === productId);
+//                 if (product) {
+//                     localStorage.setItem('selectedProduct', JSON.stringify(product));
+//                     window.location.href = 'personal.html';
+//                 }
+//             }
+//         });
+//     }
+// });
+
+// personal.js (for personal.html - the product details page)
+
+// document.addEventListener('DOMContentLoaded', () => {
+//     const productJson = localStorage.getItem('selectedProduct');
+//     if (productJson) {
+//         const product = JSON.parse(productJson);
+//         updateProductDetails(product);
+//     }
+
+//     // Add click event listeners for sub-images
+//     const subImages = document.querySelectorAll('.sub_img .d_img');
+//     subImages.forEach(img => {
+//         img.addEventListener('click', () => {
+//             const targetImage = img.dataset.target;
+//             const mainImage = document.querySelector('#mainImage img');
+//             if (mainImage) {
+//                 mainImage.src = `/darshan_img/${targetImage}`;
+//             }
+//         });
+//     });
+// });
+
+// function updateProductDetails(product) {
+//     // Update main image
+//     const mainImage = document.querySelector('#mainImage img');
+//     if (mainImage) {
+//         mainImage.src = `/darshan_img/${product.img}`;
+//     }
+
+//     // Update sub images
+//     const subImages = document.querySelectorAll('.sub_img .d_img');
+//     subImages.forEach((img, index) => {
+//         if (product.subImages && product.subImages[index]) {
+//             const imgTag = img.querySelector('img');
+//             if (imgTag) {
+//                 imgTag.src = `/darshan_img/${product.subImages[index]}`;
+//                 img.dataset.target = product.subImages[index];
+//             }
+//         }
+//     });
+
+//     // Update product info
+//     const productName = document.querySelector('.d_content h2');
+//     if (productName) {
+//         productName.textContent = product.name;
+//     }
+    
+//     const priceElement = document.querySelector('.d_content .d_price');
+//     if (priceElement) {
+//         priceElement.innerHTML = `Price : $${product.price} ${product.oldPrice ? `<span class="text-decoration-line-through">$${product.oldPrice}</span>` : ''}`;
+//     }
+    
+//     const starElement = document.querySelector('.d_content .d_star');
+//     if (starElement) {
+//         starElement.innerHTML = generateStars(product.review);
+//     }
+    
+//     const reviewElement = document.querySelector('.d_content .d_review');
+//     if (reviewElement) {
+//         reviewElement.textContent = `${product.review} Review`;
+//     }
+    
+//     const descElement = document.querySelector('.d_content .d_desc');
+//     if (descElement) {
+//         descElement.textContent = product.description;
+//     }
+
+//     // Update product info tab
+//     const infoList = document.querySelectorAll('#pills-home .d_info ul');
+//     if (infoList[1]) {
+//         infoList[1].innerHTML = `
+//             <li>${product.brand || 'N/A'}</li>
+//             <li>${product.manufacturer || 'N/A'}</li>
+//             <li>${product.soldBy || 'N/A'}</li>
+//             <li>${product.netQty || 'N/A'}</li>
+//             <li>${product.productType || 'N/A'}</li>
+//             <li>${product.customerCare || 'N/A'}</li>
+//         `;
+//     }
+
+//     // Update description tab
+//     const descriptionElement = document.querySelector('#pills-profile .d_desciption p');
+//     if (descriptionElement) {
+//         descriptionElement.textContent = product.fullDescription || product.description;
+//     }
+
+//     // Update reviews tab (if you have this data)
+//     // ... (update reviews here if you have the data)
+// }

@@ -24,6 +24,7 @@
 
     <!-- custom css file -->
     <link rel="stylesheet" href="/css/d_style.css">
+    <link rel="stylesheet" href="/css/vivek.css">
 
 </head>
 
@@ -82,7 +83,7 @@
         <div class="d_container">
             <div class="d-flex align-items-center justify-content-between mb-lg-5 mb-3">
                 <h2 class="mb-0">Explore groceries</h2>
-                <a href="">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
+                <a href="/category.html">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
             </div>
             <div class="row g-4" id="D_grocery">
             </div>
@@ -118,11 +119,11 @@
 
     <!-- Today discount section start -->
 
-    <section class="d_p-100 d_discount d_grocerylist position-relative">
+    <section class="d_p-100  d_discount d_grocerylist position-relative">
         <div class="d_container">
             <div class="d-flex align-items-center justify-content-between mb-lg-5 mb-3">
                 <h2 class="mb-0">Today discounts</h2>
-                <a href="">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
+                <a href="/category.html">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
             </div>
             <div class="row g-4" id="D_discountgrocery">
                 <div class="col-sm-6 col-lg-4 col-xl-3">
@@ -169,6 +170,9 @@
 
     <!-- Today discount section End -->
 
+    <!-- footer -->
+    <footer class="VK_sec_padd pt-0"></footer>
+
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -177,6 +181,14 @@
         crossorigin="anonymous"></script>
 
     <script src="/js/darshan.js"></script>
+
+    <script>
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').innerHTML = data;
+            });
+    </script>
 
 </body>
 

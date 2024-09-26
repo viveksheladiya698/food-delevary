@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: "Lato", sans-serif;
+    font-family: "imter", sans-serif;
 }
 
 a {
@@ -971,61 +971,76 @@ hr {
     color: #000;
     font-weight: 500;
 }
-.d_cart .d_billlist{
+
+.d_cart .d_billlist {
     padding: 20px 30px;
     box-shadow: 0px 4px 28px 0px #0000000F;
 }
-.d_cart .d_billlist .d_delivery{
+
+.d_cart .d_billlist .d_delivery {
     background-color: #f7f7f7;
     padding: 15px 36px;
     margin-bottom: 20px;
 }
-.d_cart .d_billlist .d_delivery .d_img{
+
+.d_cart .d_billlist .d_delivery .d_img {
     width: 36px;
     height: 40px;
     margin-right: 22px;
 }
-.d_cart .d_billlist .d_delivery .d_img img{
+
+.d_cart .d_billlist .d_delivery .d_img img {
     width: 100%;
     height: 100%;
 }
-.d_cart .d_billlist .d_delivery p{
+
+.d_cart .d_billlist .d_delivery p {
     font-size: 20px;
     font-weight: 400;
     color: #000;
 }
-.d_cart .d_billlist .d_delivery .d_coupontext{
+
+.d_cart .d_billlist .d_delivery .d_coupontext {
     font-size: 14px;
     color: #323232;
     font-weight: 400;
 }
-.d_cart .d_billlist .d_billdel{
+
+.d_cart .d_billlist .d_billdel {
     padding-bottom: 18px;
     border-bottom: 1.69px solid #0000001A;
 }
-.d_cart .d_billlist .d_billdel h5{
+
+.d_cart .d_billlist .d_billdel h5 {
     font-size: 22px;
     color: #000;
     font-weight: 500;
     margin-bottom: 30px;
 }
-.d_cart .d_billlist .d_billdel .d_billtext,.d_cart .d_billlist .d_fee{
+
+.d_cart .d_billlist .d_billdel .d_billtext,
+.d_cart .d_billlist .d_fee {
     font-size: 20px;
     font-weight: 400;
     color: #000;
 }
-.d_cart .d_billlist .d_billdel .d_free{
+
+.d_cart .d_billlist .d_billdel .d_free {
     color: #F65959;
 }
-.d_cart .d_billlist .d_final{
+
+.d_cart .d_billlist .d_final {
     padding-top: 20px;
 }
-.d_cart .d_billlist .d_final .d_totaltext,.d_cart .d_billlist .d_final .d_totalamt{
+
+.d_cart .d_billlist .d_final .d_totaltext,
+.d_cart .d_billlist .d_final .d_totalamt {
     font-size: 22px;
     font-weight: 500;
     color: #000;
 }
-.d_cart .d_billlist .d_proceedbtn a{
+
+.d_cart .d_billlist .d_proceedbtn a {
     background-color: #041527;
     font-size: 20px;
     font-weight: 500;
@@ -1033,6 +1048,534 @@ hr {
     padding: 15px 0;
     border-radius: 8px;
 }
+
+/* Profile css start */
+
+.d_accounthead p {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+
+.d_tab1 .nav {
+    /* width: 300px; */
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    border-radius: 8px;
+}
+
+.d_tab1 .nav a {
+    padding: 20px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    border-bottom: 1px solid #0000001A;
+    border-radius: 0;
+}
+
+.d_tab1 .nav-pills .nav-link.active {
+    color: #000;
+    background-color: #f7f7f7;
+}
+
+.d_tab1 .d_alpha {
+    width: 50px;
+    height: 50px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+}
+
+.d_tab1 .d_alpha p {
+    font-weight: 600;
+    font-size: 22px;
+    color: #000;
+}
+
+.d_tab1 .d_username {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_mobile {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4c4c4c;
+}
+
+.d_tab1 .nav-link .d_img {
+    width: 20px;
+    height: 24px;
+}
+
+.d_tab1 .nav-link .d_img img {
+    width: 100%;
+    height: 100%;
+}
+
+.d_tab1 .d_listpro {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_headingprofile {
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_account .d_box {
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    background-color: #fff;
+    padding: 30px;
+    height: 510px;
+}
+
+.d_tab1 .d_account .d_box .d_filed {
+    border-bottom: 1px solid #0000001A;
+    padding: 12px 0;
+}
+
+.d_tab1 .d_account .d_box .d_label {
+    font-size: 15px;
+    color: #323232;
+    font-weight: 500;
+}
+
+.d_tab1 .d_account .d_box .d_result {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_account .d_box .d_editbtn {
+    background-color: #041527;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.d_tab1 .d_account .d_box .d_editbtn img {
+    width: 20px;
+    height: 20px;
+}
+
+.d_tab1 .d_account .d_box .d_editbtn a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.d_tab1 .d_account .d_box .d_savebtn a {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    padding: 11px 130px;
+    background-color: #041527;
+    border-radius: 8px;
+}
+
+.d_tab1 .d_emptyimg .d_img {
+    width: 290px;
+    height: 270px;
+}
+
+.d_tab1 .d_emptyimg .d_img img {
+    width: 290px;
+    height: 270px;
+}
+
+.d_tab1 .d_emptyimg p {
+    font-size: 26px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_emptyimg .d_cta a {
+    padding: 15px 40px;
+    background-color: #041527;
+    border-radius: 8px;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.d_tab1 .d_order {
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    background-color: #fff;
+}
+
+.d_tab1 .d_order .d_firstsec {
+    padding: 18px 20px;
+    border-bottom: 1px solid #0000001A;
+}
+
+.d_tab1 .d_order .d_status {
+    font-size: 18px;
+    font-weight: 500;
+    color: #DA5353;
+    margin-right: 10px;
+}
+
+.d_tab1 .d_order .d_date {
+    font-size: 14px;
+    font-weight: 400;
+    color: #323232;
+}
+
+.d_tab1 .d_order .d_orderbtn a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #041527;
+    border-radius: 8px;
+    padding: 7px 15px;
+}
+
+.d_tab1 .d_order .d_secondsec {
+    padding: 16px 20px;
+}
+
+.d_tab1 .d_order .d_secondsec .d_img {
+    width: 100%;
+    height: 180px;
+}
+
+.d_tab1 .d_order .d_secondsec .d_img img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.d_tab1 .d_order .d_secondsec .d_shopname {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+    margin-bottom: 4px;
+}
+
+.d_tab1 .d_order .d_secondsec .d_itemname {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 8px;
+}
+
+.d_tab1 .d_order .d_secondsec .d_itemprice,
+.d_tab1 .d_order .d_secondsec .d_itemqty {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_order .d_secondsec .d_orderid {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4d4d4d;
+    margin-top: 6px;
+}
+
+.d_tab1 .d_order .d_secondsec .d_track a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.d_tab1 .d_order .d_firstsec .d_success {
+    color: #66B043;
+}
+
+.d_tab1 .d_order .d_thirdsec {
+    padding: 18px 20px;
+    border-top: 1px solid #0000001A;
+}
+
+.d_tab1 .d_order .d_thirdsec img {
+    width: 14px;
+    height: 14px;
+}
+
+/* cancel order model css start */
+
+.d_ordermodel .modal-dialog {}
+
+.d_ordermodel .modal-content {
+    border-radius: 0 !important;
+}
+
+.d_ordermodel .modal-header {
+    padding: 28px 30px 20px 30px;
+    border-bottom: 1.69px solid #0000001A;
+}
+
+.d_ordermodel .modal-header h1 {
+    font-size: 22px !important;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_ordermodel .modal-body {
+    padding: 28px 30px 0px 30px;
+}
+
+.d_ordermodel .modal-body .d_text {
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+}
+
+.d_mb-20 {
+    margin-bottom: 20px;
+}
+
+.d_custom-radio input {
+    display: none;
+    /* Hide the default radio button */
+}
+
+.d_radio-checkmark {
+    width: 26px;
+    /* Size of the custom radio button */
+    height: 26px;
+    border: 2px solid #041527;
+    border-radius: 50%;
+    /* Make it round */
+    display: inline-block;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.d_radio-checkmark::after {
+    content: "";
+    width: 13px;
+    /* Size of the inner dot */
+    height: 13px;
+    background: transparent;
+    /* Hidden by default */
+    border-radius: 50%;
+    /* Make it round */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center it */
+    transition: background 0.3s;
+}
+
+.d_custom-radio input:checked+.d_radio-checkmark {
+    background: #fff;
+    /* Background color when checked */
+}
+
+.d_custom-radio input:checked+.d_radio-checkmark::after {
+    background: #041527;
+    /* Inner dot color when checked */
+    border-color: #fff;
+}
+
+.d_ordermodel .modal-footer a {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000 !important;
+    padding: 11px 0;
+    text-align: center;
+}
+
+.d_ordermodel .modal-footer .d_submit {
+    background-color: #041527;
+    color: #fff !important;
+}
+
+.d_ordermodel .d_closeback {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+}
+
+.d_ordermodel .d_closeback i {
+    color: #041527;
+}
+
+.d_wishlist .d_head {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+
+.d_wishlist .d_item {
+    padding: 20px;
+    box-shadow: 0px 4px 28px 0px #0000000F;
+}
+
+.d_wishlist .d_item .d_img {
+    width: 100%;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+.d_wishlist .d_item .d_img img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.d_wishlist .d_item .d_proname {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_wishlist .d_item .d_add {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+}
+
+.d_wishlist .d_item .d_review {
+    font-size: 18px;
+    font-weight: 400;
+    color: #000;
+}
+
+.d_wishlist .d_item .d_heart {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.d_wishlist .d_item .d_heart i {
+    color: #F65959;
+    font-size: 16px;
+}
+
+.d_address .d_boxlist {
+    padding: 30px;
+    box-shadow: 0px 4px 28px 0px #0000000F;
+}
+
+.d_address .d_boxlist .d_icontext {
+    padding: 6px 14px;
+    background-color: #d6d6d6;
+    border-radius: 8px;
+    width: 100px;
+}
+
+.d_address .d_boxlist .d_icontext img {
+    width: 18px;
+    height: 18px;
+}
+
+.d_address .d_boxlist p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-top: 3px;
+}
+.d_address .d_boxlist .d_adddel{
+    font-size: 17px;
+    font-weight: 500;
+    color: #000;
+    line-height: 26px;
+    margin-top: 8px;
+}
+.d_address .d_dropdown{
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+.d_address .d_dropbtn{
+    width: 30px;
+    height: 30px;
+}
+
+.d_address .d_dropdown-content {
+    display: none;
+    position: absolute;
+    right: 15px;
+    background-color: #fff;
+    min-width: 240px;
+    overflow: auto;
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    z-index: 1;
+}
+
+.d_address .d_dropdown-content a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    padding: 18px 30px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #0000001A;
+}
+.d_show {
+    display: block !important;
+}
+.d_address .d_addaddress{
+    box-shadow: 0px 1.9px 4.28px 0px #5C58751F;
+    border: 0.84px solid #000000;
+    padding: 12px 24px;
+    display: inline-block;
+}
+.d_address .d_addaddress a i{
+    font-size: 20px;
+    color: #000;
+    font-weight: 500;
+}
+.d_address .d_addaddress a {
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+
+
+.d_logoutmodel .modal-dialog{
+    width: 445px !important;
+}
+.d_logoutmodel .modal-body{
+    padding: 50px 78px;
+}
+
+.d_logoutmodel .modal-body h6{
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 22px;
+}
+.d_logoutmodel .modal-body p{
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+.d_logoutmodel .modal-body a {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000 !important;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.d_logoutmodel .modal-body .d_submit {
+    background-color: #041527;
+    color: #fff !important;
+}
+.d_logoutmodel .d_dialog{
+    margin: 0 auto ;
+}
+
 
 
 
@@ -1080,6 +1623,10 @@ hr {
 
     .d_tab .d_desciption p {
         line-height: 30px;
+    }
+
+    .d_tab1 .d_account .d_box {
+        height: 470px;
     }
 }
 
@@ -1138,17 +1685,73 @@ hr {
         font-size: 20px;
         line-height: 28px;
     }
-    .d_cart .d_img{
+
+    .d_cart .d_img {
         width: 100%;
         height: 160px;
     }
-    .d_cart .d_text .d_increbtn{
+
+    .d_cart .d_text .d_increbtn {
         padding-top: 0;
         padding-bottom: 0;
         width: 100px;
     }
-    .d_cart .d_text .d_increbtn .d_itemnum{
+
+    .d_cart .d_text .d_increbtn .d_itemnum {
         font-size: 20px;
+    }
+
+    .d_tab1 .d_alpha {
+        width: 30px;
+        height: 30px;
+    }
+
+    .d_tab1 .d_alpha p {
+        font-size: 18px;
+    }
+
+    .d_tab1 .d_username {
+        font-size: 16px;
+    }
+
+    .d_tab1 .d_mobile {
+        font-size: 12px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_img {
+        height: 100px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_track a {
+        font-size: 13px;
+    }
+
+    .d_wishlist .d_item .d_proname {
+        font-size: 18px;
+    }
+
+    .d_wishlist .d_item .d_add {
+        font-size: 15px;
+    }
+
+    .d_wishlist .d_item .d_review {
+        font-size: 14px;
+    }
+
+    .d_wishlist .d_item .d_star {
+        margin-right: 5px;
+    }
+
+    .d_wishlist .d_item .d_star img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .d_wishlist .d_head {
+        font-size: 20px;
+    }
+    .d_address .d_boxlist{
+        padding: 20px;
     }
 }
 
@@ -1227,6 +1830,47 @@ hr {
         padding-top: 2px;
         padding-bottom: 2px;
         width: 115px;
+    }
+
+    .d_tab1 .d_emptyimg p {
+        font-size: 20px;
+    }
+
+    .d_tab1 .d_emptyimg .d_cta a {
+        padding: 15px;
+        font-size: 18px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_img {
+        height: 300px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_track {
+        text-align: start !important;
+    }
+
+    .d_ordermodel .modal-body .d_text {
+        font-size: 16px;
+    }
+
+    .d_mb-20 {
+        margin-bottom: 8px;
+    }
+
+    .d_radio-checkmark {
+        width: 20px;
+        height: 20px;
+    }
+
+    .d_radio-checkmark::after {
+        width: 10px;
+        height: 10px;
+    }
+    .d_logoutmodel .modal-body{
+        padding: 20px 40px;
+    }
+    .d_address .d_dropdown-content{
+        max-width: 210px;
     }
 }
 
@@ -1372,60 +2016,153 @@ hr {
     }
 
     .d_tab .d_cusreview .d_right .d_item {
-        padding: 1px 0; 
+        padding: 1px 0;
     }
-    .d_carthead .d_img{
+
+    .d_carthead .d_img {
         width: 20px;
         height: 20px;
     }
-    .d_carthead p{
+
+    .d_carthead p {
         font-size: 20px;
         line-height: 22px;
     }
-    .d_cart .d_img{
+
+    .d_cart .d_img {
         width: 100%;
         height: 100%;
     }
-    .d_cart .d_text{
+
+    .d_cart .d_text {
         padding-top: 14px;
     }
-    .d_cart .d_text .d_name{
+
+    .d_cart .d_text .d_name {
         font-size: 20px;
     }
-    .d_cart .d_text .d_price,.d_cart .d_text .d_remove{
+
+    .d_cart .d_text .d_price,
+    .d_cart .d_text .d_remove {
         font-size: 16px;
     }
-    .d_cart .d_text .d_increbtn{
+
+    .d_cart .d_text .d_increbtn {
         width: 110px;
     }
-    .d_cart .d_text .d_increbtn .d_itemnum{
+
+    .d_cart .d_text .d_increbtn .d_itemnum {
         font-size: 22px;
     }
-    .d_cart .d_billlist .d_delivery{
+
+    .d_cart .d_billlist .d_delivery {
         padding: 15px;
     }
-    .d_cart .d_billlist .d_billdel h5{
+
+    .d_cart .d_billlist .d_billdel h5 {
         font-size: 20px;
         margin-bottom: 15px;
     }
-    .d_cart .d_billlist .d_billdel .d_billtext, .d_cart .d_billlist .d_fee{
+
+    .d_cart .d_billlist .d_billdel .d_billtext,
+    .d_cart .d_billlist .d_fee {
         font-size: 18px;
     }
-    .d_cart .d_billlist .d_final .d_totaltext, .d_cart .d_billlist .d_final .d_totalamt{
+
+    .d_cart .d_billlist .d_final .d_totaltext,
+    .d_cart .d_billlist .d_final .d_totalamt {
         font-size: 20px;
     }
-    .d_cart .d_billlist .d_proceedbtn a{
+
+    .d_cart .d_billlist .d_proceedbtn a {
         padding: 8px 0;
         font-size: 16px;
     }
-    .d_cart .d_billlist .d_delivery p{
+
+    .d_cart .d_billlist .d_delivery p {
         font-size: 16px;
     }
-    .d_cart .d_billlist .d_delivery .d_img{
+
+    .d_cart .d_billlist .d_delivery .d_img {
         width: 22px;
         height: 22px;
     }
+
+    .d_accounthead p {
+        font-size: 20px;
+    }
+
+    .d_tab1 .d_headingprofile,
+    .d_tab1 .d_order .d_secondsec .d_itemname {
+        font-size: 18px;
+    }
+
+    .d_tab1 .d_account .d_box .d_savebtn {
+        text-align: center;
+    }
+
+    .d_tab1 .d_account .d_box .d_savebtn a {
+        padding: 11px 30px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_img {
+        height: 200px;
+    }
+
+    .d_tab1 .d_order .d_firstsec,
+    .d_tab1 .d_order .d_thirdsec {
+        padding: 10px;
+    }
+
+    .d_tab1 .d_order .d_status {
+        font-size: 15px;
+    }
+
+    .d_tab1 .d_order .d_date {
+        font-size: 12px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_shopname {
+        font-size: 16px;
+    }
+
+    .d_tab1 .d_order .d_secondsec .d_itemname {
+        margin-bottom: 0;
+    }
+
+    .d_tab1 .d_order .d_orderbtn a {
+        padding: 7px;
+        font-size: 12px;
+    }
+
+    .d_tab1 .d_account .d_box {
+        height: 360px;
+    }
+
+    .d_ordermodel .modal-header,
+    .d_ordermodel .modal-body,
+    .d_ordermodel .modal-footer {
+        padding: 15px;
+    }
+
+    .d_ordermodel .modal-header h1 {
+        font-size: 18px !important;
+    }
+
+    .d_wishlist .d_head {
+        font-size: 18px;
+    }
+    .d_logoutmodel .modal-dialog{
+        width: 380px !important;
+    }
+    .d_logoutmodel .modal-body{
+        padding: 20px;
+    }
+    .d_address .d_dropdown-content a{
+        padding: 12px 15px;
+    }
 }
+
 
 @media(max-width:375px) {
     .d_banner2 .d_discounttext {
@@ -1444,8 +2181,12 @@ hr {
         padding: 10px;
         margin-right: 0;
     }
-    .d_cart .d_text{
+
+    .d_cart .d_text {
         padding-bottom: 0;
+    }
+    .d_logoutmodel .modal-dialog{
+        width: 340px !important; 
     }
 }
 
@@ -1492,11 +2233,24 @@ hr {
     .d_personal .d_m-30 {
         margin: 0 5px;
     }
-    .d_cart .d_text .d_increbtn{
+
+    .d_cart .d_text .d_increbtn {
         width: 100px;
     }
+
     .d_cart .d_billlist .d_delivery p {
         font-size: 13px;
+    }
+
+    .d_tab1 .d_order .d_status,
+    .d_tab1 .d_order .d_date {
+        font-size: 10px;
+    }
+    .d_logoutmodel .modal-dialog{
+        width: 303px !important;
+    }
+    .d_logoutmodel .modal-body{
+        padding: 20px 10px;
     }
 }
 

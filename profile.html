@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font awsome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css"
+        integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="/css/d_style.css">
+
+</head>
+
+<body>
+
+    <!-- cart heading section start -->
+
+    <section class="d_p-30 pb-0">
+        <div class="d_container">
+            <div class="row d_accounthead align-items-center">
+                <div class="col-12">
+                    <p class="mb-0">My Account</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- cart heading section start -->
+
+    <!-- nav-tab section start-->
+
+    <section class="d_p-30">
+        <div class="d_container">
+            <div class="row g-3 d_tab1">
+                <div class="col-12 col-lg-3 ">
+                    <div class="nav flex-column nav-pills " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div class="d-flex align-items-center">
+                                    <div class="d_alpha d-flex align-items-center justify-content-center me-3">
+                                        <p class="mb-0">J</p>
+                                    </div>
+                                    <div>
+                                        <div class="d_username">Johan Patel</div>
+                                        <div class="d_mobile">+91 8975426510</div>
+                                    </div>
+                                </div>
+                                <div><i class="fa-solid fa-angle-right"></i></div>
+                            </div>
+                        </a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">
+                            <div class="d-flex align-items-center">
+                                <div class="d_img me-3">
+                                    <img src="/darshan_img/shoppingbag.png" alt="">
+                                </div>
+                                <div class="d_listpro">My Orders</div>
+                            </div>
+                        </a>
+                        <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages"
+                            aria-selected="false">
+                            <div class="d-flex align-items-center">
+                                <div class="d_img me-3">
+                                    <img src="/darshan_img/heart.png" alt="">
+                                </div>
+                                <div class="d_listpro">Wish list</div>
+                            </div>
+                        </a>
+                        <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings"
+                            aria-selected="false">
+                            <div class="d-flex align-items-center">
+                                <div class="d_img me-3">
+                                    <img src="/darshan_img/location.png" alt="">
+                                </div>
+                                <div class="d_listpro">Delivery Address</div>
+                            </div>
+                        </a>
+                        <a class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal" role="tab"
+                            aria-controls="v-pills-settings" aria-selected="false">
+                            <div class="d-flex align-items-center">
+                                <div class="d_img me-3">
+                                    <img src="/darshan_img/logout.png" alt="">
+                                </div>
+                                <div class="d_listpro">Logout</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9 ps-lg-4">
+                    <div class="tab-content " id="v-pills-tabContent">
+                        <div class="tab-pane fade show active d_account " id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab" tabindex="0">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="d_headingprofile">Account Information</div>
+                                </div>
+                            </div>
+                            <div class="d_box d-flex flex-column">
+                                <div class="d_filed">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <div class="d_label">Name</div>
+                                            <div class="d_result">johan patel</div>
+                                        </div>
+                                        <div class="d_editbtn d-flex align-items-center ">
+                                            <img src="/darshan_img/edit.png" class="me-2" alt="">
+                                            <a class="mb-0">Edit</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d_filed">
+                                    <div class="d_label">Mobile No.</div>
+                                    <div class="d_result">8975426510</div>
+                                </div>
+                                <div class="d_filed">
+                                    <div class="d_label">Email</div>
+                                    <div class="d_result">johanpatel@gmail.com</div>
+                                </div>
+                                <div class="d_savebtn mt-auto">
+                                    <a href="" class="text-center">Save</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade " id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab" tabindex="0">
+                            <div id="emptyStateContainer"
+                                class="d-flex justify-content-center align-items-center mt-3 d-none">
+                                <div class="d_emptyimg text-center">
+                                    <div class="d_img mb-3">
+                                        <img src="/darshan_img/empty.png" alt="">
+                                    </div>
+                                    <p>You have no placed order</p>
+                                    <div class="d_cta">
+                                        <a href="" class="d-block text-center d-sm-inline-block">Continue Shopping</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="orderListContainer">
+                                <div class="row mb-3">
+                                    <div class="col-12">
+                                        <div class="d_headingprofile">My Orders</div>
+                                    </div>
+                                </div>
+                                <div class="d_order mb-3">
+                                    <div class="d_firstsec">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center">
+                                                <div class="d_status">Order Arriving</div>
+                                                <div class="d_date">03 Sep 2024 12:28 PM</div>
+                                            </div>
+                                            <div class="d_orderbtn">
+                                                <a href="" data-bs-toggle="modal"
+                                                    data-bs-target="#cancelorderModal">Cancel
+                                                    Order</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d_secondsec">
+                                        <div class="row align-items-center g-3">
+                                            <div class="col-12 col-lg-2">
+                                                <div class="d_img">
+                                                    <img src="/darshan_img/item9.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-10">
+                                                <div class="row align-items-center">
+                                                    <div class="col-12 col-lg-10">
+                                                        <div class="d_shopname">Burger king</div>
+                                                        <div class="d_itemname">Peri Peri Cheese Burger</div>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="d_itemprice me-4">Price : $80</div>
+                                                            <div class="d_itemqty">Qty: 1</div>
+                                                        </div>
+                                                        <div class="d_orderid">Order ID 54879120156</div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-2">
+                                                        <div class="d_track text-end">
+                                                            <a href="">Track Order</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d_order">
+                                    <div class="d_firstsec">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div class="d-flex align-items-center">
+                                                <div class="d_status d_success">Order Delivered</div>
+                                                <div class="d_date">03 Sep 2024 12:28 PM</div>
+                                            </div>
+                                            <div class="d_orderbtn">
+                                                <a href="">Reorder</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d_secondsec">
+                                        <div class="row align-items-center g-3">
+                                            <div class="col-12 col-lg-2">
+                                                <div class="d_img">
+                                                    <img src="/darshan_img/item9.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="col-12 col-lg-10">
+                                                <div class="row align-items-center">
+                                                    <div class="col-12 col-lg-10">
+                                                        <div class="d_shopname">Burger king</div>
+                                                        <div class="d_itemname">Peri Peri Cheese Burger</div>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="d_itemprice me-4">Price : $80</div>
+                                                            <div class="d_itemqty">Qty: 1</div>
+                                                        </div>
+                                                        <div class="d_orderid">Order ID 54879120156</div>
+                                                    </div>
+                                                    <div class="col-12 col-lg-2">
+                                                        <div class="d_track text-end">
+                                                            <a href="">Track Order</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d_thirdsec">
+                                        <div class="d-flex align-items-center">
+                                            <div class="d_star align-items-center me-3">
+                                                <img src="/darshan_img/Star.png" alt="">
+                                                <img src="/darshan_img/Star.png" alt="">
+                                                <img src="/darshan_img/Star.png" alt="">
+                                                <img src="/darshan_img/Star.png" alt="">
+                                                <img src="/darshan_img/Star.png" alt="">
+                                            </div>
+                                            <div class="d_review">5 Review</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade d_wishlist" id="v-pills-messages" role="tabpanel"
+                            aria-labelledby="v-pills-messages-tab" tabindex="0">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="d_head">Wishlist</div>
+                                </div>
+                            </div>
+                            <div class="row g-4">
+                                <div class="col-12 col-sm-6 col-lg-4  ">
+                                    <div class="d_item">
+                                        <div class="d_img">
+                                            <img src="/darshan_img/wishlist1.png" alt="">
+                                            <div class="d_heart d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="d_con">
+                                            <div class="d_proname">McDonald’s</div>
+                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
+                                            <div class="d-flex ">
+                                                <div class="d_star align-items-center me-3">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                </div>
+                                                <div class="d_review align-self-center">5 Review</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4  ">
+                                    <div class="d_item">
+                                        <div class="d_img">
+                                            <img src="/darshan_img/wishlist1.png" alt="">
+                                            <div class="d_heart d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="d_con">
+                                            <div class="d_proname">McDonald’s</div>
+                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
+                                            <div class="d-flex ">
+                                                <div class="d_star align-items-center me-3">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                </div>
+                                                <div class="d_review align-self-center">5 Review</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4  ">
+                                    <div class="d_item">
+                                        <div class="d_img">
+                                            <img src="/darshan_img/wishlist1.png" alt="">
+                                            <div class="d_heart d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="d_con">
+                                            <div class="d_proname">McDonald’s</div>
+                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
+                                            <div class="d-flex ">
+                                                <div class="d_star align-items-center me-3">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                </div>
+                                                <div class="d_review align-self-center">5 Review</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-lg-4  ">
+                                    <div class="d_item">
+                                        <div class="d_img">
+                                            <img src="/darshan_img/wishlist1.png" alt="">
+                                            <div class="d_heart d-flex justify-content-center align-items-center">
+                                                <i class="fa-solid fa-heart"></i>
+                                            </div>
+                                        </div>
+                                        <div class="d_con">
+                                            <div class="d_proname">McDonald’s</div>
+                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
+                                            <div class="d-flex">
+                                                <div class="d_star align-items-center me-3">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                    <img src="/darshan_img/star.png" alt="">
+                                                </div>
+                                                <div class="d_review align-self-center">5 Review</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade d_address" id="v-pills-settings" role="tabpanel"
+                            aria-labelledby="v-pills-settings-tab" tabindex="0">
+                            <div class="row mb-3">
+                                <div class="col-12">
+                                    <div class="d_headingprofile">Saved Addresses</div>
+                                </div>
+                            </div>
+                            <div class="row g-4">
+                                <div class="col-12 col-lg-6">
+                                    <div class="d_boxlist">
+                                        <div class="d-flex justify-content-between ">
+                                            <div>
+                                                <div class="d_icontext ">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="div me-2"><img src="/darshan_img/home.png" alt="">
+                                                        </div>
+                                                        <p class="mb-0">Home</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d_adddel">510, Shelley Street, Sydney, NSW 2000, dgdf,
+                                                    ruhwbd, Perth 650145, Australia</div>
+                                            </div>
+                                            <div class="d_dropdown">
+                                                <a><img src="/darshan_img/dots.png" alt="" class="d_dropbtn"
+                                                        onclick="toggleDropdown(0)"></a>
+                                                <div id="myDropdown_0" class="d_dropdown-content">
+                                                    <a href="#">Edit</a>
+                                                    <a href="#" class="border-0">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-lg-6">
+                                    <div class="d_boxlist">
+                                        <div class="d-flex justify-content-between ">
+                                            <div>
+                                                <div class="d_icontext ">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="div me-2"><img src="/darshan_img/work.png" alt="">
+                                                        </div>
+                                                        <p class="mb-0">Work</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d_adddel">54, Shelley Street, Sydney, vfsxc 2000, dgdf,
+                                                    ruhwbd, Perth 650145, Australia</div>
+                                            </div>
+                                            <div class="d_dropdown">
+                                                <a><img src="/darshan_img/dots.png" alt="" class="d_dropbtn"
+                                                        onclick="toggleDropdown(1)"></a>
+                                                <div id="myDropdown_1" class="d_dropdown-content">
+                                                    <a href="#">Edit</a>
+                                                    <a href="#" class="border-0">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d_addaddress mt-3">
+                                <a class="">
+                                    <i class="fa-solid fa-plus me-2"></i> Add New Address
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- nav-tab section end-->
+
+    <!-- Cancel order model section start -->
+
+    <div class="modal d_ordermodel fade " id="cancelorderModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header d-inline">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h1 class="modal-title " id="exampleModalLabel">Reason for Cancellation</h1>
+                        <div class="d_closeback d-flex justify-content-center align-items-center">
+                            <i class="fa-solid fa-xmark" data-bs-dismiss="modal"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="d-flex align-items-center justify-content-between d_mb-20">
+                        <div class="d_text">Delay in delivery</div>
+                        <label class="d_custom-radio">
+                            <input type="radio" name="delivery" value="delay">
+                            <span class="d_radio-checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between d_mb-20">
+                        <div class="d_text">Bought by mistake</div>
+                        <label class="d_custom-radio">
+                            <input type="radio" name="delivery" value="delay">
+                            <span class="d_radio-checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between d_mb-20">
+                        <div class="d_text">No longer needed</div>
+                        <label class="d_custom-radio">
+                            <input type="radio" name="delivery" value="delay">
+                            <span class="d_radio-checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between d_mb-20">
+                        <div class="d_text">Placed a duplicate order</div>
+                        <label class="d_custom-radio">
+                            <input type="radio" name="delivery" value="delay">
+                            <span class="d_radio-checkmark"></span>
+                        </label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between d_mb-20">
+                        <div class="d_text">Other reason</div>
+                        <label class="d_custom-radio">
+                            <input type="radio" name="delivery" value="delay">
+                            <span class="d_radio-checkmark"></span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer d-inline border-0">
+                    <div class="d-flex">
+                        <a href="" class="me-3" data-bs-dismiss="modal">Cancel</a>
+                        <a href="" class="d_submit">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cancel order model section end -->
+
+    <!-- Logout model section start -->
+
+    <div class="modal d_logoutmodel fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog d_dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <h6>Logout</h6>
+                    <p class="mb-0">Are you sure you want to Logout?</p>
+                    <div class="d-flex mt-5">
+                        <a href="" class="me-3" data-bs-dismiss="modal">NO</a>
+                        <a href="" class="d_submit">YES</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- logout model section end -->
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"
+        integrity="sha512-zlWWyZq71UMApAjih4WkaRpikgY9Bz1oXIW5G0fED4vk14JjGlQ1UmkGM392jEULP8jbNMiwLWdM8Z87Hu88Fw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.js"
+        integrity="sha512-Y+cHVeYzi7pamIOGBwYHrynWWTKImI9G78i53+azDb1uPmU1Dz9/r2BLxGXWgOC7FhwAGsy3/9YpNYaoBy7Kzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="/js/darshan.js"></script>
+
+    <script>
+        function toggleDropdown(index) {
+            var dropdowns = document.getElementsByClassName("d_dropdown-content");
+            for (var i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.id !== `myDropdown_${index}` && openDropdown.classList.contains('d_show')) {
+                    openDropdown.classList.remove('d_show');
+                }
+            }
+            document.getElementById(`myDropdown_${index}`).classList.toggle("d_show");
+            event.stopPropagation(); // Prevent the click from immediately closing the dropdown
+        }
+
+        // Close all dropdowns if the user clicks outside of any dropdown
+        document.addEventListener('click', function (event) {
+            if (!event.target.matches('.d_dropbtn')) {
+                var dropdowns = document.getElementsByClassName("d_dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('d_show')) {
+                        openDropdown.classList.remove('d_show');
+                    }
+                }
+            }
+        });
+    </script>
+
+    <script>
+        // Set this variable to 0 to show empty state, or 1 to show order list
+        let orderStatus = 1;
+
+        function toggleOrderDisplay() {
+            const orderListContainer = document.getElementById('orderListContainer');
+            const emptyStateContainer = document.getElementById('emptyStateContainer');
+
+            if (orderStatus === 0) {
+                orderListContainer.classList.add('d-none');
+                emptyStateContainer.classList.remove('d-none');
+            } else {
+                orderListContainer.classList.remove('d-none');
+                emptyStateContainer.classList.add('d-none');
+            }
+        }
+
+        // Call toggleOrderDisplay when the page loads
+        document.addEventListener('DOMContentLoaded', toggleOrderDisplay);
+
+        // You can also call toggleOrderDisplay() after changing the orderStatus
+        // For example:
+        // orderStatus = 0;
+        // toggleOrderDisplay();
+    </script>
+
+
+</body>
+
+</html>
