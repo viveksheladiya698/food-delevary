@@ -287,8 +287,8 @@
 }
 
 .VK_close_span {
-    height: 30px;
-    width: 30px;
+    height: 30px !important;
+    width: 30px !important;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -545,35 +545,99 @@
 
 
 /* ------------------------------------------------------- Resturents ------------------------------------------------------- */
-.VK_restro_grid_container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
-
+.VK_button_clr{
+    color: #67717c;
+}
+.VK_button_brd{
+    border: 1px solid #67717c;
 }
 
-.img1 {
-    grid-row: 1 / span 2;
+.VK_reco_img{
+    height: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+.VK_reco_veg{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+.VK_food_heading {
+    font-size: clamp(18px, 2vw, 22px);
+}
+
+.VK_shadow{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.VK_menu_bar{
+    position: sticky;
+    bottom: 0px;
+}
+.VK_menubar_color{
+    background-color: rgb(102, 176, 67);
+}
+.VK_white_border{
+    border: 1px solid white;
+}
+
+.VK_menu_box_btns{
+    background-color: rgba(4, 21, 39, 1);
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.VK_bg_light{
+    background-color: #e5e5e5;
+}
+
+.VK_backdrop{
+    position: fixed;
+    display: none;
+    height: 100vh;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.575);
+    top: 0%;
+}
+
+.VK_open_menu{
+    width: 98%;
+    left: 2px;
+    transition: all 0.3s ease;
+    transform: translateY(100%);
+    box-sizing: border-box;
+}
+
+.VK_opne_menu_box{
+    transform: translateY(-102%);
+}
+
+.VK_menu_parent{
+    overflow: hidden;
+}
+
+.VK_round_lg{
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.VK_add_to_cart{
+    background-color: #041527;
+    border-radius: 5px;
+    border: 0px;
+    height: 100%;
 }
 
 
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto;
-    background-color: #2196F3;
-    padding: 10px;
-}
 
-.grid-container>div {
-    background-color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-}
-
-.item1 {
-    grid-row: 1 / span 2;
-}
 
 /* ---------------------------------------------- media query ----------------------------------------------- */
 
@@ -629,6 +693,12 @@
 
     .VK_popular_food_poster {
         height: 300px;
+    }
+    .VK_img_col{
+        height: 250px !important;
+    }
+    .VK_col_img{
+        height: 150px;
     }
 }
 
@@ -686,6 +756,12 @@
     .VK_popular_food_poster {
         height: 400px;
     }
+    .VK_img_col{
+        height: 300px !important;
+    }
+    .VK_col_img{
+        height: 200px;
+    }
 }
 
 /* medium device */
@@ -736,6 +812,12 @@
     .VK_popular_food_poster {
         height: 450px;
     }
+    .VK_img_col{
+        height: 300px !important;
+    }
+    .VK_col_img{
+        height: 200px;
+    }
 }
 
 /* lg device */
@@ -771,6 +853,12 @@
 
     .VK_popular_food_poster {
         height: 450px;
+    }
+    .VK_img_col{
+        height: 350px !important;
+    }
+    .VK_col_img{
+        height: 250px;
     }
 }
 
@@ -808,6 +896,18 @@
     .VK_popular_food_poster {
         height: 450px;
     }
+
+    .VK_col_h {
+        height: 100%;
+    }
+
+    .VK_col_img {
+        height: 50%;
+    }
+
+    .VK_restro_img_height {
+        height: 550px;
+    }
 }
 
 /* 2xl device */
@@ -839,6 +939,18 @@
     .VK_area_details .modal-dialog {
         max-width: 40% !important;
     }
+
+    .VK_col_h {
+        height: 100%;
+    }
+
+    .VK_col_img {
+        height: 50%;
+    }
+
+    .VK_restro_img_height {
+        height: 550px;
+    }
 }
 
 /* 3xl device */
@@ -869,6 +981,21 @@
 
     .VK_p {
         font-size: 18px;
+    }
+
+    .VK_col_h {
+        height: 100%;
+    }
+
+    .VK_col_img {
+        height: 50%;
+    }
+
+    .VK_restro_img_height {
+        height: 550px;
+    }
+    .dialog_model .modal-dialog{
+        max-width: 30% !important;
     }
 
 }
@@ -965,9 +1092,6 @@
     transition: all 0.2s ease-in-out;
 }
 
-/* .radio-button:hover {
-    transform: translateY(-2px);
-} */
 
 .radio-button input[type="radio"] {
     display: none;

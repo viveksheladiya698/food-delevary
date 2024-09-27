@@ -1,0 +1,345 @@
+<link rel="stylesheet" href="/css/nav-bar.css">
+<!-- bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+<header class="VK_header">
+    <div class="d_container">
+        <div class="row m-0">
+            <div class="col p-0">
+                <div class="dropdown h-100">
+                    <a class="nav-link dropdown-toggle VK_nav_drop text-white" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="d-inline-block px-2">
+                            Location
+                        </span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </a>
+                    <ul class="dropdown-menu VK_header_location p-0" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="py-2 dropdown-item VK_border_bottom">
+                            <button class="bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#location"
+                                data-bs-dismiss="offcanvas" aria-label="Close">
+                                <i class="fa-solid fa-location-crosshairs"></i>
+                                <span class="d-inline ps-3">
+                                    Get current location
+                                </span>
+                            </button>
+                        </li>
+                        <li class="py-2 dropdown-item">
+                            <button class="bg-transparent border-0" data-bs-toggle="modal" data-bs-target="#address"
+                                data-bs-dismiss="offcanvas" aria-label="Close">
+                                <i class="fa-solid fa-plus"></i>
+                                <span class="d-inline ps-3">
+                                    Add address
+                                </span>
+                            </button>
+                        </li>
+                    </ul>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Action
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Another action
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                Something else here
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col p-0 py-2">
+                <div class="text-end">
+                    <div class="dropdown">
+                        <button
+                            class="VK_drop_down bg-transparent d-flex align-items-center dropdown-toggle ms-auto border-0"
+                            role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="VK_profile_down">
+                                J
+                            </span>
+                            <span class="text-white ps-2">
+                                <i class="fa-solid fa-angle-down font_12"></i>
+                            </span>
+                        </button>
+                        <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuLink">
+                            <li class="VK_border_bottom py-2 pe-5">
+                                <a class="dropdown-item VK_lato pe-5" href="#">
+                                    Profile
+                                </a>
+                            </li>
+                            <li class="VK_border_bottom py-2 pe-5">
+                                <a class="dropdown-item VK_lato pe-5" href="#">
+                                    My Orders
+                                </a>
+                            </li>
+                            <li class="VK_border_bottom py-2 pe-5">
+                                <a class="dropdown-item VK_lato pe-5" href="#">
+                                    Wishlist
+                                </a>
+                            </li>
+                            <li class=" py-2 pe-5">
+                                <a class="dropdown-item VK_lato pe-5" href="#">
+                                    Logout
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="">
+    <div class="d_container">
+        <div class="row m-0">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid p-0 justify-content-between">
+                        <a class="navbar-brand m-0" href="#">
+                            <img src="/images/vivek/header_logo.png" class="VK_header_logo" alt="">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                            data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse flex-grow-0" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active VK_inter font_14 px-3" aria-current="page" href="#">
+                                    Home
+                                </a>
+                                <a class="nav-link active VK_inter font_14 px-3" aria-current="page" href="#">
+                                    Offers
+                                </a>
+                                <a class="nav-link active VK_inter font_14 px-3" aria-current="page" href="#">
+                                    Help
+                                </a>
+                                <a class="nav-link active VK_inter font_14 px-3" aria-current="page" href="#">
+                                    Contact us
+                                </a>
+                            </div>
+                        </div>
+                        <div class="ps-4 d-lg-block d-none">
+                            <div class="d-flex gap-3">
+                                <div class="px-2">
+                                    <a href="">
+                                        <img src="/images/vivek/search.png" height="20px" alt="">
+                                    </a>
+                                </div>
+                                <div class="px-2">
+                                    <a href="">
+                                        <img src="/images/vivek/watchlist.png" height="20px" alt="">
+                                    </a>
+                                </div>
+                                <div class="px-2">
+                                    <a href="">
+                                        <img src="/images/vivek/card.png" height="20px" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header align-items-center">
+        <h5 id="offcanvasRightLabel">
+            <img src="/images/vivek/header_logo.png" class="w-75" alt="">
+        </h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="mb-3">
+            <input type="search" placeholder="Search..."
+                class="w-100 px-2 py-1 rounded-2 VK_black_border VK_outlline_none">
+        </div>
+        <div>
+            <ul class="list-unstyled">
+                <li>
+                    <a href="" class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Offers
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Help
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Cart
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Wishlist
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- address model -->
+<div class="modal fade VK_area_details" id="address" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-sm-5 p-4">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <h5 class="VK_inter fw-bold text-black">
+                                Area details
+                            </h5>
+                        </div>
+                        <div>
+                            <button class="bg-transparent border-0" data-bs-dismiss="modal">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <form action="" class="w-100 mt-4">
+                        <div class="VK_black_border rounded-3">
+                            <div class="d-flex align-items-center">
+                                <input type="text" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia"
+                                    class="py-2 border-0 VK_outlline_none w-100 px-3">
+                                <button type="button"
+                                    class="border-0 bg-transparent font_14 text-uppercase VK_inter fw-bold">
+                                    CHANGE
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
+                                placeholder="Flat/ House No/ Building Name">
+                        </div>
+                        <div class="mt-4">
+                            <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
+                                placeholder="Area">
+                        </div>
+                        <div class="mt-4">
+                            <div class="d-flex flex-sm-row flex-column w-100 gap-3">
+                                <div class="w-100">
+                                    <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
+                                        placeholder="Sector/ Locality">
+                                </div>
+                                <div class="w-100 ">
+                                    <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
+                                        placeholder="Pincode">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-5 pb-4">
+                            <h5 class="VK_inter h5 fw-bold text-black">
+                                Address Type
+                            </h5>
+                            <div class="mt-3 d-flex flex-wrap gap-3">
+                                <button
+                                    class="VK_black_border VK_round bg-transparent d-flex align-items-center py-1 px-2">
+                                    <img src="/images/vivek/home.png" alt="">
+                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
+                                        Home
+                                    </span>
+                                </button>
+                                <button
+                                    class="VK_black_border VK_round bg-transparent d-flex align-items-center py-1 px-2">
+                                    <img src="/images/vivek/job.png" alt="">
+                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
+                                        Work
+                                    </span>
+                                </button>
+                                <button
+                                    class="VK_black_border VK_round bg-transparent d-flex align-items-center py-1 px-2">
+                                    <img src="/images/vivek/hotel.png" alt="">
+                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
+                                        Hotel
+                                    </span>
+                                </button>
+                                <button class="VK_black_border VK_round bg-transparent py-1 px-3">
+                                    <span class="d-inline-block VK_inter fw-bold">
+                                        Other
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <input type="submit"
+                                class="w-100 VK_inter fw-500 text-white font_14 py-2 VK_theme_btn border-0"
+                                value="Save Address">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- location -->
+<div class="modal fade VK_location_model" id="location" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="col-12">
+                    <div class="VK_location_map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7438.503047132397!2d72.88590531534237!3d21.221872379931217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f6ea9db54a1%3A0x4e3123fd544d1413!2sGujarat%20Gas%20CNG%20Station!5e0!3m2!1sen!2sin!4v1727266809753!5m2!1sen!2sin"
+                            class="w-100" height="400px" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <div class="VK_location_close">
+                            <button class="border-0 VK_close_span" data-bs-dismiss="modal">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-4 p-4">
+                        <h6 class="VK_inter fw-bold text-black font_20">
+                            Delivery your order to
+                        </h6>
+                        <div>
+                            <form action="">
+                                <div class="mt-3">
+                                    <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2">
+                                </div>
+                                <div class="mt-4">
+                                    <input type="submit"
+                                        class="w-100 VK_inter fw-500 text-white font_14 py-2 VK_theme_btn border-0"
+                                        value="Use this location">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+ <!-- bootstrap -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+ crossorigin="anonymous"></script>

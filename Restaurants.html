@@ -36,36 +36,428 @@
 
     <main>
 
+        <div class="nav-bar"></div>
+
+
+
+
         <!--  -->
         <section class="">
-            <div class="d_container">
-                <div class="VK_restro_grid_container">
-                    <div class="img1">
-                        <img src="/images/assets/burgerking1.png" class="w-100" alt="">
+            <div class="d_container p-0">
+                <div class="row m-0 VK_restro_img_height">
+                    <div class="col-xl-8 col-lg-7 h-100 px-md-1 p-0 VK_img_col">
+                        <img src="/images/assets/burgerking1.png" class="w-100 h-100 object_cover" alt="">
                     </div>
-                    <div class="img2">
-                        <img src="/images/assets/burger.png" class="w-100" alt="">
+                    <div class="col-xl-4 col-lg-5 px-md-1 p-0 VK_col_h pt-2 pt-lg-0">
+                        <div class="d-flex flex-lg-column h-100">
+                            <div class="w-100 pb-lg-2 VK_col_img pe-1 pe-lg-0">
+                                <img src="/images/assets/burger.png" class="w-100 h-100 object_cover" alt="">
+                            </div>
+                            <div class="w-100 VK_col_img ps-1 ps-lg-0">
+                                <img src="/images/assets/burger2.png" class="w-100 h-100 object_cover" alt="">
+                            </div>
+                        </div>
                     </div>
-                    <div class="img3">
-                        <img src="/images/assets/burger2.png" class="w-100" alt="">
+                </div>
+                <div class="row mt-3 m-0">
+                    <div class="col px-2">
+                        <div class="d-flex justify-content-between flex-wrap gap-2">
+                            <div>
+                                <h2 class="h4 VK_lato fw-bold text-black">
+                                    Burger King
+                                </h2>
+                                <p class="VK_inter text-black mb-2">
+                                    Burger, Fast Food, Dessert Vesu, Surat
+                                </p>
+                                <div class="d-flex gap-3 align-items-center flex-wrap">
+                                    <div class="d-flex gap-1">
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="d-inline-block VK_inter ps-2">
+                                            5 Review
+                                        </span>
+                                    </div>
+                                    <p class="m-0">
+                                        Delivery time : 15 to 20 min
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="">
+                                <button class="bg-transparent VK_inter VK_round VK_button_clr VK_button_brd px-2 py-1">
+                                    <img src="/images/vivek/direction.png" height="20px" alt="">
+                                    Direction
+                                </button>
+                                <button
+                                    class="bg-transparent VK_inter VK_round VK_button_clr VK_button_brd px-2 py-1 ms-2">
+                                    <img src="/images/vivek/link.png" height="20px" alt="">
+                                    Copy link
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="grid-container">
-            <div class="item1">1</div>
-            <div class="item2">2</div>
-            <div class="item3">3</div>  
-          
-          </div>
+        <section class="VK_food_recommended">
+            <!-- recommended for you -->
+            <section class="VK_sec_padd">
+                <div class="d_container">
+                    <div class="row m-0">
+                        <div class="col p-0">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button shadow-none bg-transparent text-black py-3 px-0"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <h4 class="VK_lato h5 fw-bold VK_food_heading">
+                                                Recommended for you
+                                            </h4>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne">
+                                        <div class="accordion-body p-0" id="VK_recomended">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Beverages & Coffee (hot and cold) -->
+            <section class="VK_sec_padd">
+                <div class="d_container">
+                    <div class="row m-0">
+                        <div class="col p-0">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item border-0">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button shadow-none bg-transparent text-black py-3 px-0"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="true" aria-controls="collapseTwo">
+                                            <h4 class="VK_lato h5 fw-bold VK_food_heading">
+                                                Beverages & Coffee (hot and cold)
+                                            </h4>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingTwo">
+                                        <div class="accordion-body p-0" id="VK_Beverages">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- menu -->
+            <div class="VK_backdrop"></div>
+            <div class="VK_menu_bar">
+                <div class="d_container">
+                    <div class="row m-0 justify-content-center">
+                        <div class="p-0 VK_menu_parent position-relative">
+                            <div class="text-end">
+                                <div class="px-3 py-2">
+                                    <button class="VK_menu_box_btns border-0 ms-auto" onclick="VK_open_menu()">
+                                        <img src="/images/vivek/icn1.png" height="20px" alt="">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="bg-white VK_open_menu position-absolute shadow-lg py-3 rounded-3">
+                                <div class="VK_border_bottom px-3 pb-2 d-flex justify-content-between">
+                                    <h5 class="font_20 VK_inter text-black fw-bold">
+                                        Menu
+                                    </h5>
+                                    <div>
+                                        <button class="border-0 VK_close_span VK_bg_light" onclick="VK_close_menu()">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="pt-3 px-3">
+                                    <p class="d-flex justify-content-between VK_inter text-black fw-600">
+                                        Recommended for you
+                                        <span class="d-inline-block">
+                                            30
+                                        </span>
+                                    </p>
+                                    <p class="d-flex justify-content-between VK_inter text-black fw-600">
+                                        Beverages & Coffee (hot and cold)
+                                        <span class="d-inline-block">
+                                            20
+                                        </span>
+                                    </p>
+                                    <p class="d-flex justify-content-between VK_inter text-black fw-600">
+                                        Burgers & wraps
+                                        <span class="d-inline-block">
+                                            15
+                                        </span>
+                                    </p>
+                                    <p class="d-flex justify-content-between VK_inter text-black fw-600">
+                                        Fries
+                                        <span class="d-inline-block">
+                                            15
+                                        </span>
+                                    </p>
+                                    <p class="d-flex justify-content-between VK_inter text-black fw-600">
+                                        Burger combos
+                                        <span class="d-inline-block">
+                                            15
+                                        </span>
+                                    </p>
+                                    <p class="d-flex justify-content-between VK_inter text-black fw-600 m-0">
+                                        Desserts
+                                        <span class="d-inline-block">
+                                            15
+                                        </span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="d-flex VK_menubar_color py-3 px-3 align-items-center justify-content-between text-white rounded-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div>
+                                        <img src="/images/vivek/tik.png" height="25px" alt="">
+                                    </div>
+                                    <div>
+                                        <p class="m-0">
+                                            1 item added
+                                        </p>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button class="bg-transparent VK_white_border rounded-pill px-3 py-1 text-white">
+                                        View cart
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- footer -->
+        <footer></footer>
 
 
     </main>
 
+    <!-- model -->
+    <div class="modal fade dialog_model" id="Recommended" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <p class="VK_inter text-black mb-1 font_14" id="VK_recomded_title"></p>
+                        <p class="modal-title VK_inter fw-bold text-black" id="exampleModalLabel">
+                            Customise as per your taste
+                        </p>
+                    </div>
+                    <div class="">
+                        <button class="border-0 VK_close_span VK_bg_light" data-bs-dismiss="modal">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <p class="fw-bold VK_inter text-black">
+                            Choose an option for fries
+                        </p>
+                        <div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Mexican Cheese Fries
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$10</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Extra Cheese Fries
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Fries(Large)
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="fw-bold VK_inter text-black mt-4">
+                            Choose an option for Coca cola
+                        </p>
+                        <div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Sprite
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$10</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Coca cola
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Green Apple Lemon Fizz
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Hot Chocolate
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Latte Coffee
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <div>
+                                    <p class="m-0 text-black VK_inter">
+                                        Fanta
+                                    </p>
+                                </div>
+                                <div class="radio-wrapper m-0">
+                                    <label class="radio-button align-items-center">
+                                        <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
+                                        <input id="option1" name="radio-group" type="radio">
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-5">
+                        <div class="d-flex gap-3">
+                            <div
+                                class="d-flex VK_black_border VK_round_lg bg-transparent VK_inter text-black align-items-center w-100 justify-content-center py-2">
+                                <button class="bg-transparent border-0 font_14">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+                                <span class="font_18 fw-bold px-2">
+                                    1
+                                </span>
+                                <button class="bg-transparent border-0 font_14">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="VK_intertext-center w-100">
+                                <button class="VK_add_to_cart w-100 text-center text-white">
+                                    Add Item to cart
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
     <script>
+        fetch('Nav_bar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.nav-bar').innerHTML = data
+            })
         fetch('Footer.html')
             .then(response => response.text())
             .then(data => {
@@ -85,7 +477,7 @@
     <script>
         document.querySelectorAll('.dropdown-item').forEach(function (item) {
             item.addEventListener('click', function (event) {
-                event.stopPropagation(); // Prevent dropdown from closing
+                event.stopPropagation();
             });
         });
     </script>
