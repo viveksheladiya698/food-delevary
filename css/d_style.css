@@ -588,6 +588,7 @@ hr {
     font-size: 16px;
     line-height: 28px;
     font-weight: 500;
+    color: #000;
 }
 
 .d_category .d_lgwidth {
@@ -621,13 +622,17 @@ hr {
     bottom: 125px;
 }
 
-.d_toatify {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1000;
-    min-width: 985px;
+
+/* #d_tost { */
+    /* position: sticky; */
+    /* bottom: 20px; */
+    /* left: 0%; */
+    /* transform: translateX(-50%); */
+    /* z-index: 1000; */
+/* } */
+.d_stcky{
+    position: sticky;
+    bottom: 0%;
 }
 
 .d_toast {
@@ -899,6 +904,11 @@ hr {
 
 /* cart css start */
 
+.d_cart .d_bglike {
+    /* background-color: #fff; */
+    /* box-shadow: 0px 4px 28px 0px #0000000F; */
+}
+
 .d_carthead .d_img {
     width: 30px;
     height: 30px;
@@ -947,6 +957,12 @@ hr {
     font-size: 18px;
     color: #000;
     font-weight: 500;
+}
+
+.d_cart .d_text .d_flavor {
+    font-size: 18px;
+    color: #000;
+    font-weight: 400;
 }
 
 .d_cart .d_text .d_remove {
@@ -1481,19 +1497,22 @@ hr {
     color: #000;
     margin-top: 3px;
 }
-.d_address .d_boxlist .d_adddel{
+
+.d_address .d_boxlist .d_adddel {
     font-size: 17px;
     font-weight: 500;
     color: #000;
     line-height: 26px;
     margin-top: 8px;
 }
-.d_address .d_dropdown{
+
+.d_address .d_dropdown {
     cursor: pointer;
     position: relative;
     display: inline-block;
 }
-.d_address .d_dropbtn{
+
+.d_address .d_dropbtn {
     width: 30px;
     height: 30px;
 }
@@ -1518,20 +1537,24 @@ hr {
     display: block;
     border-bottom: 1px solid #0000001A;
 }
+
 .d_show {
     display: block !important;
 }
-.d_address .d_addaddress{
+
+.d_address .d_addaddress {
     box-shadow: 0px 1.9px 4.28px 0px #5C58751F;
     border: 0.84px solid #000000;
     padding: 12px 24px;
     display: inline-block;
 }
-.d_address .d_addaddress a i{
+
+.d_address .d_addaddress a i {
     font-size: 20px;
     color: #000;
     font-weight: 500;
 }
+
 .d_address .d_addaddress a {
     font-size: 16px;
     color: #000;
@@ -1539,24 +1562,27 @@ hr {
 }
 
 
-.d_logoutmodel .modal-dialog{
+.d_logoutmodel .modal-dialog {
     width: 445px !important;
 }
-.d_logoutmodel .modal-body{
+
+.d_logoutmodel .modal-body {
     padding: 50px 78px;
 }
 
-.d_logoutmodel .modal-body h6{
+.d_logoutmodel .modal-body h6 {
     font-size: 24px;
     font-weight: 600;
     color: #000;
     margin-bottom: 22px;
 }
-.d_logoutmodel .modal-body p{
+
+.d_logoutmodel .modal-body p {
     font-size: 18px;
     font-weight: 500;
     color: #000;
 }
+
 .d_logoutmodel .modal-body a {
     width: 100%;
     border-radius: 8px;
@@ -1572,11 +1598,320 @@ hr {
     background-color: #041527;
     color: #fff !important;
 }
-.d_logoutmodel .d_dialog{
-    margin: 0 auto ;
+
+.d_logoutmodel .d_dialog {
+    margin: 0 auto;
 }
 
+/* help page css start */
 
+.d_helphead h5 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+}
+
+.d_helphead p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #323232;
+    max-width: 630px;
+    line-height: 30px;
+    margin: auto;
+}
+
+.d_help .d_helpheading {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 28px;
+}
+
+.d_help .d_helpacc {
+    margin-bottom: 20px;
+}
+
+.d_help .d_helpacchead {
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.d_help .d_helpacchead i {
+    font-size: 14px;
+    margin-right: 9px;
+    color: #000;
+}
+
+.d_help .d_helpacccon {
+    max-width: 1290px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #323232;
+    padding-left: 22px;
+    display: none;
+}
+
+.d_help .d_helpacc.active .d_helpacccon {
+    display: block;
+}
+
+/* Contact Us css start */
+
+.d_contactbackimg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/darshan_img/contact.png');
+    /* background-image: url('/darshan_img/contact.png'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    backdrop-filter: blur(10px);
+}
+
+.d_contactmodal .modal-dialog {
+    max-width: 650px;
+}
+
+.d_contactmodal .modal-content {
+    border-radius: 0 !important;
+}
+
+.d_contactmodal .modal-body {
+    padding: 36px 40px;
+}
+
+.d_contactmodal .modal-body .d_head {
+    font-size: 32px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 6px;
+}
+
+.d_contactmodal .modal-body p {
+    font-size: 20px;
+    font-weight: 500;
+    color: #323232;
+    line-height: 30px;
+}
+
+.d_contactmodal .modal-body input {
+    width: 100%;
+    padding: 14px 14px;
+    border: 0.84px solid #000000;
+    border-radius: 8px;
+    color: #000;
+}
+
+.d_contactmodal .modal-body textarea {
+    width: 100%;
+    padding: 14px 14px;
+    border: 0.84px solid #000000;
+    border-radius: 8px;
+}
+
+.d_contactmodal .modal-body .d_cta a {
+    background-color: #041527;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+    width: 410px;
+    padding: 15px 0;
+}
+
+/* offers page css start */
+
+.d_offerhead p {
+    max-width: 760px;
+    line-height: 20px;
+}
+
+.d_offer .d_item .d_content {
+    padding-top: 20px;
+}
+
+.d_offer .d_discountvalue span {
+    padding: 6px 18px;
+}
+
+.d_offer .d_item .d_img {
+    width: 300px;
+    height: 300px;
+}
+
+.d_offer .d_item .d_heart {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.d_offer .d_item .d_heart i {
+    color: #000;
+    font-size: 18px;
+}
+
+.d_offer .d_item .d_loc {
+    font-size: 19px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* cart food page css start */
+
+.d_emptycart {
+    height: 100vh;
+}
+
+.d_emptycart .d_emptyimg .d_img {
+    width: 290px;
+    height: 270px;
+}
+
+.d_emptycart .d_emptyimg .d_img img {
+    width: 290px;
+    height: 270px;
+}
+
+.d_emptycart .d_emptyimg p {
+    font-size: 26px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_emptycart .d_emptyimg .d_cta a {
+    font-size: 20px;
+    color: #000;
+    font-weight: 400;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* couponmodal css start */
+
+.d_couponmodal .modal-dialog {
+    max-width: 700px;
+}
+
+.d_couponmodal .modal-content {
+    border-radius: 0 !important;
+}
+
+.d_couponmodal .d_con {
+    padding: 30px;
+    border-bottom: 1.69px solid #0000001A;
+}
+
+.d_couponmodal .d_con h5 {
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_couponmodal .d_con .d_close {
+    width: 30px;
+    height: 30px;
+    background-color: #f7f7f7;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.d_couponmodal .d_con .d_close i {
+    color: #041527;
+}
+
+.d_couponmodal .d_con input {
+    width: 100%;
+    padding: 14px 14px;
+    border: 0.84px solid #000000;
+    border-radius: 8px;
+    color: #000;
+}
+
+.d_couponmodal .d_con .d_cta a {
+    background-color: #041527;
+    color: #fff;
+    border-radius: 8px;
+    padding: 17px 50px;
+}
+
+.d_couponmodal .d_con .d_coponlist {
+    padding: 20px 0 0 0;
+}
+
+.d_couponmodal .d_con .d_coponlist .d_couponhead {
+    font-size: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.d_couponmodal .d_con .d_coponlist p {
+    font-size: 14px;
+    color: #808080;
+    font-weight: 500;
+}
+
+.d_couponmodal .d_con .d_coponlist p span {
+    color: #000000B2;
+}
+
+.d_couponmodal .d_con p {
+    font-size: 12px;
+    color: #808080 !important;
+}
+
+.d_couponmodal .d_con p a {
+    font-size: 11px;
+    font-weight: 400;
+    color: #3081BC;
+}
+
+.d_expandable-header {
+    background-color: transparent;
+    padding-left: 1rem;
+    cursor: pointer;
+}
+
+.d_expandable-title {
+    color: #3081BC;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.d_expandable-icon {
+    transition: transform 0.3s ease;
+}
+
+.d_expandable-icon.d_expanded {
+    /* transform: rotate(180deg); */
+}
+
+.d_expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding-left: 1rem;
+}
+
+.d_expandable-content ul {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+}
+
+.d_expandable-content li {
+    font-size: 12px;
+    font-weight: 400;
+    color: #808080;
+}
 
 
 @media(max-width:1920px) {
@@ -1627,6 +1962,24 @@ hr {
 
     .d_tab1 .d_account .d_box {
         height: 470px;
+    }
+
+    .d_help .d_helpheading {
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .d_help .d_helpacchead {
+        font-size: 18px;
+    }
+
+    .d_offer .d_item .d_img {
+        width: 100%;
+    }
+
+    .d_cart .d_img {
+        width: 100%;
+        height: 180px;
     }
 }
 
@@ -1750,7 +2103,29 @@ hr {
     .d_wishlist .d_head {
         font-size: 20px;
     }
-    .d_address .d_boxlist{
+
+    .d_address .d_boxlist {
+        padding: 20px;
+    }
+
+    .d_contactmodal .modal-body .d_head {
+        font-size: 26px;
+    }
+
+    .d_contactmodal .modal-body p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .d_contactmodal .modal-dialog {
+        max-width: 570px !important;
+    }
+
+    .d_offer .d_item .d_img {
+        width: 100%;
+    }
+
+    .d_couponmodal .d_con {
         padding: 20px;
     }
 }
@@ -1841,6 +2216,14 @@ hr {
         font-size: 18px;
     }
 
+    .d_emptycart .d_emptyimg p {
+        font-size: 20px;
+    }
+
+    .d_emptycart .d_emptyimg .d_cta a {
+        font-size: 18px;
+    }
+
     .d_tab1 .d_order .d_secondsec .d_img {
         height: 300px;
     }
@@ -1866,11 +2249,33 @@ hr {
         width: 10px;
         height: 10px;
     }
-    .d_logoutmodel .modal-body{
+
+    .d_logoutmodel .modal-body {
         padding: 20px 40px;
     }
-    .d_address .d_dropdown-content{
+
+    .d_address .d_dropdown-content {
         max-width: 210px;
+    }
+
+    .d_helphead h5 {
+        font-size: 24px;
+    }
+
+    .d_helphead p {
+        font-size: 16px;
+    }
+
+    .d_contactmodal .modal-body {
+        padding: 25px;
+    }
+
+    .d_contactmodal .modal-dialog {
+        max-width: 510px !important;
+    }
+
+    .d_offernav .d_searchlist .d_search {
+        padding: 5px 15px;
     }
 }
 
@@ -2043,6 +2448,7 @@ hr {
     }
 
     .d_cart .d_text .d_price,
+    .d_cart .d_text .d_flavor,
     .d_cart .d_text .d_remove {
         font-size: 16px;
     }
@@ -2152,14 +2558,63 @@ hr {
     .d_wishlist .d_head {
         font-size: 18px;
     }
-    .d_logoutmodel .modal-dialog{
+
+    .d_logoutmodel .modal-dialog {
         width: 380px !important;
     }
-    .d_logoutmodel .modal-body{
+
+    .d_logoutmodel .modal-body {
         padding: 20px;
     }
-    .d_address .d_dropdown-content a{
+
+    .d_address .d_dropdown-content a {
         padding: 12px 15px;
+    }
+
+    .d_help .d_helpheading {
+        font-size: 20px;
+    }
+
+    .d_help .d_helpacchead {
+        font-size: 16px;
+    }
+
+    .d_help .d_helpacccon {
+        font-size: 14px;
+    }
+
+    .d_helphead p {
+        line-height: 20px;
+    }
+
+    .d_helphead h5 {
+        font-size: 22px;
+    }
+
+    .d_contactmodal .modal-dialog {
+        max-width: 410px !important;
+    }
+
+    .d_contactmodal .modal-body .d_head {
+        font-size: 20px;
+    }
+
+    .d_contactmodal .modal-body input {
+        padding: 8px;
+    }
+
+    .d_contactmodal .modal-body .d_cta a {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+
+    .d_couponmodal .d_con input {
+        padding: 10px;
+    }
+
+    .d_couponmodal .d_con .d_cta a {
+        padding: 15px 30px;
     }
 }
 
@@ -2185,8 +2640,9 @@ hr {
     .d_cart .d_text {
         padding-bottom: 0;
     }
-    .d_logoutmodel .modal-dialog{
-        width: 340px !important; 
+
+    .d_logoutmodel .modal-dialog {
+        width: 340px !important;
     }
 }
 
@@ -2246,11 +2702,17 @@ hr {
     .d_tab1 .d_order .d_date {
         font-size: 10px;
     }
-    .d_logoutmodel .modal-dialog{
+
+    .d_logoutmodel .modal-dialog {
         width: 303px !important;
     }
-    .d_logoutmodel .modal-body{
+
+    .d_logoutmodel .modal-body {
         padding: 20px 10px;
+    }
+
+    .d_contactmodal .modal-body {
+        padding: 15px;
     }
 }
 

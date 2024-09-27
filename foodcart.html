@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Font awsome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.css"
+        integrity="sha512-8D+M+7Y6jVsEa7RD6Kv/Z7EImSpNpQllgaEIQAtqHcI0H6F4iZknRj0Nx1DCdB+TwBaS+702BGWYC0Ze2hpExQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css file -->
+    <link rel="stylesheet" href="/css/d_style.css">
+
+</head>
+
+<body>
+
+    <!-- empty cart section start -->
+
+    <div id="emptycart" class="d_emptycart d-flex justify-content-center align-items-center d-none">
+        <div class="d_emptyimg text-center">
+            <div class="d_img mb-3">
+                <img src="/darshan_img/cartempty.png" alt="">
+            </div>
+            <p>Your Cart is empty!</p>
+            <div class="d_cta">
+                <a href="" class="text-center ">Back Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- empty cart section end -->
+
+    <!-- cart heading section start -->
+
+    <div id="cartlist">
+        <section class="d_p-30">
+            <div class="d_container">
+                <div class="row d_carthead align-items-center">
+                    <div class="col-12">
+                        <div class="d-flex align-items-center d_checked">
+                            <div class="d_img">
+                                <img src="/darshan_img/check1.png" alt="">
+                            </div>
+                            <p class="mb-0">2 Items selected</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- cart heading section start -->
+
+        <!-- cart item section start -->
+
+        <section>
+            <div class="d_container">
+                <div class="row g-3 d_cart">
+                    <div class="col-12 col-lg-6">
+                        <div class="d_box mb-4">
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <div class="d_img">
+                                        <img src="/darshan_img/item10.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="d_text h-100 d-flex flex-column">
+                                        <div class="d_name">Peri Peri Cheese Burger</div>
+                                        <div class="d_price">Price : $80</div>
+                                        <div class="d_flavor">Flavor : Spicy</div>
+                                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                                            <a href="" class="d_remove">Remove</a>
+                                            <div class="d_increbtn d-flex align-items-center justify-content-between">
+                                                <i class="fa-solid fa-minus ps-3"></i>
+                                                <div class="d_itemnum">2</div>
+                                                <i class="fa-solid fa-plus pe-3"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d_box">
+                            <div class="row
+                        ">
+                                <div class="col-sm-4">
+                                    <div class="d_img">
+                                        <img src="/darshan_img/item11.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-8">
+                                    <div class="d_text h-100 d-flex flex-column">
+                                        <div class="d_name">Paneer Tanduri Pizza</div>
+                                        <div class="d_price">Price : $100</div>
+                                        <div class="d_flavor">Flavor : Hot & Spicy</div>
+                                        <div class="d-flex justify-content-between align-items-center mt-auto">
+                                            <a href="" class="d_remove">Remove</a>
+                                            <div class="d_increbtn d-flex align-items-center justify-content-between">
+                                                <i class="fa-solid fa-minus ps-3"></i>
+                                                <div class="d_itemnum">2</div>
+                                                <i class="fa-solid fa-plus pe-3"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="d_billlist">
+                            <div class="d_delivery d-flex align-items-center">
+                                <div class="d_img">
+                                    <img src="/darshan_img/time.png" alt="">
+                                </div>
+                                <p class="mb-0">Delivery In 15 to 20 Minutes</p>
+                            </div>
+                            <div class="d_delivery d-flex align-items-center d_cur" data-bs-toggle="modal"
+                                data-bs-target="#couponmodal">
+                                <div class="d_img">
+                                    <img src="/darshan_img/coupon.png" alt="">
+                                </div>
+                                <div>
+                                    <p class="mb-0">Apply Coupon</p>
+                                    <div class="d_coupontext">3 Coupon Available</div>
+                                </div>
+                            </div>
+                            <div class="d_billdel">
+                                <h5>Bill Details (2 Item)</h5>
+                                <div class="d-flex justify-content-between aling-items-center mb-2">
+                                    <div class="d_billtext">Sub Total</div>
+                                    <div class="d_fee">$180</div>
+                                </div>
+                                <div class="d-flex justify-content-between aling-items-center mb-2">
+                                    <div class="d_billtext">Delivery Charge</div>
+                                    <div class="d_fee">$10</div>
+                                </div>
+                                <div class="d-flex justify-content-between aling-items-center mb-2">
+                                    <div class="d_billtext">Restaurant Charge</div>
+                                    <div class="d_fee d_free">Free</div>
+                                </div>
+                            </div>
+                            <div class="d_final">
+                                <div class="d-flex justify-content-between aling-items-center mb-2">
+                                    <div class="d_totaltext">Restaurant Charge</div>
+                                    <div class="d_totalamt">$190</div>
+                                </div>
+                            </div>
+                            <div class="d_proceedbtn mt-5">
+                                <a href="" class="d-block text-center">Proceed</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- cart item section end -->
+
+    <!-- Modal section start -->
+
+    <!-- Modal -->
+    <div class="modal fade d_couponmodal" id="couponmodal" tabindex="-1"
+        aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="d_con">
+                    <div class="d-flex justify-content-between mb-4">
+                        <h5>Apply Coupon</h5>
+                        <div class="d_close d-flex justify-content-center align-items-center" data-bs-dismiss="modal"
+                            aria-label="Close">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-12 col-sm-12">
+                            <div class="d-flex align-items-center">
+                                <input type="text" placeholder="Enter Code">
+                                <div class="d_cta ms-3"><a href="">Apply</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d_coponlist">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="d_img me-3">
+                                <img src="/darshan_img/coupon1.png" alt="">
+                            </div>
+                            <div>
+                                <div class="d_couponhead">Flat 250 off on Sports pro...</div>
+                                <p class="mb-0">Use code <span>AXISSPORTS250</span></p>
+                            </div>
+                        </div>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an Lorem
+                            Ipsum has been the industry's standard</p>
+                        <div class="d_expandable-header">
+                            <div class="d_expandable-title">Show details <i
+                                    class="fa-solid fa-angle-down ms-3 d_expandable-icon"></i></div>
+                        </div>
+                        <div class="d_expandable-content">
+                            <ul class="mb-0 mt-2 ps-3">
+                                <li>Lorem Ipsum has been the industry's standard</li>
+                                <li>Lorem Ipsum has been the industry's standard</li>
+                                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                                    an</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="d_con">
+                    <div class="d_coponlist">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="d_img me-3">
+                                <img src="/darshan_img/coupon2.png" alt="">
+                            </div>
+                            <div>
+                                <div class="d_couponhead">Flat 250 off on Sports pro...</div>
+                                <p class="mb-0">Use code <span>SBIDELIGHT250</span></p>
+                            </div>
+                        </div>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an Lorem
+                            Ipsum has been the industry's standard</p>
+                        <div class="d_expandable-header">
+                            <div class="d_expandable-title">Show details <i
+                                    class="fa-solid fa-angle-down ms-3 d_expandable-icon"></i></div>
+                        </div>
+                        <div class="d_expandable-content">
+                            <ul class="mb-0 mt-2 ps-3">
+                                <li>Lorem Ipsum has been the industry's standard</li>
+                                <li>Lorem Ipsum has been the industry's standard</li>
+                                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                                    an</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="d_con">
+                    <div class="d_coponlist">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="d_img me-3">
+                                <img src="/darshan_img/coupon2.png" alt="">
+                            </div>
+                            <div>
+                                <div class="d_couponhead">Flat 250 off on Sports pro...</div>
+                                <p class="mb-0">Use code <span>SBIDELIGHT250</span></p>
+                            </div>
+                        </div>
+                        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an Lorem
+                            Ipsum has been the industry's standard</p>
+                        <div class="d_expandable-header">
+                            <div class="d_expandable-title">Show details <i
+                                    class="fa-solid fa-angle-down ms-3 d_expandable-icon"></i></div>
+                        </div>
+                        <div class="d_expandable-content">
+                            <ul class="mb-0 mt-2 ps-3">
+                                <li>Lorem Ipsum has been the industry's standard</li>
+                                <li>Lorem Ipsum has been the industry's standard</li>
+                                <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when
+                                    an</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal section end -->
+
+
+
+
+    <!-- Jquery js file -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap js file -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- custom js file -->
+    <script src="/js/darshan.js"></script>
+
+    <script>
+        // Set this variable to 0 to show empty state, or 1 to show order list
+        let orderStatus = 1;
+
+        function toggleOrderDisplay() {
+            const orderListContainer = document.getElementById('cartlist');
+            const emptyStateContainer = document.getElementById('emptycart');
+
+            if (orderStatus === 0) {
+                orderListContainer.classList.add('d-none');
+                emptyStateContainer.classList.remove('d-none');
+            } else {
+                orderListContainer.classList.remove('d-none');
+                emptyStateContainer.classList.add('d-none');
+            }
+        }
+
+        // Call toggleOrderDisplay when the page loads
+        document.addEventListener('DOMContentLoaded', toggleOrderDisplay);
+
+        // You can also call toggleOrderDisplay() after changing the orderStatus
+        // For example:
+        // orderStatus = 0;
+        // toggleOrderDisplay();
+    </script>
+
+    <script>
+        document.querySelectorAll('.d_expandable-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                const icon = header.querySelector('.d_expandable-icon');
+                const title = header.querySelector('.d_expandable-title');
+                const isExpanded = content.style.maxHeight !== "0px" && content.style.maxHeight !== "";
+
+                // Toggle expanded state
+                if (!isExpanded) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.classList.remove('fa-angle-down');
+                    icon.classList.add('fa-angle-up', 'd_expanded');
+                    title.innerHTML = 'Hide details <i class="fa-solid fa-angle-up ms-3 d_expandable-icon d_expanded"></i>';
+                } else {
+                    content.style.maxHeight = "0px";
+                    icon.classList.remove('fa-angle-up', 'd_expanded');
+                    icon.classList.add('fa-angle-down');
+                    title.innerHTML = 'Show details <i class="fa-solid fa-angle-down ms-3 d_expandable-icon"></i>';
+                }
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

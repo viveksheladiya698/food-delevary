@@ -388,9 +388,7 @@ const categoryGrocery = [
     },
 ];
 
-let cartItems = 0;
-let toastTimeout;
-let toastElement = null;
+
 
 // Function to generate HTML for grocery items
 function generateGroceryItemHTML(item) {
@@ -431,14 +429,15 @@ function generateGroceryItemHTML(item) {
     `;
 }
 
-
-
 // Function to render grocery items
 function renderGroceryItems(items) {
+    if(document.getElementById('D_categorygrocery'))
+    {
     const container = document.getElementById('D_categorygrocery');
     container.innerHTML = items.map(generateGroceryItemHTML).join('');
        // Call to add event listeners after rendering
        addCartEventListeners();
+    }
 }
 
 // Function to filter grocery items
@@ -534,42 +533,49 @@ document.querySelectorAll('#categoryFilter input, input[name="rating"], input[na
 
 // Function to show toast
 
-function showToast(message) {
-    if (toastElement) {
-        document.body.removeChild(toastElement);
-    }
+let toastElement
+let toastTimeout;
+let cartItems = 0;
 
-    toastElement = document.createElement('div');
-    toastElement.className = 'd_toatify';
-    toastElement.innerHTML = `
-        <div class="d_toast">
-            <div class="d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                    <div class="d_img">
-                        <img src="/darshan_img/check.png" alt="">
+function showToast(message) {
+    // Get the parent element by ID
+    let par = document.getElementById('d_tost');
+
+    // Create a new toast element
+    if (toastElement) {
+        toastElement.querySelector('p').innerText = message;
+        clearTimeout(toastTimeout); // Clear previous timeout
+    } else {
+        // Create a new toast element
+        toastElement = document.createElement('div');
+        toastElement.className = 'd_toatify';
+        toastElement.innerHTML = `
+            <div class="d_toast">
+                <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex align-items-center">
+                        <div class="d_img">
+                            <img src="/darshan_img/check.png" alt="">
+                        </div>
+                        <p class="mb-0">${message}</p>
                     </div>
-                    <p class="mb-0">${message}</p>
-                </div>
-                <div class="d_link">
-                    <a href="">View cart</a>
+                    <div class="d_link">
+                        <a href="">View cart</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    `;
-    document.body.appendChild(toastElement);
+        `;
 
-    // Clear any existing timeout
-    if (toastTimeout) {
-        clearTimeout(toastTimeout);
-    }
+        // Append the new toast element to the specified parent
+        par.appendChild(toastElement);
+    };
 
-    // Set a new timeout to remove the toast after 3 seconds
-    toastTimeout = setTimeout(() => {
-        if (toastElement) {
-            document.body.removeChild(toastElement);
-            toastElement = null;
-        }
-    }, 3000);
+    // Set a timeout to remove the toast after 3 seconds
+    // toastTimeout = setTimeout(() => {
+    //     if (toastElement) {
+    //         par.removeChild(toastElement);
+    //         toastElement = null; // Reset the toast element
+    //     }
+    // }, 3000);
 }
 
 // Function to handle cart icon click
@@ -588,6 +594,9 @@ function addCartEventListeners() {
         icon.addEventListener('click', handleCartClick);
     });
 }
+
+// Call this function to set up event listeners once the document is loaded
+document.addEventListener('DOMContentLoaded', addCartEventListeners);
 
 // Initial render
 updateDisplay();
