@@ -1,3 +1,12 @@
+.VK_inter {
+    font-family: "inter", sans-serif;
+}
+
+.text-black {
+    color: black !important;
+}
+
+
 .VK_header1 {
     position: absolute;
     top: 0%;
@@ -19,34 +28,246 @@
     border-radius: 5px;
     color: white;
     transition: 0.2s ease;
-    &:hover{
+
+    &:hover {
         background-color: white !important;
         color: black;
     }
 }
 
-.VK_header_logo{
+.VK_header_logo {
     width: 250px;
 }
-.VK_white_border{
+
+.VK_white_border {
     border: 1px solid white;
 }
-.VK_toggle_off{
+
+.VK_toggle_off {
     padding: 0px 10px;
     font-size: 18px;
 }
-.VK_btn{
+
+.VK_btn {
     background-color: #041527;
+}
+
+.VK_outlline_none {
+    outline: none;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
+
+
+/* sign in model */
+.VK_signin_model .modal-dialog {
+    max-width: 50% !important;
+}
+
+
+/* model */
+.VK_input_border {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.VK_theme_btns {
+    background-color: #041527;
+    padding: 6px 0px;
+    border-radius: 5px;
+}
+
+
+.VK_seperators {
+    width: 40%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, 0.14);
+    display: inline-block;
+}
+
+.font_14 {
+    font-size: 14px;
+}
+
+.font_20 {
+    font-size: 20px;
+}
+
+.VK_black_border {
+    border: 1px solid black;
+}
+
+.VK_round {
+    border-radius: 5px;
+}
+
+.VK_gold {
+    color: #CA9F5C;
+}
+
+
+/* otp */
+.otp-inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.otp {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 24px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* sign up */
+.VK_signup_number {
+    width: 300px !important;
+}
+
+.VK_location_map {
+    position: relative;
+}
+
+.VK_location_close {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.VK_close_span {
+    height: 30px !important;
+    width: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+/* address */
+.VK_address_active_btn{
+    background-color: #d6d6d6;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+}
+
+.VK_address_btn{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
 
 /* ------------------------------ media query ------------------------------- */
+
+/* 3xl device */
+@media (min-width:1441px) {
+    .VK_signin_model .modal-dialog {
+        max-width: 45% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 42% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 45% !important;
+    }
+
+    .VK_area_details .modal-dialog {
+        max-width: 35% !important;
+    }
+
+    .VK_location_model .modal-dialog {
+        max-width: 30% !important;
+    }
+}
+
+/* 2xl device */
+@media (max-width:1440px) and (min-width:1199px) {
+    .VK_signin_model .modal-dialog {
+        max-width: 50% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 50% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 55% !important;
+    }
+
+    .VK_area_details .modal-dialog {
+        max-width: 40% !important;
+    }
+}
+
+/* xl device */
+@media (max-width:1200px) and (min-width:993px) {
+    .VK_signin_model .modal-dialog {
+        max-width: 60% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 60% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 65% !important;
+    }
+
+    .VK_area_details .modal-dialog {
+        max-width: 50% !important;
+    }
+}
+
+/* lg device */
+@media (max-width:992px) and (min-width:768px) {
+    .VK_signin_model .modal-dialog {
+        max-width: 80% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 80% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 80% !important;
+    }
+}
+
+
 /* medium device */
 @media (max-width:768px) and (min-width:577px) {
     .VK_header_login {
         padding: 5px 10px;
         font-size: 12px;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 90% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 90% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 90% !important;
     }
 
 }
@@ -57,6 +278,18 @@
         padding: 5px 10px;
         font-size: 12px;
     }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 100% !important;
+    }
 }
 
 /*  extra small device */
@@ -65,7 +298,20 @@
         padding: 5px 10px;
         font-size: 12px;
     }
-    .VK_header_logo{
+
+    .VK_header_logo {
         width: 200px;
+    }
+
+    .VK_signin_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_otp_model .modal-dialog {
+        max-width: 100% !important;
+    }
+
+    .VK_signup_model .modal-dialog {
+        max-width: 100% !important;
     }
 }

@@ -1,3 +1,9 @@
+.VK_header_location li:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+
+
 .VK_header {
     background-color: rgba(4, 21, 39, 1);
 }
@@ -36,6 +42,20 @@
     font-family: "inter", sans-serif;
 }
 
+.VK_lato {
+    font-family: "Lato", system-ui;
+}
+
+.VK_round {
+    border-radius: 5px;
+}
+
+.VK_theme_btns {
+    background-color: #041527;
+    padding: 6px 0px;
+    border-radius: 5px;
+}
+
 .font_14 {
     font-size: 14px;
 }
@@ -59,6 +79,33 @@
 .VK_input_border {
     border: 1px solid black;
     border-radius: 5px;
+}
+
+
+/* location */
+.VK_location_map {
+    position: relative;
+}
+
+.nav-bar{
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+
+.VK_location_close {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.VK_close_span {
+    height: 30px !important;
+    width: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
 }
 
 
@@ -97,5 +144,8 @@
 @media (min-width:1441px) {
     .VK_area_details .modal-dialog {
         max-width: 35% !important;
+    }
+    .VK_location_model .modal-dialog {
+        max-width: 30% !important;
     }
 }
