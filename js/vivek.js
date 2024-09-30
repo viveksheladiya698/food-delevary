@@ -4,6 +4,8 @@ window.onload = function () {
     VK_resturent_data_display();
     VK_popular_restro_data_display();
     VK_our_restro_data_display();
+    recommended_data();
+    VK_Beverages();
 
 }
 
@@ -436,7 +438,7 @@ var VK_our_resturent_data = [
         description: "Burger, Fast Food, Dessert Vesu, Surat",
         review_cnt: 5,
         review: 5,
-        alter:"Items At $60",
+        alter: "Items At $60",
         image: "hotel1.png",
         type: "vage"
     },
@@ -475,7 +477,7 @@ var VK_our_resturent_data = [
         name: "McDonald’s",
         description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
         review_cnt: 5,
-        alter:"50% OFF UPTO $20",
+        alter: "50% OFF UPTO $20",
         review: 5,
         image: "mcdonald.png",
         type: "vage"
@@ -484,7 +486,7 @@ var VK_our_resturent_data = [
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
         review_cnt: 5,
-        alter:"Items At $60",
+        alter: "Items At $60",
         review: 5,
         image: "hotel7.png",
         type: "vage"
@@ -579,7 +581,246 @@ function VK_our_restro_data_display() {
 }
 
 
-function VK_filter_restro(filters){
+function VK_filter_restro(filters) {
     let buttons = document.querySelectorAll('.VK_filters_buttons button')
     console.log(buttons[0].textContent);
+}
+
+function VK_open_menu() {
+
+    let menu = document.querySelector('.VK_open_menu')
+    menu.classList.add('VK_opne_menu_box')
+
+    document.getElementsByClassName('VK_backdrop')[0].style.display = 'block'
+    document.body.style.overflow = 'hidden';
+
+    setTimeout(() => {
+        let rl = document.querySelector('.VK_menu_parent');
+        rl.style.overflow = 'visible';
+    }, 120)
+}
+
+function VK_close_menu() {
+    let rl = document.querySelector('.VK_menu_parent');
+    rl.style.overflow = 'hidden';
+
+    document.getElementsByClassName('VK_backdrop')[0].style.display = 'none'
+    document.body.style.overflow = 'visible';
+
+    let menu = document.querySelector('.VK_open_menu')
+    menu.classList.remove('VK_opne_menu_box')
+}
+
+
+
+
+
+
+let VK_recomndended_data = [
+    {
+        name: "Peri Peri Cheese Burger",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 5,
+        review: 5,
+        image: "burger3.png",
+        type: "veg"
+    },
+    {
+        name: "Spicy Chicken Burger",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 5,
+        review: 5,
+        image: "burger.png",
+        type: "non-veg"
+    },
+    {
+        name: "Aloo Tikki Burger + French Fries",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 10,
+        review: 2,
+        image: "burger2.png",
+        type: "veg"
+    },
+]
+
+
+function recommended_data() {
+    let div = document.querySelector('#VK_recomended')
+    if (div) {
+        let html = VK_recomndended_data.map((ele, id) => {
+            const generateStars = (rating) => {
+                return Array.from({ length: 5 }, (_, index) => {
+                    return `
+                    <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                        <i class="fa-solid fa-star"></i>
+                    </span>`;
+                }).join("");
+            };
+
+            const stars = generateStars(ele.review);
+            return ` 
+            <div class="row mb-4 py-3">
+                <div class="col-xxl-2 col-xl-3 col-md-4">
+                    <div class="VK_reco_img">
+                        <img src="/images/assets/${ele.image}"
+                            class="w-100 h-100 object_cover" alt="">
+                        <div class="VK_reco_veg">
+                            <img src="/images/vivek/${ele.type == "veg" ? `veg.png` : `non-veg.png`}" class="w-100 h-100" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 ps-4 pt-3">
+                    <h5 class="text-black VK_inter VK_food_heading fw-600">
+                       ${ele.name}
+                    </h5>
+                    <p class="font_18 VK_inter text-black fw-400">
+                        Price : $${ele.price}
+                    </p>
+                    <div class="d-flex gap-1">
+                        ${stars}
+                        <span class="d-inline-block VK_inter ps-2">
+                            ${ele.review_cnt} Reviews
+                        </span>
+                    </div>
+                    <p class="VK_inter font_14 text-black mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <div>
+                        <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-noee">
+                            <button
+                                class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">
+                                ADD
+                            </button>
+                        </span>
+                        <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-none">
+                            <button
+                                class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold ">
+                                -
+                            </button>
+                            <p class="m-0  fw-bold">
+                                1
+                            </p>
+                            <button
+                                class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold">
+                                +
+                            </button>
+                        </span>
+                    </div>
+                </div>
+            </div>`
+        }).join("")
+        div.innerHTML = html;
+    } else {
+        return
+    }
+
+}
+
+
+function VK_Recommended_model_opn(id) {
+
+    document.getElementById('VK_recomded_title').innerHTML = VK_recomndended_data[id].name
+
+    var myModal = new bootstrap.Modal(document.getElementById('Recommended'));
+
+    myModal.show();
+
+}
+
+
+
+
+
+
+
+let VK_beverages_data = [
+    {
+        name: "Coca Cola",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 5,
+        review: 5,
+        image: "cold-drink1.png",
+    },
+    {
+        name: "Cold Coffee",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 5,
+        review: 5,
+        image: "cold-drink2.png",
+    },
+]
+
+function VK_Beverages() {
+    let div = document.getElementById('VK_Beverages')
+    if (div) {
+        let html = VK_beverages_data.map((ele) => {
+            const generateStars = (rating) => {
+                return Array.from({ length: 5 }, (_, index) => {
+                    return `
+                    <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                        <i class="fa-solid fa-star"></i>
+                    </span>`;
+                }).join("");
+            };
+
+            const stars = generateStars(ele.review);
+            return `
+                <div class="row mb-4 pb-3">
+                    <div class="col-xxl-2 col-xl-3 col-md-4">
+                        <div class="VK_reco_img ">
+                            <img src="/images/assets/${ele.image}"
+                                class="w-100 h-100 object_cover" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-8 ps-4 pt-3">
+                        <h5 class="text-black VK_inter VK_food_heading fw-600">
+                            ${ele.name}
+                        </h5>
+                        <p class="font_18 VK_inter text-black fw-400">
+                            Price : $${ele.price}
+                        </p>
+                        <div class="d-flex gap-1">
+                            ${stars}
+                            <span class="d-inline-block VK_inter ps-2">
+                                ${ele.review_cnt} Review
+                            </span>
+                        </div>
+                        <p class="VK_inter font_14 text-black mt-2">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                        <div>
+                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-noee">
+                                <button
+                                    class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold">
+                                    ADD
+                                </button>
+                            </span>
+                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-none">
+                                <button
+                                    class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold ">
+                                    -
+                                </button>
+                                <p class="m-0  fw-bold">
+                                    1
+                                </p>
+                                <button
+                                    class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold">
+                                    +
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>`
+        }).join("")
+        div.innerHTML = html
+    } else {
+        return
+    }
 }

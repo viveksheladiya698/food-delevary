@@ -1,0 +1,101 @@
+.VK_header {
+    background-color: rgba(4, 21, 39, 1);
+}
+
+.VK_nav_drop_down.dropdown-toggle::after {
+    display: none;
+}
+
+.VK_drop_down.dropdown-toggle::after {
+    display: none;
+}
+
+.VK_profile_down {
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+}
+
+.font_12 {
+    font-size: 12px;
+}
+
+.VK_border_bottom {
+    border-bottom: 1px solid #ddd !important;
+}
+
+.VK_header_logo {
+    width: 200px;
+}
+
+.VK_inter {
+    font-family: "inter", sans-serif;
+}
+
+.font_14 {
+    font-size: 14px;
+}
+
+.VK_nav_drop.dropdown-toggle::after {
+    display: none;
+}
+
+.VK_black_border {
+    border: 1px solid black;
+}
+
+.VK_outlline_none {
+    outline: none;
+}
+
+.text-black {
+    color: black !important;
+}
+
+.VK_input_border {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+
+
+/*  extra small device */
+@media (max-width:480px) {
+    .VK_header_logo {
+        width: 180px;
+    }
+}
+
+/* small device */
+@media (max-width:576px) and (min-width:481px) {}
+
+/* medium device */
+@media (max-width:767px) and (min-width:577px) {}
+
+/* lg device */
+@media (max-width:992px) and (min-width:768px) {}
+
+/* xl device */
+@media (max-width:1200px) and (min-width:993px) {
+    .VK_area_details .modal-dialog {
+        max-width: 50% !important;
+    }
+}
+
+/* 2xl device */
+@media (max-width:1440px) and (min-width:1199px) {
+    .VK_area_details .modal-dialog {
+        max-width: 40% !important;
+    }
+}
+
+/* 3xl device */
+@media (min-width:1441px) {
+    .VK_area_details .modal-dialog {
+        max-width: 35% !important;
+    }
+}
