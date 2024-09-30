@@ -3,11 +3,11 @@
 }
 
 body {
-    font-family: "imter", sans-serif;
+    font-family: "inter", sans-serif;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none ;
 }
 
 h1,
@@ -41,6 +41,9 @@ h6 {
 
 .d_p-60 {
     padding: 60px 0;
+}
+.d_bgtran{
+    background-color: transparent;
 }
 
 .d_container {
@@ -497,6 +500,7 @@ h6 {
     font-weight: 500;
 }
 
+
 .d_category .d_right .d_drop a {
     border: 0.5px solid #000000;
 }
@@ -520,7 +524,7 @@ h6 {
 
 hr {
     opacity: 1;
-    margin: 0;
+    margin: 0 !important;
 }
 
 .d_searchlist .d_list .radio-wrapper {
@@ -1424,6 +1428,15 @@ hr {
     font-weight: 600;
     color: #000;
 }
+.d_wishlist .d_type a{
+    padding: 5px 32px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    border: 0.5px solid #000000;
+    border-radius: 8px;
+    margin-right: 16px;
+}
 
 .d_wishlist .d_item {
     padding: 20px;
@@ -1469,9 +1482,13 @@ hr {
     border-radius: 50%;
 }
 
-.d_wishlist .d_item .d_heart i {
-    color: #F65959;
+.d_heart i {
+    color: #fff;
+    font-size: 20px;
+}
+.d_wishlist .d_heart i{
     font-size: 16px;
+    color: #F65959;
 }
 
 .d_address .d_boxlist {
@@ -1669,20 +1686,17 @@ hr {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    /* height: 100vh; */
+    padding: 80px 0;
     backdrop-filter: blur(10px);
 }
 
-.d_contactmodal .modal-dialog {
-    max-width: 650px;
-}
-
-.d_contactmodal .modal-content {
-    border-radius: 0 !important;
-}
 
 .d_contactmodal .modal-body {
     padding: 36px 40px;
+    background-color: #fff;
+    max-width: 650px;
+    margin: auto;
 }
 
 .d_contactmodal .modal-body .d_head {
@@ -1913,6 +1927,207 @@ hr {
     color: #808080;
 }
 
+/* Delivery address  */
+
+ .d_title .d_head{
+    font-size: 26px;
+    font-weight: 600;
+    color: #000;
+}
+.d_deliveryadd .d_dropdown img{
+    width: 24px;
+    height: 24px;
+}
+.d_deliveryadd .d_cta a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #041527;
+    border-radius: 8px;
+    padding: 11px 125px;
+}
+.d_deliveryadd .d_deliveryaddbtn{
+    box-shadow: 0px 1.9px 4.28px 0px #5C58751F;
+}
+.d_deliveryadd .d_deliveryaddbtn a{
+    border: 0.84px solid #000000;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+
+/* add address */
+.d_addaddress {
+    padding: 30px;
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    background-color: #fff;
+}
+.d_addaddress .d_head{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 16px;
+}
+.d_addaddress input{
+    padding: 14px 14px;
+    border: 0.84px solid #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.d_addaddress .d_cta a{
+    font-size: 20px;
+    font-weight: 500;
+    padding: 15px 0;
+    color: #fff;
+    background-color: #041527;
+    border-radius: 8px;
+}
+.d_addfuldel .d_box {
+    box-shadow: 0px 4px 28px 0px #0000000F;
+    background-color: #fff;
+    padding: 30px;
+}
+.d_addfuldel .d_box .d_head{
+    font-size: 22px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 20px;
+}
+.d_addfuldel .d_box .d_change{
+    border: 0.84px solid #000000;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+.d_addfuldel .d_box .d_change a{
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+}
+.d_addfuldel .d_box input{
+    padding: 12px;
+    border: 0.84px solid #000000;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #000;
+    font-weight: 500;
+    width: 100%;
+}
+input:focus-visible{
+    outline: 0 !important;
+}
+.d_addfuldel .d_box .d_iconfrom{
+    padding: 6px 14px;
+    background-color: #d6d6d6;
+    border-radius: 8px;
+    width: 100px;
+    margin-right: 16px;
+}
+.d_addfuldel .d_box p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    margin-top: 3px;
+}
+.d_addfuldel .d_box .d_bgtran{
+    background-color: transparent;
+    border: 0.5px solid #000000;
+}
+.d_addfuldel .d_box .d_cta a{
+    padding: 15px 0;
+    background-color: #041527;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+
+/* payment method */
+
+.d_pay form{
+    box-shadow: 0px 4px 28px 0px #0000000F;
+}
+.d_pay .d_formgroup{
+    padding: 20px 34px;
+    border: 0.84px solid #000000
+}
+.d_pay .d_formgroup .d_img{
+    width: 36px;
+    height: 36px;
+    /* margin-top: -3px; */
+}
+.d_pay .d_formgroup .d_img img{
+    width: 100%;
+    height: 100%;
+}
+.d_pay .d_custom-radio{
+    margin-top: 5px;
+}
+.d_pay .d_formgroup .d_text{
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    /* margin-top: -3px; */
+}
+.d_pay .d_cardform{
+    padding: 34px;
+}
+.d_pay .d_cardform input{
+    padding: 12px;
+    border: 0.84px solid #000000;
+    border-radius: 8px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 500;
+    width: 100%;
+}
+.d_pay .d_cardform .d_cta a {
+    padding: 15px 0;
+    background-color: #b4b9be;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 8px;
+}
+/* .d_pay .d_bankoption{
+    padding: 34px;
+} */
+.d_pay .d_bankdel{
+    border-bottom: 1.69px solid #0000001A;
+
+}
+.d_pay .d_bankoption .d_bank{
+    padding: 24px 34px;
+}
+.d_pay .d_bankoption .d_bgbox{
+    width: 50px;
+    height: 50px;
+    background-color: #ededed;
+}
+.d_pay .d_bankoption .d_img{
+    width: 30px;
+    height: 30px;
+}
+.d_pay .d_bankoption .d_img img{
+    width: 100%;
+    height: 100%;
+}
+.d_pay .d_bankoption .d_bankname{
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+}
+
+
+
+
 
 @media(max-width:1920px) {
     .d_banner2 {
@@ -2128,6 +2343,43 @@ hr {
     .d_couponmodal .d_con {
         padding: 20px;
     }
+    .d_title .d_head{
+        font-size: 22px;
+    }
+    .d_deliveryadd .d_cta a{
+        padding: 11px 70px;
+    }
+    .d_map iframe{
+        height: 330px !important;
+    }
+    .d_addaddress .d_head{
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+    .d_addaddress input{
+        padding: 8px;
+        margin-bottom: 15px;
+    }
+    .d_addfuldel .d_box .d_head{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .d_addfuldel .d_box .d_iconfrom{
+        margin-bottom: 5px;
+    }
+    .d_pay .d_formgroup{
+        padding: 15px;
+    }
+    .d_pay .d_cardform{
+        padding: 17px;
+    }
+    .d_pay .d_cardform .d_cta a{
+        padding: 8px;
+        font-size: 16px;
+    }
+    .d_pay .d_bankoption .d_bank{
+        padding: 15px;
+    }
 }
 
 @media(max-width:991px) {
@@ -2268,14 +2520,15 @@ hr {
 
     .d_contactmodal .modal-body {
         padding: 25px;
+        max-width: 570px ;
     }
 
-    .d_contactmodal .modal-dialog {
-        max-width: 510px !important;
-    }
 
     .d_offernav .d_searchlist .d_search {
         padding: 5px 15px;
+    }
+    .d_wishlist .d_type a{
+        padding: 5px 16px;
     }
 }
 
@@ -2342,6 +2595,13 @@ hr {
         width: 80px;
         height: 80px;
         margin-right: 10px;
+    }
+    .d_addaddress .d_cta a{
+        padding: 8px 0;
+        font-size: 16px;
+    }
+    .d_addaddress{
+        padding: 15px;
     }
 }
 
@@ -2590,9 +2850,8 @@ hr {
     .d_helphead h5 {
         font-size: 22px;
     }
-
-    .d_contactmodal .modal-dialog {
-        max-width: 410px !important;
+    .d_contactmodal .modal-body{
+        max-width: 385px;
     }
 
     .d_contactmodal .modal-body .d_head {
@@ -2616,6 +2875,20 @@ hr {
     .d_couponmodal .d_con .d_cta a {
         padding: 15px 30px;
     }
+    .d_addfuldel .d_box .d_change,.d_addfuldel .d_box input{
+        padding: 10px;
+    }
+    .d_addfuldel .d_box .d_cta a{
+        padding: 8px 0;
+        font-size: 16px;
+    }
+    .d_addfuldel .d_box{
+        padding: 15px;
+    }
+    .d_cart .d_billlist{
+        padding: 20px;
+    }
+    
 }
 
 
@@ -2643,6 +2916,9 @@ hr {
 
     .d_logoutmodel .modal-dialog {
         width: 340px !important;
+    }
+    .d_contactmodal .modal-body{
+        max-width: 340px;
     }
 }
 
@@ -2713,6 +2989,10 @@ hr {
 
     .d_contactmodal .modal-body {
         padding: 15px;
+        max-width: 300px;
+    }
+    .d_addfuldel .d_box input{
+        font-size: 15px;
     }
 }
 

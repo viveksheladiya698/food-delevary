@@ -24,11 +24,12 @@
 
     <!-- custom css file -->
     <link rel="stylesheet" href="/css/d_style.css">
-    <link rel="stylesheet" href="/css/vivek.css">
 
 </head>
 
 <body>
+
+    <div class="nav-bar"></div>
 
 
     <!-- Banner section start -->
@@ -46,7 +47,7 @@
                             tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div class="d_cta text-center">
-                        <a href="">Order Now</a>
+                        <a href="" class="text-decoration-none">Order Now</a>
                     </div>
                 </div>
                 <div class="d_feature">
@@ -85,7 +86,7 @@
         <div class="d_container">
             <div class="d-flex align-items-center justify-content-between mb-lg-5 mb-3">
                 <h2 class="mb-0">Explore groceries</h2>
-                <a href="/category.html">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
+                <a href="/category.html" class="text-decoration-none">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
             </div>
             <div class="row g-4" id="D_grocery">
             </div>
@@ -109,7 +110,7 @@
                     <h3>Goodness in Every bite!</h3>
                     <p>Crunchy and sweet</p>
                     <div class="d_cta">
-                        <a href="">Order Now</a>
+                        <a href="" class="text-decoration-none">Order Now</a>
                     </div>
                 </div>
             </div>
@@ -125,7 +126,7 @@
         <div class="d_container">
             <div class="d-flex align-items-center justify-content-between mb-lg-5 mb-3">
                 <h2 class="mb-0">Today discounts</h2>
-                <a href="/category.html">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
+                <a href="/category.html" class="text-decoration-none">Show more<i class="fa-solid fa-angle-right ms-2"></i></a>
             </div>
             <div class="row g-4" id="D_discountgrocery">
                 <div class="col-sm-6 col-lg-4 col-xl-3">
@@ -194,17 +195,24 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <!-- custom js file -->
-    <script src="/js/darshan.js"></script>
+   
 
-    <!-- Footer script -->
+    <!-- Header & Footer script -->
     <script>
+        fetch('Nav_bar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.nav-bar').innerHTML = data
+            })
         fetch('Footer.html')
             .then(response => response.text())
             .then(data => {
                 document.querySelector('footer').innerHTML = data;
             });
     </script>
+
+     <!-- custom js file -->
+     <script src="/js/darshan.js"></script>
 
 </body>
 

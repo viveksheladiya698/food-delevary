@@ -76,6 +76,9 @@ function generateGroceryItems() {
         let groceryHTML = '';
 
         grocery.forEach(item => {
+            // Stringify the item object to safely pass it as a parameter
+            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;'); // Escape quotes
+
             groceryHTML += `
                 <div class="col-sm-6 col-lg-4 col-xl-3">
                     <div class="d_item">
@@ -88,8 +91,8 @@ function generateGroceryItems() {
                                 <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}">
                                     <img src="/darshan_img/cart.png" alt="Cart">
                                 </div>
-                                <div class="d_icon d-flex align-items-center justify-content-center">
-                                    <img src="/darshan_img/wishlist.png" alt="Wishlist">
+                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(${itemJSON})">
+                                    <i class="fa-regular fa-heart"></i>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +112,10 @@ function generateGroceryItems() {
         });
 
         d_grocery.innerHTML = groceryHTML;
-        addCartEventListeners();
+        updateGroceryItemsUI();
     }
 }
+
 
 // Call the function to generate the grocery items
 generateGroceryItems();
@@ -431,12 +435,11 @@ function generateGroceryItemHTML(item) {
 
 // Function to render grocery items
 function renderGroceryItems(items) {
-    if(document.getElementById('D_categorygrocery'))
-    {
-    const container = document.getElementById('D_categorygrocery');
-    container.innerHTML = items.map(generateGroceryItemHTML).join('');
-       // Call to add event listeners after rendering
-       addCartEventListeners();
+    if (document.getElementById('D_categorygrocery')) {
+        const container = document.getElementById('D_categorygrocery');
+        container.innerHTML = items.map(generateGroceryItemHTML).join('');
+        // Call to add event listeners after rendering
+        addCartEventListeners();
     }
 }
 
@@ -480,6 +483,8 @@ function filterGroceryItems() {
     return filteredItems;
 }
 
+
+
 // Function to sort grocery items
 function sortGroceryItems(items) {
     const sortInput = document.querySelector('input[name="sort"]:checked');
@@ -515,20 +520,50 @@ document.querySelectorAll('#categoryFilter input, input[name="rating"], input[na
         input.addEventListener('change', updateDisplay);
     });
 
+
 // Category filter functionality
 
-// document.getElementById('categoryFilter').addEventListener('click', function (e) {
-//     if (e.target.tagName === 'LI') {
-//         const activeItem = this.querySelector('li.active');
-//         if (activeItem) {
-//             activeItem.classList.remove('active');
-//             activeItem.style.backgroundColor = '';
-//         }
-//         e.target.classList.add('active');
-//         e.target.style.backgroundColor = '#f5f5f5';
-//         updateDisplay();
-//     }
-// });
+
+// New filtering functions
+function filterItems(items, filters) {
+    return items.filter(item => {
+        if (filters.price && (item.price < 70 || item.price > 110)) return false;
+        if (filters.offers && !item.discount) return false;
+        if (filters.rating && item.review < 3) return false;
+        if (filters.fastDelivery && !item.fastDelivery) return false;
+        return true;
+    });
+}
+
+function updateFilters(filterElement) {
+    const filterType = filterElement.dataset.filter;
+    filterElement.classList.toggle('active');
+
+    const activeFilters = {
+        price: document.querySelector('[data-filter="price"]').classList.contains('active'),
+        offers: document.querySelector('[data-filter="offers"]').classList.contains('active'),
+        rating: document.querySelector('[data-filter="rating"]').classList.contains('active'),
+        fastDelivery: document.querySelector('[data-filter="fastDelivery"]').classList.contains('active')
+    };
+
+    const filteredItems = filterItems(categoryGrocery, activeFilters);
+    renderGroceryItems(filteredItems);
+}
+
+// Event listeners for filters
+function addFilterEventListeners() {
+    const filterElements = document.querySelectorAll('.d_search');
+    filterElements.forEach(element => {
+        element.addEventListener('click', () => updateFilters(element));
+    });
+}
+
+// Initialize filtering
+document.addEventListener('DOMContentLoaded', () => {
+    renderGroceryItems(categoryGrocery);
+    addFilterEventListeners();
+});
+
 
 
 // Function to show toast
@@ -559,7 +594,7 @@ function showToast(message) {
                         <p class="mb-0">${message}</p>
                     </div>
                     <div class="d_link">
-                        <a href="">View cart</a>
+                        <a href="" class="text-decoration-none">View cart</a>
                     </div>
                 </div>
             </div>
@@ -601,112 +636,94 @@ document.addEventListener('DOMContentLoaded', addCartEventListeners);
 // Initial render
 updateDisplay();
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     generateGroceryItems();
+// Wishlist functionality
 
-//     const productContainer = document.querySelector('.d_categorygrocery');
-//     if (productContainer) {
-//         debugger
-//         productContainer.addEventListener('click', (e) => {
-//             const productItem = e.target.closest('.d_item');
-//             if (productItem) {
-//                 const productId = parseInt(productItem.dataset.productId);
-//                 const product = categoryGrocery.find(p => p.id === productId);
-//                 if (product) {
-//                     localStorage.setItem('selectedProduct', JSON.stringify(product));
-//                     window.location.href = 'personal.html';
-//                 }
-//             }
-//         });
-//     }
-// });
+// Initialize wishlist
+let wishlist = [];
 
-// personal.js (for personal.html - the product details page)
+// Function to load wishlist from local storage
+function loadWishlist() {
+    const storedWishlist = localStorage.getItem('wishlist');
+    wishlist = storedWishlist ? JSON.parse(storedWishlist) : [];
+}
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const productJson = localStorage.getItem('selectedProduct');
-//     if (productJson) {
-//         const product = JSON.parse(productJson);
-//         updateProductDetails(product);
-//     }
+// Function to save wishlist to local storage
+function saveWishlist() {
+    localStorage.setItem('wishlist', JSON.stringify(wishlist));
+}
 
-//     // Add click event listeners for sub-images
-//     const subImages = document.querySelectorAll('.sub_img .d_img');
-//     subImages.forEach(img => {
-//         img.addEventListener('click', () => {
-//             const targetImage = img.dataset.target;
-//             const mainImage = document.querySelector('#mainImage img');
-//             if (mainImage) {
-//                 mainImage.src = `/darshan_img/${targetImage}`;
-//             }
-//         });
-//     });
-// });
+// Function to toggle wishlist items
+function toggleWishlistItem(item) {
+    const index = wishlist.findIndex(wishlistItem => wishlistItem.id === item.id);
+    if (index === -1) {
+        // Add to wishlist
+        wishlist.push(item);
+    } else {
+        // Remove from wishlist
+        wishlist.splice(index, 1);
+    }
+    saveWishlist();
+    updateWishlistUI();
+}
 
-// function updateProductDetails(product) {
-//     // Update main image
-//     const mainImage = document.querySelector('#mainImage img');
-//     if (mainImage) {
-//         mainImage.src = `/darshan_img/${product.img}`;
-//     }
+// Function to update the wishlist UI
+function updateWishlistUI() {
+    const wishlistContainer = document.getElementById('wishlist-container');
+    if (wishlistContainer) {
+        wishlistContainer.innerHTML = generateWishlistHTML();
+    }
+    updateGroceryItemsUI();
+}
 
-//     // Update sub images
-//     const subImages = document.querySelectorAll('.sub_img .d_img');
-//     subImages.forEach((img, index) => {
-//         if (product.subImages && product.subImages[index]) {
-//             const imgTag = img.querySelector('img');
-//             if (imgTag) {
-//                 imgTag.src = `/darshan_img/${product.subImages[index]}`;
-//                 img.dataset.target = product.subImages[index];
-//             }
-//         }
-//     });
+// Function to generate HTML for the wishlist
+function generateWishlistHTML() {
+    return wishlist.map(item => `
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="d_item">
+                <div class="d_img">
+                    <img src="/darshan_img/${item.img}" alt="${item.name}">
+                    <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                </div>
+                <div class="d_con">
+                    <div class="d_proname">${item.name}</div>
+                    <div class="d_add">Price: $${item.price}</div>
+                    <div class="d-flex">
+                        <div class="d_star align-items-center me-3">
+                            ${generateStars(item.review)}
+                        </div>
+                        <div class="d_review align-self-center">${item.review} Review</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
 
-//     // Update product info
-//     const productName = document.querySelector('.d_content h2');
-//     if (productName) {
-//         productName.textContent = product.name;
-//     }
-    
-//     const priceElement = document.querySelector('.d_content .d_price');
-//     if (priceElement) {
-//         priceElement.innerHTML = `Price : $${product.price} ${product.oldPrice ? `<span class="text-decoration-line-through">$${product.oldPrice}</span>` : ''}`;
-//     }
-    
-//     const starElement = document.querySelector('.d_content .d_star');
-//     if (starElement) {
-//         starElement.innerHTML = generateStars(product.review);
-//     }
-    
-//     const reviewElement = document.querySelector('.d_content .d_review');
-//     if (reviewElement) {
-//         reviewElement.textContent = `${product.review} Review`;
-//     }
-    
-//     const descElement = document.querySelector('.d_content .d_desc');
-//     if (descElement) {
-//         descElement.textContent = product.description;
-//     }
+// Function to update grocery items UI
+function updateGroceryItemsUI() {
+    const groceryItems = document.querySelectorAll('.d_item');
+    if (groceryItems) {
+        groceryItems.forEach(item => {
+            const itemId = parseInt(item.querySelector('.cart-icon').dataset.id);
+            const heartIcon = item.querySelector('.d_heart i');
+            if (wishlist.findIndex(wishlistItem => wishlistItem.id === itemId)) {
+                heartIcon.className = 'fa-solid fa-heart';
+            } else {
+                heartIcon.className = 'fa-regular fa-heart';
+            }
+        });
+    }
+}
 
-//     // Update product info tab
-//     const infoList = document.querySelectorAll('#pills-home .d_info ul');
-//     if (infoList[1]) {
-//         infoList[1].innerHTML = `
-//             <li>${product.brand || 'N/A'}</li>
-//             <li>${product.manufacturer || 'N/A'}</li>
-//             <li>${product.soldBy || 'N/A'}</li>
-//             <li>${product.netQty || 'N/A'}</li>
-//             <li>${product.productType || 'N/A'}</li>
-//             <li>${product.customerCare || 'N/A'}</li>
-//         `;
-//     }
+// Function to initialize the page
+function initializePage() {
+    loadWishlist();
+    generateGroceryItems();
+    updateWishlistUI();
+}
 
-//     // Update description tab
-//     const descriptionElement = document.querySelector('#pills-profile .d_desciption p');
-//     if (descriptionElement) {
-//         descriptionElement.textContent = product.fullDescription || product.description;
-//     }
+// Call the initialization function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', initializePage);
 
-//     // Update reviews tab (if you have this data)
-//     // ... (update reviews here if you have the data)
-// }

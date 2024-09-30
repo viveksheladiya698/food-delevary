@@ -33,42 +33,39 @@
 
 <body>
 
+    <div class="nav-bar"></div>
+
     <!-- Get in Touch modal section start -->
 
     <section>
-        <div class="d_contactbackimg"></div>
-
-        <!-- Modal -->
-        <div class="modal fade show d-block d_contactmodal" id="exampleModal" tabindex="-1"
-            aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body text-center">
-                        <div class="d_head">GET IN TOUCH</div>
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tnt ut
-                            labore et dolore magna aliqua.</p>
-                        <div class="d_p-30 pb-0">
-                            <div class="row g-3">
-                                <div class="col-12">
-                                    <input type="text" placeholder="Name*">
-                                </div>
-                                <div class="col-12">
-                                    <input type="email" placeholder="Email">
-                                </div>
-                                <div class="col-12">
-                                    <input type="text" placeholder="Mobile No.">
-                                </div>
-                                <div class="col-12">
-                                    <textarea type="text" placeholder="Message" name="" id=""
-                                    rows="5"></textarea>
-                                </div>
+        <div class="d_contactbackimg">
+            <div class="d_contactmodal">
+                <div class="modal-body text-center">
+                    <div class="d_head">GET IN TOUCH</div>
+                    <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tnt ut
+                        labore et dolore magna aliqua.</p>
+                    <div class="d_p-30 pb-0">
+                        <div class="row g-3">
+                            <div class="col-12">
+                                <input type="text" placeholder="Name*">
                             </div>
-                            <div class="mt-xl-5 mt-2">
-                                <div class="row">
-                                    <div class="col-12 text-center">
-                                        <div class="d_cta">
-                                            <a href="" class="d-block d-sm-inline-block text-center">Submit Feedback</a>
-                                        </div>
+                            <div class="col-12">
+                                <input type="email" placeholder="Email">
+                            </div>
+                            <div class="col-12">
+                                <input type="text" placeholder="Mobile No.">
+                            </div>
+                            <div class="col-12">
+                                <textarea type="text" placeholder="Message" name="" id="" rows="5"></textarea>
+                            </div>
+                        </div>
+                        <div class="mt-xl-5 mt-2">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <div class="d_cta">
+                                        <a href=""
+                                            class="d-block d-sm-inline-block text-center text-decoration-none">Submit
+                                            Feedback</a>
                                     </div>
                                 </div>
                             </div>
@@ -79,7 +76,57 @@
         </div>
     </section>
 
+
+
+
+    <!-- <div class="fade show d-block d_contactmodal d_p-30" id="exampleModal" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <div class="d_head">GET IN TOUCH</div>
+                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tnt ut
+                                labore et dolore magna aliqua.</p>
+                            <div class="d_p-30 pb-0">
+                                <div class="row g-3">
+                                    <div class="col-12">
+                                        <input type="text" placeholder="Name*">
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-12">
+                                        <input type="text" placeholder="Mobile No.">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea type="text" placeholder="Message" name="" id="" rows="5"></textarea>
+                                    </div>
+                                </div>
+                                <div class="mt-xl-5 mt-2">
+                                    <div class="row">
+                                        <div class="col-12 text-center">
+                                            <div class="d_cta">
+                                                <a href=""
+                                                    class="d-block d-sm-inline-block text-center text-decoration-none">Submit
+                                                    Feedback</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- Modal -->
+
+
     <!-- Get in Touch modal section end -->
+
+
+    <!-- footer -->
+    <footer></footer>
 
 
     <!-- Jquery js file -->
@@ -92,6 +139,20 @@
 
     <!-- custom js file -->
     <script src="/js/darshan.js"></script>
+
+    <!-- Header & Footer script -->
+    <script>
+        fetch('Nav_bar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.nav-bar').innerHTML = data
+            })
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').innerHTML = data;
+            });
+    </script>
 
 </body>
 

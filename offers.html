@@ -34,6 +34,8 @@
 
 <body>
 
+    <div class="nav-bar"></div>
+
     <!-- Heading section start -->
 
     <section class="d_p-30 ">
@@ -416,6 +418,9 @@
     <!-- Product section end -->
 
 
+      <!-- footer -->
+      <footer></footer>
+
     <!-- Jquery js file -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -426,6 +431,20 @@
 
     <!-- custom js file -->
     <script src="/js/darshan.js"></script>
+
+    <!-- Header & Footer script -->
+    <script>
+        fetch('Nav_bar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.nav-bar').innerHTML = data
+            })
+        fetch('Footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('footer').innerHTML = data;
+            });
+    </script>
 
 </body>
 
