@@ -1,10 +1,15 @@
+let wishlist = [];
+
+// ---------------------------------------------------------------  Grocery item  ------------------------------------------------
+
 const grocery = [
     {
         id: 1,
         img: "item1.png",
         name: "Tomato",
         price: 20,
-        review: 4
+        review: 4,
+        type: "Food",
     },
     {
         id: 2,
@@ -12,6 +17,7 @@ const grocery = [
         name: "Pineapple",
         price: 60,
         review: 4,
+        type: "Food",
     },
     {
         id: 3,
@@ -19,6 +25,7 @@ const grocery = [
         name: "Breads",
         price: 70,
         review: 5,
+        type: "Grocery",
     },
     {
         id: 4,
@@ -26,6 +33,7 @@ const grocery = [
         name: "Atta",
         price: 100,
         review: 5,
+        type: "Food",
     },
     {
         id: 5,
@@ -33,6 +41,7 @@ const grocery = [
         name: "Tomato",
         price: 20,
         review: 5,
+        type: "Grocery",
     },
     {
         id: 6,
@@ -40,6 +49,7 @@ const grocery = [
         name: "Breads",
         price: 70,
         review: 5,
+        type: "Grocery",
     },
     {
         id: 7,
@@ -47,6 +57,7 @@ const grocery = [
         name: "Tomato",
         price: 20,
         review: 5,
+        type: "Grocery",
     },
     {
         id: 8,
@@ -54,6 +65,7 @@ const grocery = [
         name: "Pineapple",
         price: 60,
         review: 5,
+        type: "Grocery",
     }
 ];
 
@@ -77,22 +89,25 @@ function generateGroceryItems() {
 
         grocery.forEach(item => {
             // Stringify the item object to safely pass it as a parameter
-            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;'); // Escape quotes
+            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
 
             groceryHTML += `
                 <div class="col-sm-6 col-lg-4 col-xl-3">
                     <div class="d_item">
+                    <a href="personal.html">
                         <div class="d_img">
                             <img src="/darshan_img/${item.img}" alt="${item.name}">
                             <div class="d_overlayimg"></div>
                         </div>
+                        </a>
                         <div class="d_iconoverlay">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}">
                                     <img src="/darshan_img/cart.png" alt="Cart">
                                 </div>
-                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(${itemJSON})">
-                                    <i class="fa-regular fa-heart"></i>
+                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +127,6 @@ function generateGroceryItems() {
         });
 
         d_grocery.innerHTML = groceryHTML;
-        updateGroceryItemsUI();
     }
 }
 
@@ -120,72 +134,85 @@ function generateGroceryItems() {
 // Call the function to generate the grocery items
 generateGroceryItems();
 
+// ---------------------------------------------------------------  Grocery item  ------------------------------------------------
+
+// ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
+
+
 // Discount Grocery
 
 const discountGrocery = [
     {
-        id: 1,
+        id: 9,
         img: "item5.png",
         name: "Tea and Coffee",
         price: 20,
         review: 4,
         discount: 'Get 30',
+        type: "Grocery",
     },
     {
-        id: 2,
+        id: 10,
         img: "item2.png",
         name: "Pineapple",
         price: 60,
         review: 4,
         discount: '',
+        type: "Grocery",
     },
     {
-        id: 3,
+        id: 11,
         img: "item3.png",
         name: "Breads",
         price: 70,
         review: 4,
         discount: '40',
+        type: "Grocery",
     },
     {
-        id: 4,
+        id: 12,
         img: "item4.png",
         name: "Atta",
         price: 110,
         review: 4,
         discount: '30',
+        type: "Grocery",
     },
     {
-        id: 5,
+        id: 13,
         img: "item6.png",
         name: "Sauces and Spreads",
         price: 120,
         review: 4,
         discount: 'Get 30',
+        type: "Grocery",
     },
     {
-        id: 6,
+        id: 14,
         img: "item3.png",
         name: "Breads",
         price: 70,
         review: 4,
         discount: '10',
+        type: "Grocery",
     },
     {
-        id: 7,
+        id: 15,
         img: "item7.png",
         name: "Cold Drinks & Juices",
         price: 20,
         review: 4,
         discount: '',
+        type: "Grocery",
     },
     {
-        id: 7,
+        id: 16,
         img: "item1.png",
         name: "Tomato",
         price: 20,
         review: 4,
         discount: '',
+        type: "Grocery",
     },
 ];
 
@@ -197,9 +224,13 @@ function generateDiscountGroceryItems() {
         let groceryHTML = '';
 
         discountGrocery.forEach(item => {
+            // Stringify the item object to safely pass it as a parameter
+            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
             groceryHTML += `
                 <div class="col-xl-3 col-lg-4 col-sm-6">
                     <div class="d_item">
+                    <a href="personal.html">
                         <div class="d_img">
                             <img src="/darshan_img/${item.img}" alt="${item.name}">
                             <div class="d_overlayimg"></div>
@@ -209,13 +240,14 @@ function generateDiscountGroceryItems() {
                             <span class="mb-0">${item.discount}% OFF</span>
                         </div>
                         ` : ''}
+                        </a>
                         <div class="d_iconoverlay">
                             <div class="d-flex justify-content-center align-items-center">
                                 <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}">
                                     <img src="/darshan_img/cart.png" alt="Cart">
                                 </div>
-                                <div class="d_icon d-flex align-items-center justify-content-center">
-                                    <img src="/darshan_img/wishlist.png" alt="Wishlist">
+                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
                                 </div>
                             </div>
                         </div>
@@ -242,153 +274,174 @@ function generateDiscountGroceryItems() {
 // Call the function to generate the discount grocery items
 generateDiscountGroceryItems();
 
-// Category
+// ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
 
+
+
+// ---------------------------------------------------------------  Grocery Category ------------------------------------------------
+
+// Category
 
 const categoryGrocery = [
     {
-        id: 1,
+        id: 17,
         img: "item5.png",
         name: "Tea and Coffee",
         price: 20,
         review: 4,
         discount: '30',
         category: "tea and coffee",
+        type: "Grocery",
     },
     {
-        id: 2,
+        id: 18,
         img: "item2.png",
         name: "Pineapple",
         price: 60,
         review: 4,
         discount: '',
         category: "Fresh Fruits",
+        type: "Grocery",
     },
     {
-        id: 3,
+        id: 19,
         img: "item3.png",
         name: "Breads",
         price: 70,
         review: 4,
         discount: '40',
-        category: "Dairy, Bread and Eggs"
+        category: "Dairy, Bread and Eggs",
+        type: "Grocery",
     },
     {
-        id: 4,
+        id: 20,
         img: "item4.png",
         name: "Atta",
         price: 110,
         review: 4,
         discount: '30',
         category: "Atta, Rice and Dals",
+        type: "Grocery",
     },
     {
-        id: 5,
+        id: 21,
         img: "item6.png",
         name: "Sauces and Spreads",
         price: 120,
         review: 4,
         discount: '30',
         category: "Sauces and Spreads",
+        type: "Grocery",
     },
     {
-        id: 6,
+        id: 22,
         img: "item3.png",
         name: "Breads",
         price: 70,
         review: 4,
         discount: '10',
         category: "Dairy, Bread and Eggs",
+        type: "Grocery",
     },
     {
-        id: 7,
+        id: 23,
         img: "item7.png",
         name: "Cold Drinks & Juices",
         price: 20,
         review: 4,
         discount: '',
-        category: "Cold Drinks and Juices"
+        category: "Cold Drinks and Juices",
+        type: "Grocery",
     },
     {
-        id: 7,
+        id: 24,
         img: "item1.png",
         name: "Tomato",
         price: 20,
         review: 4,
         discount: '',
-        category: "Fresh Vegetables"
+        category: "Fresh Vegetables",
+        type: "Grocery",
     },
     {
-        id: 1,
+        id: 25,
         img: "item5.png",
         name: "Tea and Coffee",
         price: 20,
         review: 4,
         discount: '30',
         category: "tea and coffee",
+        type: "Grocery",
     },
     {
-        id: 2,
+        id: 26,
         img: "item2.png",
         name: "Pineapple",
         price: 60,
         review: 4,
         discount: '',
         category: "Fresh Fruits",
+        type: "Grocery",
     },
     {
-        id: 3,
+        id: 27,
         img: "item3.png",
         name: "Breads",
         price: 70,
         review: 4,
         discount: '40',
-        category: "Dairy, Bread and Eggs"
+        category: "Dairy, Bread and Eggs",
+        type: "Grocery",
     },
     {
-        id: 4,
+        id: 28,
         img: "item4.png",
         name: "Atta",
         price: 110,
         review: 4,
         discount: '30',
         category: "Atta, Rice and Dals",
+        type: "Grocery",
     },
     {
-        id: 5,
+        id: 29,
         img: "item6.png",
         name: "Sauces and Spreads",
         price: 120,
         review: 4,
         discount: '30',
         category: "Sauces and Spreads",
+        type: "Grocery",
     },
     {
-        id: 6,
+        id: 30,
         img: "item3.png",
         name: "Breads",
         price: 70,
         review: 4,
         discount: '10',
         category: "Dairy, Bread and Eggs",
+        type: "Grocery",
     },
     {
-        id: 7,
+        id: 31,
         img: "item7.png",
         name: "Cold Drinks & Juices",
         price: 20,
         review: 4,
         discount: '',
-        category: "Cold Drinks and Juices"
+        category: "Cold Drinks and Juices",
+        type: "Grocery",
     },
     {
-        id: 7,
+        id: 32,
         img: "item1.png",
         name: "Tomato",
         price: 20,
         review: 4,
         discount: '',
-        category: "Fresh Vegetables"
+        category: "Fresh Vegetables",
+        type: "Grocery",
     },
 ];
 
@@ -396,9 +449,13 @@ const categoryGrocery = [
 
 // Function to generate HTML for grocery items
 function generateGroceryItemHTML(item) {
+    // Stringify the item object to safely pass it as a parameter
+    const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+    const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
     return `
         <div class="col-sm-6 col-lg-4 col-xl-2 d_lgwidth">
             <div class="d_item">
+            <a href="personal.html">
                 <div class="d_img">
                     <img src="/darshan_img/${item.img}" alt="${item.name}">
                     <div class="d_overlayimg"></div>
@@ -408,13 +465,14 @@ function generateGroceryItemHTML(item) {
                     <span class="mb-0">${item.discount}% OFF</span>
                 </div>
                 ` : ''}
+                </a>
                 <div class="d_iconoverlay">
                     <div class="d-flex justify-content-center align-items-center">
                         <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}">
                             <img src="/darshan_img/cart.png" alt="Cart">
                         </div>
-                        <div class="d_icon d-flex align-items-center justify-content-center">
-                            <img src="/darshan_img/wishlist.png" alt="Wishlist">
+                        <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                            <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
                         </div>
                     </div>
                 </div>
@@ -523,8 +581,8 @@ document.querySelectorAll('#categoryFilter input, input[name="rating"], input[na
 
 // Category filter functionality
 
-
 // New filtering functions
+
 function filterItems(items, filters) {
     return items.filter(item => {
         if (filters.price && (item.price < 70 || item.price > 110)) return false;
@@ -535,36 +593,138 @@ function filterItems(items, filters) {
     });
 }
 
-function updateFilters(filterElement) {
-    const filterType = filterElement.dataset.filter;
-    filterElement.classList.toggle('active');
+function getActiveFilters() {
+    const activeFilters = {};
+    document.querySelectorAll('.d_search').forEach(element => {
+        const filterType = element.dataset.filter;
+        activeFilters[filterType] = element.classList.contains('active');
+    });
+    return activeFilters;
+}
 
-    const activeFilters = {
-        price: document.querySelector('[data-filter="price"]').classList.contains('active'),
-        offers: document.querySelector('[data-filter="offers"]').classList.contains('active'),
-        rating: document.querySelector('[data-filter="rating"]').classList.contains('active'),
-        fastDelivery: document.querySelector('[data-filter="fastDelivery"]').classList.contains('active')
-    };
+function handleFilterClick(element, isCloseButton = false) {
+    if (isCloseButton) {
+        element.closest('.d_search').classList.remove('active');
+    } else {
+        element.classList.toggle('active');
+    }
 
+    const activeFilters = getActiveFilters();
     const filteredItems = filterItems(categoryGrocery, activeFilters);
     renderGroceryItems(filteredItems);
 }
 
-// Event listeners for filters
 function addFilterEventListeners() {
-    const filterElements = document.querySelectorAll('.d_search');
-    filterElements.forEach(element => {
-        element.addEventListener('click', () => updateFilters(element));
+    // Click event for filter elements
+    document.querySelectorAll('.d_search').forEach(element => {
+        element.addEventListener('click', (e) => {
+            if (!e.target.classList.contains('close-btn')) {
+                handleFilterClick(element);
+            }
+        });
+    });
+
+    // Click event for close buttons
+    document.querySelectorAll('.close-btn').forEach(closeBtn => {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent filter click event
+            handleFilterClick(closeBtn, true);
+        });
     });
 }
 
-// Initialize filtering
+// Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     renderGroceryItems(categoryGrocery);
     addFilterEventListeners();
 });
 
 
+// Initial render
+updateDisplay();
+
+// ---------------------------------------------------------------  Grocery Category ------------------------------------------------
+
+// ---------------------------------------------------------------  Related products ------------------------------------------------
+
+// Function to get random items from the category array
+function getRandomItems(array, count) {
+    // const shuffled = [...array].sort(() => 0.5 - Math.random());
+    // return shuffled.slice(0, count);
+    return array.slice(0, count);
+}
+
+// Function to generate HTML for related product items
+function generateRelatedProductHTML(item) {
+    const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+    const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
+
+    return `
+        <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="d_item">
+                    <a href="personal.html">
+                        <div class="d_img">
+                            <img src="/darshan_img/${item.img}" alt="${item.name}">
+                            <div class="d_overlayimg"></div>
+                        </div>
+                        ${item.discount ? `
+                        <div class="d_discountvalue">
+                            <span class="mb-0">${item.discount}% OFF</span>
+                        </div>
+                        ` : ''}
+                        </a>
+                        <div class="d_iconoverlay">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}">
+                                    <img src="/darshan_img/cart.png" alt="Cart">
+                                </div>
+                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d_content text-center">
+                            <div class="d_title">${item.name}</div>
+                            <div class="d_price">Price : $${item.price}</div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d_star me-3">
+                                    ${generateStars(item.review)}
+                                </div>
+                                <div class="d_review">${item.review} Review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    `;
+}
+
+// Function to render related products
+function renderRelatedProducts() {
+    const relatedProductsContainer = document.getElementById('D_relatedproduct');
+    if (relatedProductsContainer) {
+        // Get 4 random items from categoryGrocery
+        const relatedItems = getRandomItems(categoryGrocery, 4);
+
+        // Generate HTML for related products
+        const relatedProductsHTML = relatedItems.map(generateRelatedProductHTML).join('');
+
+        // Set the HTML content
+        relatedProductsContainer.innerHTML = relatedProductsHTML;
+
+        // Add cart event listeners to the new items
+        addCartEventListeners();
+    }
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', function () {
+    renderRelatedProducts();
+});
+
+// ---------------------------------------------------------------  Related products ------------------------------------------------
+
+
+// ---------------------------------------------------------------  Add Cart toast ------------------------------------------------
 
 // Function to show toast
 
@@ -594,7 +754,7 @@ function showToast(message) {
                         <p class="mb-0">${message}</p>
                     </div>
                     <div class="d_link">
-                        <a href="" class="text-decoration-none">View cart</a>
+                        <a href="/foodcart.html" class="text-decoration-none">View cart</a>
                     </div>
                 </div>
             </div>
@@ -633,18 +793,20 @@ function addCartEventListeners() {
 // Call this function to set up event listeners once the document is loaded
 document.addEventListener('DOMContentLoaded', addCartEventListeners);
 
-// Initial render
-updateDisplay();
+// ---------------------------------------------------------------  Add Cart toast ------------------------------------------------
+
+
+
+// ---------------------------------------------------------------  Wishlist  ------------------------------------------------
 
 // Wishlist functionality
 
-// Initialize wishlist
-let wishlist = [];
 
 // Function to load wishlist from local storage
 function loadWishlist() {
     const storedWishlist = localStorage.getItem('wishlist');
     wishlist = storedWishlist ? JSON.parse(storedWishlist) : [];
+    return wishlist;
 }
 
 // Function to save wishlist to local storage
@@ -653,7 +815,8 @@ function saveWishlist() {
 }
 
 // Function to toggle wishlist items
-function toggleWishlistItem(item) {
+function toggleWishlistItem(event, item) {
+    event.preventDefault();
     const index = wishlist.findIndex(wishlistItem => wishlistItem.id === item.id);
     if (index === -1) {
         // Add to wishlist
@@ -663,29 +826,32 @@ function toggleWishlistItem(item) {
         wishlist.splice(index, 1);
     }
     saveWishlist();
-    updateWishlistUI();
+    updateWishlistUI(wishlist);
 }
 
+
 // Function to update the wishlist UI
-function updateWishlistUI() {
-    const wishlistContainer = document.getElementById('wishlist-container');
+const wishlistContainer = document.getElementById('wishlist-container');
+function updateWishlistUI(filteredWishlist) {
     if (wishlistContainer) {
-        wishlistContainer.innerHTML = generateWishlistHTML();
+        wishlistContainer.innerHTML = generateWishlistHTML(filteredWishlist);
     }
-    updateGroceryItemsUI();
+    updateGroceryItemsUI(filteredWishlist);
 }
 
 // Function to generate HTML for the wishlist
-function generateWishlistHTML() {
+function generateWishlistHTML(wishlist) {
     return wishlist.map(item => `
-        <div class="col-12 col-sm-6 col-lg-3">
-            <div class="d_item">
+        <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="d_item" >
+            <a href="personal.html">
                 <div class="d_img">
                     <img src="/darshan_img/${item.img}" alt="${item.name}">
-                    <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                    <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(event,${JSON.stringify(item).replace(/"/g, '&quot;')})">
                         <i class="fa-solid fa-heart"></i>
                     </div>
                 </div>
+                </a>
                 <div class="d_con">
                     <div class="d_proname">${item.name}</div>
                     <div class="d_add">Price: $${item.price}</div>
@@ -702,28 +868,67 @@ function generateWishlistHTML() {
 }
 
 // Function to update grocery items UI
+
 function updateGroceryItemsUI() {
     const groceryItems = document.querySelectorAll('.d_item');
-    if (groceryItems) {
-        groceryItems.forEach(item => {
-            const itemId = parseInt(item.querySelector('.cart-icon').dataset.id);
+    groceryItems.forEach(item => {
+        const cartIcon = item.querySelector('.cart-icon');
+        if (cartIcon) {
+            const itemId = parseInt(cartIcon.dataset.id);
             const heartIcon = item.querySelector('.d_heart i');
-            if (wishlist.findIndex(wishlistItem => wishlistItem.id === itemId)) {
-                heartIcon.className = 'fa-solid fa-heart';
-            } else {
-                heartIcon.className = 'fa-regular fa-heart';
+            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === itemId);
+
+            if (heartIcon) {
+                heartIcon.className = isWishlisted ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
             }
-        });
-    }
+        }
+    });
 }
+
+// Function to render the wishlist
+function renderWishlist(filter) {
+    // const wishlistContainer = document.getElementById('wishlistContainer');
+    let filteredWishlist;
+
+    // Filter the wishlist based on the selected filter
+    if (filter === 'all') {
+        filteredWishlist = wishlist; // Show all items
+    } else {
+        filteredWishlist = wishlist.filter(item => item.type.toLowerCase() === filter.toLowerCase());
+    }
+
+    // wishlistContainer.innerHTML = generateWishlistHTML(filteredWishlist);
+    updateWishlistUI(filteredWishlist);
+}
+
+// Event listener for filter links
+document.querySelectorAll('.d_type a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const filter = this.getAttribute('data-filter');
+
+        // Remove 'active' class from all links and add to the clicked link
+        document.querySelectorAll('.d_type a').forEach(a => a.classList.remove('active'));
+        this.classList.add('active');
+
+        // Render wishlist based on selected filter
+        renderWishlist(filter);
+    });
+});
+
+// Initial render
+renderWishlist('all');
+
+
 
 // Function to initialize the page
 function initializePage() {
-    loadWishlist();
-    generateGroceryItems();
-    updateWishlistUI();
+    let wishlist = loadWishlist();
+    updateWishlistUI(wishlist);
 }
 
 // Call the initialization function when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', initializePage);
+
+// ---------------------------------------------------------------  Wishlist  ------------------------------------------------
 

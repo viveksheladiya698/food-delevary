@@ -324,42 +324,52 @@
 
     <!-- Accordion Script -->
     <script>
-        // Accordion Script
-const headers = document.querySelectorAll('.d_helpacchead');
-
-headers.forEach(header => {
-    header.addEventListener('click', function () {
-        const parent = this.parentElement;
-        const icon = this.querySelector('i');
-
-        // Close all other sections
-        headers.forEach(otherHeader => {
-            const otherParent = otherHeader.parentElement;
-            const otherIcon = otherHeader.querySelector('i');
-
-            if (otherParent !== parent && otherParent.classList.contains('active')) {
-                otherParent.classList.remove('active');
-                otherIcon.classList.remove('fa-angle-up');
-                otherIcon.classList.add('fa-angle-down');
-                otherParent.querySelector('.d_helpacccon').style.display = 'none';
-            }
+        const headers = document.querySelectorAll('.d_helpacchead');
+        
+        headers.forEach(header => {
+            header.addEventListener('click', function () {
+                const parent = this.parentElement;
+                const icon = this.querySelector('i');
+        
+                // Close all other sections
+                headers.forEach(otherHeader => {
+                    const otherParent = otherHeader.parentElement;
+                    const otherIcon = otherHeader.querySelector('i');
+        
+                    if (otherParent !== parent && otherParent.classList.contains('active')) {
+                        otherParent.classList.remove('active');
+                        otherIcon.classList.remove('fa-angle-up');
+                        otherIcon.classList.add('fa-angle-down');
+        
+                        // Collapse the other content
+                        const otherContent = otherParent.querySelector('.d_helpacccon');
+                        otherContent.style.maxHeight = '0'; // Collapse smoothly
+                        otherContent.style.opacity = '0'; // Fade out
+                    }
+                });
+        
+                // Toggle the clicked section
+                parent.classList.toggle('active');
+        
+                const content = parent.querySelector('.d_helpacccon');
+                if (parent.classList.contains('active')) {
+                    icon.classList.remove('fa-angle-down');
+                    icon.classList.add('fa-angle-up');
+        
+                    // Expand the content smoothly
+                    content.style.maxHeight = content.scrollHeight + 'px'; // Set to scrollHeight for smooth transition
+                    content.style.opacity = '1'; // Fade in
+                } else {
+                    icon.classList.remove('fa-angle-up');
+                    icon.classList.add('fa-angle-down');
+                    content.style.maxHeight = '0'; // Collapse
+                    content.style.opacity = '0'; // Fade out
+                }
+            });
         });
-
-        // Toggle the clicked section
-        parent.classList.toggle('active');
-
-        if (parent.classList.contains('active')) {
-            icon.classList.remove('fa-angle-down');
-            icon.classList.add('fa-angle-up');
-            parent.querySelector('.d_helpacccon').style.display = 'block';
-        } else {
-            icon.classList.remove('fa-angle-up');
-            icon.classList.add('fa-angle-down');
-            parent.querySelector('.d_helpacccon').style.display = 'none';
-        }
-    });
-});
-    </script>
+        </script>
+        
+        
 
 </body>
 

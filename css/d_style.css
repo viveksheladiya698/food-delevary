@@ -101,6 +101,10 @@ h6 {
     font-weight: 500;
     font-size: 16px;
     color: #ffffff;
+    transition: .3s ease-in-out;
+}
+.d_groceryhome .d_cta a:hover{
+    background-color: #041527;
 }
 
 .d_feature img {
@@ -213,7 +217,13 @@ h6 {
     background-color: #CA9F5C;
     margin: 0 5px;
     cursor: pointer;
+    transition: .3s ease-in-out;
 }
+
+.d_grocerylist .d_item .d_iconoverlay .d_icon:hover{
+    background-color: #041527;
+}
+
 
 .d_grocerylist .d_item .d_iconoverlay .d_icon img {
     width: 24px;
@@ -297,7 +307,7 @@ h6 {
     color: #fff;
     position: absolute;
     top: 105px;
-    right: 825px;
+    right: 812px;
 }
 
 .d_discount .d_discountvalue {
@@ -587,7 +597,18 @@ hr {
     border-radius: 8px;
     padding: 5px 20px;
 }
-
+.d_searchlist .d_search .close-btn {
+    display: none;
+    margin-left: 8px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.d_searchlist .d_search.active .close-btn{
+    display: inline-block;
+}
+.d_searchlist .d_search.active{
+    background-color: #d4d4d4;
+}
 .d_searchlist .d_search .d_text {
     font-size: 16px;
     line-height: 28px;
@@ -1059,6 +1080,11 @@ hr {
     font-weight: 500;
     color: #000;
 }
+.d_cart .d_billlist .d_final .d_strikeamt{
+    font-size: 22px;
+    font-weight: 500;
+    color: #323232;
+}
 
 .d_cart .d_billlist .d_proceedbtn a {
     background-color: #041527;
@@ -1067,6 +1093,7 @@ hr {
     color: #fff;
     padding: 15px 0;
     border-radius: 8px;
+    display: block;
 }
 
 /* Profile css start */
@@ -1437,6 +1464,9 @@ hr {
     border-radius: 8px;
     margin-right: 16px;
 }
+.d_wishlist .d_type a.active {
+    background-color: #d4d4d4;
+}
 
 .d_wishlist .d_item {
     padding: 20px;
@@ -1445,12 +1475,14 @@ hr {
 
 .d_wishlist .d_item .d_img {
     width: 100%;
+    height: 285px;
     margin-bottom: 16px;
     position: relative;
 }
 
 .d_wishlist .d_item .d_img img {
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -1584,7 +1616,7 @@ hr {
 }
 
 .d_logoutmodel .modal-body {
-    padding: 50px 78px;
+    padding: 50px 70px;
 }
 
 .d_logoutmodel .modal-body h6 {
@@ -1672,10 +1704,15 @@ hr {
     color: #323232;
     padding-left: 22px;
     display: none;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0; /* Initially hidden */
 }
 
 .d_help .d_helpacc.active .d_helpacccon {
     display: block;
+    max-height: 500px; 
+    opacity: 1
 }
 
 /* Contact Us css start */
@@ -2136,7 +2173,7 @@ input:focus-visible{
 
     .d_banner2 .d_discounttext {
         top: 35px;
-        right: 600px;
+        right: 595px;
     }
 
 }
@@ -2144,7 +2181,7 @@ input:focus-visible{
 @media(max-width:1690px) {
     .d_banner2 .d_discounttext {
         top: 40px;
-        right: 520px;
+        right: 510px;
     }
 }
 
@@ -2155,7 +2192,7 @@ input:focus-visible{
 
     .d_banner2 .d_discounttext {
         top: 45px;
-        right: 420px;
+        right: 410px;
     }
 
     .d_category .d_lgwidth {
@@ -2412,7 +2449,7 @@ input:focus-visible{
 
     .d_banner2 .d_discounttext {
         top: 45px;
-        right: 148px;
+        right: 140px;
     }
 
     .d_category .d_lgwidth {
@@ -2739,6 +2776,9 @@ input:focus-visible{
     .d_cart .d_billlist .d_final .d_totalamt {
         font-size: 20px;
     }
+    .d_cart .d_billlist .d_final .d_strikeamt{
+        font-size: 20px;
+    }
 
     .d_cart .d_billlist .d_proceedbtn a {
         padding: 8px 0;
@@ -2888,7 +2928,10 @@ input:focus-visible{
     .d_cart .d_billlist{
         padding: 20px;
     }
-    
+    .d_help .d_helpacchead i{
+        align-self: self-start;
+        margin-top: 6px;
+    }
 }
 
 
@@ -2919,6 +2962,13 @@ input:focus-visible{
     }
     .d_contactmodal .modal-body{
         max-width: 340px;
+    }
+    .d_tab1 .d_order .d_status, .d_tab1 .d_order .d_date{
+        font-size: 11px;
+    }
+    .d_tab1 .d_order .d_orderbtn a{
+        font-size: 10px;
+        padding: 7px;
     }
 }
 
@@ -2993,6 +3043,13 @@ input:focus-visible{
     }
     .d_addfuldel .d_box input{
         font-size: 15px;
+    }
+    .d_cart .d_billlist .d_final .d_strikeamt{
+        font-size: 18px;
+        margin-right: 5px !important;
+    }
+    .d_cart .d_billlist .d_final .d_totaltext, .d_cart .d_billlist .d_final .d_totalamt {
+        font-size: 18px;
     }
 }
 

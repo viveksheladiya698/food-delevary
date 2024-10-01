@@ -81,7 +81,7 @@
                                     Wishlist
                                 </a>
                             </li>
-                            <li class="dropdown-item py-2 px-0">
+                            <li class="dropdown-item py-2 px-0" data-bs-toggle="modal" data-bs-target="#logoutModal">
                                 <a class="text-black text-decoration-none VK_lato d-block ps-4" href="#">
                                     Logout
                                 </a>
@@ -344,3 +344,24 @@
         </div>
     </div>
 </div>
+
+
+ <!-- Logout model section start -->
+
+ <div class="modal d_logoutmodel fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog d_dialog modal-dialog-centered">
+     <div class="modal-content">
+         <div class="modal-body text-center">
+             <h6>Logout</h6>
+             <p class="mb-0">Are you sure you want to Logout?</p>
+             <div class="d-flex mt-5">
+                 <a href="" class="me-3 text-decoration-none" data-bs-dismiss="modal">NO</a>
+                 <a href="" class="d_submit text-decoration-none">YES</a>
+             </div>
+         </div>
+     </div>
+ </div>
+</div>
+
+<!-- logout model section end -->

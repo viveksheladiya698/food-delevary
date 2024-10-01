@@ -77,7 +77,7 @@
             <div class="d_container">
                 <div class="row g-3 d_cart ">
                     <!-- Cart Section start -->
-                    <div class="col-12 col-lg-6 ">
+                    <div class="col-12 col-lg-6" id="cartSection">
                         <div class="d_box mb-4">
                             <div class="row">
                                 <div class="col-sm-4">
@@ -131,7 +131,7 @@
                     <!-- Cart Section start -->
 
                     <!-- Delivery Address section start -->
-                    <div class="col-12 col-lg-6 d_address d_deliveryadd d-none">
+                    <div class="col-12 col-lg-6 d_address d_deliveryadd d-none" id="deliveryAddressSection">
                         <div class="row mb-3">
                             <div class="col-12 d_title">
                                 <div class="d_head">Delivery address</div>
@@ -205,7 +205,7 @@
 
                     <!-- Add Address section Start -->
 
-                    <div class="col-12 col-lg-6 d-none">
+                    <div class="col-12 col-lg-6 d-none" id="addAddressSection">
                         <div class="row mb-3">
                             <div class="col-12 d_title">
                                 <div class="d_head">Add new address</div>
@@ -221,9 +221,10 @@
                                 </div>
                                 <div class="d_addaddress">
                                     <div class="d_head">Delivery your order to</div>
-                                    <input type="text">
+                                    <input type="text" id="addressInput">
                                     <div class="d_cta">
-                                        <a href="" class="d-block text-center text-decoration-none">Use this location</a>
+                                        <a href="" class="d-block text-center text-decoration-none">Use this
+                                            location</a>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +235,7 @@
 
                     <!-- add address2 section start -->
 
-                    <div class="col-12 col-lg-6 d-none">
+                    <div class="col-12 col-lg-6 d-none" id="addAddress2Section">
                         <div class="row mb-3">
                             <div class="col-12 d_title">
                                 <div class="d_head">Add new address</div>
@@ -294,7 +295,8 @@
                                         </div>
                                     </div>
                                     <div class="d_cta mt-sm-5 mt-3">
-                                        <a href="" class="d-block text-center text-decoration-none">Save address & Procced</a>
+                                        <a href="" class="d-block text-center text-decoration-none">Save address &
+                                            Procced</a>
                                     </div>
                                 </div>
                             </div>
@@ -305,7 +307,7 @@
 
                     <!-- Payment Method section start -->
 
-                    <div class="col-12 col-lg-6 d-none">
+                    <div class="col-12 col-lg-6 d-none" id="paymentMethodSection">
                         <div class="row mb-3">
                             <div class="col-12 d_title">
                                 <div class="d_head">Payment Method</div>
@@ -328,7 +330,7 @@
                                             </div>
                                         </div>
                                     </div>
-                
+
                                     <div id="cardForm" class="d_cardform">
                                         <div class="row g-2">
                                             <div class="col-12">
@@ -344,7 +346,9 @@
                                                 <input type="text" placeholder="Name on card">
                                             </div>
                                         </div>
-                                        <div class="d_cta mt-4"><a href="#" class="text-decoration-none d-block text-center">Place Order & Pay</a></div>
+                                        <div class="d_cta mt-4"><a href="#"
+                                                class="text-decoration-none d-block text-center" data-bs-toggle="modal" data-bs-target="#paymentmodal">Place Order & Pay</a>
+                                        </div>
                                     </div>
                                 </form>
                             </div>
@@ -359,12 +363,13 @@
                                             <div class="d_text p-0">Netbanking</div>
                                         </div>
                                     </div>
-                
+
                                     <div id="bankOptions" class="d_bankoption">
                                         <div class="d_bankdel">
                                             <div class="d_bank d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d_bgbox d-flex align-items-center justify-content-center">
+                                                    <div
+                                                        class="d_bgbox d-flex align-items-center justify-content-center">
                                                         <div class="d_img">
                                                             <img src="/darshan_img/bank1.png" alt="HDFC">
                                                         </div>
@@ -377,7 +382,8 @@
                                         <div class="d_bankdel">
                                             <div class="d_bank d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d_bgbox d-flex align-items-center justify-content-center">
+                                                    <div
+                                                        class="d_bgbox d-flex align-items-center justify-content-center">
                                                         <div class="d_img">
                                                             <img src="/darshan_img/bank2.png" alt="ICICI">
                                                         </div>
@@ -390,7 +396,8 @@
                                         <div class="d_bankdel">
                                             <div class="d_bank d-flex align-items-center justify-content-between">
                                                 <div class="d-flex align-items-center">
-                                                    <div class="d_bgbox d-flex align-items-center justify-content-center">
+                                                    <div
+                                                        class="d_bgbox d-flex align-items-center justify-content-center">
                                                         <div class="d_img">
                                                             <img src="/darshan_img/anotherbank.png" alt="Add Bank">
                                                         </div>
@@ -421,7 +428,7 @@
 
                     <!-- Payment Method section end -->
 
-                    <div class="col-12 col-lg-6">
+                    <div class="col-12 col-lg-6" id="billDetailsSection">
                         <div class="d_billlist">
                             <div class="d_delivery d-flex align-items-center">
                                 <div class="d_img">
@@ -456,12 +463,15 @@
                             </div>
                             <div class="d_final">
                                 <div class="d-flex justify-content-between aling-items-center mb-2">
-                                    <div class="d_totaltext">Restaurant Charge</div>
-                                    <div class="d_totalamt">$190</div>
+                                    <div class="d_totaltext">Total Amount</div>
+                                    <div class="d-flex align-items-center">
+                                        <div class="d_strikeamt me-3 text-decoration-line-through">$190</div>
+                                        <div class="d_totalamt">$100</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="d_proceedbtn mt-5">
-                                <a href="" class="d-block text-center text-decoration-none">Proceed</a>
+                            <div class="d_proceedbtn mt-5" id="proceedBtn">
+                                <a href="" class=" text-center text-decoration-none">Proceed</a>
                             </div>
                         </div>
                     </div>
@@ -583,7 +593,7 @@
 
     <!-- Payment success modal start -->
 
-    <div class="modal d_logoutmodel fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div class="modal d_logoutmodel fade " id="paymentmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog d_dialog modal-dialog-centered">
             <div class="modal-content">
@@ -618,11 +628,72 @@
             .then(data => {
                 document.querySelector('.nav-bar').innerHTML = data
             })
-        fetch('Footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('footer').innerHTML = data;
+    </script>
+
+    <script>
+        // JavaScript code will be added here
+        document.addEventListener('DOMContentLoaded', function () {
+            const cartSection = document.getElementById('cartSection');
+            const deliveryAddressSection = document.getElementById('deliveryAddressSection');
+            const addAddressSection = document.getElementById('addAddressSection');
+            const addAddress2Section = document.getElementById('addAddress2Section');
+            const paymentMethodSection = document.getElementById('paymentMethodSection');
+            const billDetailsSection = document.getElementById('billDetailsSection');
+            const proceedBtn = document.getElementById('proceedBtn');
+
+            // Function to hide all sections
+            function hideAllSections() {
+                cartSection.classList.add('d-none');
+                deliveryAddressSection.classList.add('d-none');
+                addAddressSection.classList.add('d-none');
+                addAddress2Section.classList.add('d-none');
+                paymentMethodSection.classList.add('d-none');
+            }
+
+            // Proceed button click event
+            proceedBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                hideAllSections();
+                deliveryAddressSection.classList.remove('d-none');
+                this.style.display = 'none';
             });
+
+            // Add New Address button click event
+            document.querySelector('.d_deliveryaddbtn a').addEventListener('click', function (e) {
+                e.preventDefault();
+                hideAllSections();
+                addAddressSection.classList.remove('d-none');
+            });
+
+            // Use this location button click event
+            document.querySelector('.d_addaddress .d_cta a').addEventListener('click', function (e) {
+                e.preventDefault();
+                hideAllSections();
+                addAddress2Section.classList.remove('d-none');
+            });
+
+            // Save address & Proceed button click event
+            document.querySelector('.d_addfuldel .d_cta a').addEventListener('click', function (e) {
+                e.preventDefault();
+                hideAllSections();
+                paymentMethodSection.classList.remove('d-none');
+            });
+
+            // Delivery here button click event
+            document.querySelectorAll('.d_cta a').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (this.textContent.trim() === 'Delivery here') {
+                        hideAllSections();
+                        paymentMethodSection.classList.remove('d-none');
+                    }
+                });
+            });
+
+            // Initialize the page
+            hideAllSections();
+            cartSection.classList.remove('d-none');
+        });
     </script>
 
     <script>
@@ -678,11 +749,11 @@
     <!-- payment -->
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const cardForm = document.getElementById('cardForm');
             const bankOptions = document.getElementById('bankOptions');
             const paymentMethods = document.getElementsByName('paymentMethod');
-    
+
             function toggleForms() {
                 paymentMethods.forEach(method => {
                     if (method.checked) {
@@ -699,12 +770,12 @@
                     }
                 });
             }
-    
+
             function preventUncheck(event) {
                 if (event.target.checked) {
                     return; // Allow checking if it's being checked
                 }
-    
+
                 const isChecked = Array.from(paymentMethods).some(method => method.checked);
                 if (!isChecked) {
                     // If no radio is checked, re-check the previous one
@@ -712,19 +783,31 @@
                     event.target.checked = true; // Keep it checked
                 }
             }
-    
+
             paymentMethods.forEach(method => {
                 method.addEventListener('change', toggleForms);
                 method.addEventListener('click', preventUncheck);
             });
-    
+
             // Initial toggle based on default checked radio
             toggleForms();
         });
     </script>
-    
 
-    
+    <script>
+        function selectLocation(event) {
+            // For simplicity, we can use a hardcoded address or fetch the address based on latitude and longitude.
+            const addressInput = document.getElementById('addressInput');
+
+            // Example address; replace with actual address from a geocoding API if needed
+            const address = "Indira Gandhi International Airport, New Delhi, India";
+
+            addressInput.value = address; // Set the input value to the selected address
+        }
+    </script>
+
+
+
 
 
 </body>
