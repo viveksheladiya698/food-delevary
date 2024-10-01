@@ -51,34 +51,36 @@
                                     alt="">
                             </div>
                             <div class="col-xxl-6 col-md-7 col-12 align-self-center mt-4 mt-md-0">
-                                <h2 class="VK_inter text-black mb-2">
+                                <h2 class="VK_inter h4 fw-bolder text-black mb-2" id="VK_item_name">
                                     Peri Peri Cheese Burger
                                 </h2>
                                 <p class="VK_inter font_20 fw-600 mb-2">
-                                    Price : $80
+                                    Price : $<span id="VK_item_price"></span>
                                 </p>
-                                <div class="d-flex align-items-center">
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="d-flex align-items-center gap-2" id="VK_item_review_star">
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                        <span class="font_14 VK_review_star">
+                                            <i class="fa-solid fa-star"></i>
+                                        </span>
+                                    </div>
                                     <div class="ms-2">
-                                        <p class="m-0 fw-500 VK_inter">5 Reviews</p>
+                                        <p class="m-0 fw-500 VK_inter"><span id="VK_item_review_cnt"></span> Reviews</p>
                                     </div>
                                 </div>
                                 <div>
-                                    <p class="font_14 VK_inter">
+                                    <p class="font_14 VK_inter" id="VK_item_desc">
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                                         inidunt ut labore et dolore magna aliqua.
                                     </p>
@@ -91,27 +93,46 @@
                                     </p>
                                     <div>
                                         <button
-                                            class="VK_black_border VK_round bg-white fw-500 VK_inter px-3 py-1 my-2">
+                                            class="VK_item_flaver_active_btn VK_itm_flover fw-500 VK_inter px-3 py-1 my-2"
+                                            onclick="VK_item_flover_btn(0)">
                                             Spicy
                                         </button>
-                                        <button
-                                            class="VK_black_border VK_round bg-white fw-500 VK_inter px-3 py-1 my-2">
+                                        <button class="VK_item_flaver_btn VK_itm_flover fw-500 VK_inter px-3 py-1 my-2"
+                                            onclick="VK_item_flover_btn(1)">
                                             Hot & Spicy
                                         </button>
-                                        <button
-                                            class="VK_black_border VK_round bg-white fw-500 VK_inter px-3 py-1 my-2">
+                                        <button class="VK_item_flaver_btn VK_itm_flover fw-500 VK_inter px-3 py-1 my-2"
+                                            onclick="VK_item_flover_btn(2)">
                                             Hot & Sweet
                                         </button>
                                     </div>
                                 </div>
                                 <div class="mt-4 pt-2 pe-xxl-5">
                                     <div class="d-flex gap-3 VK_view_parent">
-                                        <button class="w-100 bg-transparent VK_round VK_black_border VK_inter py-2">
+                                        <button class="w-100 bg-transparent VK_round VK_black_border VK_inter py-2"
+                                            onclick="VK_item_add_cart()" id="VK_item_cart">
                                             Add to cart
                                         </button>
-                                        <button class="VK_theme_btns text-white border-0 w-100 py-2">
+                                        <div class="d-none w-100 h-100" id="VK_item_ince">
+                                            <span
+                                                class="w-100 d-flex justify-content-center gap-3 align-items-center VK_inter VK_black_border VK_round_lg">
+                                                <button class="bg-white border-0 py-1 font_18 VK_inter fw-bold"
+                                                    onclick="VK_item_decre()">
+                                                    -
+                                                </button>
+                                                <p class="m-0 fw-bold" id="VK_item_qty">
+                                                    1
+                                                </p>
+                                                <button class="bg-white border-0 py-1 font_18 VK_inter fw-bold"
+                                                    onclick="VK_item_incre()">
+                                                    +
+                                                </button>
+                                            </span>
+                                        </div>
+                                        <a href="/foodcart.html"
+                                            class="text-center text-decoration-none VK_theme_btns text-white border-0 w-100 py-2">
                                             View Cart
-                                        </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -128,12 +149,16 @@
                     <div class="col-xl-10 p-0">
                         <div class="row m-0">
                             <div class="col text-center">
-                                <button class="VK_inter VK_active VK_item_btn bg-white VK_round" id="VK_desc" onclick="VK_review_tab(1)">
-                                    Description
-                                </button>
-                                <button class="VK_inter VK_item_btn bg-white VK_round" id="VK_review" onclick="VK_review_tab(2)">
-                                    Reviews
-                                </button>
+                                <div class="d-flex justify-content-center">
+                                    <button class="VK_inter VK_active VK_item_btn bg-white VK_round" id="VK_desc"
+                                        onclick="VK_review_tab(1)">
+                                        Description
+                                    </button>
+                                    <button class="VK_inter VK_item_btn bg-white VK_round" id="VK_review"
+                                        onclick="VK_review_tab(2)">
+                                        Reviews
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div class="row m-0 mt-5" id="VK_description">
@@ -351,51 +376,8 @@
                         </h3>
                     </div>
                 </div>
-                <div class="row m-0">
-                    <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
-                        <div class="overflow-hidden VK_regular_menu_img mx-md-4">
-                            <img src="/images/assets/samosa.png" class="w-100 h-100 object_cover" alt="${ele.name}">
-                            <div class="VK_regular_cart">
-                                <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
-                                    <button class="border-0 rounded-circle VK_cart_btn">
-                                        <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
-                                    </button>
-                                    <button class="border-0 rounded-circle VK_cart_btn">
-                                        <img src="/images/vivek/hart.png" alt="Add to favorites" width="20px">
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-4 text-center">
-                            <p class="VK_inter text-black fw-600 mb-1 font_18">
-                                Chinese Samosa
-                            </p>
-                            <p class="VK_inter text-black fw-400 mb-1">
-                                Price : $200
-                            </p>
-                            <div>
-                                <div class="d-flex justify-content-center align-items-center">
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <span class="font_14 VK_review_star">
-                                        <i class="fa-solid fa-star"></i>
-                                    </span>
-                                    <div class="ms-2">
-                                        <p class="m-0 fw-500 VK_inter font_14">
-                                            5 Reviews
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row m-0" id="VK_item_best_delevery">
+
                 </div>
             </div>
         </section>
