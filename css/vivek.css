@@ -20,6 +20,10 @@
     margin: auto;
 }
 
+.font_14 {
+    font-size: 14px;
+}
+
 .fw-500 {
     font-weight: 500;
 }
@@ -38,6 +42,10 @@
 
 .VK_white_space {
     white-space: nowrap;
+}
+
+.VK_black_border {
+    border: 1px solid black;
 }
 
 
@@ -71,6 +79,10 @@
 
 .text-black {
     color: black !important;
+}
+
+.VK_home_drop.dropdown-toggle::after {
+    display: none;
 }
 
 .VK_home_cate li a {
@@ -208,93 +220,10 @@
 }
 
 
-/* model */
-.VK_input_border {
-    border: 1px solid black;
-    border-radius: 5px;
-}
-
-.VK_theme_btn {
-    background-color: #041527;
-    padding: 6px 0px;
-    border-radius: 5px;
-}
-
-.VK_signin_model .modal-dialog {
-    max-width: 50% !important;
-}
-
-.VK_seperators {
-    width: 40%;
-    height: 2px;
-    background-color: rgba(0, 0, 0, 0.14);
-    display: inline-block;
-}
-
-.font_14 {
-    font-size: 14px;
-}
-
-.font_20 {
-    font-size: 20px;
-}
-
-.VK_black_border {
-    border: 1px solid black;
-}
-
-.VK_round {
-    border-radius: 5px;
-}
-
-.VK_gold {
-    color: #CA9F5C;
-}
 
 
-/* otp */
-.otp-inputs {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
 
-.otp {
-    width: 40px;
-    height: 40px;
-    text-align: center;
-    font-size: 24px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
-/* sign up */
-.VK_signup_number {
-    width: 300px !important;
-}
-
-/* location */
-
-.VK_location_map {
-    position: relative;
-}
-
-.VK_location_close {
-    position: absolute;
-    top: 0%;
-    left: 100%;
-    transform: translateX(-100%);
-}
-
-.VK_close_span {
-    height: 30px !important;
-    width: 30px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    background-color: white;
-}
 
 
 
@@ -394,6 +323,19 @@
     top: 47%;
     right: 10px;
 }
+
+.VK_food_filter_btn{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.VK_food_filter_active_btn{
+    background-color: #d6d6d6 !important;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+}
+
 
 /* regular menu */
 
@@ -545,20 +487,22 @@
 
 
 /* ------------------------------------------------------- Resturents ------------------------------------------------------- */
-.VK_button_clr{
+.VK_button_clr {
     color: #67717c;
 }
-.VK_button_brd{
+
+.VK_button_brd {
     border: 1px solid #67717c;
 }
 
-.VK_reco_img{
+.VK_reco_img {
     height: 250px;
     overflow: hidden;
     border-radius: 10px;
     position: relative;
 }
-.VK_reco_veg{
+
+.VK_reco_veg {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -570,22 +514,24 @@
     font-size: clamp(18px, 2vw, 22px);
 }
 
-.VK_shadow{
+.VK_shadow {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.VK_menu_bar{
+.VK_menu_bar {
     position: sticky;
     bottom: 0px;
 }
-.VK_menubar_color{
-    background-color: rgb(102, 176, 67);
+
+.VK_menubar_color {
+    background-color: #66b043;
 }
-.VK_white_border{
+
+.VK_white_border {
     border: 1px solid white;
 }
 
-.VK_menu_box_btns{
+.VK_menu_box_btns {
     background-color: rgba(4, 21, 39, 1);
     border-radius: 50%;
     height: 60px;
@@ -594,11 +540,12 @@
     justify-content: center;
     align-items: center;
 }
-.VK_bg_light{
+
+.VK_bg_light {
     background-color: #e5e5e5;
 }
 
-.VK_backdrop{
+.VK_backdrop {
     position: fixed;
     display: none;
     height: 100vh;
@@ -608,7 +555,7 @@
     top: 0%;
 }
 
-.VK_open_menu{
+.VK_open_menu {
     width: 98%;
     left: 2px;
     transition: all 0.3s ease;
@@ -616,20 +563,20 @@
     box-sizing: border-box;
 }
 
-.VK_opne_menu_box{
+.VK_opne_menu_box {
     transform: translateY(-102%);
 }
 
-.VK_menu_parent{
+.VK_menu_parent {
     overflow: hidden;
 }
 
-.VK_round_lg{
+.VK_round_lg {
     border-radius: 5px;
     overflow: hidden;
 }
 
-.VK_add_to_cart{
+.VK_add_to_cart {
     background-color: #041527;
     border-radius: 5px;
     border: 0px;
@@ -638,6 +585,47 @@
 
 
 
+/* ------------------------------------------ items ---------------------------------------------- */
+
+.VK_view_parent {
+    width: 100%;
+}
+
+.VK_item_btn {
+    border: 4px solid white;
+    padding: 10px 40px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.14);
+}
+
+.VK_active {
+    border-bottom-color: black;
+}
+
+.VK_progress {
+    width: 70%;
+}
+
+.VK_progress .progress {
+    height: 12px !important;
+    border-radius: 25px !important;
+}
+
+.VK_progress .progress-bar {
+    background-color: #00900E !important;
+    border-radius: 25px !important;
+}
+
+.VK_progress:nth-child(4) .progress-bar {
+    background-color: #FDC040 !important;
+}
+
+.VK_progress:nth-child(5) .progress-bar {
+    background-color: #DA5353 !important;
+}
+
+.VK_review_alert {
+    background-color: #FBF0D6;
+}
 
 /* ---------------------------------------------- media query ----------------------------------------------- */
 
@@ -671,18 +659,6 @@
         border-right: none !important;
     }
 
-    .VK_signin_model .modal-dialog {
-        max-width: 100% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 100% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 100% !important;
-    }
-
     .VK_poster_text_parent {
         padding: 55px 0px;
     }
@@ -694,10 +670,12 @@
     .VK_popular_food_poster {
         height: 300px;
     }
-    .VK_img_col{
+
+    .VK_img_col {
         height: 250px !important;
     }
-    .VK_col_img{
+
+    .VK_col_img {
         height: 150px;
     }
 }
@@ -729,18 +707,6 @@
         border-right: none !important;
     }
 
-    .VK_signin_model .modal-dialog {
-        max-width: 100% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 100% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 100% !important;
-    }
-
     .VK_signin_flex {
         flex-direction: column-reverse;
     }
@@ -756,10 +722,12 @@
     .VK_popular_food_poster {
         height: 400px;
     }
-    .VK_img_col{
+
+    .VK_img_col {
         height: 300px !important;
     }
-    .VK_col_img{
+
+    .VK_col_img {
         height: 200px;
     }
 }
@@ -793,18 +761,6 @@
         border-right: none !important;
     }
 
-    .VK_signin_model .modal-dialog {
-        max-width: 90% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 90% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 90% !important;
-    }
-
     .VK_poster_text_parent {
         padding: 100px 0px;
     }
@@ -812,10 +768,12 @@
     .VK_popular_food_poster {
         height: 450px;
     }
-    .VK_img_col{
+
+    .VK_img_col {
         height: 300px !important;
     }
-    .VK_col_img{
+
+    .VK_col_img {
         height: 200px;
     }
 }
@@ -839,25 +797,15 @@
         top: 60px;
     }
 
-    .VK_signin_model .modal-dialog {
-        max-width: 80% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 80% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 80% !important;
-    }
-
     .VK_popular_food_poster {
         height: 450px;
     }
-    .VK_img_col{
+
+    .VK_img_col {
         height: 350px !important;
     }
-    .VK_col_img{
+
+    .VK_col_img {
         height: 250px;
     }
 }
@@ -877,22 +825,6 @@
         top: 60px;
     }
 
-    .VK_signin_model .modal-dialog {
-        max-width: 60% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 60% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 65% !important;
-    }
-
-    .VK_area_details .modal-dialog {
-        max-width: 50% !important;
-    }
-
     .VK_popular_food_poster {
         height: 450px;
     }
@@ -907,6 +839,10 @@
 
     .VK_restro_img_height {
         height: 550px;
+    }
+
+    .VK_view_parent {
+        width: 80%;
     }
 }
 
@@ -924,22 +860,6 @@
         margin-bottom: calc(-6rem + 1rem);
     }
 
-    .VK_signin_model .modal-dialog {
-        max-width: 50% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 50% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 55% !important;
-    }
-
-    .VK_area_details .modal-dialog {
-        max-width: 40% !important;
-    }
-
     .VK_col_h {
         height: 100%;
     }
@@ -951,32 +871,16 @@
     .VK_restro_img_height {
         height: 550px;
     }
+
+    .VK_view_parent {
+        width: 80%;
+    }
 }
 
 /* 3xl device */
 @media (min-width:1441px) {
     .VK_settler_imgs {
         margin-bottom: calc(-6rem + 2rem);
-    }
-
-    .VK_signin_model .modal-dialog {
-        max-width: 40% !important;
-    }
-
-    .VK_otp_model .modal-dialog {
-        max-width: 42% !important;
-    }
-
-    .VK_signup_model .modal-dialog {
-        max-width: 45% !important;
-    }
-
-    .VK_area_details .modal-dialog {
-        max-width: 35% !important;
-    }
-
-    .VK_location_model .modal-dialog {
-        max-width: 30% !important;
     }
 
     .VK_p {
@@ -994,11 +898,20 @@
     .VK_restro_img_height {
         height: 550px;
     }
-    .dialog_model .modal-dialog{
+
+    .dialog_model .modal-dialog {
         max-width: 30% !important;
     }
 
+    .VK_view_parent {
+        width: 80%;
+    }
+
 }
+
+
+
+
 
 
 

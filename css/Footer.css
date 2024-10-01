@@ -1,17 +1,56 @@
-.VK_footer{
+.VK_footer {
     background-color: #041527;
 }
 
-.VK_follow_us{
+.VK_follow_us {
     font-size: 18px;
 }
 
-.VK_footer_img{
+.VK_footer_img {
     width: 30px;
 }
-.VK_footer_ul li{
+
+.VK_footer_ul li {
     font-size: 14px;
 }
-.VK_border_top{
+
+.VK_border_top {
     border-top: 1px solid rgba(255, 255, 255, 0.192);
+}
+
+.VK_sec_padd {
+    padding: 60px 0px;
+}
+
+.VK_inter {
+    font-family: "inter", sans-serif;
+}
+
+
+/*  extra small device */
+@media (max-width:480px) {
+    .VK_sec_padd {
+        padding: 30px 0px;
+    }
+}
+
+/* small device */
+@media (max-width:576px) and (min-width:481px) {
+    .VK_sec_padd {
+        padding: 30px 0px;
+    }
+}
+
+/* medium device */
+@media (max-width:767px) and (min-width:577px) {
+    .VK_sec_padd {
+        padding: 40px 0px;
+    }
+}
+
+/* lg device */
+@media (max-width:992px) and (min-width:768px) {
+    .VK_sec_padd {
+        padding: 40px 0px;
+    }
 }

@@ -35,6 +35,9 @@
 
     <main>
 
+        <!-- header -->
+        <div class="nav-bar"></div>
+
         <!-- poster -->
         <section class="VK_food_home_poster pb-5">
             <div class="d_container h-100">
@@ -329,28 +332,48 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div>
-                                <button class="VK_black_border VK_round bg-transparent VK_inter">
+                            <div class="d-flex flex-wrap gap-2 VK_filters_buttons" id="VK_food_filt_btn">
+                                <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                    id="VK_active_pure_veg" onclick="VK_clear_filter_restrorent(0)">
+                                    Pure Veg
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                    id="VK_active_price_range" onclick="VK_clear_filter_restrorent(1)">
+                                    Rs. 300 - Rs. 600
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                    id="VK_active_offers" onclick="VK_clear_filter_restrorent(2)">
+                                    Offers
+                                    <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                    id="VK_active_rating" onclick="VK_clear_filter_restrorent(3)">
+                                    Rating 3+ <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                    id="VK_active_fast_delivery" onclick="VK_clear_filter_restrorent(4)">
+                                    Fast Delivery <i class="fa-solid fa-xmark"></i>
+                                </button>
+                                <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_pure_veg"
+                                    onclick="VK_filter_restrorent(0)">
                                     Pure Veg
                                 </button>
-                            </div>
-                            <div>
-                                <button class="VK_black_border VK_round bg-transparent VK_inter">
+                                <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_price_range"
+                                    onclick="VK_filter_restrorent(1)">
                                     Rs. 300 - Rs. 600
                                 </button>
-                            </div>
-                            <div>
-                                <button class="VK_black_border VK_round bg-transparent VK_inter">
+                                <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_offers"
+                                    onclick="VK_filter_restrorent(2)">
                                     Offers
                                 </button>
-                            </div>
-                            <div>
-                                <button class="VK_black_border VK_round bg-transparent VK_inter">
+                                <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_rating"
+                                    onclick="VK_filter_restrorent(3)">
                                     Rating 3+
                                 </button>
-                            </div>
-                            <div>
-                                <button class="VK_black_border VK_round bg-transparent VK_inter">
+                                <button class="VK_food_filter_btn VK_round bg-transparent VK_inter"
+                                    id="VK_fast_delivery" onclick="VK_filter_restrorent(4)">
                                     Fast Delivery
                                 </button>
                             </div>
@@ -403,11 +426,8 @@
             </div>
         </section>
 
-
-
         <!-- footer -->
         <footer></footer>
-
 
     </main>
 
@@ -465,6 +485,11 @@
     </script>
 
     <script>
+        fetch('Nav_bar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.querySelector('.nav-bar').innerHTML = data
+            })
         fetch('Footer.html')
             .then(response => response.text())
             .then(data => {
@@ -482,6 +507,13 @@
     <script src="/js/vivek.js"></script>
 
 
+    <script>
+        document.querySelectorAll('.dropdown-item').forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+    </script>
 
 </body>
 
