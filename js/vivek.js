@@ -6,12 +6,14 @@ window.onload = function () {
     VK_our_restro_data_display();
     recommended_data();
     VK_Beverages();
+    VK_item_delivery();
 
 }
 
 
 
 
+// otp
 function moveToNext(current, nextFieldId) {
     const value = current.value;
 
@@ -23,6 +25,7 @@ function moveToNext(current, nextFieldId) {
     }
 }
 
+// otp
 function moveToPrev(event, currentFieldId, prevFieldId) {
     if (event.key === 'Backspace' && document.getElementById(currentFieldId).value === '' && prevFieldId !== '') {
         document.getElementById(prevFieldId).focus();
@@ -30,11 +33,12 @@ function moveToPrev(event, currentFieldId, prevFieldId) {
 }
 
 
+// ---------------------------------------------------- Food Home ----------------------------------------------------
 
-
-
+// food home page (Regular Menu)
 let VK_regular_menu_items = [
     {
+        id: 201,
         name: "Chinese Samosa",
         price: "200",
         review_cnt: 4,
@@ -42,6 +46,7 @@ let VK_regular_menu_items = [
         image: "samosa.png"
     },
     {
+        id: 202,
         name: "Punjabi Dish",
         price: "400",
         review_cnt: 4,
@@ -49,6 +54,7 @@ let VK_regular_menu_items = [
         image: "punjabi.png"
     },
     {
+        id: 203,
         name: "Burger",
         price: "80",
         review_cnt: 4,
@@ -56,6 +62,7 @@ let VK_regular_menu_items = [
         image: "burger.png"
     },
     {
+        id: 204,
         name: "Punjabi Dish",
         price: "400",
         review_cnt: 4,
@@ -63,6 +70,7 @@ let VK_regular_menu_items = [
         image: "punjabi.png"
     },
     {
+        id: 205,
         name: "Burger",
         price: "80",
         review_cnt: 4,
@@ -70,6 +78,7 @@ let VK_regular_menu_items = [
         image: "burger.png"
     },
     {
+        id: 206,
         name: "Veg Manchurian",
         price: "60",
         review_cnt: 4,
@@ -77,6 +86,7 @@ let VK_regular_menu_items = [
         image: "manchurian.png"
     },
     {
+        id: 207,
         name: "Gujarati Thali",
         price: "200",
         review_cnt: 4,
@@ -84,6 +94,7 @@ let VK_regular_menu_items = [
         image: "gujarati.png"
     },
     {
+        id: 208,
         name: "Chinese Samosa",
         price: "200",
         review_cnt: 4,
@@ -92,10 +103,19 @@ let VK_regular_menu_items = [
     }
 ]
 
+// food home page (Regular Menu)
 function regular_menu_card_display() {
     let div = document.getElementById('VK_regular_menu_cards');
+
+    let cart_data = JSON.parse(localStorage.getItem('cart'));
+    if (cart_data.length >= 1) {
+        if (document.getElementById('VK_add_item_menu')) {
+            document.getElementById('VK_add_item_menu')?.classList.remove('d-none')
+            document.getElementById('VK_item_cnt').innerText = cart_data.length
+        }
+    }
     if (div) {
-        let html = VK_regular_menu_items.map((ele) => {
+        let html = VK_regular_menu_items.map((ele, ind) => {
             const generateStars = (rating) => {
                 return Array.from({ length: 5 }, (_, index) => {
                     return `
@@ -106,23 +126,23 @@ function regular_menu_card_display() {
             };
 
             const stars = generateStars(ele.review);
-
+            let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
                 <div class="overflow-hidden VK_regular_menu_img mx-md-4">
-                    <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
-                    <div class="VK_regular_cart">
-                        <a href="/Popular_food.html">
+                    <a href="/Popular_food.html?id=${ele.id}">
+                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
+                        <div class="VK_regular_cart">
                             <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
-                                <button class="border-0 rounded-circle VK_cart_btn" onclick="demo(event)">
+                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
                                     <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
                                 </button>
                                 <button class="border-0 rounded-circle VK_cart_btn">
                                     <img src="/images/vivek/hart.png" alt="Add to favorites" width="20px">
                                 </button>
                             </div>
-                        </a>
-                    </div>
+                        </div>
+                    </a>
                 </div>
                 <div class="mt-4 text-center">
                     <p class="VK_inter text-black fw-600 mb-1 font_18">${ele.name}</p>
@@ -145,20 +165,35 @@ function regular_menu_card_display() {
     }
 }
 
-function demo(event){
+// food home page (Add To Cart)
+function VK_add_to_cart(event, item) {
     event.preventDefault();
+
+    let data = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let existingItem = data.find(el => el.id === item.id);
+
+    if (!existingItem) {
+        item.quantity = 1;
+        data.push(item);
+        console.log(`Item ${item.name} added to the cart`);
+        localStorage.setItem('cart', JSON.stringify(data));
+    }
 }
 
 
 
+// food home page (Resturent data)
 var VK_resturent_data = [
     {
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
         review_cnt: 5,
-        review: 1,
-        offer: null,
-        image: "hotel1.png"
+        review: 4,
+        offer: "Items At $60",
+        image: "hotel1.png",
+        type: "vage",
+        price: 500,
     },
     {
         name: "Radhe Punjabi Dhaba",
@@ -166,7 +201,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 2,
         offer: null,
-        image: "hotel2.png"
+        image: "hotel2.png",
+        type: "vage",
+        price: 700,
     },
     {
         name: "La pino’z ",
@@ -174,7 +211,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 3,
         offer: null,
-        image: "hotel3.png"
+        image: "hotel3.png",
+        type: "non-vage",
+        price: 300,
     },
     {
         name: "Avadh Hotel",
@@ -182,7 +221,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel4.png"
+        image: "hotel4.png",
+        type: "vage",
+        price: 200,
     },
     {
         name: "Taste of Bhagwati",
@@ -190,7 +231,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel5.png"
+        image: "hotel5.png",
+        type: "non-vage",
+        price: 1000,
     },
     {
         name: "Avadh Hotel",
@@ -198,7 +241,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel6.png"
+        image: "hotel6.png",
+        type: "vage",
+        price: 800,
     },
     {
         name: "Burger King",
@@ -206,7 +251,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 3,
         offer: "Items At $60",
-        image: "hotel7.png"
+        image: "hotel7.png",
+        type: "vage",
+        price: 500,
     },
     {
         name: "Avadh Hotel",
@@ -214,7 +261,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel6.png"
+        image: "hotel6.png",
+        type: "vage",
+        price: 500,
     },
     {
         name: "Taste of Bhagwati",
@@ -222,7 +271,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 2,
         offer: "10% OFF",
-        image: "hotel5.png"
+        image: "hotel5.png",
+        type: "vage",
+        price: 500,
     },
     {
         name: "Avadh Hotel",
@@ -230,7 +281,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel6.png"
+        image: "hotel6.png",
+        type: "vage",
+        price: 500,
     },
     {
         name: "Radhe Punjabi Dhaba",
@@ -238,7 +291,9 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 1,
         offer: null,
-        image: "hotel2.png"
+        image: "hotel2.png",
+        type: "vage",
+        price: 500,
     },
     {
         name: "Avadh Hotel",
@@ -246,12 +301,16 @@ var VK_resturent_data = [
         review_cnt: 5,
         review: 3,
         offer: null,
-        image: "hotel6.png"
+        image: "hotel6.png",
+        type: "vage",
+        price: 500,
     },
 ]
 
+// food home page (Resturent data)
 var VK_resturents = VK_resturent_data
 
+// food home page (Resturent data)
 function VK_resturent_data_display() {
     let div = document.getElementById('VK_resturent');
     if (div) {
@@ -312,6 +371,7 @@ function VK_resturent_data_display() {
     }
 }
 
+// food home page (Resturent data filter by)
 function VK_filter_restrorent(ele) {
     const buttons = document.querySelectorAll('.VK_food_filter_btn');
     const active = document.querySelectorAll('.VK_food_filter_active_btn');
@@ -341,7 +401,7 @@ function VK_filter_restrorent(ele) {
             filteredRestros = VK_resturents.filter(restro => restro.type === "vage");
             break;
         case 1:
-            // Apply price range filter here
+            filteredRestros = VK_resturents.filter(restro => restro.price >= 300 && restro.price <= 600)
             break;
         case 2:
             filteredRestros = VK_resturents.filter(restro => restro.offer);
@@ -360,6 +420,35 @@ function VK_filter_restrorent(ele) {
     VK_resturent_data_display();
 }
 
+// food home page (Resturent data sort by)
+let main_data = [...VK_resturents]
+
+function VK_restro_filt() {
+
+
+    let sort = document.querySelectorAll('#restro_filter')
+    let sort_order = Array.from(sort).find(el => el.checked)
+
+    let filter = [];
+    console.log(sort_order.value);
+
+    switch (sort_order.value) {
+        case 'Relevance':
+            filter = main_data
+            break;
+        case 'Price (low to high)':
+            filter = VK_resturents.sort((a,b)=> a.price - b.price)
+            break;
+        case 'Price (high to low)':
+            filter = VK_resturents.sort((a,b)=> b.price - a.price)
+            break;
+    }
+    VK_resturents = filter
+    console.log(filter);
+    VK_resturent_data_display();
+}
+
+// food home page (Resturent data)
 function VK_clear_filter_restrorent(id) {
     const buttons = document.querySelectorAll('.VK_food_filter_btn');
     const active = document.querySelectorAll('.VK_food_filter_active_btn');
@@ -402,14 +491,14 @@ function VK_clear_filter_restrorent(id) {
 
 
 
-
+// food home page (Popular Restro data)
 var VK_popular_retro_near = [
     {
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
         review_cnt: 5,
         review: 5,
-        alter: "Items At $60",
+        offer: "Items At $60",
         image: "hotel1.png"
     },
     {
@@ -417,7 +506,7 @@ var VK_popular_retro_near = [
         description: "Gujarati dish, Biryani Adajan, Surat",
         review_cnt: 5,
         review: 5,
-        alter: null,
+        offer: null,
         image: "hotel2.png"
     },
     {
@@ -425,7 +514,7 @@ var VK_popular_retro_near = [
         description: "Pizza , Dessert, French fri... Pal, Surat",
         review_cnt: 5,
         review: 5,
-        alter: null,
+        offer: null,
         image: "hotel3.png"
     },
     {
@@ -433,7 +522,7 @@ var VK_popular_retro_near = [
         description: "Punjabi, south Indian Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
-        alter: null,
+        offer: null,
         image: "hotel4.png"
     },
     {
@@ -441,7 +530,7 @@ var VK_popular_retro_near = [
         description: "Indian, Pastas ved road, Mumbai",
         review_cnt: 5,
         review: 5,
-        alter: null,
+        offer: null,
         image: "hotel5.png"
     },
     {
@@ -449,7 +538,7 @@ var VK_popular_retro_near = [
         description: "Punjabi, south Indian Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
-        alter: null,
+        offer: null,
         image: "hotel6.png"
     },
     {
@@ -457,7 +546,7 @@ var VK_popular_retro_near = [
         description: "Punjabi, south Indian Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
-        alter: "Items At $60",
+        offer: "Items At $60",
         image: "hotel7.png"
     },
     {
@@ -465,11 +554,12 @@ var VK_popular_retro_near = [
         description: "Punjabi, south Indian Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
-        alter: null,
+        offer: null,
         image: "hotel6.png"
     },
 ]
 
+// food home page (Popular Restro data)
 function VK_popular_restro_data_display() {
     let div = document.getElementById('VK_popular_restro');
     if (div) {
@@ -494,16 +584,13 @@ function VK_popular_restro_data_display() {
                             <i class="fa-regular fa-heart"></i>
                         </button>
                     </div>
-                    ${ele.alter != null
-                    ?
+                    ${ele.offer != null ?
                     `<div class="VK_resturent_alert">
                                 <p class="m-0 VK_inter">
-                                    ${ele.alter}
+                                    ${ele.offer}
                                 </p>
                             </div>`
-                    :
-                    ""
-                }
+                    : ""}
                 </div>
                 <div class="px-2 mt-3">
                     <p class="VK_inter text-black fw-600 mb-1 font_20">
@@ -533,7 +620,10 @@ function VK_popular_restro_data_display() {
 
 
 
+// ---------------------------------------------------- Popular Food ----------------------------------------------------
 
+
+//  Popular Food page (our Restrunts)
 var VK_our_resturent_data = [
     {
         name: "Burger King",
@@ -620,9 +710,10 @@ var VK_our_resturent_data = [
     },
 ]
 
+//  Popular Food page (our Restrunts)
 var VK_our_restros = VK_our_resturent_data;
 
-
+//  Popular Food page (our Restrunts)
 function VK_our_restro_data_display() {
     let div = document.getElementById('VK_our_resturent');
     if (div) {
@@ -640,24 +731,23 @@ function VK_our_restro_data_display() {
 
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
-                <div class="overflow-hidden VK_resturent_food">
-                    <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
-                    <div class="VK_resturent_btn">
-                        <button class="">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                    </div>
-                    ${ele.offer != null
-                    ?
+                <a href="/Restaurants.html">
+                    <div class="overflow-hidden VK_resturent_food">
+                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
+                        <div class="VK_resturent_btn">
+                            <button class="">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                        </div>
+                        ${ele.offer != null ?
                     `<div class="VK_resturent_alert">
-                                <p class="m-0 VK_inter">
-                                    ${ele.offer}
-                                </p>
-                            </div>`
-                    :
-                    ""
-                }
-                </div>
+                            <p class="m-0 VK_inter">
+                                ${ele.offer}
+                            </p>
+                        </div>`
+                    : ""}
+                    </div>
+                </a>
                 <div class="px-2 mt-3">
                     <p class="VK_inter text-black fw-600 mb-1 font_20">
                         ${ele.name}
@@ -683,10 +773,10 @@ function VK_our_restro_data_display() {
     }
 }
 
-
-
+//  Popular Food page (our Restrunts)
 let activeFilters = [];
 
+//  Popular Food page (our Restrunts)
 function VK_filter_restro(ele) {
     const buttons = document.querySelectorAll('.VK_food_filter_btn');
     const active = document.querySelectorAll('.VK_food_filter_active_btn');
@@ -735,6 +825,7 @@ function VK_filter_restro(ele) {
     VK_our_restro_data_display();
 }
 
+//  Popular Food page (our Restrunts)
 function VK_clear_filter_restro(ele) {
     const buttons = document.querySelectorAll('.VK_food_filter_btn');
     const active = document.querySelectorAll('.VK_food_filter_active_btn');
@@ -746,7 +837,6 @@ function VK_clear_filter_restro(ele) {
     buttons[ele].classList.remove('d-none');
 
     let filteredRestros = VK_our_resturent_data;
-    console.log(filteredRestros);
 
 
     // Reapply all active filters
@@ -771,20 +861,29 @@ function VK_clear_filter_restro(ele) {
                 break;
         }
     });
-    console.log(filteredRestros);
 
     VK_our_restros = filteredRestros;
     VK_our_restro_data_display();
 }
 
 
+// popular food
+document.addEventListener('DOMContentLoaded', function () {
+    let url = window.location.search
+    let params = new URLSearchParams(url)
+    let id = params.get('id')
+    if (id) {
+        let data = VK_regular_menu_items.find(el => el.id == id)
+        document.getElementById('VK_popular_food_heading').innerText = data.name;
+    }
+})
 
 
 
+// ---------------------------------------------------- Resturents ----------------------------------------------------
 
 
-
-
+// Restaurants page (item menu)
 function VK_open_menu() {
 
     let menu = document.querySelector('.VK_open_menu')
@@ -799,6 +898,7 @@ function VK_open_menu() {
     }, 120)
 }
 
+// Restaurants page (item menu)
 function VK_close_menu() {
     let rl = document.querySelector('.VK_menu_parent');
     rl.style.overflow = 'hidden';
@@ -811,44 +911,57 @@ function VK_close_menu() {
 }
 
 
-
-
-
-
+// Restaurants page (Recomended For you)
 let VK_recomndended_data = [
     {
+        id: 1,
         name: "Peri Peri Cheese Burger",
         price: "80",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        review_cnt: 5,
-        review: 5,
+        review_cnt: 15,
+        review: 4,
         image: "burger3.png",
-        type: "veg"
+        typ: "veg"
     },
     {
+        id: 2,
         name: "Spicy Chicken Burger",
         price: "80",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        review_cnt: 5,
-        review: 5,
+        review_cnt: 25,
+        review: 3,
         image: "burger.png",
-        type: "non-veg"
+        typ: "non-veg"
     },
     {
+        id: 3,
         name: "Aloo Tikki Burger + French Fries",
         price: "80",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         review_cnt: 10,
         review: 2,
         image: "burger2.png",
-        type: "veg"
+        typ: "veg"
     },
 ]
 
 
+let currentItem = {};
+
+// Restaurants page (Recomended For you)
 function recommended_data() {
-    let div = document.querySelector('#VK_recomended')
+    let div = document.querySelector('#VK_recomended');
     if (div) {
+
+        let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart_data.length >= 1) {
+            if (document.getElementById('VK_add_item_menu')) {
+                document.getElementById('VK_add_item_menu').classList.remove('d-none')
+                document.getElementById('VK_item_cnt').innerText = cart_data.length;
+            }
+        }
+
         let html = VK_recomndended_data.map((ele, id) => {
             const generateStars = (rating) => {
                 return Array.from({ length: 5 }, (_, index) => {
@@ -860,16 +973,23 @@ function recommended_data() {
             };
 
             const stars = generateStars(ele.review);
+
+            // Check if item exists in cart
+            let cartItem = cart_data.find(cartEle => cartEle.id === ele.id);
+            let quantity = cartItem ? cartItem.qty : 0;
+
             return ` 
             <div class="row mb-4 py-3">
                 <div class="col-xxl-2 col-xl-3 col-md-4">
-                    <div class="VK_reco_img">
-                        <img src="/images/assets/${ele.image}"
-                            class="w-100 h-100 object_cover" alt="">
-                        <div class="VK_reco_veg">
-                            <img src="/images/vivek/${ele.type == "veg" ? `veg.png` : `non-veg.png`}" class="w-100 h-100" alt="">
+                    <a href="/items.html?item_id=${ele.id}">
+                        <div class="VK_reco_img">
+                            <img src="/images/assets/${ele.image}"
+                                class="w-100 h-100 object_cover" alt="">
+                            <div class="VK_reco_veg">
+                                <img src="/images/vivek/${ele.typ == "veg" ? `veg.png` : `non-veg.png`}" class="w-100 h-100" alt="veg type">
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-md-8 ps-4 pt-3">
                     <h5 class="text-black VK_inter VK_food_heading fw-600">
@@ -889,53 +1009,120 @@ function recommended_data() {
                         eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <div>
-                        <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-noee">
-                            <button
-                                class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">
-                                ADD
-                            </button>
-                        </span>
-                        <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-none">
-                            <button
-                                class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold ">
-                                -
-                            </button>
-                            <p class="m-0  fw-bold">
-                                1
-                            </p>
-                            <button
-                                class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold">
-                                +
-                            </button>
-                        </span>
+                        ${quantity > 0 ? `
+                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg" id="VK_restro_btn_${ele.id}">
+                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="decrementQuantity(${ele.id})">-</button>
+                                <p class="m-0 fw-bold">${quantity}</p>
+                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="incrementQuantity(${ele.id})">+</button>
+                            </span>
+                        ` : `
+                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg">
+                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">ADD</button>
+                            </span>
+                        `}
                     </div>
                 </div>
-            </div>`
-        }).join("")
+            </div>`;
+        }).join("");
         div.innerHTML = html;
     } else {
-        return
+        return;
+    }
+}
+
+// increment decrement
+function incrementQuantity(id) {
+    let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartItem = cart_data.find(item => item.id === id);
+
+    if (cartItem) {
+        cartItem.qty += 1;
+    } else {
+        let item = VK_recomndended_data.find(item => item.id === id);
+        item.qty = 1;
+        cart_data.push(item);
     }
 
+    localStorage.setItem('cart', JSON.stringify(cart_data));
+    recommended_data(); // Re-render the UI
 }
 
+// increment decrement
+function decrementQuantity(id) {
+    let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartItem = cart_data.find(item => item.id === id);
 
+    if (cartItem && cartItem.qty > 1) {
+        cartItem.qty -= 1;
+    } else {
+        cart_data = cart_data.filter(item => item.id !== id);
+    }
+
+    localStorage.setItem('cart', JSON.stringify(cart_data));
+    recommended_data(); // Re-render the UI
+}
+
+// Open modal and pass item data
 function VK_Recommended_model_opn(id) {
+    currentItem = VK_recomndended_data[id];
+    document.querySelector('#VK_recomded_title').textContent = currentItem.name;
+    const modal = new bootstrap.Modal(document.getElementById('Recommended'));
+    modal.show();
+    document.querySelector('.font_18.fw-bold.px-2').textContent = 1;
+}
 
-    document.getElementById('VK_recomded_title').innerHTML = VK_recomndended_data[id].name
+// increment decrement
+function VK_restro_incre() {
+    let qty = document.querySelector('.font_18.fw-bold.px-2').textContent;
+    document.querySelector('.font_18.fw-bold.px-2').textContent = parseInt(qty) + 1;
+}
 
-    var myModal = new bootstrap.Modal(document.getElementById('Recommended'));
+// increment decrement
+function VK_restro_decre() {
+    let qty = document.querySelector('.font_18.fw-bold.px-2').textContent;
+    if (parseInt(qty) > 1) {
+        document.querySelector('.font_18.fw-bold.px-2').textContent = parseInt(qty) - 1;
+    }
+}
 
-    myModal.show();
+// add to cart
+function VK_addToCart() {
+    let cartItem = { ...currentItem };
 
+    // fries
+    let friOptions = document.querySelectorAll('input[name="fries"]');
+    let selectedFri = Array.from(friOptions).find(fr => fr.checked);
+    if (selectedFri) {
+        cartItem.fries = selectedFri.value;
+    }
+
+    // cold drink
+    let coldOptions = document.querySelectorAll('input[name="drink"]');
+    let selectedCold = Array.from(coldOptions).find(cd => cd.checked);
+    if (selectedCold) {
+        cartItem.cold_drink = selectedCold.value;
+    }
+
+    // Update quantity
+    cartItem.qty = parseInt(document.querySelector('.font_18.fw-bold.px-2').textContent);
+    cartItem.type = "food";
+
+
+    let data = JSON.parse(localStorage.getItem('cart')) || [];
+
+    data.push(cartItem);
+
+    localStorage.setItem('cart', JSON.stringify(data));
+
+
+    const modalInstance = bootstrap.Modal.getInstance(document.getElementById('Recommended'));
+    modalInstance.hide();
+    recommended_data();
 }
 
 
 
-
-
-
-
+// Restaurants page (Cold drinks)
 let VK_beverages_data = [
     {
         name: "Coca Cola",
@@ -955,6 +1142,7 @@ let VK_beverages_data = [
     },
 ]
 
+// Restaurants page (Cold drinks)
 function VK_Beverages() {
     let div = document.getElementById('VK_Beverages')
     if (div) {
@@ -972,7 +1160,7 @@ function VK_Beverages() {
             return `
                 <div class="row mb-4 pb-3">
                     <div class="col-xxl-2 col-xl-3 col-md-4">
-                        <div class="VK_reco_img ">
+                        <div class="VK_reco_img">
                             <img src="/images/assets/${ele.image}"
                                 class="w-100 h-100 object_cover" alt="">
                         </div>
@@ -1026,7 +1214,10 @@ function VK_Beverages() {
 
 
 
+// ---------------------------------------------------- item ----------------------------------------------------
 
+
+// item page (review and description)
 function VK_review_tab(id) {
     if (id == 1) {
         document.getElementById('VK_desc').classList.add('VK_active')
@@ -1043,6 +1234,122 @@ function VK_review_tab(id) {
         document.getElementById('VK_reviews').classList.remove('d-none')
     }
 }
+
+// item page (item flover buttons)
+function VK_item_flover_btn(id) {
+    let btn = document.querySelectorAll('.VK_itm_flover')
+    btn.forEach(e => {
+        e.classList.remove('VK_item_flaver_active_btn')
+        e.classList.add('VK_item_flaver_btn')
+    })
+    btn[id].classList.add('VK_item_flaver_active_btn')
+    btn[id].classList.remove('VK_item_flaver_btn')
+}
+
+// item page (add to cart page) 
+function VK_item_add_cart() {
+    console.log("call");
+    document.getElementById('VK_item_cart').classList.add('d-none')
+    document.getElementById('VK_item_ince').classList.remove('d-none')
+}
+
+function VK_item_decre() {
+    let qty = document.querySelector('#VK_item_qty').innerText;
+    if (parseInt(qty) > 1) {
+        document.querySelector('#VK_item_qty').innerText = parseInt(qty) - 1;
+    }
+}
+
+function VK_item_incre() {
+    let qty = document.querySelector('#VK_item_qty').textContent;
+    document.querySelector('#VK_item_qty').textContent = parseInt(qty) + 1;
+}
+
+
+
+// item page (our best delivery)
+function VK_item_delivery() {
+    let div = document.getElementById('VK_item_best_delevery');
+    if (div) {
+        let item_delivery = VK_regular_menu_items.slice(0, 4)
+        let cart_data = JSON.parse(localStorage.getItem('cart'));
+        if (cart_data.length >= 1) {
+            if (document.getElementById('VK_add_item_menu')) {
+                document.getElementById('VK_add_item_menu').classList.remove('d-none')
+                document.getElementById('VK_item_cnt').innerText = cart_data.length
+            }
+        }
+        let html = item_delivery.map((ele, ind) => {
+            const generateStars = (rating) => {
+                return Array.from({ length: 5 }, (_, index) => {
+                    return `
+                        <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                            <i class="fa-solid fa-star"></i>
+                        </span>`;
+                }).join("");
+            };
+
+            const stars = generateStars(ele.review);
+            let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
+            return `
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
+                <div class="overflow-hidden VK_regular_menu_img mx-md-4">
+                    <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
+                    <div class="VK_regular_cart">
+                        <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
+                            <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
+                                <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
+                            </button>
+                            <button class="border-0 rounded-circle VK_cart_btn">
+                                <img src="/images/vivek/hart.png" alt="Add to favorites" width="20px">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="VK_inter text-black fw-600 mb-1 font_18">${ele.name}</p>
+                    <p class="VK_inter text-black fw-400 mb-1">Price: $${ele.price}</p>
+                    <div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            ${stars}
+                            <div class="ms-2">
+                                <p class="m-0 fw-500 VK_inter font_14">${ele.review_cnt} Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }).join("");
+
+        div.innerHTML = html;
+    } else {
+        return;
+    }
+}
+
+// items page
+document.addEventListener('DOMContentLoaded', function () {
+    let url = window.location.search
+    let params = new URLSearchParams(url)
+    let id = params.get('item_id');
+    if (id) {
+        let data = VK_recomndended_data.find(el => el.id == id)
+
+        document.getElementById('VK_item_name').innerText = data.name;
+        document.getElementById('VK_item_price').innerText = data.price;
+        document.getElementById('VK_item_desc').innerText = data.description;
+        document.getElementById('VK_item_review_cnt').innerText = data.review_cnt;
+
+        let arr = Array.from({ length: 5 }, (_, index) => {
+            return `
+                <span class="font_14 ${index < data.review ? "VK_review_star" : "VK_star"}">
+                    <i class="fa-solid fa-star"></i>
+                </span>`;
+        }).join("");
+        document.getElementById('VK_item_review_star').innerHTML = arr
+
+    }
+})
 
 
 

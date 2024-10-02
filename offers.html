@@ -27,7 +27,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- custom css file -->
-    <link rel="stylesheet" href="/css/d_style.css">
+    <link rel="stylesheet" href="/css/vivek.css">
 
 
 </head>
@@ -38,388 +38,158 @@
 
     <!-- Heading section start -->
 
-    <section class="d_p-30 ">
+    <section class="py-5">
         <div class="d_container">
-            <div class="row d_helphead d_offerhead">
-                <div class="col-12 text-center">
-                    <h5>Restaurants with Best Offers</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+            <div class="row m-0 justify-content-center">
+                <div class="col-xxl-6 col-lg-7 col-12 col-md-8">
+                    <h2 class="VK_500 VK_section_heading text-black fw-bold text-center mx-auto">
+                        Restaurants with Best Offers
+                    </h2>
+                    <p class="VK_p VK_inter text-center text-black fw-400">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-
-    <!-- Heading section end -->
-
-    <!-- nav section start -->
-
-    <section class=" pt-lg-4 pt-2 pb-0 d_category d_offernav">
+    <!-- Our Restaurants to explore -->
+    <section class="VK_sec_padd pt-0">
         <div class="d_container">
-            <div class="d_right">
-                <div class="d_searchlist">
-                    <div class="d-flex flex-wrap justify-content-lg-start justify-content-center align-items-center">
-                        <div class="d_search ms-0 border-0 p-0">
-                            <div class="d_drop">
-                                <div class="dropdown">
-                                    <a class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                        aria-expanded="false">
-                                        Sort by
-                                    </a>
-                                    <div class="dropdown-menu py-0">
-                                        <h6 class="mb-0">Sort by</h6>
-                                        <hr>
-                                        <div class="d_list">
-                                            <div class="radio-wrapper">
-                                                <input type="radio" id="sort1" name="sort" value="relevance"
-                                                    class="radio-input" checked>
-                                                <label for="sort1" class="radio-label">Relevance (default)</label>
-                                            </div>
-                                            <div class="radio-wrapper">
-                                                <input type="radio" id="sort2" name="sort" value="price-low-high"
-                                                    class="radio-input">
-                                                <label for="sort2" class="radio-label">Price (low to high)</label>
-                                            </div>
-                                            <div class="radio-wrapper">
-                                                <input type="radio" id="sort3" name="sort" value="price-high-low"
-                                                    class="radio-input">
-                                                <label for="sort3" class="radio-label">Price (high to low)</label>
-                                            </div>
-                                            <div class="radio-wrapper">
-                                                <input type="radio" id="sort4" name="sort" value="rating"
-                                                    class="radio-input">
-                                                <label for="sort4" class="radio-label">Rating 3+</label>
-                                            </div>
-                                            <div class="radio-wrapper">
-                                                <input type="radio" id="sort5" name="sort" value="discount"
-                                                    class="radio-input">
-                                                <label for="sort5" class="radio-label">Discount (high to
-                                                    low)</label>
-                                            </div>
+            <div class="row mt-4">
+                <div class="col ps-xl-5">
+                    <div class="d-flex flex-wrap gap-2">
+                        <div class="dropdown">
+                            <button
+                                class="VK_resturent_drop dropdown-toggle px-2 bg-transparent VK_black_border VK_round"
+                                type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Sort by
+                                <span class="d-inline ps-2">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </span>
+                            </button>
+                            <ul class="dropdown-menu p-0 pb-2" aria-labelledby="dropdownMenuButton1">
+                                <li class="p-2 VK_border_bottom">
+                                    SortBy
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="radio-container">
+                                        <div class="radio-wrapper m-0">
+                                            <label class="radio-button">
+                                                <input id="option1" name="radio-group" type="radio">
+                                                <span class="radio-checkmark"></span>
+                                                <span class="radio-label text-black fw-normal">Relevance
+                                                    (default)</span>
+                                            </label>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="radio-container">
+                                        <div class="radio-wrapper m-0">
+                                            <label class="radio-button">
+                                                <input id="option1" name="radio-group" type="radio">
+                                                <span class="radio-checkmark"></span>
+                                                <span class="radio-label text-black fw-normal">Price (low to
+                                                    high)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="radio-container">
+                                        <div class="radio-wrapper m-0">
+                                            <label class="radio-button">
+                                                <input id="option1" name="radio-group" type="radio">
+                                                <span class="radio-checkmark"></span>
+                                                <span class="radio-label text-black fw-normal">Price (high to
+                                                    low)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="radio-container">
+                                        <div class="radio-wrapper m-0">
+                                            <label class="radio-button">
+                                                <input id="option1" name="radio-group" type="radio">
+                                                <span class="radio-checkmark"></span>
+                                                <span class="radio-label text-black fw-normal">Rating 3+</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="dropdown-item">
+                                    <div class="radio-container">
+                                        <div class="radio-wrapper m-0">
+                                            <label class="radio-button">
+                                                <input id="option1" name="radio-group" type="radio">
+                                                <span class="radio-checkmark"></span>
+                                                <span class="radio-label text-black fw-normal">Discount (high to
+                                                    low)</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
                         </div>
-                        <div class="d_search">
-                            <div class="d_text">Pure Veg</div>
-                        </div>
-                        <div class="d_search">
-                            <div class="d_text">Rs. 300 - Rs. 600</div>
-                        </div>
-                        <div class="d_search">
-                            <div class="d_text">Offers</div>
-                        </div>
-                        <div class="d_search">
-                            <div class="d_text">Rating 3+</div>
-                        </div>
-                        <div class="d_search">
-                            <div class="d_text">Fast Delivery</div>
+                        <div class="d-flex flex-wrap gap-2 VK_filters_buttons" id="VK_food_filt_btn">
+                            <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                id="VK_active_pure_veg" onclick="VK_clear_filter_restro(0)">
+                                Pure Veg
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                id="VK_active_price_range" onclick="VK_clear_filter_restro(1)">
+                                Rs. 300 - Rs. 600
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                id="VK_active_offers" onclick="VK_clear_filter_restro(2)">
+                                Offers
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                id="VK_active_rating" onclick="VK_clear_filter_restro(3)">
+                                Rating 3+ <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
+                                id="VK_active_fast_delivery" onclick="VK_clear_filter_restro(4)">
+                                Fast Delivery <i class="fa-solid fa-xmark"></i>
+                            </button>
+                            <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_pure_veg"
+                                onclick="VK_filter_restro(0)">
+                                Pure Veg
+                            </button>
+                            <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_price_range"
+                                onclick="VK_filter_restro(1)">
+                                Rs. 300 - Rs. 600
+                            </button>
+                            <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_offers"
+                                onclick="VK_filter_restro(2)">
+                                Offers
+                            </button>
+                            <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_rating"
+                                onclick="VK_filter_restro(3)">
+                                Rating 3+
+                            </button>
+                            <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_fast_delivery"
+                                onclick="VK_filter_restro(4)">
+                                Fast Delivery
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="row mt-md-5" id="VK_our_resturent">
             </div>
         </div>
     </section>
 
 
-    <!-- nav section end -->
-
-    <!-- product section start -->
-
-    <section class="d_p-30 d_grocerylist d_discount d_offer position-relative">
-        <div class="d_container">
-            <div class="row g-lg-5 g-3">
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer1.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Items At $60</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Burger King</div>
-                            <div class="d_loc">Burger, Fast Food, Dessert</div>
-                            <div class="d_loc">Vesu, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer2.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">50% OFF UPTO $20</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">McDonald’s</div>
-                            <div class="d_loc">Burgers, Beverages, Cafe, Mota</div>
-                            <div class="d_loc">Varachaa, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer3.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Items At $60</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Burger House</div>
-                            <div class="d_loc">Burgers, Pizzas, fast food</div>
-                            <div class="d_loc">Aaimata Road, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer4.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Items At $10</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Veggie House</div>
-                            <div class="d_loc">Burger, Fast Food, Dessert</div>
-                            <div class="d_loc">Vesu, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer5.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Get 30% OFF</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Load Petrick</div>
-                            <div class="d_loc">Burgers, Pizzas, fast food</div>
-                            <div class="d_loc">Yogichowk, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer2.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">50% OFF UPTO $20</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">McDonald’s</div>
-                            <div class="d_loc">Burgers, Beverages, Cafe, Mota</div>
-                            <div class="d_loc">Varachaa, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer3.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Items At $60</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Burger House</div>
-                            <div class="d_loc">Burgers, Pizzas, fast food</div>
-                            <div class="d_loc">Aaimata Road, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer4.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Items At $10</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Veggie House</div>
-                            <div class="d_loc">Burger, Fast Food, Dessert</div>
-                            <div class="d_loc">Vesu, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer5.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">Get 30% OFF</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">Load Petrick</div>
-                            <div class="d_loc">Burgers, Pizzas, fast food</div>
-                            <div class="d_loc">Yogichowk, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                        <div class="d_img">
-                            <img src="/darshan_img/offer2.png" alt="${item.name}">
-                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                <i class="fa-regular fa-heart"></i>
-                            </div>
-                        </div>
-                        <div class="d_discountvalue">
-                            <span class="mb-0">50% OFF UPTO $20</span>
-                        </div>
-                        <div class="d_content text-start">
-                            <div class="d_title">McDonald’s</div>
-                            <div class="d_loc">Burgers, Beverages, Cafe, Mota</div>
-                            <div class="d_loc">Varachaa, Surat</div>
-                            <div class="d-flex align-self-center">
-                                <div class="d_star me-3">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                    <img src="/darshan_img/Star.png" alt="">
-                                </div>
-                                <div class="d_review">5 Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Product section end -->
-
-
-      <!-- footer -->
-      <footer></footer>
+    <!-- footer -->
+    <footer></footer>
 
     <!-- Jquery js file -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -430,7 +200,7 @@
         crossorigin="anonymous"></script>
 
     <!-- custom js file -->
-    <script src="/js/darshan.js"></script>
+    <script src="/js/vivek.js"></script>
 
     <!-- Header & Footer script -->
     <script>
@@ -444,6 +214,14 @@
             .then(data => {
                 document.querySelector('footer').innerHTML = data;
             });
+    </script>
+
+    <script>
+        document.querySelectorAll('.dropdown-item').forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
     </script>
 
 </body>

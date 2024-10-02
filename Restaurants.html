@@ -39,7 +39,6 @@
         <!-- header -->
         <div class="nav-bar"></div>
 
-
         <!--  -->
         <section class="mt-2">
             <div class="d_container p-0">
@@ -231,22 +230,23 @@
                                     </p>
                                 </div>
                             </div>
-                            <div
-                                class="d-flex VK_menubar_color py-3 px-3 align-items-center justify-content-between text-white rounded-3 d-none" id="VK_add_item_menu">
+                            <div class="d-flex VK_menubar_color py-3 px-3 align-items-center justify-content-between text-white rounded-3 d-none"
+                                id="VK_add_item_menu">
                                 <div class="d-flex align-items-center gap-3">
                                     <div>
                                         <img src="/images/vivek/tik.png" height="25px" alt="">
                                     </div>
                                     <div>
                                         <p class="m-0">
-                                            1 item added
+                                            <span id="VK_item_cnt"></span> item added
                                         </p>
                                     </div>
                                 </div>
                                 <div>
-                                    <button class="bg-transparent VK_white_border rounded-pill px-3 py-1 text-white">
+                                    <a href="/foodcart.html"
+                                        class="bg-transparent VK_white_border rounded-pill px-3 py-1 text-white text-decoration-none d-inline-block">
                                         View cart
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -255,8 +255,6 @@
             </div>
 
         </section>
-
-
 
         <!-- footer -->
         <footer></footer>
@@ -297,7 +295,8 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$10</span>
-                                        <input id="option1" name="fries" type="radio">
+                                        <input id="fries" value="Mexican Cheese Fries" name="fries" type="radio"
+                                            checked>
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -311,7 +310,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="fries" type="radio">
+                                        <input id="fries" name="fries" value="Extra Cheese Fries" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -325,7 +324,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="fries" type="radio">
+                                        <input id="fries" name="fries" value="Fries(Large)" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -346,7 +345,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$10</span>
-                                        <input id="option1" name="drink" type="radio">
+                                        <input id="colddrink" name="drink" value="Sprite" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -360,7 +359,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="drink" type="radio">
+                                        <input id="colddrink" name="drink" value="Coca cola" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -374,7 +373,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="drink" type="radio">
+                                        <input id="colddrink" name="drink" value="Green Apple Lemon Fizz" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -388,7 +387,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="drink" type="radio">
+                                        <input id="colddrink" name="drink" value="Hot Chocolate" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -402,7 +401,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="drink" type="radio">
+                                        <input id="colddrink" name="drink" value="Latte Coffee" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -416,7 +415,7 @@
                                 <div class="radio-wrapper m-0">
                                     <label class="radio-button align-items-center">
                                         <span class="radio-label text-black fw-500 text-black pe-3">+$12</span>
-                                        <input id="option1" name="drink" type="radio">
+                                        <input id="colddrink" name="drink" value="Fanta" type="radio">
                                         <span class="radio-checkmark"></span>
                                     </label>
                                 </div>
@@ -427,18 +426,18 @@
                         <div class="d-flex gap-3">
                             <div
                                 class="d-flex VK_black_border VK_round_lg bg-transparent VK_inter text-black align-items-center w-100 justify-content-center py-2">
-                                <button class="bg-transparent border-0 font_14">
+                                <button class="bg-transparent border-0 font_14" onclick="VK_restro_decre()">
                                     <i class="fa-solid fa-minus"></i>
                                 </button>
                                 <span class="font_18 fw-bold px-2">
                                     1
                                 </span>
-                                <button class="bg-transparent border-0 font_14">
+                                <button class="bg-transparent border-0 font_14" onclick="VK_restro_incre()">
                                     <i class="fa-solid fa-plus"></i>
                                 </button>
                             </div>
-                            <div class="VK_intertext-center w-100">
-                                <button class="VK_add_to_cart w-100 text-center text-white">
+                            <div class="VK_inter text-center w-100">
+                                <button class="VK_add_to_cart w-100 text-center text-white" onclick="VK_addToCart()">
                                     Add Item to cart
                                 </button>
                             </div>
@@ -447,6 +446,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
 
