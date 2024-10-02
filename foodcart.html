@@ -37,14 +37,14 @@
 
     <!-- empty cart section start -->
 
-    <div id="emptycart" class="d_emptycart d-flex justify-content-center align-items-center d-none">
+    <div id="emptyCartMessage" class="d_emptycart d-flex justify-content-center align-items-center">
         <div class="d_emptyimg text-center">
             <div class="d_img mb-3">
                 <img src="/darshan_img/cartempty.png" alt="">
             </div>
             <p>Your Cart is empty!</p>
             <div class="d_cta">
-                <a href="" class="text-center ">Back Home</a>
+                <a href="/groceryhome.html" class="text-center" onclick="gotoback()">Back Home</a>
             </div>
         </div>
     </div>
@@ -53,431 +53,385 @@
 
     <!-- cart heading section start -->
 
-    <div id="cartlist" class="d_p-30">
-        <section class="d_p-30 d-none">
-            <div class="d_container">
-                <div class="row d_carthead align-items-center">
-                    <div class="col-12">
-                        <div class="d-flex align-items-center d_checked">
-                            <div class="d_img">
-                                <img src="/darshan_img/check1.png" alt="">
+    <div id="d_cartlist">
+        <div id="" class="d_p-30 ">
+            <section class="d_p-30 " id="">
+                <div class="d_container">
+                    <div class="row d_carthead align-items-center">
+                        <div class="col-12">
+                            <div class="d-flex align-items-center d_checked">
+                                <div class="d_img">
+                                    <img src="/darshan_img/check1.png" alt="">
+                                </div>
+                                <p class="mb-0"><span id="itemCount">2</span> Items selected</p>
                             </div>
-                            <p class="mb-0">2 Items selected</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- cart heading section start -->
+            <!-- cart heading section start -->
 
-        <!-- cart item section start -->
+            <!-- cart item section start -->
 
-        <section class="">
-            <div class="d_container">
-                <div class="row g-3 d_cart ">
-                    <!-- Cart Section start -->
-                    <div class="col-12 col-lg-6" id="cartSection">
-                        <div class="d_box mb-4">
+            <section class="">
+                <div class="d_container">
+                    <div class="row g-3 d_cart ">
+                        <div class="col-12 col-lg-6" id="cartContent">
+
+                        </div>
+
+                        <!-- Delivery Address section start -->
+                        <div class="col-12 col-lg-6 d_address d_deliveryadd d-none" id="deliveryAddressSection">
+                            <div class="row mb-3">
+                                <div class="col-12 d_title">
+                                    <div class="d_head">Delivery address</div>
+                                </div>
+                            </div>
                             <div class="row">
-                                <div class="col-sm-4">
-                                    <div class="d_img">
-                                        <img src="/darshan_img/item10.png" alt="">
+                                <div class="col-12 col-lg-12">
+                                    <div class="d_boxlist">
+                                        <div class="d-flex justify-content-between ">
+                                            <div>
+                                                <div class="d_icontext ">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="div me-2"><img src="/darshan_img/home.png" alt="">
+                                                        </div>
+                                                        <p class="mb-0">Home</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d_adddel">510, Shelley Street, Sydney, NSW 2000, dgdf,
+                                                    ruhwbd, Perth 650145, Australia</div>
+                                            </div>
+                                            <div class="d_dropdown">
+                                                <a><img src="/darshan_img/editpen.png" alt="" class="d_dropbtn"
+                                                        onclick="toggleDropdown(0)"></a>
+                                                <div id="myDropdown_0" class="d_dropdown-content">
+                                                    <a href="#">Edit</a>
+                                                    <a href="#" class="border-0">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d_cta mt-4">
+                                            <a href="" class="text-decoration-none">Delivery here</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-8">
-                                    <div class="d_text h-100 d-flex flex-column">
-                                        <div class="d_name">Peri Peri Cheese Burger</div>
-                                        <div class="d_price">Price : $80</div>
-                                        <div class="d_flavor">Flavor : Spicy</div>
-                                        <div class="d-flex justify-content-between align-items-center mt-auto">
-                                            <a href="" class="d_remove">Remove</a>
-                                            <div class="d_increbtn d-flex align-items-center justify-content-between">
-                                                <i class="fa-solid fa-minus ps-3"></i>
-                                                <div class="d_itemnum">2</div>
-                                                <i class="fa-solid fa-plus pe-3"></i>
+                                <div class="col-12 col-lg-12">
+                                    <div class="d_boxlist">
+                                        <div class="d-flex justify-content-between ">
+                                            <div>
+                                                <div class="d_icontext ">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="div me-2"><img src="/darshan_img/work.png" alt="">
+                                                        </div>
+                                                        <p class="mb-0">Work</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d_adddel">54, Shelley Street, Sydney, NSW 2000, dgdf,
+                                                    ruhwbd, Perth 650145, Australia</div>
                                             </div>
+                                            <div class="d_dropdown">
+                                                <a><img src="/darshan_img/editpen.png" alt="" class="d_dropbtn"
+                                                        onclick="toggleDropdown(0)"></a>
+                                                <div id="myDropdown_0" class="d_dropdown-content">
+                                                    <a href="#">Edit</a>
+                                                    <a href="#" class="border-0">Delete</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="d_cta mt-4">
+                                            <a href="" class="text-decoration-none">Delivery here</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="d_box">
-                            <div class="row
-                        ">
-                                <div class="col-sm-4">
-                                    <div class="d_img">
-                                        <img src="/darshan_img/item11.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="col-sm-8">
-                                    <div class="d_text h-100 d-flex flex-column">
-                                        <div class="d_name">Paneer Tanduri Pizza</div>
-                                        <div class="d_price">Price : $100</div>
-                                        <div class="d_flavor">Flavor : Hot & Spicy</div>
-                                        <div class="d-flex justify-content-between align-items-center mt-auto">
-                                            <a href="" class="d_remove">Remove</a>
-                                            <div class="d_increbtn d-flex align-items-center justify-content-between">
-                                                <i class="fa-solid fa-minus ps-3"></i>
-                                                <div class="d_itemnum">2</div>
-                                                <i class="fa-solid fa-plus pe-3"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="d_deliveryaddbtn mt-3">
+                                <a class="d-block text-center text-decoration-none">
+                                    <i class="fa-solid fa-plus me-2"></i> Add New Address
+                                </a>
                             </div>
                         </div>
-                    </div>
-                    <!-- Cart Section start -->
+                        <!-- Delivery Address section end -->
 
-                    <!-- Delivery Address section start -->
-                    <div class="col-12 col-lg-6 d_address d_deliveryadd d-none" id="deliveryAddressSection">
-                        <div class="row mb-3">
-                            <div class="col-12 d_title">
-                                <div class="d_head">Delivery address</div>
+                        <!-- Add Address section Start -->
+
+                        <div class="col-12 col-lg-6 d-none" id="addAddressSection">
+                            <div class="row mb-3">
+                                <div class="col-12 d_title">
+                                    <div class="d_head">Add new address</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 col-lg-12">
+                                    <div class="d_map">
+                                        <iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28034.970064222234!2d77.07966046610873!3d28.55861238927609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b85fc2a2d89%3A0xbef376182c43ed9d!2sIndira%20Gandhi%20International%20Airport!5e0!3m2!1sen!2sin!4v1727670545379!5m2!1sen!2sin"
+                                            width="100%" height="500" style="border:0;" allowfullscreen=""
+                                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                    </div>
+                                    <div class="d_addaddress">
+                                        <div class="d_head">Delivery your order to</div>
+                                        <input type="text" id="addressInput">
+                                        <div class="d_cta">
+                                            <a href="" class="d-block text-center text-decoration-none">Use this
+                                                location</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-12">
-                                <div class="d_boxlist">
-                                    <div class="d-flex justify-content-between ">
-                                        <div>
-                                            <div class="d_icontext ">
+
+                        <!-- Add Address section end -->
+
+                        <!-- add address2 section start -->
+
+                        <div class="col-12 col-lg-6 d-none" id="addAddress2Section">
+                            <div class="row mb-3">
+                                <div class="col-12 d_title">
+                                    <div class="d_head">Add new address</div>
+                                </div>
+                            </div>
+                            <div class="row d_addfuldel">
+                                <div class="col-12 col-lg-12">
+                                    <div class="d_box ">
+                                        <div class="d_head">Area details</div>
+                                        <div class="row g-3 mb-3">
+                                            <div class="col-12">
+                                                <div class="d_change d-flex align-items-center justify-content-between">
+                                                    <input type="text" class="border-0 p-0 border-0">
+                                                    <a href="" class="text-decoration-none">CHANGE</a>
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" placeholder="Flat/ House No/ Building Name">
+                                            </div>
+                                            <div class="col-12">
+                                                <input type="text" placeholder="Area">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" placeholder="Sector/ Locality">
+                                            </div>
+                                            <div class="col-6">
+                                                <input type="text" placeholder="Pincode">
+                                            </div>
+                                        </div>
+                                        <div class="d_head">Address Type</div>
+                                        <div class="d-flex align-items-center  justify-content-sm-start flex-wrap">
+                                            <div class="d_iconfrom">
                                                 <div class="d-flex align-items-center">
                                                     <div class="div me-2"><img src="/darshan_img/home.png" alt="">
                                                     </div>
                                                     <p class="mb-0">Home</p>
                                                 </div>
                                             </div>
-                                            <div class="d_adddel">510, Shelley Street, Sydney, NSW 2000, dgdf,
-                                                ruhwbd, Perth 650145, Australia</div>
-                                        </div>
-                                        <div class="d_dropdown">
-                                            <a><img src="/darshan_img/editpen.png" alt="" class="d_dropbtn"
-                                                    onclick="toggleDropdown(0)"></a>
-                                            <div id="myDropdown_0" class="d_dropdown-content">
-                                                <a href="#">Edit</a>
-                                                <a href="#" class="border-0">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d_cta mt-4">
-                                        <a href="" class="text-decoration-none">Delivery here</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12 col-lg-12">
-                                <div class="d_boxlist">
-                                    <div class="d-flex justify-content-between ">
-                                        <div>
-                                            <div class="d_icontext ">
+                                            <div class="d_iconfrom d_bgtran">
                                                 <div class="d-flex align-items-center">
                                                     <div class="div me-2"><img src="/darshan_img/work.png" alt="">
                                                     </div>
                                                     <p class="mb-0">Work</p>
                                                 </div>
                                             </div>
-                                            <div class="d_adddel">54, Shelley Street, Sydney, NSW 2000, dgdf,
-                                                ruhwbd, Perth 650145, Australia</div>
-                                        </div>
-                                        <div class="d_dropdown">
-                                            <a><img src="/darshan_img/editpen.png" alt="" class="d_dropbtn"
-                                                    onclick="toggleDropdown(0)"></a>
-                                            <div id="myDropdown_0" class="d_dropdown-content">
-                                                <a href="#">Edit</a>
-                                                <a href="#" class="border-0">Delete</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d_cta mt-4">
-                                        <a href="" class="text-decoration-none">Delivery here</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d_deliveryaddbtn mt-3">
-                            <a class="d-block text-center text-decoration-none">
-                                <i class="fa-solid fa-plus me-2"></i> Add New Address
-                            </a>
-                        </div>
-                    </div>
-                    <!-- Delivery Address section end -->
-
-                    <!-- Add Address section Start -->
-
-                    <div class="col-12 col-lg-6 d-none" id="addAddressSection">
-                        <div class="row mb-3">
-                            <div class="col-12 d_title">
-                                <div class="d_head">Add new address</div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12 col-lg-12">
-                                <div class="d_map">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28034.970064222234!2d77.07966046610873!3d28.55861238927609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1b85fc2a2d89%3A0xbef376182c43ed9d!2sIndira%20Gandhi%20International%20Airport!5e0!3m2!1sen!2sin!4v1727670545379!5m2!1sen!2sin"
-                                        width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                                <div class="d_addaddress">
-                                    <div class="d_head">Delivery your order to</div>
-                                    <input type="text" id="addressInput">
-                                    <div class="d_cta">
-                                        <a href="" class="d-block text-center text-decoration-none">Use this
-                                            location</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Add Address section end -->
-
-                    <!-- add address2 section start -->
-
-                    <div class="col-12 col-lg-6 d-none" id="addAddress2Section">
-                        <div class="row mb-3">
-                            <div class="col-12 d_title">
-                                <div class="d_head">Add new address</div>
-                            </div>
-                        </div>
-                        <div class="row d_addfuldel">
-                            <div class="col-12 col-lg-12">
-                                <div class="d_box ">
-                                    <div class="d_head">Area details</div>
-                                    <div class="row g-3 mb-3">
-                                        <div class="col-12">
-                                            <div class="d_change d-flex align-items-center justify-content-between">
-                                                <input type="text" class="border-0 p-0 border-0">
-                                                <a href="" class="text-decoration-none">CHANGE</a>
-                                            </div>
-                                        </div>
-                                        <div class="col-12">
-                                            <input type="text" placeholder="Flat/ House No/ Building Name">
-                                        </div>
-                                        <div class="col-12">
-                                            <input type="text" placeholder="Area">
-                                        </div>
-                                        <div class="col-6">
-                                            <input type="text" placeholder="Sector/ Locality">
-                                        </div>
-                                        <div class="col-6">
-                                            <input type="text" placeholder="Pincode">
-                                        </div>
-                                    </div>
-                                    <div class="d_head">Address Type</div>
-                                    <div class="d-flex align-items-center  justify-content-sm-start flex-wrap">
-                                        <div class="d_iconfrom">
-                                            <div class="d-flex align-items-center">
-                                                <div class="div me-2"><img src="/darshan_img/home.png" alt="">
+                                            <div class="d_iconfrom d_bgtran">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="div me-2"><img src="/darshan_img/hotel.png" alt="">
+                                                    </div>
+                                                    <p class="mb-0">Hotel</p>
                                                 </div>
-                                                <p class="mb-0">Home</p>
                                             </div>
-                                        </div>
-                                        <div class="d_iconfrom d_bgtran">
-                                            <div class="d-flex align-items-center">
-                                                <div class="div me-2"><img src="/darshan_img/work.png" alt="">
+                                            <div class="d_iconfrom d_bgtran">
+                                                <div class="d-flex justify-content-center align-items-center">
+                                                    <p class="mb-0">Other</p>
                                                 </div>
-                                                <p class="mb-0">Work</p>
                                             </div>
                                         </div>
-                                        <div class="d_iconfrom d_bgtran">
-                                            <div class="d-flex align-items-center">
-                                                <div class="div me-2"><img src="/darshan_img/hotel.png" alt="">
-                                                </div>
-                                                <p class="mb-0">Hotel</p>
-                                            </div>
+                                        <div class="d_cta mt-sm-5 mt-3">
+                                            <a href="" class="d-block text-center text-decoration-none">Save address &
+                                                Procced</a>
                                         </div>
-                                        <div class="d_iconfrom d_bgtran">
-                                            <div class="d-flex justify-content-center align-items-center">
-                                                <p class="mb-0">Other</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="d_cta mt-sm-5 mt-3">
-                                        <a href="" class="d-block text-center text-decoration-none">Save address &
-                                            Procced</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- add address2 section end -->
+                        <!-- add address2 section end -->
 
-                    <!-- Payment Method section start -->
+                        <!-- Payment Method section start -->
 
-                    <div class="col-12 col-lg-6 d-none" id="paymentMethodSection">
-                        <div class="row mb-3">
-                            <div class="col-12 d_title">
-                                <div class="d_head">Payment Method</div>
+                        <div class="col-12 col-lg-6 d-none" id="paymentMethodSection">
+                            <div class="row mb-3">
+                                <div class="col-12 d_title">
+                                    <div class="d_head">Payment Method</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row g-3 d_pay">
-                            <div class="col-12 col-lg-12">
-                                <form>
-                                    <div class="d_formgroup">
-                                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="row g-3 d_pay">
+                                <div class="col-12 col-lg-12">
+                                    <form>
+                                        <div class="d_formgroup">
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="d-flex align-items-center">
+                                                    <label class="d_custom-radio me-3">
+                                                        <input type="radio" name="paymentMethod" value="card" checked>
+                                                        <span class="d_radio-checkmark"></span>
+                                                    </label>
+                                                    <div class="d_text p-0">Add Credit or debit card</div>
+                                                </div>
+                                                <div class="d_img">
+                                                    <img src="/darshan_img/credit.png" alt="Credit Card">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="cardForm" class="d_cardform">
+                                            <div class="row g-2">
+                                                <div class="col-12">
+                                                    <input type="text" placeholder="Card number">
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="text" placeholder="Expiration date (MM/YY)">
+                                                </div>
+                                                <div class="col-6">
+                                                    <input type="text" placeholder="CVV">
+                                                </div>
+                                                <div class="col-12">
+                                                    <input type="text" placeholder="Name on card">
+                                                </div>
+                                            </div>
+                                            <div class="d_cta mt-4"><a href="#"
+                                                    class="text-decoration-none d-block text-center"
+                                                    data-bs-toggle="modal" data-bs-target="#paymentmodal">Place Order &
+                                                    Pay</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    <form>
+                                        <div class="d_formgroup">
                                             <div class="d-flex align-items-center">
                                                 <label class="d_custom-radio me-3">
-                                                    <input type="radio" name="paymentMethod" value="card" checked>
+                                                    <input type="radio" name="paymentMethod" value="netbanking">
                                                     <span class="d_radio-checkmark"></span>
                                                 </label>
-                                                <div class="d_text p-0">Add Credit or debit card</div>
-                                            </div>
-                                            <div class="d_img">
-                                                <img src="/darshan_img/credit.png" alt="Credit Card">
+                                                <div class="d_text p-0">Netbanking</div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div id="cardForm" class="d_cardform">
-                                        <div class="row g-2">
-                                            <div class="col-12">
-                                                <input type="text" placeholder="Card number">
-                                            </div>
-                                            <div class="col-6">
-                                                <input type="text" placeholder="Expiration date (MM/YY)">
-                                            </div>
-                                            <div class="col-6">
-                                                <input type="text" placeholder="CVV">
-                                            </div>
-                                            <div class="col-12">
-                                                <input type="text" placeholder="Name on card">
-                                            </div>
-                                        </div>
-                                        <div class="d_cta mt-4"><a href="#"
-                                                class="text-decoration-none d-block text-center" data-bs-toggle="modal" data-bs-target="#paymentmodal">Place Order & Pay</a>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-12 col-lg-12">
-                                <form>
-                                    <div class="d_formgroup">
-                                        <div class="d-flex align-items-center">
-                                            <label class="d_custom-radio me-3">
-                                                <input type="radio" name="paymentMethod" value="netbanking">
-                                                <span class="d_radio-checkmark"></span>
-                                            </label>
-                                            <div class="d_text p-0">Netbanking</div>
-                                        </div>
-                                    </div>
-
-                                    <div id="bankOptions" class="d_bankoption">
-                                        <div class="d_bankdel">
-                                            <div class="d_bank d-flex align-items-center justify-content-between">
-                                                <div class="d-flex align-items-center">
-                                                    <div
-                                                        class="d_bgbox d-flex align-items-center justify-content-center">
-                                                        <div class="d_img">
-                                                            <img src="/darshan_img/bank1.png" alt="HDFC">
+                                        <div id="bankOptions" class="d_bankoption">
+                                            <div class="d_bankdel">
+                                                <div class="d_bank d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d_bgbox d-flex align-items-center justify-content-center">
+                                                            <div class="d_img">
+                                                                <img src="/darshan_img/bank1.png" alt="HDFC">
+                                                            </div>
                                                         </div>
+                                                        <div class="d_bankname ms-3">HDFC</div>
                                                     </div>
-                                                    <div class="d_bankname ms-3">HDFC</div>
+                                                    <i class="fa-solid fa-angle-right"></i>
                                                 </div>
-                                                <i class="fa-solid fa-angle-right"></i>
                                             </div>
-                                        </div>
-                                        <div class="d_bankdel">
-                                            <div class="d_bank d-flex align-items-center justify-content-between">
-                                                <div class="d-flex align-items-center">
-                                                    <div
-                                                        class="d_bgbox d-flex align-items-center justify-content-center">
-                                                        <div class="d_img">
-                                                            <img src="/darshan_img/bank2.png" alt="ICICI">
+                                            <div class="d_bankdel">
+                                                <div class="d_bank d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d_bgbox d-flex align-items-center justify-content-center">
+                                                            <div class="d_img">
+                                                                <img src="/darshan_img/bank2.png" alt="ICICI">
+                                                            </div>
                                                         </div>
+                                                        <div class="d_bankname ms-3">ICICI</div>
                                                     </div>
-                                                    <div class="d_bankname ms-3">ICICI</div>
+                                                    <i class="fa-solid fa-angle-right"></i>
                                                 </div>
-                                                <i class="fa-solid fa-angle-right"></i>
                                             </div>
-                                        </div>
-                                        <div class="d_bankdel">
-                                            <div class="d_bank d-flex align-items-center justify-content-between">
-                                                <div class="d-flex align-items-center">
-                                                    <div
-                                                        class="d_bgbox d-flex align-items-center justify-content-center">
-                                                        <div class="d_img">
-                                                            <img src="/darshan_img/anotherbank.png" alt="Add Bank">
+                                            <div class="d_bankdel">
+                                                <div class="d_bank d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d_bgbox d-flex align-items-center justify-content-center">
+                                                            <div class="d_img">
+                                                                <img src="/darshan_img/anotherbank.png" alt="Add Bank">
+                                                            </div>
                                                         </div>
+                                                        <div class="d_bankname ms-3">Add Bank</div>
                                                     </div>
-                                                    <div class="d_bankname ms-3">Add Bank</div>
+                                                    <i class="fa-solid fa-angle-right"></i>
                                                 </div>
-                                                <i class="fa-solid fa-angle-right"></i>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
-                            </div>
-                            <div class="col-12 col-lg-12">
-                                <form>
-                                    <div class="d_formgroup">
-                                        <div class="d-flex align-items-center">
-                                            <label class="d_custom-radio me-3">
-                                                <input type="radio" name="paymentMethod" value="cash">
-                                                <span class="d_radio-checkmark"></span>
-                                            </label>
-                                            <div class="d_text p-0">Pay On Cash Delivery</div>
+                                    </form>
+                                </div>
+                                <div class="col-12 col-lg-12">
+                                    <form>
+                                        <div class="d_formgroup">
+                                            <div class="d-flex align-items-center">
+                                                <label class="d_custom-radio me-3">
+                                                    <input type="radio" name="paymentMethod" value="cash">
+                                                    <span class="d_radio-checkmark"></span>
+                                                </label>
+                                                <div class="d_text p-0">Pay On Cash Delivery</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Payment Method section end -->
+                        <!-- Payment Method section end -->
 
-                    <div class="col-12 col-lg-6" id="billDetailsSection">
-                        <div class="d_billlist">
-                            <div class="d_delivery d-flex align-items-center">
-                                <div class="d_img">
-                                    <img src="/darshan_img/time.png" alt="">
+                        <div class="col-12 col-lg-6" id="billDetailsSection">
+                            <div class="d_billlist">
+                                <div class="d_delivery d-flex align-items-center">
+                                    <div class="d_img">
+                                        <img src="/darshan_img/time.png" alt="">
+                                    </div>
+                                    <p class="mb-0">Delivery In 15 to 20 Minutes</p>
                                 </div>
-                                <p class="mb-0">Delivery In 15 to 20 Minutes</p>
-                            </div>
-                            <div class="d_delivery d-flex align-items-center d_cur" data-bs-toggle="modal"
-                                data-bs-target="#couponmodal">
-                                <div class="d_img">
-                                    <img src="/darshan_img/coupon.png" alt="">
-                                </div>
-                                <div>
-                                    <p class="mb-0">Apply Coupon</p>
-                                    <div class="d_coupontext">3 Coupon Available</div>
-                                </div>
-                            </div>
-                            <div class="d_billdel">
-                                <h5>Bill Details (2 Item)</h5>
-                                <div class="d-flex justify-content-between aling-items-center mb-2">
-                                    <div class="d_billtext">Sub Total</div>
-                                    <div class="d_fee">$180</div>
-                                </div>
-                                <div class="d-flex justify-content-between aling-items-center mb-2">
-                                    <div class="d_billtext">Delivery Charge</div>
-                                    <div class="d_fee">$10</div>
-                                </div>
-                                <div class="d-flex justify-content-between aling-items-center mb-2">
-                                    <div class="d_billtext">Restaurant Charge</div>
-                                    <div class="d_fee d_free">Free</div>
-                                </div>
-                            </div>
-                            <div class="d_final">
-                                <div class="d-flex justify-content-between aling-items-center mb-2">
-                                    <div class="d_totaltext">Total Amount</div>
-                                    <div class="d-flex align-items-center">
-                                        <div class="d_strikeamt me-3 text-decoration-line-through">$190</div>
-                                        <div class="d_totalamt">$100</div>
+                                <div class="d_delivery d-flex align-items-center d_cur" data-bs-toggle="modal"
+                                    data-bs-target="#couponmodal">
+                                    <div class="d_img">
+                                        <img src="/darshan_img/coupon.png" alt="">
+                                    </div>
+                                    <div>
+                                        <p class="mb-0">Apply Coupon</p>
+                                        <div class="d_coupontext">3 Coupon Available</div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="d_proceedbtn mt-5" id="proceedBtn">
-                                <a href="" class=" text-center text-decoration-none">Proceed</a>
+                                <div class="d_billdel">
+                                    <h5>Bill Details (<span id="billitemCount"></span> Item)</h5>
+                                    <div class="d-flex justify-content-between aling-items-center mb-2">
+                                        <div class="d_billtext">Sub Total</div>
+                                        <div class="d_fee" id="subTotal">$180</div>
+                                    </div>
+                                    <div class="d-flex justify-content-between aling-items-center mb-2">
+                                        <div class="d_billtext">Delivery Charge</div>
+                                        <div class="d_fee">$10</div>
+                                    </div>
+                                    <div class="d-flex justify-content-between aling-items-center mb-2">
+                                        <div class="d_billtext">Restaurant Charge</div>
+                                        <div class="d_fee d_free">Free</div>
+                                    </div>
+                                </div>
+                                <div class="d_final">
+                                    <div class="d-flex justify-content-between aling-items-center mb-2">
+                                        <div class="d_totaltext">Total Amount</div>
+                                        <div class="d-flex align-items-center">
+                                            <div class="d_strikeamt me-3 text-decoration-line-through">$190</div>
+                                            <div class="d_totalamt" id="totalAmount">$100</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="d_proceedbtn mt-5" id="proceedBtn">
+                                    <a href="" class=" text-center text-decoration-none">Proceed</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
 
     <!-- cart item section end -->
@@ -620,6 +574,7 @@
 
     <!-- custom js file -->
     <script src="/js/darshan.js"></script>
+    <!-- <script src="/js/header.js"></script> -->
 
     <!-- Header & Footer script -->
     <script>
@@ -633,7 +588,7 @@
     <script>
         // JavaScript code will be added here
         document.addEventListener('DOMContentLoaded', function () {
-            const cartSection = document.getElementById('cartSection');
+            const cartSection = document.getElementById('cartContent');
             const deliveryAddressSection = document.getElementById('deliveryAddressSection');
             const addAddressSection = document.getElementById('addAddressSection');
             const addAddress2Section = document.getElementById('addAddress2Section');
@@ -643,7 +598,9 @@
 
             // Function to hide all sections
             function hideAllSections() {
-                cartSection.classList.add('d-none');
+                if (cartSection) {
+                    cartSection.classList.add('d-none');
+                }
                 deliveryAddressSection.classList.add('d-none');
                 addAddressSection.classList.add('d-none');
                 addAddress2Section.classList.add('d-none');
@@ -692,34 +649,10 @@
 
             // Initialize the page
             hideAllSections();
-            cartSection.classList.remove('d-none');
-        });
-    </script>
-
-    <script>
-        // Set this variable to 0 to show empty state, or 1 to show order list
-        let orderStatus = 1;
-
-        function toggleOrderDisplay() {
-            const orderListContainer = document.getElementById('cartlist');
-            const emptyStateContainer = document.getElementById('emptycart');
-
-            if (orderStatus === 0) {
-                orderListContainer.classList.add('d-none');
-                emptyStateContainer.classList.remove('d-none');
-            } else {
-                orderListContainer.classList.remove('d-none');
-                emptyStateContainer.classList.add('d-none');
+            if (cartSection) {
+                cartSection.classList.remove('d-none');
             }
-        }
-
-        // Call toggleOrderDisplay when the page loads
-        document.addEventListener('DOMContentLoaded', toggleOrderDisplay);
-
-        // You can also call toggleOrderDisplay() after changing the orderStatus
-        // For example:
-        // orderStatus = 0;
-        // toggleOrderDisplay();
+        });
     </script>
 
     <script>
@@ -794,19 +727,12 @@
         });
     </script>
 
+
     <script>
-        function selectLocation(event) {
-            // For simplicity, we can use a hardcoded address or fetch the address based on latitude and longitude.
-            const addressInput = document.getElementById('addressInput');
-
-            // Example address; replace with actual address from a geocoding API if needed
-            const address = "Indira Gandhi International Airport, New Delhi, India";
-
-            addressInput.value = address; // Set the input value to the selected address
+        function gotoback(){
+            window.location.href = "/groceryhome.html"
         }
     </script>
-
-
 
 
 
