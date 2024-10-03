@@ -8,7 +8,7 @@
                     <a class="nav-link dropdown-toggle VK_nav_drop text-white d-inline-block" href="#"
                         id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span class="d-inline-block px-2">
+                        <span class="d-inline-block px-2" id="VK_address">
                             Location
                         </span>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -513,7 +513,7 @@
                             </button>
                         </div>
                     </div>
-                    <form action="" class="w-100 mt-4">
+                    <form action="" onsubmit="VK_address()" class="w-100 mt-4">
                         <div class="VK_black_border px-2 rounded-3">
                             <div class="d-flex align-items-center ps-2">
                                 <input type="text" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia"
@@ -527,22 +527,22 @@
                         </div>
                         <div class="mt-4">
                             <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                placeholder="Flat/ House No/ Building Name" required>
+                                placeholder="Flat/ House No/ Building Name" required id="address">
                         </div>
                         <div class="mt-4">
                             <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                placeholder="Area" required>
+                                placeholder="Area" required id="area">
                         </div>
                         <div class="mt-4">
                             <div class="d-flex flex-sm-row flex-column w-100 gap-3">
                                 <div class="w-100">
                                     <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                        placeholder="Sector/ Locality" required>
+                                        placeholder="Sector/ Locality" required id="sector">
                                 </div>
                                 <div class="w-100 ">
                                     <input type="number"
                                         class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                        placeholder="Pincode" required>
+                                        placeholder="Pincode" required id="pin">
                                 </div>
                             </div>
                         </div>
@@ -550,38 +550,56 @@
                             <h5 class="VK_inter h5 fw-bold text-black">
                                 Address Type
                             </h5>
-                            <div class="mt-3 d-flex flex-wrap gap-3">
-                                <button type="button"
-                                    class="VK_address_active_btn py-1 px-2 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(0)">
-                                    <img src="/images/vivek/home.png" alt="">
-                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
-                                        Home
-                                    </span>
-                                </button>
-                                <button type="button"
-                                    class="VK_address_btn py-1 px-2 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(1)">
-                                    <img src="/images/vivek/job.png" alt="">
-                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
-                                        Work
-                                    </span>
-                                </button>
-                                <button type="button"
-                                    class="VK_address_btn py-1 px-2 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(2)">
-                                    <img src="/images/vivek/hotel.png" alt="">
-                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
-                                        Hotel
-                                    </span>
-                                </button>
-                                <button type="button"
-                                    class="VK_address_btn py-1 px-3 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(3)">
-                                    <span class="d-inline-block VK_inter fw-bold">
-                                        Other
-                                    </span>
-                                </button>
+                            <div class="VK_address_type mt-3 d-flex flex-wrap gap-3">
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Home" id="home" checked>
+                                    <label for="home" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="/images/vivek/home.png" alt="">
+                                            </div>
+                                            <div class="ps-2 fw-600 text-black VK_inter">
+                                                Home
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Work" id="Work">
+                                    <label for="Work" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="/images/vivek/job.png" alt="">
+                                            </div>
+                                            <div class="ps-2 fw-600 text-black VK_inter">
+                                                Work
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Hotel" id="Hotel">
+                                    <label for="Hotel" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="/images/vivek/hotel.png" alt="">
+                                            </div>
+                                            <div class="ps-2 fw-600 text-black VK_inter">
+                                                Hotel
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Other" id="Other">
+                                    <label for="Other" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div class=" fw-600 text-black VK_inter">
+                                                Other
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-5">

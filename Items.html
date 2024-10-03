@@ -91,20 +91,25 @@
                                             Flavour:
                                         </b>
                                     </p>
-                                    <div>
-                                        <button
-                                            class="VK_item_flaver_active_btn VK_itm_flover fw-500 VK_inter px-3 py-1 my-2"
-                                            onclick="VK_item_flover_btn(0)">
-                                            Spicy
-                                        </button>
-                                        <button class="VK_item_flaver_btn VK_itm_flover fw-500 VK_inter px-3 py-1 my-2"
-                                            onclick="VK_item_flover_btn(1)">
-                                            Hot & Spicy
-                                        </button>
-                                        <button class="VK_item_flaver_btn VK_itm_flover fw-500 VK_inter px-3 py-1 my-2"
-                                            onclick="VK_item_flover_btn(2)">
-                                            Hot & Sweet
-                                        </button>
+                                    <div class="d-flex">
+                                        <div class="button-group">
+                                            <input type="radio" value="Spicy" id="svelt" name="flaver" checked />
+                                            <label for="svelt">
+                                                Spicy
+                                            </label>
+                                        </div>
+                                        <div class="button-group">
+                                            <input type="radio" value="Hot & Spicy" id="react" name="flaver" />
+                                            <label for="react">
+                                                Hot & Spicy
+                                            </label>
+                                        </div>
+                                        <div class="button-group">
+                                            <input type="radio" value="Hot & Sweet" id="vue" name="flaver" />
+                                            <label for="vue">
+                                                Hot & Sweet
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mt-4 pt-2 pe-xxl-5">

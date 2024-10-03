@@ -1,9 +1,10 @@
 <link rel="stylesheet" href="/css/header.css">
 
+
 <div class="VK_header1 pt-3">
     <div class="d_container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-            <div class="container-fluid p-0">
+        <div class="row m-0 justify-content-between">
+            <div class="col-lg-4 col-12 d-flex justify-content-between">
                 <a class="navbar-brand" href="#">
                     <img src="/images/vivek/logo.png" class="VK_header_logo" alt="">
                 </a>
@@ -11,9 +12,133 @@
                     data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item dropdown">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                    aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 id="offcanvasRightLabel VK_inter">
+                            Food & Grocery Store
+                        </h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="accordion accordion-flush border-bottom" id="accordionFlushExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingOne">
+                                    <button class="accordion-button shadow-none collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                        aria-expanded="false" aria-controls="flush-collapseOne">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <span class="d-inline-block px-2" id="VK_address">
+                                            Location
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body py-0">
+                                        <ul class="VK_header_location list-unstyled">
+                                            <li class="py-2 ">
+                                                <button class="border-0 bg-transparent w-100 text-start"
+                                                    data-bs-toggle="modal" data-bs-target="#location"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close">
+                                                    <i class="fa-solid fa-location-crosshairs"></i>
+                                                    <span class="d-inline ps-3">
+                                                        Get current location
+                                                    </span>
+                                                </button>
+                                            </li>
+                                            <li class="py-2">
+                                                <button class="border-0 bg-transparent w-100 text-start"
+                                                    data-bs-toggle="modal" data-bs-target="#address"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span class="d-inline ps-3">
+                                                        Add address
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item" id="VK_profile_off">
+                                <h2 class="accordion-header" id="flush-headingTwo">
+                                    <button class="accordion-button shadow-none collapsed" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                                        <i class="fa-solid fa-user"></i>
+                                        <span class="d-inline-block px-2">
+                                            Profile
+                                        </span>
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body py-0">
+                                        <ul class="VK_header_location list-unstyled">
+                                            <li class="py-2">
+                                                <a href="/profile.html" class="text-decoration-none text-black d-block">
+                                                    My Profile
+                                                </a>
+                                            </li>
+                                            <li class="py-2">
+                                                <a href="/profile.html" class="text-decoration-none text-black d-block">
+                                                    My Orders
+                                                </a>
+                                            </li>
+                                            <li class="py-2">
+                                                <a href="/wishlist.html"
+                                                    class="text-decoration-none text-black d-block">
+                                                    Wishlist
+                                                </a>
+                                            </li>
+                                            <li class="py-2">
+                                                <button class="border-0 bg-transparent w-100 text-start"
+                                                    data-bs-toggle="modal" data-bs-target="#location"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close">
+                                                    Logout
+                                                </button>
+                                            </li>
+                                            <li class="py-2">
+                                                <button class="border-0 bg-transparent w-100 text-start"
+                                                    data-bs-toggle="modal" data-bs-target="#address"
+                                                    data-bs-dismiss="offcanvas" aria-label="Close">
+                                                    <i class="fa-solid fa-plus"></i>
+                                                    <span class="d-inline ps-3">
+                                                        Add address
+                                                    </span>
+                                                </button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-bottom">
+                            <a class="nav-link text-black" href="#">
+                                Get the app
+                            </a>
+                        </div>
+                        <div class="py-2" id="VK_off_btns">
+                            <button class="VK_inter border-0 VK_btn rounded-3 px-4 py-2 text-white"
+                                data-bs-toggle="modal" data-bs-target="#signIn" data-bs-dismiss="offcanvas"
+                                aria-label="Close">
+                                Sign In
+                            </button>
+                            <button class="VK_inter border-0 VK_btn rounded-3 px-4 py-2 text-white ms-2"
+                                data-bs-toggle="modal" data-bs-target="#signUP" data-bs-dismiss="offcanvas"
+                                aria-label="Close">
+                                Sign Up
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-lg-block d-none">
+                <div>
+                    <ul class="d-flex align-items-center list-unstyled justify-content-end">
+                        <li class="">
                             <a class="nav-link dropdown-toggle VK_nav_drop text-white" href="#"
                                 id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
@@ -44,12 +169,12 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="nav-item mx-2">
+                        <li class="mx-2">
                             <a class="nav-link text-white" href="#">
                                 Get the app
                             </a>
                         </li>
-                        <li class="nav-item">
+                        <li class="">
                             <div class="" id="VK_sign_in">
                                 <button class="VK_header_login VK_inter bg-transparent" data-bs-toggle="modal"
                                     data-bs-target="#signIn">
@@ -101,78 +226,8 @@
                         </li>
                     </ul>
                 </div>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
-                    aria-labelledby="offcanvasRightLabel">
-                    <div class="offcanvas-header">
-                        <h5 id="offcanvasRightLabel VK_inter">
-                            Food & Grocery Store
-                        </h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                            aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <div class="accordion accordion-flush border-bottom" id="accordionFlushExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button shadow-none collapsed" type="button"
-                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                        aria-expanded="false" aria-controls="flush-collapseOne">
-                                        <i class="fa-solid fa-location-dot"></i>
-                                        <span class="d-inline-block px-2">
-                                            Location
-                                        </span>
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body py-0">
-                                        <ul class="VK_header_location list-unstyled">
-                                            <li class="py-2 ">
-                                                <button class="border-0 bg-transparent w-100 text-start"
-                                                    data-bs-toggle="modal" data-bs-target="#location"
-                                                    data-bs-dismiss="offcanvas" aria-label="Close">
-                                                    <i class="fa-solid fa-location-crosshairs"></i>
-                                                    <span class="d-inline ps-3">
-                                                        Get current location
-                                                    </span>
-                                                </button>
-                                            </li>
-                                            <li class="py-2">
-                                                <button class="border-0 bg-transparent w-100 text-start"
-                                                    data-bs-toggle="modal" data-bs-target="#address"
-                                                    data-bs-dismiss="offcanvas" aria-label="Close">
-                                                    <i class="fa-solid fa-plus"></i>
-                                                    <span class="d-inline ps-3">
-                                                        Add address
-                                                    </span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-bottom">
-                            <a class="nav-link text-black" href="#">
-                                Get the app
-                            </a>
-                        </div>
-                        <div class="py-2">
-                            <button class="VK_inter border-0 VK_btn rounded-3 px-4 py-2 text-white"
-                                data-bs-toggle="modal" data-bs-target="#signIn" data-bs-dismiss="offcanvas"
-                                aria-label="Close">
-                                Sign In
-                            </button>
-                            <button class="VK_inter border-0 VK_btn rounded-3 px-4 py-2 text-white ms-2"
-                                data-bs-toggle="modal" data-bs-target="#signUP" data-bs-dismiss="offcanvas"
-                                aria-label="Close">
-                                Sign Up
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
-        </nav>
+        </div>
     </div>
 </div>
 
@@ -497,7 +552,7 @@
                             </button>
                         </div>
                     </div>
-                    <form action="" class="w-100 mt-4">
+                    <form action="" onsubmit="VK_address(event)" class="w-100 mt-4">
                         <div class="VK_black_border px-2 rounded-3">
                             <div class="d-flex align-items-center ps-2">
                                 <input type="text" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia"
@@ -511,22 +566,22 @@
                         </div>
                         <div class="mt-4">
                             <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                placeholder="Flat/ House No/ Building Name" required>
+                                placeholder="Flat/ House No/ Building Name" id="flat_no" required>
                         </div>
                         <div class="mt-4">
                             <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                placeholder="Area" required>
+                                placeholder="Area" id="area" required>
                         </div>
                         <div class="mt-4">
                             <div class="d-flex flex-sm-row flex-column w-100 gap-3">
                                 <div class="w-100">
                                     <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                        placeholder="Sector/ Locality" required>
+                                        placeholder="Sector/ Locality" id="sector" required>
                                 </div>
                                 <div class="w-100 ">
                                     <input type="number"
                                         class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                        placeholder="Pincode" required>
+                                        placeholder="Pincode" id="pin" required>
                                 </div>
                             </div>
                         </div>
@@ -534,38 +589,56 @@
                             <h5 class="VK_inter h5 fw-bold text-black">
                                 Address Type
                             </h5>
-                            <div class="mt-3 d-flex flex-wrap gap-3">
-                                <button type="button"
-                                    class="VK_address_active_btn py-1 px-2 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(0)">
-                                    <img src="/images/vivek/home.png" alt="">
-                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
-                                        Home
-                                    </span>
-                                </button>
-                                <button type="button"
-                                    class="VK_address_btn py-1 px-2 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(1)">
-                                    <img src="/images/vivek/job.png" alt="">
-                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
-                                        Work
-                                    </span>
-                                </button>
-                                <button type="button"
-                                    class="VK_address_btn py-1 px-2 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(2)">
-                                    <img src="/images/vivek/hotel.png" alt="">
-                                    <span class="ms-2 d-inline-block VK_inter fw-bold">
-                                        Hotel
-                                    </span>
-                                </button>
-                                <button type="button"
-                                    class="VK_address_btn py-1 px-3 d-flex align-items-center VK_address_btns"
-                                    onclick="VK_address_btns(3)">
-                                    <span class="d-inline-block VK_inter fw-bold">
-                                        Other
-                                    </span>
-                                </button>
+                            <div class="VK_address_type mt-3 d-flex flex-wrap gap-3">
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Home" id="home" checked>
+                                    <label for="home" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="/images/vivek/home.png" alt="">
+                                            </div>
+                                            <div class="ps-2 fw-600 text-black VK_inter">
+                                                Home
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Work" id="Work">
+                                    <label for="Work" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="/images/vivek/job.png" alt="">
+                                            </div>
+                                            <div class="ps-2 fw-600 text-black VK_inter">
+                                                Work
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Hotel" id="Hotel">
+                                    <label for="Hotel" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div>
+                                                <img src="/images/vivek/hotel.png" alt="">
+                                            </div>
+                                            <div class="ps-2 fw-600 text-black VK_inter">
+                                                Hotel
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="d-none" name="address" value="Other" id="Other">
+                                    <label for="Other" class="VK_black_border VK_round px-2 py-1">
+                                        <div class="d-flex align-items-center">
+                                            <div class=" fw-600 text-black VK_inter">
+                                                Other
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                         <div class="mt-5">
@@ -631,7 +704,7 @@
                 <h6>Logout</h6>
                 <p class="mb-0">Are you sure you want to Logout?</p>
                 <div class="d-flex mt-5">
-                    <a href="" class="me-3 text-decoration-none" data-bs-dismiss="modal">NO</a>
+                    <button class="me-3 text-decoration-none" data-bs-dismiss="modal">NO</button>
                     <button class="d_submit text-decoration-none" onclick="VK_logout()">
                         YES
                     </button>

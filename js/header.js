@@ -3,9 +3,21 @@ function login_chk() {
     if (data) {
         document.getElementById('VK_user_profile').classList.remove('d-none')
         document.getElementById('VK_sign_in').classList.add('d-none')
+        document.getElementById('VK_profile_off')?.classList.remove('d-none')
+        document.getElementById('VK_off_btns')?.classList.add('d-none')
+        // let address = JSON.parse(localStorage.getItem('address'))
+        // if (address) {
+        //     console.log("call");
+        //     let location = address.house_no + ", " + address.area + ", " + address.sector + "-" + address.pincode
+
+        //     document.getElementById('VK_address')?.innerHTML = location;
+        // }
     } else {
         document.getElementById('VK_user_profile').classList.add('d-none')
         document.getElementById('VK_sign_in').classList.remove('d-none')
+        document.getElementById('VK_profile_off').classList.add('d-none')
+        document.getElementById('VK_off_btns').classList.remove('d-none')
+
     }
 }
 
@@ -109,7 +121,6 @@ function VK_signup(event) {
     };
 
     localStorage.setItem('user', JSON.stringify(user));
-    console.log(user);
 
     const modal = bootstrap.Modal.getInstance(document.getElementById('signUP'));
     modal.hide();
@@ -123,7 +134,6 @@ function VK_signin(event) {
     event.preventDefault();
 
     let mobile_email = document.getElementById('VK_email_or_pass').value;
-    console.log(mobile_email);
 
     let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let phonePattern = /^[0-9]+$/;
@@ -181,3 +191,35 @@ function VK_logout() {
 
     login_chk()
 }
+
+
+
+// Address model
+function VK_address(event) {
+    event.preventDefault();
+
+    let address = document.getElementById('VK_address_inpute').value;
+    let house_num = document.getElementById('flat_no').value;
+    let area = document.getElementById('area').value;
+    let sector = document.getElementById('sector').value;
+    let pin = document.getElementById('pin').value;
+
+    let chk = document.querySelector('input[name="address"]:checked');
+    let type = chk ? chk.value : null;
+
+    let user_location = {
+        address: address,
+        house_no: house_num,
+        area: area,
+        sector: sector,
+        pincode: pin,
+        address_type: type
+    };
+
+    localStorage.setItem('address', JSON.stringify(user_location))
+
+    const modal = bootstrap.Modal.getInstance(document.getElementById('address'));
+    modal.hide();
+
+}
+
