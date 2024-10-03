@@ -13,6 +13,25 @@
     width: 100%;
 }
 
+
+.VK_nav_drop_down.dropdown-toggle::after {
+    display: none;
+}
+
+.VK_drop_down.dropdown-toggle::after {
+    display: none;
+}
+
+.VK_profile_down {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 50%;
+}
+
 .VK_nav_drop.dropdown-toggle::after {
     display: none;
 }
@@ -152,13 +171,13 @@
 
 
 /* address */
-.VK_address_active_btn{
+.VK_address_active_btn {
     background-color: #d6d6d6;
     border: 1px solid #d6d6d6;
     border-radius: 5px;
 }
 
-.VK_address_btn{
+.VK_address_btn {
     background-color: white;
     border: 1px solid black;
     border-radius: 5px;

@@ -50,14 +50,54 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <button class="VK_header_login VK_inter bg-transparent" data-bs-toggle="modal"
-                                data-bs-target="#signIn">
-                                Sign In
-                            </button>
-                            <button class="VK_header_login VK_inter bg-transparent ms-2" data-bs-toggle="modal"
-                                data-bs-target="#signUP">
-                                Sign Up
-                            </button>
+                            <div class="" id="VK_sign_in">
+                                <button class="VK_header_login VK_inter bg-transparent" data-bs-toggle="modal"
+                                    data-bs-target="#signIn">
+                                    Sign In
+                                </button>
+                                <button class="VK_header_login VK_inter bg-transparent ms-2" data-bs-toggle="modal"
+                                    data-bs-target="#signUP">
+                                    Sign Up
+                                </button>
+                            </div>
+                            <div class="dropdown d-none" id="VK_user_profile">
+                                <button
+                                    class="VK_drop_down bg-transparent d-flex align-items-center dropdown-toggle ms-auto border-0"
+                                    role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="VK_profile_down" id="VK_profile_name">
+                                        J
+                                    </span>
+                                    <span class="text-white ps-2">
+                                        <i class="fa-solid fa-angle-down font_12"></i>
+                                    </span>
+                                </button>
+                                <ul class="dropdown-menu p-0" aria-labelledby="dropdownMenuLink">
+                                    <li class="VK_border_bottom dropdown-item py-2 px-0">
+                                        <a class="text-black text-decoration-none VK_lato d-block ps-4"
+                                            href="/profile.html">
+                                            Profile
+                                        </a>
+                                    </li>
+                                    <li class="VK_border_bottom dropdown-item py-2 px-0">
+                                        <a class="text-black text-decoration-none VK_lato d-block ps-4"
+                                            href="/profile.html">
+                                            My Orders
+                                        </a>
+                                    </li>
+                                    <li class="VK_border_bottom dropdown-item py-2 px-0">
+                                        <a class="text-black text-decoration-none VK_lato d-block ps-4"
+                                            href="/wishlist.html">
+                                            Wishlist
+                                        </a>
+                                    </li>
+                                    <li class="dropdown-item py-2 px-0" data-bs-toggle="modal"
+                                        data-bs-target="#logoutModal">
+                                        <a class="text-black text-decoration-none VK_lato d-block ps-4" href="#">
+                                            Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -163,10 +203,10 @@
                         <h5 class="VK_inter mb-4 fw-bold text-black text-center d-none d-md-block">
                             Sign In
                         </h5>
-                        <form action="" class="w-100">
+                        <form action="" class="w-100" onsubmit="VK_signin(event)">
                             <div class="VK_email">
-                                <input type="email" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                    placeholder="Email or Mobile No." required>
+                                <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
+                                    placeholder="Email or Mobile No." id="VK_email_or_pass" required>
                             </div>
                             <div class="mt-4">
                                 <button type="submit"
@@ -228,7 +268,7 @@
                                 </b>
                             </p>
                         </div>
-                        <form action="" class="w-100">
+                        <form action="" class="w-100" onsubmit="VK_otp(event)">
                             <div class="otp-inputs">
                                 <input type="text" maxlength="1" class="otp" id="otp1"
                                     oninput="moveToNext(this, 'otp2')" onkeydown="moveToPrev(event, 'otp1', '')" />
@@ -273,10 +313,10 @@
                                 Sign Up
                             </h5>
                         </div>
-                        <form action="" class="w-100">
+                        <form action="" class="w-100" onsubmit="VK_signup(event)">
                             <div class="VK_email">
                                 <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                    placeholder="Enter Name" required>
+                                    placeholder="Enter Name" id="VK_signup_name" required>
                             </div>
                             <div class="VK_numder d-flex mt-3 align-items-center">
                                 <div class="dropdown">
@@ -390,16 +430,17 @@
                                 </div>
                                 <input type="number"
                                     class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2 ms-3"
-                                    placeholder="Mobile No." required>
+                                    placeholder="Mobile No." id="VK_signup_num" required>
                             </div>
                             <div class="VK_email mt-3">
                                 <input type="email" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                    placeholder="Email" required>
+                                    placeholder="Email" id="VK_signup_email" required>
                             </div>
                             <div class="mt-4">
-                                <input type="submit"
-                                    class="w-100 VK_inter fw-500 text-white font_14 py-2 VK_theme_btns border-0"
-                                    value="Continue">
+                                <button role="submit"
+                                    class="w-100 VK_inter fw-500 text-white font_14 py-2 VK_theme_btns border-0">
+                                    Continue
+                                </button>
                             </div>
                         </form>
                         <div class="d-flex w-100 mt-4 justify-content-between align-items-center">
@@ -574,6 +615,26 @@
                             </form>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Logout model  -->
+
+<div class="modal d_logoutmodel fade " id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog d_dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <h6>Logout</h6>
+                <p class="mb-0">Are you sure you want to Logout?</p>
+                <div class="d-flex mt-5">
+                    <a href="" class="me-3 text-decoration-none" data-bs-dismiss="modal">NO</a>
+                    <button class="d_submit text-decoration-none" onclick="VK_logout()">
+                        YES
+                    </button>
                 </div>
             </div>
         </div>
