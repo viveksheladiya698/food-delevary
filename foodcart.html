@@ -44,7 +44,7 @@
             </div>
             <p>Your Cart is empty!</p>
             <div class="d_cta">
-                <a href="/groceryhome.html" class="text-center" onclick="gotoback()">Back Home</a>
+                <a href="/HOME.html" class="text-center" onclick="gotoback()">Back Home</a>
             </div>
         </div>
     </div>
@@ -147,7 +147,7 @@
                                 </div>
                             </div>
                             <div class="d_deliveryaddbtn mt-3">
-                                <a class="d-block text-center text-decoration-none">
+                                <a class="d-block text-center text-decoration-none d_cur">
                                     <i class="fa-solid fa-plus me-2"></i> Add New Address
                                 </a>
                             </div>
@@ -172,7 +172,7 @@
                                     </div>
                                     <div class="d_addaddress">
                                         <div class="d_head">Delivery your order to</div>
-                                        <input type="text" id="addressInput">
+                                        <input type="text" id="addressInput" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia">
                                         <div class="d_cta">
                                             <a href="" class="d-block text-center text-decoration-none">Use this
                                                 location</a>
@@ -199,7 +199,7 @@
                                         <div class="row g-3 mb-3">
                                             <div class="col-12">
                                                 <div class="d_change d-flex align-items-center justify-content-between">
-                                                    <input type="text" class="border-0 p-0 border-0">
+                                                    <input type="text" class="border-0 p-0 border-0" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia">
                                                     <a href="" class="text-decoration-none">CHANGE</a>
                                                 </div>
                                             </div>
@@ -218,28 +218,28 @@
                                         </div>
                                         <div class="d_head">Address Type</div>
                                         <div class="d-flex align-items-center  justify-content-sm-start flex-wrap">
-                                            <div class="d_iconfrom">
-                                                <div class="d-flex align-items-center">
+                                            <div class="d_iconfrom active">
+                                                <div class="d-flex align-items-center d_cur">
                                                     <div class="div me-2"><img src="/darshan_img/home.png" alt="">
                                                     </div>
                                                     <p class="mb-0">Home</p>
                                                 </div>
                                             </div>
-                                            <div class="d_iconfrom d_bgtran">
-                                                <div class="d-flex align-items-center">
+                                            <div class="d_iconfrom ">
+                                                <div class="d-flex align-items-center d_cur">
                                                     <div class="div me-2"><img src="/darshan_img/work.png" alt="">
                                                     </div>
                                                     <p class="mb-0">Work</p>
                                                 </div>
                                             </div>
-                                            <div class="d_iconfrom d_bgtran">
-                                                <div class="d-flex align-items-center">
+                                            <div class="d_iconfrom ">
+                                                <div class="d-flex align-items-center d_cur">
                                                     <div class="div me-2"><img src="/darshan_img/hotel.png" alt="">
                                                     </div>
                                                     <p class="mb-0">Hotel</p>
                                                 </div>
                                             </div>
-                                            <div class="d_iconfrom d_bgtran">
+                                            <div class="d_iconfrom  d_cur">
                                                 <div class="d-flex justify-content-center align-items-center">
                                                     <p class="mb-0">Other</p>
                                                 </div>
@@ -563,6 +563,9 @@
 
     <!-- Payment success modal end -->
 
+    <!-- footer -->
+    <footer id="d_cartfooter"></footer>
+
 
     <!-- Jquery js file -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -578,11 +581,22 @@
 
     <!-- Header & Footer script -->
     <script>
-        fetch('Nav_bar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('.nav-bar').innerHTML = data
-            })
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Nav_bar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.nav-bar').innerHTML = data;
+                    login_chk();
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+
+            fetch('Footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
     </script>
 
     <script>
@@ -704,22 +718,19 @@
                 });
             }
 
-            function preventUncheck(event) {
-                if (event.target.checked) {
-                    return; // Allow checking if it's being checked
-                }
-
-                const isChecked = Array.from(paymentMethods).some(method => method.checked);
-                if (!isChecked) {
-                    // If no radio is checked, re-check the previous one
-                    event.preventDefault();
-                    event.target.checked = true; // Keep it checked
-                }
-            }
-
             paymentMethods.forEach(method => {
-                method.addEventListener('change', toggleForms);
-                method.addEventListener('click', preventUncheck);
+                method.addEventListener('change', function () {
+                    // Uncheck all radio buttons
+                    paymentMethods.forEach(radio => {
+                        radio.checked = false;
+                    });
+
+                    // Check the clicked radio button
+                    this.checked = true;
+
+                    // Toggle forms based on selection
+                    toggleForms();
+                });
             });
 
             // Initial toggle based on default checked radio
@@ -729,9 +740,30 @@
 
 
     <script>
-        function gotoback(){
-            window.location.href = "/groceryhome.html"
+        function gotoback() {
+            window.location.href = "/HOME.html"
         }
+    </script>
+
+    <!-- For Address type -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const icons = document.querySelectorAll('.d_iconfrom');
+
+            // Set "Home" as active by default
+            icons[0].classList.add('active');
+
+            icons.forEach(icon => {
+                icon.addEventListener('click', function () {
+                    // Remove active class from all icons
+                    icons.forEach(i => i.classList.remove('active'));
+
+                    // Add active class to the clicked icon
+                    this.classList.add('active');
+                });
+            });
+        });
     </script>
 
 

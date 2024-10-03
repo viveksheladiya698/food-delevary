@@ -47,7 +47,7 @@
                             tempor incididunt ut labore et dolore magna aliqua.</p>
                     </div>
                     <div class="d_cta text-center">
-                        <a href="" class="text-decoration-none">Order Now</a>
+                        <a href="/category.html" class="text-decoration-none">Order Now</a>
                     </div>
                 </div>
                 <div class="d_feature">
@@ -176,7 +176,7 @@
     <div class="d_stcky d-none" id="d_toastcart">
         <div class="d_container">
             <div class="row m-0 justify-content-center">
-                <div class="col-xxl-8">
+                <div class="col-xxl-12">
                     <div id="d_tost">
                         <div class="d_toatify">
                             <div class="d_toast">
@@ -218,19 +218,23 @@
 
     <!-- Header & Footer script -->
     <script>
-        fetch('Nav_bar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('.nav-bar').innerHTML = data
-            })
-        fetch('Footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('footer').innerHTML = data;
-            });
-    </script>
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Nav_bar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.nav-bar').innerHTML = data;
+                    login_chk();
+                })
+                .catch(error => console.error('Error loading navbar:', error));
 
-  
+            fetch('Footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
+    </script>
 
 </body>
 

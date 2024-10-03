@@ -310,16 +310,22 @@
 
     <!-- Header & Footer script -->
     <script>
-        fetch('Nav_bar.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('.nav-bar').innerHTML = data
-            })
-        fetch('Footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('footer').innerHTML = data;
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Nav_bar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.nav-bar').innerHTML = data;
+                    login_chk();
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+
+            fetch('Footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
     </script>
 
 

@@ -69,13 +69,13 @@ h6 {
 }
 
 .d_groceryhome .d_heading {
-    max-width: 700px;
+    max-width: 710px;
 }
 
 .d_groceryhome .d_heading h1 {
     color: #ffffff;
     font-weight: 700;
-    font-size: 55px;
+    font-size: 60px;
     text-align: center;
     line-height: 60px;
     margin-bottom: 10px;
@@ -299,6 +299,10 @@ h6 {
     line-height: 38px;
     font-weight: 500;
     color: #fff;
+    transition: .3s ease-in-out;
+}
+.d_banner2 .d_text .d_cta a:hover{
+    background-color: #041527;
 }
 
 .d_banner2 .d_discounttext {
@@ -656,6 +660,7 @@ hr {
     /* transform: translateX(-50%); */
     /* z-index: 1000; */
 /* } */
+
 .d_stcky{
     position: sticky;
     bottom: 0%;
@@ -930,10 +935,7 @@ hr {
 
 /* cart css start */
 
-.d_cart .d_bglike {
-    /* background-color: #fff; */
-    /* box-shadow: 0px 4px 28px 0px #0000000F; */
-}
+
 
 .d_carthead .d_img {
     width: 30px;
@@ -1347,7 +1349,7 @@ hr {
 
 /* cancel order model css start */
 
-.d_ordermodel .modal-dialog {}
+
 
 .d_ordermodel .modal-content {
     border-radius: 0 !important;
@@ -1943,10 +1945,6 @@ hr {
     transition: transform 0.3s ease;
 }
 
-.d_expandable-icon.d_expanded {
-    /* transform: rotate(180deg); */
-}
-
 .d_expandable-content {
     max-height: 0;
     overflow: hidden;
@@ -2063,20 +2061,22 @@ input:focus-visible{
 }
 .d_addfuldel .d_box .d_iconfrom{
     padding: 6px 14px;
-    background-color: #d6d6d6;
+    background-color: #fff;
     border-radius: 8px;
     width: 100px;
     margin-right: 16px;
+    border: 0.5px solid #000000;
+}
+.d_iconfrom.active {
+    background-color: #d6d6d6 !important; 
+    border:none !important ;
+    
 }
 .d_addfuldel .d_box p {
     font-size: 16px;
     font-weight: 500;
     color: #000;
     margin-top: 3px;
-}
-.d_addfuldel .d_box .d_bgtran{
-    background-color: transparent;
-    border: 0.5px solid #000000;
 }
 .d_addfuldel .d_box .d_cta a{
     padding: 15px 0;
@@ -2163,6 +2163,12 @@ input:focus-visible{
     color: #000;
 }
 
+
+/* live tracking */
+
+.d_livetracking iframe{
+    height: 80vh;
+}
 
 
 
@@ -2541,7 +2547,7 @@ input:focus-visible{
     }
 
     .d_logoutmodel .modal-body {
-        padding: 20px 40px;
+        padding: 40px;
     }
 
     .d_address .d_dropdown-content {

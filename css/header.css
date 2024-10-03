@@ -190,6 +190,49 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 
+/* Logout modal */
+
+.d_logoutmodel .modal-dialog {
+    width: 445px !important;
+}
+
+.d_logoutmodel .modal-body {
+    padding: 50px 70px;
+}
+
+.d_logoutmodel .modal-body h6 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 22px;
+}
+
+.d_logoutmodel .modal-body p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_logoutmodel .modal-body button {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000 !important;
+    padding: 7px 0;
+    text-align: center;
+}
+
+.d_logoutmodel .modal-body .d_submit {
+    background-color: #041527;
+    color: #fff !important;
+}
+
+.d_logoutmodel .d_dialog {
+    margin: 0 auto;
+}
+
 
 /* ------------------------------ media query ------------------------------- */
 
@@ -288,7 +331,6 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 90% !important;
     }
-
 }
 
 /* small device */
@@ -332,5 +374,32 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .VK_signup_model .modal-dialog {
         max-width: 100% !important;
+    }
+}
+
+@media(max-width:991px) {
+    .d_logoutmodel .modal-body {
+        padding: 40px;
+    }
+}
+
+@media(max-width:576px) {
+    .d_logoutmodel .modal-dialog {
+        width: 380px !important;
+    }
+
+    .d_logoutmodel .modal-body {
+        padding: 20px !important;
+    }
+}
+@media(max-width:375px) {
+    .d_logoutmodel .modal-dialog {
+        width: 300px !important;
+    }
+    .d_logoutmodel .modal-body{
+        padding: 15px !important;
+    }
+    .d_logoutmodel .modal-body p{
+        font-size: 16px;
     }
 }

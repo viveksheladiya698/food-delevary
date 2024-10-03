@@ -1,15 +1,13 @@
 let wishlist = [];
 
-// ---------------------------------------------------------------  Grocery item  ------------------------------------------------
-
-const grocery = [
+const product = [
     {
         id: 1,
         img: "item1.png",
         name: "Tomato",
         price: 20,
         review: 4,
-        type: "Food",
+        type: "Grocery",
 
     },
     {
@@ -18,7 +16,7 @@ const grocery = [
         name: "Pineapple",
         price: 60,
         review: 4,
-        type: "Food",
+        type: "Grocery",
     },
     {
         id: 3,
@@ -34,7 +32,7 @@ const grocery = [
         name: "Atta",
         price: 100,
         review: 5,
-        type: "Food",
+        type: "Grocery",
     },
     {
         id: 5,
@@ -67,171 +65,7 @@ const grocery = [
         price: 60,
         review: 5,
         type: "Grocery",
-    }
-];
-
-function generateStars(review) {
-    let starsHTML = '';
-    for (let i = 1; i <= 5; i++) {
-        if (i <= review) {
-            starsHTML += '<img src="/darshan_img/Star.png" alt="Full Star">';
-        } else {
-            starsHTML += '<img src="/darshan_img/star1.png" class="d_emptystar" alt="Empty Star">';
-        }
-    }
-    return starsHTML;
-}
-
-function generateGroceryItems() {
-    const d_grocery = document.getElementById('D_grocery');
-
-    if (d_grocery) {
-        let groceryHTML = '';
-
-        grocery.forEach(item => {
-            // Stringify the item object to safely pass it as a parameter
-            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
-            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
-
-            groceryHTML += `
-                <div class="col-sm-6 col-lg-4 col-xl-3">
-                    <div class="d_item">
-                    <a href="personal.html?item_id=${item.id}">
-                        <div class="d_img">
-                            <img src="/darshan_img/${item.img}" alt="${item.name}">
-                            <div class="d_overlayimg"></div>
-                        </div>
-                        </a>
-                        <div class="d_iconoverlay">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}" onclick="addToCart(${itemJSON})">
-                                    <img src="/darshan_img/cart.png" alt="Cart">
-                                </div>
-                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
-                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d_content text-center">
-                            <div class="d_title">${item.name}</div>
-                            <div class="d_price">Price : $${item.price}</div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <div class="d_star me-3">
-                                    ${generateStars(item.review)}
-                                </div>
-                                <div class="d_review">${item.review} Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-
-        d_grocery.innerHTML = groceryHTML;
-    }
-}
-
-// Call the function to generate the grocery items
-generateGroceryItems();
-
-// ---------------------------------------------------------------  Grocery item  ------------------------------------------------
-
-// ---------------------------------------------------------------  Single Item   ------------------------------------------------
-
-document.addEventListener('DOMContentLoaded', geturl)
-
-function geturl() {
-    let url = window.location.search
-    let params = new URLSearchParams(url)
-    let id = params.get("item_id")
-    console.log(id);
-    let single_item = grocery.find(el => el.id == id)
-    console.log(single_item);
-    singleproduct(single_item);
-
-}
-
-function singleproduct(item) {
-    let oneitem = document.getElementById('D_singleproduct');
-
-    const subImages = [
-        { target: "subimg1.png", alt: "Product view 1" },
-        { target: "subimg2.png", alt: "Product view 2" },
-        { target: "subimg3.png", alt: "Product view 3" },
-        { target: "subimg4.png", alt: "Product view 4" }
-    ];
-    
-    const subImagesHTML = subImages.map((img, index) => `
-        <div class="d_img d_cur${index === 3 ? ' mb-lg-0' : ''}" data-target="${img.target}">
-            <img src="/darshan_img/${img.target}" alt="${img.alt}">
-        </div>
-    `).join('');
-
-    if (oneitem) {
-        oneitem.innerHTML = `
-        <div class="col-12 col-lg-5">
-            <div class="row g-3 flex-lg-row flex-column-reverse">
-                <div class="col-sm-12 col-lg-3">
-                    <div class="sub_img d-flex justify-content-md-between justify-content-center flex-lg-column align-items-center">
-                        ${subImagesHTML}
-                    </div>
-                </div>
-                <div class="col-sm-12 col-lg-9">
-                    <div class="d_img" id="mainImage">
-                        <img src="/darshan_img/${item.img}" alt="${item.name}">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-7 align-self-center">
-            <div class="d_content">
-                <h2 class="mb-2">${item.name}</h2>
-                <div class="d_price mb-2">
-                    Price: $${item.price}
-                    ${item.originalPrice ? `<span class="text-decoration-line-through">$${item.originalPrice}</span>` : ''}
-                </div>
-                <div class="d-flex align-items-center mb-2">
-                    <div class="d_star me-3">
-                        ${generateStars(item.review)}
-                    </div>
-                    <div class="d_review">${item.review} Review</div>
-                </div>
-                <div class="d_desc">${item.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inidunt ut labore et dolore magna aliqua.'}</div>
-                <div class="d-sm-flex mt-lg-5 mt-4">
-                    <div class="d_cta1">
-                        <a href="#" class="d-block text-center text-decoration-none" 
-                           onclick="addToCart(${JSON.stringify(item).replace(/"/g, '&quot;')}); return false;">
-                            Add to cart
-                        </a>
-                    </div>
-                    <div class="d_cta2">
-                        <a href="/foodcart.html" class="d-block text-center text-decoration-none">View cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>`;
-
-        // Add event listeners for thumbnail images
-        const thumbnails = oneitem.querySelectorAll('.d_cur');
-        thumbnails.forEach(thumb => {
-            thumb.addEventListener('click', function () {
-                const targetImage = this.getAttribute('data-target');
-                const mainImage = document.getElementById('mainImage').querySelector('img');
-                mainImage.src = `/darshan_img/${targetImage}`;
-            });
-        });
-    }
-}
-
-// ---------------------------------------------------------------  Single Item   ------------------------------------------------
-
-
-// ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
-
-
-// Discount Grocery
-
-const discountGrocery = [
+    },
     {
         id: 9,
         img: "item5.png",
@@ -304,74 +138,6 @@ const discountGrocery = [
         discount: '',
         type: "Grocery",
     },
-];
-
-
-function generateDiscountGroceryItems() {
-    const d_discountgrocery = document.getElementById('D_discountgrocery');
-
-    if (d_discountgrocery) {
-        let groceryHTML = '';
-
-        discountGrocery.forEach(item => {
-            // Stringify the item object to safely pass it as a parameter
-            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
-            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
-            groceryHTML += `
-                <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="d_item">
-                    <a href="personal.html?item_id=${item.id}">
-                        <div class="d_img">
-                            <img src="/darshan_img/${item.img}" alt="${item.name}">
-                            <div class="d_overlayimg"></div>
-                        </div>
-                        ${item.discount ? `
-                        <div class="d_discountvalue">
-                            <span class="mb-0">${item.discount}% OFF</span>
-                        </div>
-                        ` : ''}
-                        </a>
-                        <div class="d_iconoverlay">
-                            <div class="d-flex justify-content-center align-items-center">
-                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}" onclick="addToCart(${itemJSON})">
-                                    <img src="/darshan_img/cart.png" alt="Cart">
-                                </div>
-                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
-                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d_content text-center">
-                            <div class="d_title">${item.name}</div>
-                            <div class="d_price">Price : $${item.price}</div>
-                            <div class="d-flex align-items-center justify-content-center">
-                                <div class="d_star me-3">
-                                    ${generateStars(item.review)}
-                                </div>
-                                <div class="d_review">${item.review} Review</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
-        });
-
-        d_discountgrocery.innerHTML = groceryHTML;
-    }
-}
-
-// Call the function to generate the discount grocery items
-generateDiscountGroceryItems();
-
-// ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
-
-
-
-// ---------------------------------------------------------------  Grocery Category ------------------------------------------------
-
-// Category
-
-const categoryGrocery = [
     {
         id: 17,
         img: "item5.png",
@@ -532,35 +298,273 @@ const categoryGrocery = [
         category: "Fresh Vegetables",
         type: "Grocery",
     },
-];
+]
+
+// ---------------------------------------------------------------  Grocery item  ------------------------------------------------
+
+
+function generateStars(review) {
+    let starsHTML = '';
+    for (let i = 1; i <= 5; i++) {
+        if (i <= review) {
+            starsHTML += '<img src="/darshan_img/Star.png" alt="Full Star">';
+        } else {
+            starsHTML += '<img src="/darshan_img/star1.png" class="d_emptystar" alt="Empty Star">';
+        }
+    }
+    return starsHTML;
+}
+
+function generateGroceryItems() {
+    const d_grocery = document.getElementById('D_grocery');
+
+    if (d_grocery) {
+        let groceryHTML = '';
+
+        const limitedGrocery = product.slice(0, 8); // Adjust the numbers as needed
+
+        limitedGrocery.forEach(item => {
+            // Stringify the item object to safely pass it as a parameter
+            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
+
+            groceryHTML += `
+                <div class="col-sm-6 col-lg-4 col-xl-3">
+                    <div class="d_item">
+                    <a href="personal.html?item_id=${item.id}">
+                        <div class="d_img">
+                            <img src="/images/assets/${item.img}" alt="${item.name}">
+                            <div class="d_overlayimg"></div>
+                        </div>
+                        </a>
+                        <div class="d_iconoverlay">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}" onclick="addToCart(${itemJSON})">
+                                    <img src="/darshan_img/cart.png" alt="Cart">
+                                </div>
+                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d_content text-center">
+                            <div class="d_title">${item.name}</div>
+                            <div class="d_price">Price : $${item.price}</div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d_star me-3">
+                                    ${generateStars(item.review)}
+                                </div>
+                                <div class="d_review">${item.review} Review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        d_grocery.innerHTML = groceryHTML;
+    }
+}
+
+// Call the function to generate the grocery items
+generateGroceryItems();
+
+// ---------------------------------------------------------------  Grocery item  ------------------------------------------------
+
+// ---------------------------------------------------------------  Single Item   ------------------------------------------------
+
+document.addEventListener('DOMContentLoaded', geturl)
+
+function geturl() {
+    let url = window.location.search
+    let params = new URLSearchParams(url)
+    let id = params.get("item_id")
+    console.log(id);
+    let single_item = product.find(el => el.id == id)
+    console.log(single_item);
+    singleproduct(single_item);
+
+}
+
+function singleproduct(item) {
+    let oneitem = document.getElementById('D_singleproduct');
+
+    const subImages = [
+        { target: "subimg1.png", alt: "Product view 1" },
+        { target: "subimg2.png", alt: "Product view 2" },
+        { target: "subimg3.png", alt: "Product view 3" },
+        { target: "subimg4.png", alt: "Product view 4" }
+    ];
+    
+    const subImagesHTML = subImages.map((img, index) => `
+        <div class="d_img d_cur${index === 3 ? ' mb-lg-0' : ''}" data-target="${img.target}">
+            <img src="/images/assets/${img.target}" alt="${img.alt}">
+        </div>
+    `).join('');
+
+    if (oneitem) {
+        const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+        oneitem.innerHTML = `
+        <div class="col-12 col-lg-5">
+            <div class="row g-3 flex-lg-row flex-column-reverse">
+                <div class="col-sm-12 col-lg-3">
+                    <div class="sub_img d-flex justify-content-md-between justify-content-center flex-lg-column align-items-center">
+                        ${subImagesHTML}
+                    </div>
+                </div>
+                <div class="col-sm-12 col-lg-9">
+                    <div class="d_img" id="mainImage">
+                        <img src="/images/assets/${item.img}" alt="${item.name}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-7 align-self-center">
+            <div class="d_content">
+                <h2 class="mb-2">${item.name}</h2>
+                <div class="d_price mb-2">
+                    Price: $${item.price}
+                    ${item.originalPrice ? `<span class="text-decoration-line-through">$${item.originalPrice}</span>` : ''}
+                </div>
+                <div class="d-flex align-items-center mb-2">
+                    <div class="d_star me-3">
+                        ${generateStars(item.review)}
+                    </div>
+                    <div class="d_review">${item.review} Review</div>
+                </div>
+                <div class="d_desc">${item.description || 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor inidunt ut labore et dolore magna aliqua.'}</div>
+                <div class="d-sm-flex mt-lg-5 mt-4">
+                    <div class="d_cta1">
+                        <a href="#" class="d-block text-center text-decoration-none" 
+                           onclick="addToCart(${itemJSON}); return false;">
+                            Add to cart
+                        </a>
+                    </div>
+                    <div class="d_cta2">
+                        <a href="/foodcart.html" class="d-block text-center text-decoration-none">View cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+
+        // Add event listeners for thumbnail images
+        const thumbnails = oneitem.querySelectorAll('.d_cur');
+        thumbnails.forEach(thumb => {
+            thumb.addEventListener('click', function () {
+                const targetImage = this.getAttribute('data-target');
+                const mainImage = document.getElementById('mainImage').querySelector('img');
+                mainImage.src = `/images/assets/${targetImage}`;
+            });
+        });
+    }
+}
+
+// ---------------------------------------------------------------  Single Item   ------------------------------------------------
+
+
+// ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
+
+
+// Discount Grocery
+
+
+function generateDiscountGroceryItems() {
+    const d_discountgrocery = document.getElementById('D_discountgrocery');
+
+    if (d_discountgrocery) {
+        let groceryHTML = '';
+
+        const limitedGrocery = product.slice(8, 16); // Adjust the numbers as needed
+
+        limitedGrocery.forEach(item => {
+            // Stringify the item object to safely pass it as a parameter
+            const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
+            const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
+            groceryHTML += `
+                <div class="col-xl-3 col-lg-4 col-sm-6">
+                    <div class="d_item">
+                    <a href="personal.html?item_id=${item.id}">
+                        <div class="d_img">
+                            <img src="/images/assets/${item.img}" alt="${item.name}">
+                            <div class="d_overlayimg"></div>
+                        </div>
+                        ${item.discount ? `
+                        <div class="d_discountvalue">
+                            <span class="mb-0">${item.discount}% OFF</span>
+                        </div>
+                        ` : ''}
+                        </a>
+                        <div class="d_iconoverlay">
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}" onclick="addToCart(${itemJSON})">
+                                    <img src="/darshan_img/cart.png" alt="Cart">
+                                </div>
+                                <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                                    <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d_content text-center">
+                            <div class="d_title">${item.name}</div>
+                            <div class="d_price">Price : $${item.price}</div>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <div class="d_star me-3">
+                                    ${generateStars(item.review)}
+                                </div>
+                                <div class="d_review">${item.review} Review</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        d_discountgrocery.innerHTML = groceryHTML;
+    }
+}
+
+// Call the function to generate the discount grocery items
+generateDiscountGroceryItems();
+
+// ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
+
+
+
+// ---------------------------------------------------------------  Grocery Category ------------------------------------------------
+
+// Category
+
 
 
 
 // Function to generate HTML for grocery items
+// Function to generate HTML for each grocery item
 function generateGroceryItemHTML(item) {
-    // Stringify the item object to safely pass it as a parameter
     const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
     const isWishlisted = wishlist.some(wishlistItem => wishlistItem.id === item.id);
+    
     return `
         <div class="col-sm-6 col-lg-4 col-xl-2 d_lgwidth">
             <div class="d_item">
-            <a href="personal.html>item_id=${item.id}">
-                <div class="d_img">
-                    <img src="/darshan_img/${item.img}" alt="${item.name}">
-                    <div class="d_overlayimg"></div>
-                </div>
-                ${item.discount ? `
-                <div class="d_discountvalue">
-                    <span class="mb-0">${item.discount}% OFF</span>
-                </div>
-                ` : ''}
+                <a href="personal.html?item_id=${item.id}">
+                    <div class="d_img">
+                        <img src="/images/assets/${item.img}" alt="${item.name}">
+                        <div class="d_overlayimg"></div>
+                    </div>
+                    ${item.discount ? `
+                    <div class="d_discountvalue">
+                        <span class="mb-0">${item.discount}% OFF</span>
+                    </div>
+                    ` : ''}
                 </a>
                 <div class="d_iconoverlay">
                     <div class="d-flex justify-content-center align-items-center">
-                        <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}" onclick="addToCart(${itemJSON})">
+                        <div class="d_icon d-flex align-items-center justify-content-center cart-icon" 
+                             data-id="${item.id}" onclick="addToCart(${itemJSON})">
                             <img src="/darshan_img/cart.png" alt="Cart">
                         </div>
-                        <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
+                        <div class="d_heart d_icon d-flex align-items-center justify-content-center" 
+                             onclick="toggleWishlistItem(event,${itemJSON})">
                             <i class="${isWishlisted ? 'fa-solid' : 'fa-regular'} fa-heart"></i>
                         </div>
                     </div>
@@ -582,23 +586,22 @@ function generateGroceryItemHTML(item) {
 
 // Function to render grocery items
 function renderGroceryItems(items) {
-    if (document.getElementById('D_categorygrocery')) {
-        const container = document.getElementById('D_categorygrocery');
+    const container = document.getElementById('D_categorygrocery');
+    if (container) {
         container.innerHTML = items.map(generateGroceryItemHTML).join('');
-        // Call to add event listeners after rendering
-        // addCartEventListeners();
     }
 }
 
 // Function to filter grocery items
 function filterGroceryItems() {
-    let filteredItems = [...categoryGrocery];
+    let filteredItems = [...product];
+    filteredItems.slice(16)
 
     // Category filter
     const selectedCategory = document.querySelector('#categoryFilter li.active');
     if (selectedCategory && selectedCategory.dataset.category.toLowerCase() !== 'all') {
         filteredItems = filteredItems.filter(item =>
-            item.category.toLowerCase() === selectedCategory.dataset.category.toLowerCase()
+            item.category && item.category.toLowerCase() === selectedCategory.dataset.category.toLowerCase()
         );
     }
 
@@ -620,28 +623,25 @@ function filterGroceryItems() {
         });
     }
 
-    // Offer filter
+    // Discount filter
     const selectedDiscount = document.querySelector('input[name="discount"]:checked');
     if (selectedDiscount) {
         const [min, max] = selectedDiscount.value.split('-').map(Number);
-        filteredItems = filteredItems.filter(item => item.discount >= min && (max ? item.discount <= max : true));
+        filteredItems = filteredItems.filter(item => {
+            const discount = parseInt(item.discount) || 0;
+            return discount >= min && (max ? discount <= max : true);
+        });
     }
 
     return filteredItems;
 }
 
-
-
 // Function to sort grocery items
 function sortGroceryItems(items) {
     const sortInput = document.querySelector('input[name="sort"]:checked');
-    const sortMethod = sortInput ? sortInput.value : null; // Safely access the value
+    if (!sortInput) return items;
 
-    if (!sortMethod) {
-        return items; // If no sort method is selected, return items as is
-    }
-
-    switch (sortMethod) {
+    switch (sortInput.value) {
         case 'price-low-high':
             return items.sort((a, b) => a.price - b.price);
         case 'price-high-low':
@@ -649,28 +649,17 @@ function sortGroceryItems(items) {
         case 'rating':
             return items.sort((a, b) => b.review - a.review);
         case 'discount':
-            return items.sort((a, b) => b.discount - a.discount);
+            return items.sort((a, b) => {
+                const discountA = parseInt(a.discount) || 0;
+                const discountB = parseInt(b.discount) || 0;
+                return discountB - discountA;
+            });
         default:
             return items;
     }
 }
-// Function to update the display
-function updateDisplay() {
-    let items = filterGroceryItems();
-    items = sortGroceryItems(items);
-    renderGroceryItems(items);
-}
 
-// Event listeners for filters and sorting
-document.querySelectorAll('#categoryFilter input, input[name="rating"], input[name="price"], input[name="discount"], input[name="sort"]')
-    .forEach(input => {
-        input.addEventListener('change', updateDisplay);
-    });
-
-
-// Category filter functionality
-
-// New filtering functions
+// Quick filter functionality
 
 function filterItems(items, filters) {
     return items.filter(item => {
@@ -698,13 +687,27 @@ function handleFilterClick(element, isCloseButton = false) {
         element.classList.toggle('active');
     }
 
-    const activeFilters = getActiveFilters();
-    const filteredItems = filterItems(categoryGrocery, activeFilters);
-    renderGroceryItems(filteredItems);
+    updateDisplay();
 }
 
-function addFilterEventListeners() {
-    // Click event for filter elements
+// Function to update the display
+function updateDisplay() {
+    let items = filterGroceryItems();
+    const activeFilters = getActiveFilters();
+    items = filterItems(items, activeFilters);
+    items = sortGroceryItems(items);
+    renderGroceryItems(items);
+}
+
+// Add event listeners
+function addEventListeners() {
+    // Filter and sort event listeners
+    document.querySelectorAll('#categoryFilter input, input[name="rating"], input[name="price"], input[name="discount"], input[name="sort"]')
+        .forEach(input => {
+            input.addEventListener('change', updateDisplay);
+        });
+
+    // Quick filter event listeners
     document.querySelectorAll('.d_search').forEach(element => {
         element.addEventListener('click', (e) => {
             if (!e.target.classList.contains('close-btn')) {
@@ -713,10 +716,9 @@ function addFilterEventListeners() {
         });
     });
 
-    // Click event for close buttons
     document.querySelectorAll('.close-btn').forEach(closeBtn => {
         closeBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent filter click event
+            e.stopPropagation();
             handleFilterClick(closeBtn, true);
         });
     });
@@ -724,12 +726,10 @@ function addFilterEventListeners() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    renderGroceryItems(categoryGrocery);
-    addFilterEventListeners();
+    addEventListeners();
+    updateDisplay();
 });
 
-
-// Initial render
 updateDisplay();
 
 // ---------------------------------------------------------------  Grocery Category ------------------------------------------------
@@ -738,7 +738,7 @@ updateDisplay();
 
 // Function to get random items from the category array
 function getRandomItems(array, count) {
-    return array.slice(0, count);
+    return array.slice(18, count);
 }
 
 // Function to generate HTML for related product items
@@ -751,7 +751,7 @@ function generateRelatedProductHTML(item) {
                     <div class="d_item">
                     <a href="personal.html?item_id=${item.id}">
                         <div class="d_img">
-                            <img src="/darshan_img/${item.img}" alt="${item.name}">
+                            <img src="/images/assets/${item.img}" alt="${item.name}">
                             <div class="d_overlayimg"></div>
                         </div>
                         ${item.discount ? `
@@ -790,7 +790,7 @@ function renderRelatedProducts() {
     const relatedProductsContainer = document.getElementById('D_relatedproduct');
     if (relatedProductsContainer) {
         // Get 4 random items from categoryGrocery
-        const relatedItems = getRandomItems(categoryGrocery, 4);
+        const relatedItems = getRandomItems(product, 22);
 
         // Generate HTML for related products
         const relatedProductsHTML = relatedItems.map(generateRelatedProductHTML).join('');
@@ -803,7 +803,8 @@ function renderRelatedProducts() {
     }
 }
 
-// Call the function when the page loads
+// Call the function when the page loads 
+
 document.addEventListener('DOMContentLoaded', function () {
     renderRelatedProducts();
 });
@@ -859,7 +860,7 @@ function generateWishlistHTML(wishlist) {
             <div class="d_item" >
             <a href="personal.html">
                 <div class="d_img">
-                    <img src="/darshan_img/${item.img}" alt="${item.name}">
+                    <img src="/images/assets/${item.img}" alt="${item.name}">
                     <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(event,${JSON.stringify(item).replace(/"/g, '&quot;')})">
                         <i class="fa-solid fa-heart"></i>
                     </div>
@@ -1001,6 +1002,8 @@ function displayCart() {
     const emptyCartMessage = document.getElementById('emptyCartMessage');
     const itemCountSpan = document.getElementById('itemCount');
     const billCountSpan = document.getElementById('billitemCount');
+    const d_cartfooter = document.getElementById('d_cartfooter');
+    
 
     if (cartItems.length > 0) {
         if (emptyCartMessage) {
@@ -1009,15 +1012,17 @@ function displayCart() {
         if (cartlist) {
             cartlist.classList.remove('d-none');
         }
+        if(d_cartfooter){
+            d_cartfooter.classList.add('d-none');
+        }
 
         if (cartContent) {
-
             const cartHTML = cartItems.map(item => `
             <div class="d_box mb-4">
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="d_img">
-                            <img src="/darshan_img/${item.img}" alt="${item.name}">
+                            <img src="/images/assets/${item.img}" alt="${item.name}">
                         </div>
                     </div>
                     <div class="col-sm-8">
@@ -1028,9 +1033,9 @@ function displayCart() {
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <a href="#" class="d_remove" onclick="removeFromCart(${item.id})">Remove</a>
                                 <div class="d_increbtn d-flex align-items-center justify-content-between">
-                                    <i class="fa-solid fa-minus ps-3" onclick="updateQuantity(${item.id}, -1)"></i>
+                                <button class="border-0 bg-white"><i class="fa-solid fa-minus ps-3" onclick="updateQuantity(${item.id}, -1)"></i></button>
                                     <div class="d_itemnum">${item.quantity}</div>
-                                    <i class="fa-solid fa-plus pe-3" onclick="updateQuantity(${item.id}, 1)"></i>
+                                    <button class="border-0 bg-white"><i class="fa-solid fa-plus pe-3" onclick="updateQuantity(${item.id}, 1)"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -1043,7 +1048,7 @@ function displayCart() {
 
         if (itemCountSpan) {
             itemCountSpan.textContent = cartItems.length;
-        }
+        }                
         if (billCountSpan) {
             billCountSpan.textContent = cartItems.length;
         }
