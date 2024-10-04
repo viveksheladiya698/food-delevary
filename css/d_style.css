@@ -7,7 +7,7 @@ body {
 }
 
 a {
-    text-decoration: none ;
+    text-decoration: none;
 }
 
 h1,
@@ -42,7 +42,8 @@ h6 {
 .d_p-60 {
     padding: 60px 0;
 }
-.d_bgtran{
+
+.d_bgtran {
     background-color: transparent;
 }
 
@@ -53,6 +54,45 @@ h6 {
     padding-left: 10px;
     padding-right: 10px;
 }
+
+/* Loader css start */
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 99999;
+    background-color: #fff;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    border-top: 3px solid #041527;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Loader css end */
 
 
 .d_groceryhome {
@@ -104,7 +144,8 @@ h6 {
     color: #ffffff;
     transition: .3s ease-in-out;
 }
-.d_groceryhome .d_cta a:hover{
+
+.d_groceryhome .d_cta a:hover {
     background-color: #041527;
 }
 
@@ -221,7 +262,7 @@ h6 {
     transition: .3s ease-in-out;
 }
 
-.d_grocerylist .d_item .d_iconoverlay .d_icon:hover{
+.d_grocerylist .d_item .d_iconoverlay .d_icon:hover {
     background-color: #041527;
 }
 
@@ -301,7 +342,8 @@ h6 {
     color: #fff;
     transition: .3s ease-in-out;
 }
-.d_banner2 .d_text .d_cta a:hover{
+
+.d_banner2 .d_text .d_cta a:hover {
     background-color: #041527;
 }
 
@@ -602,18 +644,22 @@ hr {
     border-radius: 8px;
     padding: 5px 20px;
 }
+
 .d_searchlist .d_search .close-btn {
     display: none;
     margin-left: 8px;
     font-size: 20px;
     cursor: pointer;
 }
-.d_searchlist .d_search.active .close-btn{
+
+.d_searchlist .d_search.active .close-btn {
     display: inline-block;
 }
-.d_searchlist .d_search.active{
+
+.d_searchlist .d_search.active {
     background-color: #d4d4d4;
 }
+
 .d_searchlist .d_search .d_text {
     font-size: 16px;
     line-height: 28px;
@@ -654,14 +700,14 @@ hr {
 
 
 /* #d_tost { */
-    /* position: sticky; */
-    /* bottom: 20px; */
-    /* left: 0%; */
-    /* transform: translateX(-50%); */
-    /* z-index: 1000; */
+/* position: sticky; */
+/* bottom: 20px; */
+/* left: 0%; */
+/* transform: translateX(-50%); */
+/* z-index: 1000; */
 /* } */
 
-.d_stcky{
+.d_stcky {
     position: sticky;
     bottom: 0%;
 }
@@ -825,6 +871,9 @@ hr {
     font-weight: 500;
     color: #000;
 }
+.d_tab .d_info li:last-child{
+    border-bottom: 0;
+}
 
 .d_tab .d_infodel li {
     color: #4c4c4c;
@@ -865,11 +914,15 @@ hr {
     font-weight: 500;
     color: #000;
 }
+.d_tab .d_cusreview .d_left .d_one {
+    margin-right: 12px !important;
+}
 
 .d_tab .d_cusreview .d_left .d_star img {
     width: 18px;
     height: 18px;
     line-height: 18px;
+    margin-bottom: 3px;
 }
 
 .d_tab .d_cusreview .d_left .d_process {
@@ -1036,6 +1089,7 @@ hr {
 .d_cart .d_billlist .d_delivery .d_img img {
     width: 100%;
     height: 100%;
+    object-fit: contain;
 }
 
 .d_cart .d_billlist .d_delivery p {
@@ -1083,7 +1137,8 @@ hr {
     font-weight: 500;
     color: #000;
 }
-.d_cart .d_billlist .d_final .d_strikeamt{
+
+.d_cart .d_billlist .d_final .d_strikeamt {
     font-size: 22px;
     font-weight: 500;
     color: #323232;
@@ -1458,7 +1513,8 @@ hr {
     font-weight: 600;
     color: #000;
 }
-.d_wishlist .d_type a{
+
+.d_wishlist .d_type a {
     padding: 5px 32px;
     font-size: 16px;
     font-weight: 500;
@@ -1467,6 +1523,7 @@ hr {
     border-radius: 8px;
     margin-right: 16px;
 }
+
 .d_wishlist .d_type a.active {
     background-color: #d4d4d4;
 }
@@ -1521,7 +1578,8 @@ hr {
     color: #fff;
     font-size: 20px;
 }
-.d_wishlist .d_heart i{
+
+.d_wishlist .d_heart i {
     font-size: 16px;
     color: #F65959;
 }
@@ -1709,12 +1767,13 @@ hr {
     display: none;
     overflow: hidden;
     transition: max-height 0.4s ease, opacity 0.4s ease;
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
+    /* Initially hidden */
 }
 
 .d_help .d_helpacc.active .d_helpacccon {
     display: block;
-    max-height: 500px; 
+    max-height: 500px;
     opacity: 1
 }
 
@@ -1965,15 +2024,17 @@ hr {
 
 /* Delivery address  */
 
- .d_title .d_head{
+.d_title .d_head {
     font-size: 26px;
     font-weight: 600;
     color: #000;
 }
-.d_deliveryadd .d_dropdown img{
+
+.d_deliveryadd .d_dropdown img {
     width: 24px;
     height: 24px;
 }
+
 .d_deliveryadd .d_cta a {
     font-size: 18px;
     font-weight: 500;
@@ -1982,10 +2043,12 @@ hr {
     border-radius: 8px;
     padding: 11px 125px;
 }
-.d_deliveryadd .d_deliveryaddbtn{
+
+.d_deliveryadd .d_deliveryaddbtn {
     box-shadow: 0px 1.9px 4.28px 0px #5C58751F;
 }
-.d_deliveryadd .d_deliveryaddbtn a{
+
+.d_deliveryadd .d_deliveryaddbtn a {
     border: 0.84px solid #000000;
     padding: 12px 0;
     font-size: 16px;
@@ -1999,13 +2062,15 @@ hr {
     box-shadow: 0px 4px 28px 0px #0000000F;
     background-color: #fff;
 }
-.d_addaddress .d_head{
+
+.d_addaddress .d_head {
     font-size: 20px;
     font-weight: 500;
     color: #000;
     margin-bottom: 16px;
 }
-.d_addaddress input{
+
+.d_addaddress input {
     padding: 14px 14px;
     border: 0.84px solid #000000;
     border-radius: 8px;
@@ -2015,7 +2080,8 @@ hr {
     width: 100%;
     margin-bottom: 30px;
 }
-.d_addaddress .d_cta a{
+
+.d_addaddress .d_cta a {
     font-size: 20px;
     font-weight: 500;
     padding: 15px 0;
@@ -2023,18 +2089,21 @@ hr {
     background-color: #041527;
     border-radius: 8px;
 }
+
 .d_addfuldel .d_box {
     box-shadow: 0px 4px 28px 0px #0000000F;
     background-color: #fff;
     padding: 30px;
 }
-.d_addfuldel .d_box .d_head{
+
+.d_addfuldel .d_box .d_head {
     font-size: 22px;
     font-weight: 500;
     color: #000;
     margin-bottom: 20px;
 }
-.d_addfuldel .d_box .d_change{
+
+.d_addfuldel .d_box .d_change {
     border: 0.84px solid #000000;
     padding: 12px;
     border-radius: 8px;
@@ -2042,12 +2111,14 @@ hr {
     color: #000;
     font-weight: 500;
 }
-.d_addfuldel .d_box .d_change a{
+
+.d_addfuldel .d_box .d_change a {
     font-size: 16px;
     color: #000;
     font-weight: 500;
 }
-.d_addfuldel .d_box input{
+
+.d_addfuldel .d_box input {
     padding: 12px;
     border: 0.84px solid #000000;
     border-radius: 8px;
@@ -2056,10 +2127,12 @@ hr {
     font-weight: 500;
     width: 100%;
 }
-input:focus-visible{
+
+input:focus-visible {
     outline: 0 !important;
 }
-.d_addfuldel .d_box .d_iconfrom{
+
+.d_addfuldel .d_box .d_iconfrom {
     padding: 6px 14px;
     background-color: #fff;
     border-radius: 8px;
@@ -2067,18 +2140,21 @@ input:focus-visible{
     margin-right: 16px;
     border: 0.5px solid #000000;
 }
+
 .d_iconfrom.active {
-    background-color: #d6d6d6 !important; 
-    border:none !important ;
-    
+    background-color: #d6d6d6 !important;
+    border: none !important;
+
 }
+
 .d_addfuldel .d_box p {
     font-size: 16px;
     font-weight: 500;
     color: #000;
     margin-top: 3px;
 }
-.d_addfuldel .d_box .d_cta a{
+
+.d_addfuldel .d_box .d_cta a {
     padding: 15px 0;
     background-color: #041527;
     color: #fff;
@@ -2089,35 +2165,42 @@ input:focus-visible{
 
 /* payment method */
 
-.d_pay form{
+.d_pay form {
     box-shadow: 0px 4px 28px 0px #0000000F;
 }
-.d_pay .d_formgroup{
+
+.d_pay .d_formgroup {
     padding: 20px 34px;
     border: 0.84px solid #000000
 }
-.d_pay .d_formgroup .d_img{
+
+.d_pay .d_formgroup .d_img {
     width: 36px;
     height: 36px;
     /* margin-top: -3px; */
 }
-.d_pay .d_formgroup .d_img img{
+
+.d_pay .d_formgroup .d_img img {
     width: 100%;
     height: 100%;
 }
-.d_pay .d_custom-radio{
+
+.d_pay .d_custom-radio {
     margin-top: 5px;
 }
-.d_pay .d_formgroup .d_text{
+
+.d_pay .d_formgroup .d_text {
     font-size: 16px;
     font-weight: 500;
     color: #000;
     /* margin-top: -3px; */
 }
-.d_pay .d_cardform{
+
+.d_pay .d_cardform {
     padding: 34px;
 }
-.d_pay .d_cardform input{
+
+.d_pay .d_cardform input {
     padding: 12px;
     border: 0.84px solid #000000;
     border-radius: 8px;
@@ -2126,6 +2209,7 @@ input:focus-visible{
     font-weight: 500;
     width: 100%;
 }
+
 .d_pay .d_cardform .d_cta a {
     padding: 15px 0;
     background-color: #b4b9be;
@@ -2134,30 +2218,36 @@ input:focus-visible{
     font-weight: 500;
     border-radius: 8px;
 }
+
 /* .d_pay .d_bankoption{
     padding: 34px;
 } */
-.d_pay .d_bankdel{
+.d_pay .d_bankdel {
     border-bottom: 1.69px solid #0000001A;
 
 }
-.d_pay .d_bankoption .d_bank{
+
+.d_pay .d_bankoption .d_bank {
     padding: 24px 34px;
 }
-.d_pay .d_bankoption .d_bgbox{
+
+.d_pay .d_bankoption .d_bgbox {
     width: 50px;
     height: 50px;
     background-color: #ededed;
 }
-.d_pay .d_bankoption .d_img{
+
+.d_pay .d_bankoption .d_img {
     width: 30px;
     height: 30px;
 }
-.d_pay .d_bankoption .d_img img{
+
+.d_pay .d_bankoption .d_img img {
     width: 100%;
     height: 100%;
 }
-.d_pay .d_bankoption .d_bankname{
+
+.d_pay .d_bankoption .d_bankname {
     font-size: 16px;
     font-weight: 500;
     color: #000;
@@ -2166,7 +2256,7 @@ input:focus-visible{
 
 /* live tracking */
 
-.d_livetracking iframe{
+.d_livetracking iframe {
     height: 80vh;
 }
 
@@ -2387,42 +2477,57 @@ input:focus-visible{
     .d_couponmodal .d_con {
         padding: 20px;
     }
-    .d_title .d_head{
+
+    .d_title .d_head {
         font-size: 22px;
     }
-    .d_deliveryadd .d_cta a{
+
+    .d_deliveryadd .d_cta a {
         padding: 11px 70px;
     }
-    .d_map iframe{
+
+    .d_map iframe {
         height: 330px !important;
     }
-    .d_addaddress .d_head{
+
+    .d_addaddress .d_head {
         font-size: 18px;
         margin-bottom: 8px;
     }
-    .d_addaddress input{
+
+    .d_addaddress input {
         padding: 8px;
         margin-bottom: 15px;
     }
-    .d_addfuldel .d_box .d_head{
+
+    .d_addfuldel .d_box .d_head {
         font-size: 20px;
         margin-bottom: 10px;
     }
-    .d_addfuldel .d_box .d_iconfrom{
+
+    .d_addfuldel .d_box .d_iconfrom {
         margin-bottom: 5px;
     }
-    .d_pay .d_formgroup{
+
+    .d_pay .d_formgroup {
         padding: 15px;
     }
-    .d_pay .d_cardform{
+
+    .d_pay .d_cardform {
         padding: 17px;
     }
-    .d_pay .d_cardform .d_cta a{
+
+    .d_pay .d_cardform .d_cta a {
         padding: 8px;
         font-size: 16px;
     }
-    .d_pay .d_bankoption .d_bank{
+
+    .d_pay .d_bankoption .d_bank {
         padding: 15px;
+    }
+
+    .d_cart .d_billlist .d_proceedbtn a {
+        padding: 10px 0;
     }
 }
 
@@ -2564,14 +2669,15 @@ input:focus-visible{
 
     .d_contactmodal .modal-body {
         padding: 25px;
-        max-width: 570px ;
+        max-width: 570px;
     }
 
 
     .d_offernav .d_searchlist .d_search {
         padding: 5px 15px;
     }
-    .d_wishlist .d_type a{
+
+    .d_wishlist .d_type a {
         padding: 5px 16px;
     }
 }
@@ -2640,11 +2746,13 @@ input:focus-visible{
         height: 80px;
         margin-right: 10px;
     }
-    .d_addaddress .d_cta a{
+
+    .d_addaddress .d_cta a {
         padding: 8px 0;
         font-size: 16px;
     }
-    .d_addaddress{
+
+    .d_addaddress {
         padding: 15px;
     }
 }
@@ -2783,7 +2891,8 @@ input:focus-visible{
     .d_cart .d_billlist .d_final .d_totalamt {
         font-size: 20px;
     }
-    .d_cart .d_billlist .d_final .d_strikeamt{
+
+    .d_cart .d_billlist .d_final .d_strikeamt {
         font-size: 20px;
     }
 
@@ -2897,7 +3006,8 @@ input:focus-visible{
     .d_helphead h5 {
         font-size: 22px;
     }
-    .d_contactmodal .modal-body{
+
+    .d_contactmodal .modal-body {
         max-width: 385px;
     }
 
@@ -2922,20 +3032,26 @@ input:focus-visible{
     .d_couponmodal .d_con .d_cta a {
         padding: 15px 30px;
     }
-    .d_addfuldel .d_box .d_change,.d_addfuldel .d_box input{
+
+    .d_addfuldel .d_box .d_change,
+    .d_addfuldel .d_box input {
         padding: 10px;
     }
-    .d_addfuldel .d_box .d_cta a{
+
+    .d_addfuldel .d_box .d_cta a {
         padding: 8px 0;
         font-size: 16px;
     }
-    .d_addfuldel .d_box{
+
+    .d_addfuldel .d_box {
         padding: 15px;
     }
-    .d_cart .d_billlist{
+
+    .d_cart .d_billlist {
         padding: 20px;
     }
-    .d_help .d_helpacchead i{
+
+    .d_help .d_helpacchead i {
         align-self: self-start;
         margin-top: 6px;
     }
@@ -2967,13 +3083,17 @@ input:focus-visible{
     .d_logoutmodel .modal-dialog {
         width: 340px !important;
     }
-    .d_contactmodal .modal-body{
+
+    .d_contactmodal .modal-body {
         max-width: 340px;
     }
-    .d_tab1 .d_order .d_status, .d_tab1 .d_order .d_date{
+
+    .d_tab1 .d_order .d_status,
+    .d_tab1 .d_order .d_date {
         font-size: 11px;
     }
-    .d_tab1 .d_order .d_orderbtn a{
+
+    .d_tab1 .d_order .d_orderbtn a {
         font-size: 10px;
         padding: 7px;
     }
@@ -3048,14 +3168,18 @@ input:focus-visible{
         padding: 15px;
         max-width: 300px;
     }
-    .d_addfuldel .d_box input{
+
+    .d_addfuldel .d_box input {
         font-size: 15px;
     }
-    .d_cart .d_billlist .d_final .d_strikeamt{
+
+    .d_cart .d_billlist .d_final .d_strikeamt {
         font-size: 18px;
         margin-right: 5px !important;
     }
-    .d_cart .d_billlist .d_final .d_totaltext, .d_cart .d_billlist .d_final .d_totalamt {
+
+    .d_cart .d_billlist .d_final .d_totaltext,
+    .d_cart .d_billlist .d_final .d_totalamt {
         font-size: 18px;
     }
 }

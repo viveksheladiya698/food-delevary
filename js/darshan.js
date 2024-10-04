@@ -1,3 +1,8 @@
+$(window).on('load', function () {
+    $(".loader").fadeOut();
+    $("#preloader").delay(200).fadeOut("slow");
+});
+
 let wishlist = [];
 
 const product = [
@@ -464,7 +469,6 @@ function singleproduct(item) {
 
 // ---------------------------------------------------------------  Grocery Discount item  ------------------------------------------------
 
-
 // Discount Grocery
 
 
@@ -535,9 +539,6 @@ generateDiscountGroceryItems();
 // Category
 
 
-
-
-// Function to generate HTML for grocery items
 // Function to generate HTML for each grocery item
 function generateGroceryItemHTML(item) {
     const itemJSON = JSON.stringify(item).replace(/"/g, '&quot;');
@@ -840,6 +841,7 @@ function toggleWishlistItem(event, item) {
         wishlist.splice(index, 1);
     }
     saveWishlist();
+    VK_update_data1();
     updateWishlistUI(wishlist);
 }
 
@@ -948,7 +950,7 @@ document.addEventListener('DOMContentLoaded', initializePage);
 
 
 function addToCart(item) {
-    let data = JSON.parse(localStorage.getItem('cart')) || [];
+    let data = JSON.parse(localStorage.getItem('cart')) || []; 
     let existingItem = data.find(el => el.id === item.id);
 
     if (existingItem) {
@@ -959,6 +961,7 @@ function addToCart(item) {
     localStorage.setItem('cart', JSON.stringify(data));
     showcarttoast();
     displayCart();
+    VK_update_data1();
 }
 
 function removeFromCart(itemId) {
@@ -987,6 +990,7 @@ function updateQuantity(itemId, change) {
     }
 }
 
+
 function calculateTotals(cartItems) {
     const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     const deliveryCharge = cartItems.length > 0 ? 10 : 0;
@@ -1004,7 +1008,6 @@ function displayCart() {
     const billCountSpan = document.getElementById('billitemCount');
     const d_cartfooter = document.getElementById('d_cartfooter');
     
-
     if (cartItems.length > 0) {
         if (emptyCartMessage) {
             emptyCartMessage.classList.add('d-none');
@@ -1033,9 +1036,9 @@ function displayCart() {
                             <div class="d-flex justify-content-between align-items-center mt-auto">
                                 <a href="#" class="d_remove" onclick="removeFromCart(${item.id})">Remove</a>
                                 <div class="d_increbtn d-flex align-items-center justify-content-between">
-                                <button class="border-0 bg-white"><i class="fa-solid fa-minus ps-3" onclick="updateQuantity(${item.id}, -1)"></i></button>
+                                <button class="border-0 bg-white"><i class="fa-solid fa-minus ps-sm-3 ps-2" onclick="updateQuantity(${item.id}, -1)"></i></button>
                                     <div class="d_itemnum">${item.quantity}</div>
-                                    <button class="border-0 bg-white"><i class="fa-solid fa-plus pe-3" onclick="updateQuantity(${item.id}, 1)"></i></button>
+                                    <button class="border-0 bg-white"><i class="fa-solid fa-plus pe-sm-3 pe-2" onclick="updateQuantity(${item.id}, 1)"></i></button>
                                 </div>
                             </div>
                         </div>
@@ -1043,6 +1046,7 @@ function displayCart() {
                 </div>
             </div>
         `).join('');
+
             cartContent.innerHTML = cartHTML;
         }
 
@@ -1088,4 +1092,21 @@ function showcarttoast() {
     }
 }
 
+
+
 showcarttoast()
+
+async function VK_update_data1() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (wishlist.length > 0) {
+        document.getElementById('VK_wishlist_count').innerHTML = wishlist.length;
+    } else {
+        document.getElementById('VK_wishlist_count').classList.add('d-none')
+    }
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length > 0) {
+        document.getElementById('VK_cart_count').innerHTML = cart.length
+    } else {
+        document.getElementById('VK_cart_count').classList.add('d-none')
+    }
+}
