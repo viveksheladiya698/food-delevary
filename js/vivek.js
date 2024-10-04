@@ -24,162 +24,8 @@ function VK_cart_list_menu() {
 }
 
 
-
-
-
-
-// ---------------------------------------------------- Food Home ----------------------------------------------------
-
-// food home page (Regular Menu)
-let VK_regular_menu_items = [
-    {
-        id: 201,
-        name: "Chinese Samosa",
-        price: "200",
-        review_cnt: 4,
-        review: 4,
-        image: "samosa.png"
-    },
-    {
-        id: 202,
-        name: "Punjabi Dish",
-        price: "400",
-        review_cnt: 4,
-        review: 4,
-        image: "punjabi.png"
-    },
-    {
-        id: 203,
-        name: "Burger",
-        price: "80",
-        review_cnt: 4,
-        review: 4,
-        image: "burger.png"
-    },
-    {
-        id: 204,
-        name: "Punjabi Dish",
-        price: "400",
-        review_cnt: 4,
-        review: 4,
-        image: "punjabi.png"
-    },
-    {
-        id: 205,
-        name: "Burger",
-        price: "80",
-        review_cnt: 4,
-        review: 4,
-        image: "burger.png"
-    },
-    {
-        id: 206,
-        name: "Veg Manchurian",
-        price: "60",
-        review_cnt: 4,
-        review: 4,
-        image: "manchurian.png"
-    },
-    {
-        id: 207,
-        name: "Gujarati Thali",
-        price: "200",
-        review_cnt: 4,
-        review: 4,
-        image: "gujarati.png"
-    },
-    {
-        id: 208,
-        name: "Chinese Samosa",
-        price: "200",
-        review_cnt: 4,
-        review: 5,
-        image: "samosa.png"
-    }
-]
-
-// food home page (Regular Menu)
-function regular_menu_card_display() {
-    let div = document.getElementById('VK_regular_menu_cards');
-
-    if (div) {
-
-        VK_cart_list_menu();
-
-        let html = VK_regular_menu_items.map((ele, ind) => {
-            const generateStars = (rating) => {
-                return Array.from({ length: 5 }, (_, index) => {
-                    return `
-                        <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
-                            <i class="fa-solid fa-star"></i>
-                        </span>`;
-                }).join("");
-            };
-
-            const stars = generateStars(ele.review);
-            let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
-            return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
-                <div class="overflow-hidden VK_regular_menu_img mx-md-4">
-                    <a href="/Popular_food.html?id=${ele.id}">
-                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
-                        <div class="VK_regular_cart">
-                            <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
-                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
-                                    <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
-                                </button>
-                                <button class="border-0 rounded-circle VK_cart_btn">
-                                    <img src="/images/vivek/hart.png" alt="Add to favorites" width="20px">
-                                </button>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="mt-4 text-center">
-                    <p class="VK_inter text-black fw-600 mb-1 font_18">${ele.name}</p>
-                    <p class="VK_inter text-black fw-400 mb-1">Price: $${ele.price}</p>
-                    <div>
-                        <div class="d-flex justify-content-center align-items-center">
-                            ${stars}
-                            <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter font_14">${ele.review_cnt} Reviews</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>`;
-        }).join("");
-
-        div.innerHTML = html;
-    } else {
-        return;
-    }
-}
-
-// food home page (Add To Cart)
-function VK_add_to_cart(event, item) {
-    event.preventDefault();
-
-    let data = JSON.parse(localStorage.getItem('cart')) || [];
-
-    let existingItem = data.find(el => el.id === item.id);
-
-    if (!existingItem) {
-        item.quantity = 1;
-        item.type = "food";
-        data.push(item);
-
-        localStorage.setItem('cart', JSON.stringify(data));
-    }
-
-    VK_cart_list_menu()
-}
-
-
-
-
-// food home page (Resturent data)
-var VK_resturent_data = [
+// resturent data
+var VK_main_data = [
     {
         id: 301,
         name: "Burger King",
@@ -312,7 +158,393 @@ var VK_resturent_data = [
         typ: "vage",
         price: 500,
     },
+    {
+        id: 313,
+        name: "Burger King",
+        description: "Burger, Fast Food, Dessert Vesu, Surat",
+        review_cnt: 5,
+        review: 5,
+        offer: "Items At $60",
+        image: "hotel1.png",
+        typ: "vage",
+        price: 200
+    },
+    {
+        id: 314,
+        name: "Radhe Punjabi Dhaba",
+        description: "Gujarati dish, Biryani Adajan, Surat",
+        review_cnt: 5,
+        review: 5,
+        offer: null,
+        image: "hotel2.png",
+        typ: "non-vage",
+        price: 200
+    },
+    {
+        id: 315,
+        name: "La pino’z ",
+        description: "Pizza , Dessert, French fri... Pal, Surat",
+        review_cnt: 5,
+        review: 5,
+        offer: null,
+        image: "hotel3.png",
+        typ: "non-vage",
+        price: 250
+    },
+    {
+        id: 316,
+        name: "Avadh Hotel",
+        description: "Punjabi, south Indian Gokul Road, Navsari",
+        review_cnt: 5,
+        review: 5,
+        offer: null,
+        image: "hotel4.png"
+    },
+    {
+        id: 317,
+        name: "Taste of Bhagwati",
+        description: "Indian, Pastas ved road, Mumbai",
+        review_cnt: 5,
+        review: 5,
+        offer: null,
+        image: "hotel5.png",
+        typ: "non-vage",
+        price: 200
+    },
+    {
+        id: 318,
+        name: "Avadh Hotel",
+        description: "Punjabi, south Indian Gokul Road, Navsari",
+        review_cnt: 5,
+        review: 5,
+        offer: null,
+        image: "hotel6.png",
+        typ: "vage",
+        price: 400
+    },
+    {
+        id: 319,
+        name: "Burger King",
+        description: "Punjabi, south Indian Gokul Road, Navsari",
+        review_cnt: 5,
+        review: 5,
+        offer: "Items At $60",
+        image: "hotel7.png",
+        typ: "non-vage",
+        price: 600
+    },
+    {
+        id: 320,
+        name: "Avadh Hotel",
+        description: "Punjabi, south Indian Gokul Road, Navsari",
+        review_cnt: 5,
+        review: 5,
+        offer: null,
+        image: "hotel6.png",
+        typ: "vage",
+        price: 700
+    },
+    {
+        id: 321,
+        name: "Burger King",
+        description: "Burger, Fast Food, Dessert Vesu, Surat",
+        review_cnt: 5,
+        review: 4,
+        offer: "Items At $60",
+        image: "hotel1.png",
+        typ: "vage",
+        price: 450
+
+    },
+    {
+        id: 322,
+        name: "McDonald’s",
+        description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
+        review_cnt: 5,
+        review: 3,
+        image: "mcdonald.png",
+        typ: "non-vage",
+        price: 200
+    },
+    {
+        id: 323,
+        name: "Burger House",
+        description: "Burgers, Pizzas, fast food Aaimata Road, Surat",
+        review_cnt: 5,
+        review: 2,
+        image: "hotel8.png",
+        typ: "vage",
+        price: 600
+    },
+    {
+        id: 324,
+        name: "Veggie House",
+        description: "Burgers, Beverages, Cafe... Pal, Surat",
+        review_cnt: 5,
+        review: 5,
+        image: "hotel9.png",
+        typ: "vage",
+        price: 500
+    },
+    {
+        id: 325,
+        name: "Load Petrick",
+        description: "Burgers, Pizzas, fast food Yogichowk, Surat",
+        review_cnt: 5,
+        review: 5,
+        image: "hotel9.png",
+        typ: "vage",
+        price: 900
+    },
+    {
+        id: 326,
+        name: "McDonald’s",
+        description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
+        review_cnt: 5,
+        offer: "50% OFF UPTO $20",
+        review: 1,
+        image: "mcdonald.png",
+        typ: "non-vage",
+        price: 200
+    },
+    {
+        id: 327,
+        name: "Burger King",
+        description: "Burger, Fast Food, Dessert Vesu, Surat",
+        review_cnt: 5,
+        offer: "Items At $60",
+        review: 3,
+        image: "hotel7.png",
+        typ: "non-vage",
+        price: 500
+    },
+    {
+        id: 328,
+        name: "Veggie House",
+        description: "Burgers, Beverages, Cafe... Pal, Surat",
+        review_cnt: 5,
+        review: 2,
+        image: "hotel9.png",
+        typ: "non-vage",
+        price: 100
+    },
+    {
+        id: 329,
+        name: "Load Petrick",
+        description: "Burgers, Pizzas, fast food Yogichowk, Surat",
+        review_cnt: 5,
+        review: 5,
+        image: "hotel9.png",
+        typ: "vage",
+        price: 400
+    },
+    {
+        id: 330,
+        name: "McDonald’s",
+        description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
+        review_cnt: 5,
+        review: 5,
+        image: "mcdonald.png",
+        typ: "vage",
+        price: 500
+    },
 ]
+
+
+
+
+
+
+// ---------------------------------------------------- Food Home ----------------------------------------------------
+
+// food home page (Regular Menu)
+let VK_regular_menu_items = [
+    {
+        id: 201,
+        name: "Chinese Samosa",
+        price: "200",
+        review_cnt: 4,
+        review: 4,
+        image: "samosa.png"
+    },
+    {
+        id: 202,
+        name: "Punjabi Dish",
+        price: "400",
+        review_cnt: 4,
+        review: 4,
+        image: "punjabi.png"
+    },
+    {
+        id: 203,
+        name: "Burger",
+        price: "80",
+        review_cnt: 4,
+        review: 4,
+        image: "burger.png"
+    },
+    {
+        id: 204,
+        name: "Punjabi Dish",
+        price: "400",
+        review_cnt: 4,
+        review: 4,
+        image: "punjabi.png"
+    },
+    {
+        id: 205,
+        name: "Burger",
+        price: "80",
+        review_cnt: 4,
+        review: 4,
+        image: "burger.png"
+    },
+    {
+        id: 206,
+        name: "Veg Manchurian",
+        price: "60",
+        review_cnt: 4,
+        review: 4,
+        image: "manchurian.png"
+    },
+    {
+        id: 207,
+        name: "Gujarati Thali",
+        price: "200",
+        review_cnt: 4,
+        review: 4,
+        image: "gujarati.png"
+    },
+    {
+        id: 208,
+        name: "Chinese Samosa",
+        price: "200",
+        review_cnt: 4,
+        review: 5,
+        image: "samosa.png"
+    }
+]
+
+// food home page (Regular Menu)
+function regular_menu_card_display() {
+    let div = document.getElementById('VK_regular_menu_cards');
+
+    if (div) {
+
+        VK_cart_list_menu();
+
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || []
+
+        let html = VK_regular_menu_items.map((ele, ind) => {
+            const generateStars = (rating) => {
+                return Array.from({ length: 5 }, (_, index) => {
+                    return `
+                        <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                            <i class="fa-solid fa-star"></i>
+                        </span>`;
+                }).join("");
+            };
+
+            let isInWishlist = wishlist.some(item => item.id === ele.id);
+            let heartIcon = isInWishlist ? 'fa-solid fa-heart text-white' : 'fa-regular fa-heart text-white';
+
+            const stars = generateStars(ele.review);
+            let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
+
+            return `
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
+                <div class="overflow-hidden VK_regular_menu_img mx-md-4">
+                    <a href="/Popular_food.html?id=${ele.id}">
+                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
+                        <div class="VK_regular_cart">
+                            <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
+                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
+                                    <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
+                                </button>
+                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_wishlist(event,${currnt_record})">
+                                    <i class="${heartIcon}"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="mt-4 text-center">
+                    <p class="VK_inter text-black fw-600 mb-1 font_18">${ele.name}</p>
+                    <p class="VK_inter text-black fw-400 mb-1">Price: $${ele.price}</p>
+                    <div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            ${stars}
+                            <div class="ms-2">
+                                <p class="m-0 fw-500 VK_inter font_14">${ele.review_cnt} Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }).join("");
+
+        div.innerHTML = html;
+    } else {
+        return;
+    }
+}
+
+// food wishlist
+function VK_add_wishlist(event, item) {
+    event.preventDefault();
+    item.type = "food";
+
+    let data = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+    let index = data.findIndex(i => i.id === item.id);
+    const heartIcon = event.currentTarget.querySelector('i');
+
+    if (index !== -1) {
+        data.splice(index, 1);
+
+        if (heartIcon) {
+            heartIcon.classList.remove('fa-solid', 'text-danger');
+            heartIcon.classList.add('fa-regular');
+        }
+    } else {
+        data.push(item);
+
+        if (heartIcon) {
+            heartIcon.classList.remove('fa-regular');
+            heartIcon.classList.add('fa-solid', 'text-danger');
+        }
+    }
+
+    localStorage.setItem('wishlist', JSON.stringify(data));
+
+}
+
+// food home page (Add To Cart)
+function VK_add_to_cart(event, item) {
+    event.preventDefault();
+
+    let data = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let existingItem = data.find(el => el.id === item.id);
+
+    if (!existingItem) {
+        item.quantity = 1;
+        item.type = "food";
+        data.push(item);
+
+        localStorage.setItem('cart', JSON.stringify(data));
+    }
+
+    VK_cart_list_menu()
+}
+
+
+
+
+
+
+// food home page (Resturent data)
+var VK_resturent_data = VK_main_data.slice(0, 12)
 
 // food home page (Resturent data)
 var VK_resturents = VK_resturent_data
@@ -343,7 +575,7 @@ function VK_resturent_data_display() {
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
                 <div class="overflow-hidden VK_resturent_food">
-                    <a href="/Restaurants.html">
+                    <a href="/Restaurants.html?r_id=${ele.id}">
                         <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
                         <div class="VK_resturent_btn">
                             <button class="" onclick="VK_whshlist(event,${currnt_record})">
@@ -514,7 +746,6 @@ function VK_restro_filt() {
     let sort = document.querySelectorAll('#restro_filter')
     let sort_order = Array.from(sort).find(el => el.checked)
 
-    console.log(sort_order.value);
 
     switch (sort_order.value) {
         case 'Relevance':
@@ -535,81 +766,10 @@ function VK_restro_filt() {
 
 
 
+
+
 // food home page (Popular Restro data)
-var VK_popular_retro_near = [
-    {
-        id: 313,
-        name: "Burger King",
-        description: "Burger, Fast Food, Dessert Vesu, Surat",
-        review_cnt: 5,
-        review: 5,
-        offer: "Items At $60",
-        image: "hotel1.png"
-    },
-    {
-        id: 314,
-        name: "Radhe Punjabi Dhaba",
-        description: "Gujarati dish, Biryani Adajan, Surat",
-        review_cnt: 5,
-        review: 5,
-        offer: null,
-        image: "hotel2.png"
-    },
-    {
-        id: 315,
-        name: "La pino’z ",
-        description: "Pizza , Dessert, French fri... Pal, Surat",
-        review_cnt: 5,
-        review: 5,
-        offer: null,
-        image: "hotel3.png"
-    },
-    {
-        id: 316,
-        name: "Avadh Hotel",
-        description: "Punjabi, south Indian Gokul Road, Navsari",
-        review_cnt: 5,
-        review: 5,
-        offer: null,
-        image: "hotel4.png"
-    },
-    {
-        id: 317,
-        name: "Taste of Bhagwati",
-        description: "Indian, Pastas ved road, Mumbai",
-        review_cnt: 5,
-        review: 5,
-        offer: null,
-        image: "hotel5.png"
-    },
-    {
-        id: 318,
-        name: "Avadh Hotel",
-        description: "Punjabi, south Indian Gokul Road, Navsari",
-        review_cnt: 5,
-        review: 5,
-        offer: null,
-        image: "hotel6.png"
-    },
-    {
-        id: 319,
-        name: "Burger King",
-        description: "Punjabi, south Indian Gokul Road, Navsari",
-        review_cnt: 5,
-        review: 5,
-        offer: "Items At $60",
-        image: "hotel7.png"
-    },
-    {
-        id: 320,
-        name: "Avadh Hotel",
-        description: "Punjabi, south Indian Gokul Road, Navsari",
-        review_cnt: 5,
-        review: 5,
-        offer: null,
-        image: "hotel6.png"
-    },
-]
+var VK_popular_retro_near = VK_main_data.slice(12, 20)
 
 // food home page (Popular Restro data)
 function VK_popular_restro_data_display() {
@@ -637,19 +797,21 @@ function VK_popular_restro_data_display() {
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
                 <div class="overflow-hidden VK_resturent_food">
-                    <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
-                    <div class="VK_resturent_btn">
-                        <button class="" onclick="VK_whshlist(event,${currnt_record})">
-                            <i class="${heartIcon}"></i>
-                        </button>
-                    </div>
-                    ${ele.offer != null ?
+                    <a href="/Restaurants.html?r_id=${ele.id}">
+                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
+                        <div class="VK_resturent_btn">
+                            <button class="" onclick="VK_whshlist(event,${currnt_record})">
+                                <i class="${heartIcon}"></i>
+                            </button>
+                        </div>
+                        ${ele.offer != null ?
                     `<div class="VK_resturent_alert">
-                                <p class="m-0 VK_inter">
-                                    ${ele.offer}
-                                </p>
-                            </div>`
+                                    <p class="m-0 VK_inter">
+                                        ${ele.offer}
+                                    </p>
+                                </div>`
                     : ""}
+                    </a>
                 </div>
                 <div class="px-2 mt-3">
                     <p class="VK_inter text-black fw-600 mb-1 font_20">
@@ -683,101 +845,7 @@ function VK_popular_restro_data_display() {
 
 
 //  Popular Food page (our Restrunts)
-var VK_our_resturent_data = [
-    {
-        id: 321,
-        name: "Burger King",
-        description: "Burger, Fast Food, Dessert Vesu, Surat",
-        review_cnt: 5,
-        review: 4,
-        offer: "Items At $60",
-        image: "hotel1.png",
-        type: "vage",
-
-    },
-    {
-        id: 322,
-        name: "McDonald’s",
-        description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
-        review_cnt: 5,
-        review: 3,
-        image: "mcdonald.png",
-        type: "vage"
-    },
-    {
-        id: 323,
-        name: "Burger House",
-        description: "Burgers, Pizzas, fast food Aaimata Road, Surat",
-        review_cnt: 5,
-        review: 2,
-        image: "hotel8.png",
-        type: "vage"
-    },
-    {
-        id: 324,
-        name: "Veggie House",
-        description: "Burgers, Beverages, Cafe... Pal, Surat",
-        review_cnt: 5,
-        review: 5,
-        image: "hotel9.png"
-    },
-    {
-        id: 325,
-        name: "Load Petrick",
-        description: "Burgers, Pizzas, fast food Yogichowk, Surat",
-        review_cnt: 5,
-        review: 5,
-        image: "hotel9.png",
-        type: "vage"
-    },
-    {
-        id: 326,
-        name: "McDonald’s",
-        description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
-        review_cnt: 5,
-        offer: "50% OFF UPTO $20",
-        review: 1,
-        image: "mcdonald.png",
-        type: "vage"
-    },
-    {
-        id: 327,
-        name: "Burger King",
-        description: "Burger, Fast Food, Dessert Vesu, Surat",
-        review_cnt: 5,
-        offer: "Items At $60",
-        review: 3,
-        image: "hotel7.png",
-        type: "vage"
-    },
-    {
-        id: 328,
-        name: "Veggie House",
-        description: "Burgers, Beverages, Cafe... Pal, Surat",
-        review_cnt: 5,
-        review: 2,
-        image: "hotel9.png",
-        type: "vage"
-    },
-    {
-        id: 329,
-        name: "Load Petrick",
-        description: "Burgers, Pizzas, fast food Yogichowk, Surat",
-        review_cnt: 5,
-        review: 5,
-        image: "hotel9.png",
-        type: "non-vage"
-    },
-    {
-        id: 330,
-        name: "McDonald’s",
-        description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
-        review_cnt: 5,
-        review: 5,
-        image: "mcdonald.png",
-        type: "vage"
-    },
-]
+var VK_our_resturent_data = VK_main_data.slice(20, 30)
 
 //  Popular Food page (our Restrunts)
 var VK_our_restros = VK_our_resturent_data;
@@ -807,7 +875,7 @@ function VK_our_restro_data_display() {
 
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
-                <a href="/Restaurants.html">
+                <a href="/Restaurants.html?r_id=${ele.id}">
                     <div class="overflow-hidden VK_resturent_food">
                         <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
                         <div class="VK_resturent_btn">
@@ -879,7 +947,7 @@ function VK_filter_restro(ele) {
     // Apply filter logic
     switch (ele) {
         case 0:
-            filteredRestros = VK_our_restros.filter(restro => restro.type === "vage");
+            filteredRestros = VK_our_restros.filter(restro => restro.typ === "vage");
             break;
         case 1:
             // Apply price range filter here
@@ -919,7 +987,7 @@ function VK_clear_filter_restro(ele) {
     activeFilters.forEach(activeFilter => {
         switch (activeFilter) {
             case 0:
-                filteredRestros = filteredRestros.filter(restro => restro.type === "vage");
+                filteredRestros = filteredRestros.filter(restro => restro.typ === "vage");
                 break;
             case 1:
                 // Reapply price range filter
@@ -942,6 +1010,28 @@ function VK_clear_filter_restro(ele) {
     VK_our_restro_data_display();
 }
 
+// Popular Food page 
+function VK_restro_filt() {
+
+    let sort = document.querySelectorAll('#restro_filter')
+    let sort_order = Array.from(sort).find(el => el.checked)
+
+    switch (sort_order.value) {
+        case 'Relevance':
+            VK_resturents = main_data
+            break;
+        case 'Price (low to high)':
+            VK_resturents = VK_resturents.sort((a, b) => a.price - b.price)
+            break;
+        case 'Price (high to low)':
+            VK_resturents = VK_resturents.sort((a, b) => b.price - a.price)
+            break;
+        case 'Rating 3+':
+            VK_resturents = VK_resturents.filter(el => el.review > 3)
+            break;
+    }
+    VK_resturent_data_display();
+}
 
 // popular food
 document.addEventListener('DOMContentLoaded', function () {
@@ -1052,7 +1142,7 @@ function recommended_data() {
 
             // Check if item exists in cart
             let cartItem = cart_data.find(cartEle => cartEle.id === ele.id);
-            let quantity = cartItem ? cartItem.qty : 0;
+            let quantity = cartItem ? cartItem.quantity : 0;
 
             return ` 
             <div class="row mb-4 py-3">
@@ -1112,10 +1202,10 @@ function incrementQuantity(id) {
     let cartItem = cart_data.find(item => item.id === id);
 
     if (cartItem) {
-        cartItem.qty += 1;
+        cartItem.quantity += 1;
     } else {
         let item = VK_recomndended_data.find(item => item.id === id);
-        item.qty = 1;
+        item.quantity = 1;
         cart_data.push(item);
     }
 
@@ -1128,14 +1218,14 @@ function decrementQuantity(id) {
     let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
     let cartItem = cart_data.find(item => item.id === id);
 
-    if (cartItem && cartItem.qty > 1) {
-        cartItem.qty -= 1;
+    if (cartItem && cartItem.quantity > 1) {
+        cartItem.quantity -= 1;
     } else {
         cart_data = cart_data.filter(item => item.id !== id);
     }
 
     localStorage.setItem('cart', JSON.stringify(cart_data));
-    recommended_data(); // Re-render the UI
+    recommended_data();
 }
 
 // Open modal and pass item data
@@ -1180,7 +1270,7 @@ function VK_addToCart() {
     }
 
     // Update quantity
-    cartItem.qty = parseInt(document.querySelector('.font_18.fw-bold.px-2').textContent);
+    cartItem.quantity = parseInt(document.querySelector('.font_18.fw-bold.px-2').textContent);
     cartItem.type = "food";
 
 
@@ -1311,34 +1401,85 @@ function VK_review_tab(id) {
     }
 }
 
-// item page (item flover buttons)
-function VK_item_flover_btn(id) {
-    let btn = document.querySelectorAll('.VK_itm_flover')
-    btn.forEach(e => {
-        e.classList.remove('VK_item_flaver_active_btn')
-        e.classList.add('VK_item_flaver_btn')
-    })
-    btn[id].classList.add('VK_item_flaver_active_btn')
-    btn[id].classList.remove('VK_item_flaver_btn')
-}
 
-// item page (add to cart page) 
 function VK_item_add_cart() {
-    console.log("call");
-    document.getElementById('VK_item_cart').classList.add('d-none')
-    document.getElementById('VK_item_ince').classList.remove('d-none')
-}
+    let url = window.location.search;
+    let params = new URLSearchParams(url);
+    let id = params.get('item_id');
 
-function VK_item_decre() {
-    let qty = document.querySelector('#VK_item_qty').innerText;
-    if (parseInt(qty) > 1) {
-        document.querySelector('#VK_item_qty').innerText = parseInt(qty) - 1;
+    let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+    let find_cart = cart_data.find(el => el.id == id);
+
+    if (!find_cart) {
+        let btn = Array.from(document.querySelectorAll('input[name="flaver"]'));
+        let chk = btn.find(el => el.checked === true);
+
+        if (chk) {
+            let data = VK_recomndended_data.find(el => el.id == id);
+            data.quantity = 1;
+            data.type = "food";
+            data.flavor = chk.value;
+            cart_data.push(data);
+
+            localStorage.setItem('cart', JSON.stringify(cart_data));
+
+            document.getElementById('VK_item_ince').classList.remove('d-none')
+            document.getElementById('VK_item_cart').classList.add('d-none')
+        }
     }
 }
 
+
+function VK_item_decre() {
+    let url = window.location.search;
+    let params = new URLSearchParams(url);
+    let id = params.get('item_id');
+
+    if (id) {
+        let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+        let find_cart = cart_data.find(el => el.id == id);
+
+        if (find_cart) {
+            let qty = document.querySelector('#VK_item_qty').innerText;
+
+            if (parseInt(qty) > 1) {
+                document.querySelector('#VK_item_qty').innerText = parseInt(qty) - 1;
+
+                find_cart.quantity -= 1;
+
+                localStorage.setItem('cart', JSON.stringify(cart_data));
+
+            }
+        }
+    }
+}
+
+
 function VK_item_incre() {
-    let qty = document.querySelector('#VK_item_qty').textContent;
-    document.querySelector('#VK_item_qty').textContent = parseInt(qty) + 1;
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('item_id');
+
+    if (!id) {
+        return;
+    }
+
+    const cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+    const find_cart = cart_data.find(item => item.id == id);
+
+    if (!find_cart) {
+        return;
+    }
+
+    const qtyElement = document.querySelector('#VK_item_qty');
+    const currentQty = Number(qtyElement.innerText);
+
+    const newQty = currentQty + 1;
+    qtyElement.innerText = newQty;
+
+    find_cart.quantity = newQty;
+
+    localStorage.setItem('cart', JSON.stringify(cart_data));
+
 }
 
 
@@ -1347,8 +1488,14 @@ function VK_item_incre() {
 function VK_item_delivery() {
     let div = document.getElementById('VK_item_best_delevery');
     if (div) {
+
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+
         let item_delivery = VK_regular_menu_items.slice(0, 4)
-        let cart_data = JSON.parse(localStorage.getItem('cart'));
+        let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+
+
         if (cart_data.length >= 1) {
             if (document.getElementById('VK_add_item_menu')) {
                 document.getElementById('VK_add_item_menu').classList.remove('d-none')
@@ -1365,22 +1512,27 @@ function VK_item_delivery() {
                 }).join("");
             };
 
+            let isInWishlist = wishlist.some(item => item.id === ele.id);
+            let heartIcon = isInWishlist ? 'fa-solid fa-heart text-white' : 'fa-regular fa-heart text-white';
+
             const stars = generateStars(ele.review);
             let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
                 <div class="overflow-hidden VK_regular_menu_img mx-md-4">
-                    <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
-                    <div class="VK_regular_cart">
-                        <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
-                            <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
-                                <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
-                            </button>
-                            <button class="border-0 rounded-circle VK_cart_btn">
-                                <img src="/images/vivek/hart.png" alt="Add to favorites" width="20px">
-                            </button>
+                    <a href="items.html?item_id=${ele.id}">
+                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
+                        <div class="VK_regular_cart">
+                            <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
+                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
+                                    <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
+                                </button>
+                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_wishlist(event,${currnt_record})">
+                                    <i class="${heartIcon}"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="mt-4 text-center">
                     <p class="VK_inter text-black fw-600 mb-1 font_18">${ele.name}</p>
@@ -1408,9 +1560,18 @@ document.addEventListener('DOMContentLoaded', function () {
     let url = window.location.search
     let params = new URLSearchParams(url)
     let id = params.get('item_id');
-    if (id) {
-        let data = VK_recomndended_data.find(el => el.id == id)
 
+    if (id) {
+        let cart_data = JSON.parse(localStorage.getItem('cart')) || []
+        let find_cart = cart_data.find(el => el.id == id)
+
+        if (find_cart) {
+            document.getElementById('VK_item_cart').classList.add('d-none')
+            document.getElementById('VK_item_ince').classList.remove('d-none')
+            document.getElementById('VK_item_qty').innerText = find_cart.quantity
+        }
+
+        let data = VK_recomndended_data.find(el => el.id == id)
         document.getElementById('VK_item_name').innerText = data.name;
         document.getElementById('VK_item_price').innerText = data.price;
         document.getElementById('VK_item_desc').innerText = data.description;

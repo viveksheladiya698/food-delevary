@@ -29,6 +29,12 @@
     <!-- css -->
     <link rel="stylesheet" href="/css/vivek.css">
 
+    <!-- <style>
+        body{
+            overflow-x: hidden;
+        }
+    </style> -->
+
 </head>
 
 <body>
@@ -59,12 +65,12 @@
                                     </button>
                                     <ul class="dropdown-menu VK_home_cate mt-2" aria-labelledby="dropdownMenuButton1">
                                         <li>
-                                            <a class="dropdown-item d-block h-100" href="#">
+                                            <a class="dropdown-item d-block h-100" href="/Food_home.html">
                                                 Food
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item d-block h-100" href="#">
+                                            <a class="dropdown-item d-block h-100" href="/groceryhome.html">
                                                 Groceries
                                             </a>
                                         </li>
@@ -436,16 +442,22 @@
 
 
     <script>
-        fetch('Footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('footer').innerHTML = data;
-            });
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.querySelector('header').innerHTML = data;
-            });
+        document.addEventListener('DOMContentLoaded', function () {
+            fetch('Header.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('header').innerHTML = data;
+                    login_chk();
+                })
+                .catch(error => console.error('Error loading navbar:', error));
+
+            fetch('Footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('footer').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading footer:', error));
+        });
     </script>
 
 </body>

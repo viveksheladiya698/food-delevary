@@ -64,7 +64,7 @@
 }
 
 .VK_page_heading {
-    font-size: clamp(28px, 5vw, 42px);
+    font-size: clamp(28px, 5vw, 50px);
 }
 
 .VK_slider_heading {
@@ -72,7 +72,7 @@
 }
 
 .VK_section_heading {
-    font-size: clamp(24px, 4vw, 30px);
+    font-size: clamp(24px, 4vw, 32px);
     font-family: "Lato", system-ui;
 }
 
@@ -644,6 +644,37 @@
     background-color: #FBF0D6;
 }
 
+
+.button-group {
+    flex-grow: 1;
+    margin: auto;
+}
+
+.button-group input[type="radio"] {
+    display: none;
+}
+
+.button-group label {
+    display: inline-block;
+    padding: 7px 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 13px;
+    margin: 5px;
+    font-weight: 600;
+    font-family: "inter", sans-serif;
+}
+
+.button-group input[type="radio"]:checked+label {
+    background-color: #f2e9dc;
+    border: 1px solid #f2e9dc;
+}
+
+
+
 /* ---------------------------------------------- media query ----------------------------------------------- */
 
 /*  extra small device */
@@ -695,7 +726,8 @@
     .VK_col_img {
         height: 150px;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         width: 50%;
         position: relative;
         top: 48px;
@@ -752,7 +784,8 @@
     .VK_col_img {
         height: 200px;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         width: 33%;
         position: relative;
         top: 48px;
@@ -803,7 +836,8 @@
     .VK_col_img {
         height: 200px;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         width: 33%;
         position: relative;
         top: 48px;
@@ -840,7 +874,8 @@
     .VK_col_img {
         height: 250px;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         position: relative;
         top: 64px;
     }
@@ -880,7 +915,8 @@
     .VK_view_parent {
         width: 80%;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         position: relative;
         top: 64px;
     }
@@ -916,7 +952,8 @@
     .VK_view_parent {
         width: 80%;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         position: relative;
         top: 64px;
     }
@@ -960,7 +997,8 @@
     .VK_view_parent {
         width: 80%;
     }
-    .VK_moblie_img{
+
+    .VK_moblie_img {
         position: relative;
         top: 64px;
     }
