@@ -1,25 +1,45 @@
 function login_chk() {
     let data = localStorage.getItem('login')
     if (data) {
-        document.getElementById('VK_user_profile').classList.remove('d-none')
-        document.getElementById('VK_sign_in').classList.add('d-none')
+        document.getElementById('VK_user_profile')?.classList.remove('d-none')
+        document.getElementById('VK_sign_in')?.classList.add('d-none')
         document.getElementById('VK_profile_off')?.classList.remove('d-none')
         document.getElementById('VK_off_btns')?.classList.add('d-none')
-        // let address = JSON.parse(localStorage.getItem('address'))
-        // if (address) {
-        //     console.log("call");
-        //     let location = address.house_no + ", " + address.area + ", " + address.sector + "-" + address.pincode
 
-        //     document.getElementById('VK_address')?.innerHTML = location;
-        // }
     } else {
-        document.getElementById('VK_user_profile').classList.add('d-none')
-        document.getElementById('VK_sign_in').classList.remove('d-none')
-        document.getElementById('VK_profile_off').classList.add('d-none')
-        document.getElementById('VK_off_btns').classList.remove('d-none')
+        document.getElementById('VK_user_profile')?.classList.add('d-none')
+        document.getElementById('VK_sign_in')?.classList.remove('d-none')
+        document.getElementById('VK_profile_off')?.classList.add('d-none')
+        document.getElementById('VK_off_btns')?.classList.remove('d-none')
 
     }
 }
+
+
+
+async function VK_update_data() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (wishlist.length > 0) {
+        document.getElementById('VK_wishlist_count').innerHTML = wishlist.length;
+    } else {
+        document.getElementById('VK_wishlist_count').classList.add('d-none')
+    }
+
+    let address = JSON.parse(localStorage.getItem('address'))
+    if(address)
+    {
+        let user_address = `${address.house_no } ${"" +address.address}, ${address.sector}, ${address.area}`;
+        document.getElementById('VK_address').innerText = user_address
+    }
+
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length > 0) {
+        document.getElementById('VK_cart_count').innerHTML = cart.length
+    } else {
+        document.getElementById('VK_cart_count').classList.add('d-none')
+    }
+}
+
 
 
 function VK_sign_up_cd(id) {

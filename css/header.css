@@ -234,6 +234,15 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 
+.VK_address_type label {
+    cursor: pointer;
+}
+
+.VK_address_type input[type="radio"]:checked+label {
+    background-color: #f2e9dc;
+    border: 1px solid #f2e9dc;
+}
+
 /* ------------------------------ media query ------------------------------- */
 
 /* 3xl device */
@@ -392,14 +401,17 @@ input[type="number"]::-webkit-inner-spin-button {
         padding: 20px !important;
     }
 }
+
 @media(max-width:375px) {
     .d_logoutmodel .modal-dialog {
         width: 300px !important;
     }
-    .d_logoutmodel .modal-body{
+
+    .d_logoutmodel .modal-body {
         padding: 15px !important;
     }
-    .d_logoutmodel .modal-body p{
+
+    .d_logoutmodel .modal-body p {
         font-size: 16px;
     }
 }
