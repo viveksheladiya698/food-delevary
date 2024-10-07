@@ -2,6 +2,54 @@
     border-bottom: 1px solid #ddd;
 }
 
+.VK_wishlist_icn {
+    position: relative;
+}
+
+.VK_cart_icn {
+    position: relative;
+}
+
+.VK_wishlist_cnt {
+    position: absolute;
+    font-size: 10px;
+    top: -3px;
+    right: -5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: #041527;
+    color: white;
+    font-family: "inter", sans-serif;
+}
+
+.VK_cart_cnt {
+    position: absolute;
+    font-size: 10px;
+    top: -3px;
+    right: -5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: #041527;
+    color: white;
+    font-family: "inter", sans-serif;
+}
+
+.VK_address_span {
+    display: inline-block;
+    max-width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
 
 
 .VK_header {
@@ -237,6 +285,15 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: 0;
 }
 
+
+.VK_address_type label {
+    cursor: pointer;
+}
+
+.VK_address_type input[type="radio"]:checked+label {
+    background-color: #f2e9dc;
+    border: 1px solid #f2e9dc;
+}
 /* Logout modal */
 
 .d_logoutmodel .modal-dialog {
@@ -344,7 +401,10 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 90% !important;
     }
-    
+    .VK_address_span{
+        max-width: 150px;
+    }
+
 }
 
 /* lg device */
@@ -360,6 +420,9 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 80% !important;
     }
+    .VK_address_span{
+        max-width: 200px;
+    }
 }
 
 /* xl device */
@@ -367,6 +430,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_area_details .modal-dialog {
         max-width: 50% !important;
     }
+
     .VK_signin_model .modal-dialog {
         max-width: 60% !important;
     }
@@ -378,6 +442,9 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 65% !important;
     }
+    .VK_address_span{
+        max-width: 200px;
+    }
 }
 
 /* 2xl device */
@@ -385,6 +452,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_area_details .modal-dialog {
         max-width: 40% !important;
     }
+
     .VK_signin_model .modal-dialog {
         max-width: 50% !important;
     }
@@ -395,6 +463,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .VK_signup_model .modal-dialog {
         max-width: 55% !important;
+    }
+    .VK_address_span{
+        max-width: 250px;
     }
 
 }
@@ -408,6 +479,7 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_location_model .modal-dialog {
         max-width: 30% !important;
     }
+
     .VK_signin_model .modal-dialog {
         max-width: 45% !important;
     }
@@ -418,6 +490,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
     .VK_signup_model .modal-dialog {
         max-width: 45% !important;
+    }
+    .VK_address_span{
+        max-width: 250px;
     }
 
 }
@@ -439,14 +514,17 @@ input[type="number"]::-webkit-inner-spin-button {
         padding: 20px !important;
     }
 }
+
 @media(max-width:375px) {
     .d_logoutmodel .modal-dialog {
         width: 300px !important;
     }
-    .d_logoutmodel .modal-body{
+
+    .d_logoutmodel .modal-body {
         padding: 15px !important;
     }
-    .d_logoutmodel .modal-body p{
+
+    .d_logoutmodel .modal-body p {
         font-size: 16px;
     }
 }

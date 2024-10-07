@@ -7,7 +7,24 @@ window.onload = function () {
     recommended_data();
     VK_Beverages();
     VK_item_delivery();
+    VK_popular_dish_data();
 
+}
+
+
+async function VK_update_data1() {
+    let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    if (wishlist.length > 0) {
+        document.getElementById('VK_wishlist_count').innerHTML = wishlist.length;
+    } else {
+        document.getElementById('VK_wishlist_count').classList.add('d-none')
+    }
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length > 0) {
+        document.getElementById('VK_cart_count').innerHTML = cart.length
+    } else {
+        document.getElementById('VK_cart_count').classList.add('d-none')
+    }
 }
 
 
@@ -24,6 +41,135 @@ function VK_cart_list_menu() {
 }
 
 
+
+// ------------------------------------------------- data ------------------------------------------
+
+// menu data
+let VK_item_main_data = [
+    {
+        id: 201,
+        name: "Chinese Samosa",
+        price: "200",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "samosa.png",
+        typ: "veg",
+        search_icn: "icn1.png"
+    },
+    {
+        id: 202,
+        name: "Punjabi Dish",
+        price: "400",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "punjabi.png",
+        typ: "veg",
+        search_icn: "icn2.png"
+    },
+    {
+        id: 203,
+        name: "Burger",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "burger.png",
+        typ: "veg",
+        search_icn: "icn3.png"
+    },
+    {
+        id: 204,
+        name: "Punjabi Dish",
+        price: "400",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "punjabi.png",
+        typ: "veg",
+        search_icn: "icn3.png"
+    },
+    {
+        id: 205,
+        name: "Burger",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "burger.png",
+        typ: "non-veg",
+        search_icn: "icn2.png"
+    },
+    {
+        id: 206,
+        name: "Veg Manchurian",
+        price: "60",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "manchurian.png",
+        typ: "veg",
+        search_icn: "icn1.png"
+    },
+    {
+        id: 207,
+        name: "Gujarati Thali",
+        price: "200",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 4,
+        img: "gujarati.png",
+        typ: "veg",
+        search_icn: "icn2.png"
+    },
+    {
+        id: 208,
+        name: "Chinese Samosa",
+        price: "200",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 4,
+        review: 5,
+        img: "samosa.png",
+        typ: "veg",
+        search_icn: "icn3.png"
+    },
+    {
+        id: 209,
+        name: "Peri Peri Cheese Burger",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 15,
+        review: 4,
+        img: "burger3.png",
+        typ: "veg",
+        search_icn: "icn3.png"
+    },
+    {
+        id: 210,
+        name: "Spicy Chicken Burger",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 25,
+        review: 3,
+        img: "burger.png",
+        typ: "non-veg",
+        search_icn: "icn2.png"
+    },
+    {
+        id: 211,
+        name: "Aloo Tikki Burger + French Fries",
+        price: "80",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        review_cnt: 10,
+        review: 2,
+        img: "burger2.png",
+        typ: "veg",
+        search_icn: "icn1.png"
+    },
+]
+
+
 // resturent data
 var VK_main_data = [
     {
@@ -33,7 +179,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 4,
         offer: "Items At $60",
-        image: "hotel1.png",
+        img: "hotel1.png",
         typ: "vage",
         price: 500,
     },
@@ -44,7 +190,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 2,
         offer: null,
-        image: "hotel2.png",
+        img: "hotel2.png",
         typ: "vage",
         price: 700,
     },
@@ -55,7 +201,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 3,
         offer: null,
-        image: "hotel3.png",
+        img: "hotel3.png",
         typ: "non-vage",
         price: 300,
     },
@@ -66,7 +212,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel4.png",
+        img: "hotel4.png",
         typ: "vage",
         price: 200,
     },
@@ -77,7 +223,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel5.png",
+        img: "hotel5.png",
         typ: "non-vage",
         price: 1000,
     },
@@ -88,7 +234,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel6.png",
+        img: "hotel6.png",
         typ: "vage",
         price: 800,
     },
@@ -99,7 +245,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 3,
         offer: "Items At $60",
-        image: "hotel7.png",
+        img: "hotel7.png",
         typ: "vage",
         price: 500,
     },
@@ -110,7 +256,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel6.png",
+        img: "hotel6.png",
         typ: "vage",
         price: 500,
     },
@@ -121,7 +267,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 2,
         offer: "10% OFF",
-        image: "hotel5.png",
+        img: "hotel5.png",
         typ: "vage",
         price: 500,
     },
@@ -132,7 +278,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 4,
         offer: null,
-        image: "hotel6.png",
+        img: "hotel6.png",
         typ: "vage",
         price: 500,
     },
@@ -143,7 +289,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 1,
         offer: null,
-        image: "hotel2.png",
+        img: "hotel2.png",
         typ: "vage",
         price: 500,
     },
@@ -154,7 +300,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 3,
         offer: null,
-        image: "hotel6.png",
+        img: "hotel6.png",
         typ: "vage",
         price: 500,
     },
@@ -165,7 +311,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: "Items At $60",
-        image: "hotel1.png",
+        img: "hotel1.png",
         typ: "vage",
         price: 200
     },
@@ -176,7 +322,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel2.png",
+        img: "hotel2.png",
         typ: "non-vage",
         price: 200
     },
@@ -187,7 +333,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel3.png",
+        img: "hotel3.png",
         typ: "non-vage",
         price: 250
     },
@@ -198,7 +344,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel4.png"
+        img: "hotel4.png"
     },
     {
         id: 317,
@@ -207,7 +353,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel5.png",
+        img: "hotel5.png",
         typ: "non-vage",
         price: 200
     },
@@ -218,7 +364,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel6.png",
+        img: "hotel6.png",
         typ: "vage",
         price: 400
     },
@@ -229,7 +375,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: "Items At $60",
-        image: "hotel7.png",
+        img: "hotel7.png",
         typ: "non-vage",
         price: 600
     },
@@ -240,7 +386,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 5,
         offer: null,
-        image: "hotel6.png",
+        img: "hotel6.png",
         typ: "vage",
         price: 700
     },
@@ -251,7 +397,7 @@ var VK_main_data = [
         review_cnt: 5,
         review: 4,
         offer: "Items At $60",
-        image: "hotel1.png",
+        img: "hotel1.png",
         typ: "vage",
         price: 450
 
@@ -262,7 +408,7 @@ var VK_main_data = [
         description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
         review_cnt: 5,
         review: 3,
-        image: "mcdonald.png",
+        img: "mcdonald.png",
         typ: "non-vage",
         price: 200
     },
@@ -272,7 +418,7 @@ var VK_main_data = [
         description: "Burgers, Pizzas, fast food Aaimata Road, Surat",
         review_cnt: 5,
         review: 2,
-        image: "hotel8.png",
+        img: "hotel8.png",
         typ: "vage",
         price: 600
     },
@@ -282,7 +428,7 @@ var VK_main_data = [
         description: "Burgers, Beverages, Cafe... Pal, Surat",
         review_cnt: 5,
         review: 5,
-        image: "hotel9.png",
+        img: "hotel9.png",
         typ: "vage",
         price: 500
     },
@@ -292,7 +438,7 @@ var VK_main_data = [
         description: "Burgers, Pizzas, fast food Yogichowk, Surat",
         review_cnt: 5,
         review: 5,
-        image: "hotel9.png",
+        img: "hotel9.png",
         typ: "vage",
         price: 900
     },
@@ -303,7 +449,7 @@ var VK_main_data = [
         review_cnt: 5,
         offer: "50% OFF UPTO $20",
         review: 1,
-        image: "mcdonald.png",
+        img: "mcdonald.png",
         typ: "non-vage",
         price: 200
     },
@@ -314,7 +460,7 @@ var VK_main_data = [
         review_cnt: 5,
         offer: "Items At $60",
         review: 3,
-        image: "hotel7.png",
+        img: "hotel7.png",
         typ: "non-vage",
         price: 500
     },
@@ -324,7 +470,7 @@ var VK_main_data = [
         description: "Burgers, Beverages, Cafe... Pal, Surat",
         review_cnt: 5,
         review: 2,
-        image: "hotel9.png",
+        img: "hotel9.png",
         typ: "non-vage",
         price: 100
     },
@@ -334,7 +480,7 @@ var VK_main_data = [
         description: "Burgers, Pizzas, fast food Yogichowk, Surat",
         review_cnt: 5,
         review: 5,
-        image: "hotel9.png",
+        img: "hotel9.png",
         typ: "vage",
         price: 400
     },
@@ -344,7 +490,7 @@ var VK_main_data = [
         description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
         review_cnt: 5,
         review: 5,
-        image: "mcdonald.png",
+        img: "mcdonald.png",
         typ: "vage",
         price: 500
     },
@@ -358,72 +504,7 @@ var VK_main_data = [
 // ---------------------------------------------------- Food Home ----------------------------------------------------
 
 // food home page (Regular Menu)
-let VK_regular_menu_items = [
-    {
-        id: 201,
-        name: "Chinese Samosa",
-        price: "200",
-        review_cnt: 4,
-        review: 4,
-        image: "samosa.png"
-    },
-    {
-        id: 202,
-        name: "Punjabi Dish",
-        price: "400",
-        review_cnt: 4,
-        review: 4,
-        image: "punjabi.png"
-    },
-    {
-        id: 203,
-        name: "Burger",
-        price: "80",
-        review_cnt: 4,
-        review: 4,
-        image: "burger.png"
-    },
-    {
-        id: 204,
-        name: "Punjabi Dish",
-        price: "400",
-        review_cnt: 4,
-        review: 4,
-        image: "punjabi.png"
-    },
-    {
-        id: 205,
-        name: "Burger",
-        price: "80",
-        review_cnt: 4,
-        review: 4,
-        image: "burger.png"
-    },
-    {
-        id: 206,
-        name: "Veg Manchurian",
-        price: "60",
-        review_cnt: 4,
-        review: 4,
-        image: "manchurian.png"
-    },
-    {
-        id: 207,
-        name: "Gujarati Thali",
-        price: "200",
-        review_cnt: 4,
-        review: 4,
-        image: "gujarati.png"
-    },
-    {
-        id: 208,
-        name: "Chinese Samosa",
-        price: "200",
-        review_cnt: 4,
-        review: 5,
-        image: "samosa.png"
-    }
-]
+let VK_regular_menu_items = VK_item_main_data.slice(0, 8)
 
 // food home page (Regular Menu)
 function regular_menu_card_display() {
@@ -455,7 +536,7 @@ function regular_menu_card_display() {
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
                 <div class="overflow-hidden VK_regular_menu_img mx-md-4">
                     <a href="/Popular_food.html?id=${ele.id}">
-                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
+                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="${ele.name}">
                         <div class="VK_regular_cart">
                             <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
                                 <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
@@ -516,6 +597,7 @@ function VK_add_wishlist(event, item) {
     }
 
     localStorage.setItem('wishlist', JSON.stringify(data));
+    VK_update_data1();
 
 }
 
@@ -536,6 +618,7 @@ function VK_add_to_cart(event, item) {
     }
 
     VK_cart_list_menu()
+    VK_update_data1();
 }
 
 
@@ -576,7 +659,7 @@ function VK_resturent_data_display() {
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
                 <div class="overflow-hidden VK_resturent_food">
                     <a href="/Restaurants.html?r_id=${ele.id}">
-                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
+                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
                         <div class="VK_resturent_btn">
                             <button class="" onclick="VK_whshlist(event,${currnt_record})">
                                 <i class="${heartIcon}"></i>
@@ -644,6 +727,7 @@ function VK_whshlist(event, item) {
     }
 
     localStorage.setItem('wishlist', JSON.stringify(data));
+    VK_update_data1();
 }
 
 
@@ -798,7 +882,7 @@ function VK_popular_restro_data_display() {
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
                 <div class="overflow-hidden VK_resturent_food">
                     <a href="/Restaurants.html?r_id=${ele.id}">
-                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
+                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
                         <div class="VK_resturent_btn">
                             <button class="" onclick="VK_whshlist(event,${currnt_record})">
                                 <i class="${heartIcon}"></i>
@@ -877,7 +961,7 @@ function VK_our_restro_data_display() {
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
                 <a href="/Restaurants.html?r_id=${ele.id}">
                     <div class="overflow-hidden VK_resturent_food">
-                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="">
+                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
                         <div class="VK_resturent_btn">
                             <button class="" onclick="VK_whshlist(event,${currnt_record})">
                                 <i class="${heartIcon}"></i>
@@ -1078,38 +1162,7 @@ function VK_close_menu() {
 
 
 // Restaurants page (Recomended For you)
-let VK_recomndended_data = [
-    {
-        id: 1,
-        name: "Peri Peri Cheese Burger",
-        price: "80",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        review_cnt: 15,
-        review: 4,
-        image: "burger3.png",
-        typ: "veg"
-    },
-    {
-        id: 2,
-        name: "Spicy Chicken Burger",
-        price: "80",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        review_cnt: 25,
-        review: 3,
-        image: "burger.png",
-        typ: "non-veg"
-    },
-    {
-        id: 3,
-        name: "Aloo Tikki Burger + French Fries",
-        price: "80",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        review_cnt: 10,
-        review: 2,
-        image: "burger2.png",
-        typ: "veg"
-    },
-]
+let VK_recomndended_data = VK_item_main_data.slice(8, 11)
 
 
 let currentItem = {};
@@ -1149,7 +1202,7 @@ function recommended_data() {
                 <div class="col-xxl-2 col-xl-3 col-md-4">
                     <a href="/items.html?item_id=${ele.id}">
                         <div class="VK_reco_img">
-                            <img src="/images/assets/${ele.image}"
+                            <img src="/images/assets/${ele.img}"
                                 class="w-100 h-100 object_cover" alt="">
                             <div class="VK_reco_veg">
                                 <img src="/images/vivek/${ele.typ == "veg" ? `veg.png` : `non-veg.png`}" class="w-100 h-100" alt="veg type">
@@ -1284,6 +1337,7 @@ function VK_addToCart() {
     const modalInstance = bootstrap.Modal.getInstance(document.getElementById('Recommended'));
     modalInstance.hide();
     recommended_data();
+    VK_update_data1();
 }
 
 
@@ -1296,7 +1350,7 @@ let VK_beverages_data = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         review_cnt: 5,
         review: 5,
-        image: "cold-drink1.png",
+        img: "cold-drink1.png",
     },
     {
         name: "Cold Coffee",
@@ -1304,7 +1358,7 @@ let VK_beverages_data = [
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         review_cnt: 5,
         review: 5,
-        image: "cold-drink2.png",
+        img: "cold-drink2.png",
     },
 ]
 
@@ -1312,7 +1366,17 @@ let VK_beverages_data = [
 function VK_Beverages() {
     let div = document.getElementById('VK_Beverages')
     if (div) {
-        let html = VK_beverages_data.map((ele) => {
+
+        let cart_data = JSON.parse(localStorage.getItem('cart')) || [];
+
+        if (cart_data.length >= 1) {
+            if (document.getElementById('VK_add_item_menu')) {
+                document.getElementById('VK_add_item_menu').classList.remove('d-none')
+                document.getElementById('VK_item_cnt').innerText = cart_data.length;
+            }
+        }
+
+        let html = VK_beverages_data.map((ele, id) => {
             const generateStars = (rating) => {
                 return Array.from({ length: 5 }, (_, index) => {
                     return `
@@ -1323,58 +1387,56 @@ function VK_Beverages() {
             };
 
             const stars = generateStars(ele.review);
-            return `
-                <div class="row mb-4 pb-3">
-                    <div class="col-xxl-2 col-xl-3 col-md-4">
+
+            let cartItem = cart_data.find(cartEle => cartEle.id === ele.id);
+            let quantity = cartItem ? cartItem.quantity : 0;
+
+            return ` 
+            <div class="row mb-4 py-3">
+                <div class="col-xxl-2 col-xl-3 col-md-4">
+                    <a href="/items.html?item_id=${ele.id}">
                         <div class="VK_reco_img">
-                            <img src="/images/assets/${ele.image}"
+                            <img src="/images/assets/${ele.img}"
                                 class="w-100 h-100 object_cover" alt="">
                         </div>
+                    </a>
+                </div>
+                <div class="col-md-8 ps-4 pt-3">
+                    <h5 class="text-black VK_inter VK_food_heading fw-600">
+                       ${ele.name}
+                    </h5>
+                    <p class="font_18 VK_inter text-black fw-400">
+                        Price : $${ele.price}
+                    </p>
+                    <div class="d-flex gap-1">
+                        ${stars}
+                        <span class="d-inline-block VK_inter ps-2">
+                            ${ele.review_cnt} Reviews
+                        </span>
                     </div>
-                    <div class="col-md-8 ps-4 pt-3">
-                        <h5 class="text-black VK_inter VK_food_heading fw-600">
-                            ${ele.name}
-                        </h5>
-                        <p class="font_18 VK_inter text-black fw-400">
-                            Price : $${ele.price}
-                        </p>
-                        <div class="d-flex gap-1">
-                            ${stars}
-                            <span class="d-inline-block VK_inter ps-2">
-                                ${ele.review_cnt} Review
+                    <p class="VK_inter font_14 text-black mt-2">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <div>
+                        ${quantity > 0 ? `
+                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg" id="VK_restro_btn_${ele.id}">
+                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="decrementQuantity(${ele.id})">-</button>
+                                <p class="m-0 fw-bold">${quantity}</p>
+                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="incrementQuantity(${ele.id})">+</button>
                             </span>
-                        </div>
-                        <p class="VK_inter font_14 text-black mt-2">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                        <div>
-                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-noee">
-                                <button
-                                    class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold">
-                                    ADD
-                                </button>
+                        ` : `
+                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg">
+                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">ADD</button>
                             </span>
-                            <span class="VK_shadow d-inline-flex align-items-center VK_round_lg d-none">
-                                <button
-                                    class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold ">
-                                    -
-                                </button>
-                                <p class="m-0  fw-bold">
-                                    1
-                                </p>
-                                <button
-                                    class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold">
-                                    +
-                                </button>
-                            </span>
-                        </div>
+                        `}
                     </div>
-                </div>`
-        }).join("")
-        div.innerHTML = html
+                </div>
+            </div>`;
+        }).join("");
+        div.innerHTML = html;
     } else {
-        return
+        return;
     }
 }
 
@@ -1427,6 +1489,7 @@ function VK_item_add_cart() {
             document.getElementById('VK_item_cart').classList.add('d-none')
         }
     }
+    VK_update_data1();
 }
 
 
@@ -1521,7 +1584,7 @@ function VK_item_delivery() {
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
                 <div class="overflow-hidden VK_regular_menu_img mx-md-4">
                     <a href="items.html?item_id=${ele.id}">
-                        <img src="/images/assets/${ele.image}" class="w-100 h-100 object_cover" alt="${ele.name}">
+                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="${ele.name}">
                         <div class="VK_regular_cart">
                             <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
                                 <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
@@ -1571,7 +1634,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('VK_item_qty').innerText = find_cart.quantity
         }
 
-        let data = VK_recomndended_data.find(el => el.id == id)
+        let data = VK_item_main_data.find(el => el.id == id)
         document.getElementById('VK_item_name').innerText = data.name;
         document.getElementById('VK_item_price').innerText = data.price;
         document.getElementById('VK_item_desc').innerText = data.description;
@@ -1587,3 +1650,142 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------- search page -------------------------------------------------------
+
+// search function
+function VK_search() {
+
+    let close = document.querySelector('.VK_input_cancel.d-none')
+    close?.classList.remove('d-none')
+
+    let search_text = document.getElementById('VK_search_box').value
+
+    if (search_text.length > 0) {
+        let search_restro = VK_main_data.filter((ele) => {
+            return ele.name.toLowerCase().includes(search_text.toLowerCase())
+        })
+
+        let item_search = VK_item_main_data.filter((ele) => {
+            return ele.name.toLowerCase().includes(search_text.toLowerCase())
+        })
+        document.getElementById('VK_popular_dishes').classList.add('d-none')
+        document.getElementById('VK_search_history').classList.add('d-none')
+        document.getElementById('VK_megnifine').classList.add('d-none')
+        document.getElementById('VK_search_results').classList.remove('d-none')
+
+        VK_print_search_result(item_search)
+    }else{
+        document.getElementById('VK_popular_dishes').classList.remove('d-none')
+        document.getElementById('VK_search_history').classList.remove('d-none')
+        document.getElementById('VK_megnifine').classList.remove('d-none')
+        document.getElementById('VK_search_results').classList.add('d-none')
+    }
+
+}
+
+// clear search btn
+function VK_clear() {
+
+    document.getElementById('VK_popular_dishes').classList.remove('d-none')
+    document.getElementById('VK_search_history').classList.remove('d-none')
+    document.getElementById('VK_megnifine').classList.remove('d-none')
+    document.getElementById('VK_search_results').classList.add('d-none')
+    document.querySelector('.VK_input_cancel').classList.add('d-none')
+
+    document.getElementById('VK_search_box').value = ""
+}
+
+// Print Search Results
+function VK_print_search_result(search_arr) {
+    let div = document.getElementById('VK_search_result_div')
+    if (div) {
+
+        let html = search_arr.map((ele) => {
+            return `
+                <div class="d-flex align-items-center my-3">
+                    <div class="VK_search_img">
+                        <img src="/images/assets/${ele.search_icn}" class="w-100" alt="">
+                    </div>
+                    <div class="VK_search_item_desc py-2 ps-4">
+                        <h6 class="VK_inter fw-bold text-black">
+                            ${ele.name}
+                        </h6>
+                        <p class="VK_inter font_14 VK_search_text_desc m-0">
+                            Dish
+                        </p>
+                    </div>
+                </div>`
+        }).join("")
+
+        div.innerHTML = html
+
+    } else {
+        return;
+    }
+}
+
+
+let VK_popular_dishes = [
+    {
+        name: "Burger",
+        image: "icn1.png"
+    },
+    {
+        name: "Pizza",
+        image: "icn4.png"
+    },
+    {
+        name: "Sandwich",
+        image: "icn5.png"
+    },
+    {
+        name: "Dosa",
+        image: "icn6.png"
+    },
+    {
+        name: "Idli",
+        image: "icn7.png"
+    },
+    {
+        name: "Samosa",
+        image: "icn8.png"
+    },
+    {
+        name: "Kachori",
+        image: "icn9.png"
+    },
+]
+
+// popular dish
+function VK_popular_dish_data() {
+    let div = document.getElementById('VK_popular_dish_div')
+
+    if (div) {
+        let html = VK_popular_dishes.map((el) => {
+            return `
+                <div class="VK_popular_item d-flex flex-column">
+                    <div class="VK_popular_food_image align-self-center">
+                        <img src="/images/assets/${el.image}" class="w-100 object_cover popular_img" alt="">
+                    </div>
+                    <p class="text-center text-black fw-600 VK_inter mt-auto">
+                        ${el.name}
+                    </p>
+                </div>`
+        }).join("")
+
+        div.innerHTML = html;
+    } else {
+        return
+    }
+}

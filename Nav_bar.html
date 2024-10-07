@@ -8,7 +8,7 @@
                     <a class="nav-link dropdown-toggle VK_nav_drop text-white d-inline-block" href="#"
                         id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-location-dot"></i>
-                        <span class="d-inline-block px-2" id="VK_address">
+                        <span class="d-inline-block px-2 VK_address_span" id="VK_address">
                             Location
                         </span>
                         <i class="fa-solid fa-chevron-down"></i>
@@ -121,19 +121,29 @@
                         <div class="ps-4 d-lg-block d-none">
                             <div class="d-flex gap-3">
                                 <div class="px-2">
-                                    <a href="">
-                                        <img src="/images/vivek/search.png" height="20px" alt="">
+                                    <a href="/Search.html">
+                                        <img src="/images/vivek/search.png" height="25px" alt="">
                                     </a>
                                 </div>
                                 <div class="px-2">
-                                    <a href="/wishlist.html">
-                                        <img src="/images/vivek/watchlist.png" height="20px" alt="">
-                                    </a>
+                                    <div class="VK_wishlist_icn">
+                                        <a href="/wishlist.html" class="text-decoration-none">
+                                            <img src="/images/vivek/watchlist.png" height="25px" alt="">
+                                        </a>
+                                        <p class="VK_wishlist_cnt m-0" id="VK_wishlist_count">
+                                            2
+                                        </p>
+                                    </div>
                                 </div>
                                 <div class="px-2">
-                                    <a href="/foodcart.html">
-                                        <img src="/images/vivek/card.png" height="20px" alt="">
-                                    </a>
+                                    <div class="VK_cart_icn">
+                                        <a href="/foodcart.html" class="text-decoration-none">
+                                            <img src="/images/vivek/card.png" height="25px" alt="">
+                                        </a>
+                                        <span class="VK_cart_cnt" id="VK_cart_count">
+                                            3
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -152,10 +162,6 @@
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <div class="mb-3">
-            <input type="search" placeholder="Search..."
-                class="w-100 px-2 py-1 rounded-2 VK_black_border VK_outlline_none">
-        </div>
         <div>
             <ul class="list-unstyled">
                 <li>
@@ -180,6 +186,12 @@
                     <a href="/contactus.html"
                         class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
                         Contact us
+                    </a>
+                </li>
+                <li>
+                    <a href="/Search.html"
+                        class="VK_border_bottom text-black VK_inter text-decoration-none d-block py-2 px-3">
+                        Search
                     </a>
                 </li>
                 <li>
@@ -513,7 +525,7 @@
                             </button>
                         </div>
                     </div>
-                    <form action="" onsubmit="VK_address()" class="w-100 mt-4">
+                    <form action="" onsubmit="VK_address(event)" class="w-100 mt-4">
                         <div class="VK_black_border px-2 rounded-3">
                             <div class="d-flex align-items-center ps-2">
                                 <input type="text" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia"
@@ -527,22 +539,22 @@
                         </div>
                         <div class="mt-4">
                             <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                placeholder="Flat/ House No/ Building Name" required id="address">
+                                placeholder="Flat/ House No/ Building Name" id="flat_no" required>
                         </div>
                         <div class="mt-4">
                             <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                placeholder="Area" required id="area">
+                                placeholder="Area" id="area" required>
                         </div>
                         <div class="mt-4">
                             <div class="d-flex flex-sm-row flex-column w-100 gap-3">
                                 <div class="w-100">
                                     <input type="text" class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                        placeholder="Sector/ Locality" required id="sector">
+                                        placeholder="Sector/ Locality" id="sector" required>
                                 </div>
                                 <div class="w-100 ">
                                     <input type="number"
                                         class="w-100 px-3 VK_input_border font_14 VK_outlline_none py-2"
-                                        placeholder="Pincode" required id="pin">
+                                        placeholder="Pincode" id="pin" required>
                                 </div>
                             </div>
                         </div>
@@ -668,7 +680,7 @@
                 <h6>Logout</h6>
                 <p class="mb-0">Are you sure you want to Logout?</p>
                 <div class="d-flex mt-5">
-                    <a href="" class="me-3 text-decoration-none" data-bs-dismiss="modal">NO</a>
+                    <button href="" class="me-3 text-decoration-none" data-bs-dismiss="modal">NO</button>
                     <button class="d_submit text-decoration-none" onclick="VK_logout()">
                         YES
                     </button>
