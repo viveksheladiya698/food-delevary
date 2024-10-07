@@ -124,23 +124,29 @@
                                     <div class="d-flex align-items-center justify-content-between">
                                         <div>
                                             <div class="d_label">Name</div>
-                                            <div class="d_result">johan patel</div>
+                                            <div class="d_result" id="nameResult">johan patel</div>
+                                            <input type="text" class="editable-input" id="nameInput"
+                                                style="display: none;">
                                         </div>
-                                        <div class="d_editbtn d-flex align-items-center ">
-                                            <img src="/darshan_img/edit.png" class="me-2" alt="">
+                                        <div class="d_editbtn d_flex .d_align-center" id="editBtn">
+                                            <div >
+                                                <img src="/darshan_img/edit.png" class="me-2" alt="">
                                             <a class="mb-0 text-decoration-none">Edit</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="d_filed">
                                     <div class="d_label">Mobile No.</div>
-                                    <div class="d_result">8975426510</div>
+                                    <div class="d_result" id="mobileResult">8975426510</div>
+                                    <input type="text" class="editable-input" id="mobileInput" style="display: none;">
                                 </div>
                                 <div class="d_filed">
                                     <div class="d_label">Email</div>
-                                    <div class="d_result">johanpatel@gmail.com</div>
+                                    <div class="d_result" id="emailResult">johanpatel@gmail.com</div>
+                                    <input type="email" class="editable-input" id="emailInput" style="display: none;">
                                 </div>
-                                <div class="d_savebtn mt-auto">
+                                <div class="d_savebtn mt-auto" id="saveBtn" style="display: none;">
                                     <a href="" class="text-center text-decoration-none">Save</a>
                                 </div>
                             </div>
@@ -155,7 +161,8 @@
                                     </div>
                                     <p>You have no placed order</p>
                                     <div class="d_cta">
-                                        <a href="/category.html" class="d-block text-center d-sm-inline-block">Continue Shopping</a>
+                                        <a href="/category.html" class="d-block text-center d-sm-inline-block">Continue
+                                            Shopping</a>
                                     </div>
                                 </div>
                             </div>
@@ -261,113 +268,6 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- <div class="tab-pane fade d_wishlist" id="v-pills-messages" role="tabpanel"
-                            aria-labelledby="v-pills-messages-tab" tabindex="0">
-                            <div class="row mb-3">
-                                <div class="col-12">
-                                    <div class="d_head">Wishlist</div>
-                                </div>
-                            </div>
-                            <div class="row g-4">
-                                <div class="col-12 col-sm-6 col-lg-4  ">
-                                    <div class="d_item">
-                                        <div class="d_img">
-                                            <img src="/darshan_img/wishlist1.png" alt="">
-                                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="d_con">
-                                            <div class="d_proname">McDonald’s</div>
-                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
-                                            <div class="d-flex ">
-                                                <div class="d_star align-items-center me-3">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                </div>
-                                                <div class="d_review align-self-center">5 Review</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-4  ">
-                                    <div class="d_item">
-                                        <div class="d_img">
-                                            <img src="/darshan_img/wishlist1.png" alt="">
-                                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="d_con">
-                                            <div class="d_proname">McDonald’s</div>
-                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
-                                            <div class="d-flex ">
-                                                <div class="d_star align-items-center me-3">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                </div>
-                                                <div class="d_review align-self-center">5 Review</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-4  ">
-                                    <div class="d_item">
-                                        <div class="d_img">
-                                            <img src="/darshan_img/wishlist1.png" alt="">
-                                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="d_con">
-                                            <div class="d_proname">McDonald’s</div>
-                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
-                                            <div class="d-flex ">
-                                                <div class="d_star align-items-center me-3">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                </div>
-                                                <div class="d_review align-self-center">5 Review</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-sm-6 col-lg-4  ">
-                                    <div class="d_item">
-                                        <div class="d_img">
-                                            <img src="/darshan_img/wishlist1.png" alt="">
-                                            <div class="d_heart d-flex justify-content-center align-items-center">
-                                                <i class="fa-solid fa-heart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="d_con">
-                                            <div class="d_proname">McDonald’s</div>
-                                            <div class="d_add">Burger, Beverages, Cafe, Mota Varachaa, surat</div>
-                                            <div class="d-flex">
-                                                <div class="d_star align-items-center me-3">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                    <img src="/darshan_img/star.png" alt="">
-                                                </div>
-                                                <div class="d_review align-self-center">5 Review</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="tab-pane fade d_address" id="v-pills-settings" role="tabpanel"
                             aria-labelledby="v-pills-settings-tab" tabindex="0">
                             <div class="row mb-3">
@@ -394,7 +294,8 @@
                                                 <a><img src="/darshan_img/dots.png" alt="" class="d_dropbtn"
                                                         onclick="toggleDropdown(0)"></a>
                                                 <div id="myDropdown_0" class="d_dropdown-content">
-                                                    <a href="#">Edit</a>
+                                                    <a href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#address">Edit</a>
                                                     <a href="#" class="border-0">Delete</a>
                                                 </div>
                                             </div>
@@ -419,7 +320,8 @@
                                                 <a><img src="/darshan_img/dots.png" alt="" class="d_dropbtn"
                                                         onclick="toggleDropdown(1)"></a>
                                                 <div id="myDropdown_1" class="d_dropdown-content">
-                                                    <a href="#">Edit</a>
+                                                    <a href="#" data-bs-toggle="modal"
+                                                        data-bs-target="#address">Edit</a>
                                                     <a href="#" class="border-0">Delete</a>
                                                 </div>
                                             </div>
@@ -428,7 +330,7 @@
                                 </div>
                             </div>
                             <div class="d_addaddress mt-3">
-                                <a class="text-decoration-none d_cur"  data-bs-toggle="modal" data-bs-target="#address">
+                                <a class="text-decoration-none d_cur" data-bs-toggle="modal" data-bs-target="#address">
                                     <i class="fa-solid fa-plus me-2"></i> Add New Address
                                 </a>
                             </div>
@@ -525,7 +427,7 @@
 
     <!-- logout model section end -->
 
-   
+
     <!-- Jquery js file -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -581,7 +483,7 @@
 
     <script>
         // Set this variable to 0 to show empty state, or 1 to show order list
-        let orderStatus = 0;
+        let orderStatus = 1;
 
         function toggleOrderDisplay() {
             const orderListContainer = document.getElementById('orderListContainer');
@@ -599,27 +501,80 @@
         // Call toggleOrderDisplay when the page loads
         document.addEventListener('DOMContentLoaded', toggleOrderDisplay);
 
-        // You can also call toggleOrderDisplay() after changing the orderStatus
-        // For example:
-        // orderStatus = 0;
-        // toggleOrderDisplay();
-        
+
     </script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const wishlistTab = document.getElementById('v-pills-messages-tab');
-        
-        if (wishlistTab) {
-            wishlistTab.addEventListener('click', function (e) {
-                e.preventDefault(); // Prevent default link behavior
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const wishlistTab = document.getElementById('v-pills-messages-tab');
 
-                // Optionally, navigate to wishlist.html after activating the tab
-                window.location.href = 'wishlist.html';
-            });
-        }
-    });
-</script>
+            if (wishlistTab) {
+                wishlistTab.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default link behavior
+
+                    // Optionally, navigate to wishlist.html after activating the tab
+                    window.location.href = 'wishlist.html';
+                });
+            }
+        });
+    </script>
+
+    <!-- Edit profile -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const editBtn = document.getElementById('editBtn');
+            const saveBtn = document.getElementById('saveBtn');
+
+            const fields = [
+                { result: 'nameResult', input: 'nameInput' },
+                { result: 'mobileResult', input: 'mobileInput' },
+                { result: 'emailResult', input: 'emailInput' }
+            ];
+
+            let isEditing = false;
+
+            function toggleEdit() {
+                isEditing = true;
+
+                fields.forEach(field => {
+                    const resultEl = document.getElementById(field.result);
+                    const inputEl = document.getElementById(field.input);
+
+                    if (isEditing) {
+                        resultEl.style.display = 'none';
+                        inputEl.style.display = 'block';
+                        inputEl.value = resultEl.textContent;
+                    } else {
+                        resultEl.style.display = 'block';
+                        inputEl.style.display = 'none';
+                    }
+                });
+
+                editBtn.style.display = isEditing ? 'none' : 'block';
+                saveBtn.style.display = isEditing ? 'block' : 'none';
+            }
+
+            function saveChanges() {
+                fields.forEach(field => {
+                    const resultEl = document.getElementById(field.result);
+                    const inputEl = document.getElementById(field.input);
+                    resultEl.textContent = inputEl.value;
+                });
+                toggleEdit();
+            }
+
+            if (editBtn) {
+                editBtn.addEventListener('click', toggleEdit);
+            }
+            if (saveBtn) {
+                saveBtn.querySelector('a').addEventListener('click', function (e) {
+                    e.preventDefault();
+                    saveChanges();
+                });
+            }
+        });
+    </script>
 
 </body>
 

@@ -31,6 +31,38 @@
 
     <div class="nav-bar"></div>
 
+    <!-- step section start -->
+
+    <section class="d_p-30 pb-0" id="d_stepsec">
+        <div class="d_container">
+            <div class="position-relative">
+                <div class="d_progress-line"></div>
+                <div class="d_progress-steps">
+                    <div class="d_step d_cur active" data-step="cart">
+                        <div class="d_step-circle">
+                            <img src="/darshan_img/fullcart.png" alt="">
+                        </div>
+                        <span class="d_step-label">Cart</span>
+                    </div>
+                    <div class="d_step d_cur" data-step="order">
+                        <div class="d_step-circle">
+                            <img src="/darshan_img/order.png" alt="">
+                        </div>
+                        <span class="d_step-label">Order Summary</span>
+                    </div>
+                    <div class="d_step d_cur" data-step="payment">
+                        <div class="d_step-circle">
+                            <img src="/darshan_img/payment.png" alt="">
+                        </div>
+                        <span class="d_step-label">Payment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- step section end -->
+
     <!-- empty cart section start -->
 
     <div id="emptyCartMessage" class="d_emptycart d-flex justify-content-center align-items-center">
@@ -49,9 +81,9 @@
 
     <!-- cart heading section start -->
 
-    <div id="d_cartlist">
-        <div id="" class="d_p-30 ">
-            <section class="d_p-30 " id="">
+    <div id="d_cartlist" class="section active">
+        <div id="" class="d_p-30">
+            <section class="d_p-30 pt-0" id="d_selecteditem">
                 <div class="d_container">
                     <div class="row d_carthead align-items-center">
                         <div class="col-12">
@@ -78,13 +110,20 @@
                         </div>
 
                         <!-- Delivery Address section start -->
-                        <div class="col-12 col-lg-6 d_address d_deliveryadd d-none" id="deliveryAddressSection">
+                        <div class="col-12 col-lg-6 d_address d_deliveryadd d-none section" id="deliveryAddressSection">
                             <div class="row mb-3">
                                 <div class="col-12 d_title">
                                     <div class="d_head">Delivery address</div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-lg-5 mt-4" id="d_emptydeliveryadd">
+                                <div class="col-12">
+                                    <div class="d_emptyadd text-center">
+                                        <div class="d_emptyaddhead">No saved any delivery address</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gy-4" id="d_deliveryaddresscount">
                                 <div class="col-12 col-lg-12">
                                     <div class="d_boxlist">
                                         <div class="d-flex justify-content-between ">
@@ -100,16 +139,12 @@
                                                     ruhwbd, Perth 650145, Australia</div>
                                             </div>
                                             <div class="d_dropdown">
-                                                <a><img src="/darshan_img/editpen.png" alt="" class="d_dropbtn"
-                                                        onclick="toggleDropdown(0)"></a>
-                                                <div id="myDropdown_0" class="d_dropdown-content">
-                                                    <a href="#">Edit</a>
-                                                    <a href="#" class="border-0">Delete</a>
-                                                </div>
+                                                <a data-bs-toggle="modal" data-bs-target="#address"><img
+                                                        src="/darshan_img/editpen.png" alt="" class="d_dropbtn"></a>
                                             </div>
                                         </div>
-                                        <div class="d_cta mt-4">
-                                            <a href="" class="text-decoration-none">Delivery here</a>
+                                        <div class="d_cta mt-4 ">
+                                            <a href="" class="text-decoration-none save-address-btn">Delivery here</a>
                                         </div>
                                     </div>
                                 </div>
@@ -128,22 +163,19 @@
                                                     ruhwbd, Perth 650145, Australia</div>
                                             </div>
                                             <div class="d_dropdown">
-                                                <a><img src="/darshan_img/editpen.png" alt="" class="d_dropbtn"
-                                                        onclick="toggleDropdown(0)"></a>
-                                                <div id="myDropdown_0" class="d_dropdown-content">
-                                                    <a href="#">Edit</a>
-                                                    <a href="#" class="border-0">Delete</a>
-                                                </div>
+                                                <a data-bs-toggle="modal" data-bs-target="#address"><img
+                                                        src="/darshan_img/editpen.png" alt="" class="d_dropbtn"></a>
+
                                             </div>
                                         </div>
-                                        <div class="d_cta mt-4">
-                                            <a href="" class="text-decoration-none">Delivery here</a>
+                                        <div class="d_cta mt-4 ">
+                                            <a href="" class="text-decoration-none save-address-btn">Delivery here</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="d_deliveryaddbtn mt-3">
-                                <a class="d-block text-center text-decoration-none d_cur">
+                            <div class="d_deliveryaddbtn mt-3 ">
+                                <a class="d-block text-center text-decoration-none d_cur add-address-btn">
                                     <i class="fa-solid fa-plus me-2"></i> Add New Address
                                 </a>
                             </div>
@@ -152,7 +184,7 @@
 
                         <!-- Add Address section Start -->
 
-                        <div class="col-12 col-lg-6 d-none" id="addAddressSection">
+                        <div class="col-12 col-lg-6 d-none section" id="addAddressSection">
                             <div class="row mb-3">
                                 <div class="col-12 d_title">
                                     <div class="d_head">Add new address</div>
@@ -167,10 +199,15 @@
                                             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                     <div class="d_addaddress">
-                                        <div class="d_head">Delivery your order to</div>
-                                        <input type="text" id="addressInput" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia">
-                                        <div class="d_cta">
-                                            <a href="" class="d-block text-center text-decoration-none">Use this location</a>
+                                        <div class="d_head">Delivery your order to
+                                        </div>
+                                        <input type="text" id="addressInput"
+                                            placeholder="12 Shelley Street, Sydney, NSW 2000, Australia">
+                                        <div class="d_cta ">
+                                            <a href=""
+                                                class="d-block text-center text-decoration-none use-location-btn">Use
+                                                this
+                                                location</a>
                                         </div>
                                     </div>
                                 </div>
@@ -194,7 +231,8 @@
                                         <div class="row g-3 mb-3">
                                             <div class="col-12">
                                                 <div class="d_change d-flex align-items-center justify-content-between">
-                                                    <input type="text" class="border-0 p-0 border-0" placeholder="12 Shelley Street, Sydney, NSW 2000, Australia">
+                                                    <input type="text" class="border-0 p-0 border-0"
+                                                        placeholder="12 Shelley Street, Sydney, NSW 2000, Australia">
                                                     <a href="" class="text-decoration-none">CHANGE</a>
                                                 </div>
                                             </div>
@@ -240,8 +278,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="d_cta mt-sm-5 mt-3">
-                                            <a href="" class="d-block text-center text-decoration-none">Save address &
+                                        <div class="d_cta mt-sm-5 mt-3 ">
+                                            <a href=""
+                                                class="d-block text-center text-decoration-none save-address-btn">Save
+                                                address &
                                                 Procced</a>
                                         </div>
                                     </div>
@@ -253,7 +293,7 @@
 
                         <!-- Payment Method section start -->
 
-                        <div class="col-12 col-lg-6 d-none" id="paymentMethodSection">
+                        <div class="col-12 col-lg-6 d-none section" id="paymentMethodSection">
                             <div class="row mb-3">
                                 <div class="col-12 d_title">
                                     <div class="d_head">Payment Method</div>
@@ -418,7 +458,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d_proceedbtn mt-5" id="proceedBtn">
+                                <div class="d_proceedbtn proceed-btn mt-5" id="proceedBtn">
                                     <a href="" class=" text-center text-decoration-none">Proceed</a>
                                 </div>
                             </div>
@@ -582,7 +622,7 @@
                 .then(data => {
                     document.querySelector('.nav-bar').innerHTML = data;
                     login_chk();
-                    // VK_update_data();
+                    VK_update_data();
                 })
                 .catch(error => console.error('Error loading navbar:', error));
 
@@ -595,73 +635,127 @@
         });
     </script>
 
-    <script>
-        // JavaScript code will be added here
-        document.addEventListener('DOMContentLoaded', function () {
-            const cartSection = document.getElementById('cartContent');
-            const deliveryAddressSection = document.getElementById('deliveryAddressSection');
-            const addAddressSection = document.getElementById('addAddressSection');
-            const addAddress2Section = document.getElementById('addAddress2Section');
-            const paymentMethodSection = document.getElementById('paymentMethodSection');
-            const billDetailsSection = document.getElementById('billDetailsSection');
-            const proceedBtn = document.getElementById('proceedBtn');
+    <!-- show and hide section of deliery adderess , address ,payment  -->
 
-            // Function to hide all sections
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = {
+                cart: document.getElementById('cartContent'),
+                delivery: document.getElementById('deliveryAddressSection'),
+                addAddress: document.getElementById('addAddressSection'),
+                addAddress2: document.getElementById('addAddress2Section'),
+                payment: document.getElementById('paymentMethodSection')
+            };
+
+            const steps = document.querySelectorAll('.d_step');
+            let currentStep = 'cart';
+            const proceedButton = document.getElementById('proceedBtn');
+            const selecteditem = document.getElementById('d_selecteditem');
+            const stepsec = document.getElementById('d_stepsec');
+
             function hideAllSections() {
-                if (cartSection) {
-                    cartSection.classList.add('d-none');
-                }
-                deliveryAddressSection.classList.add('d-none');
-                addAddressSection.classList.add('d-none');
-                addAddress2Section.classList.add('d-none');
-                paymentMethodSection.classList.add('d-none');
+                Object.values(sections).forEach(section => {
+                    if (section) section.classList.add('d-none');
+                });
             }
 
-            // Proceed button click event
-            proceedBtn.addEventListener('click', function (e) {
-                e.preventDefault();
+            function showSection(sectionId) {
                 hideAllSections();
-                deliveryAddressSection.classList.remove('d-none');
-                this.style.display = 'none';
-            });
+                if (sections[sectionId]) {
+                    sections[sectionId].classList.remove('d-none');
+                }
+                // Show or hide the proceed button based on the current section
+                if (sectionId === 'cart') {
+                    proceedButton.classList.remove('d-none'); // Show the button
+                    selecteditem.classList.remove('d-none')
+                } else {
+                    proceedButton.classList.add('d-none'); // Hide the button
+                    selecteditem.classList.add('d-none')
 
-            // Add New Address button click event
-            document.querySelector('.d_deliveryaddbtn a').addEventListener('click', function (e) {
-                e.preventDefault();
-                hideAllSections();
-                addAddressSection.classList.remove('d-none');
-            });
+                }
+            }
 
-            // Use this location button click event
-            document.querySelector('.d_addaddress .d_cta a').addEventListener('click', function (e) {
-                e.preventDefault();
-                hideAllSections();
-                addAddress2Section.classList.remove('d-none');
-            });
+            function updateSteps(stepName) {
+                steps.forEach(step => {
+                    step.classList.remove('active');
+                });
 
-            // Save address & Proceed button click event
-            document.querySelector('.d_addfuldel .d_cta a').addEventListener('click', function (e) {
-                e.preventDefault();
-                hideAllSections();
-                paymentMethodSection.classList.remove('d-none');
-            });
+                // Cart is always active
+                document.querySelector('[data-step="cart"]').classList.add('active');
 
-            // Delivery here button click event
-            document.querySelectorAll('.d_cta a').forEach(function (btn) {
-                btn.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    if (this.textContent.trim() === 'Delivery here') {
-                        hideAllSections();
-                        paymentMethodSection.classList.remove('d-none');
+                if (stepName === 'delivery' || stepName === 'addAddress' || stepName === 'addAddress2') {
+                    document.querySelector('[data-step="order"]').classList.add('active');
+                }
+
+                if (stepName === 'payment') {
+                    document.querySelector('[data-step="order"]').classList.add('active');
+                    document.querySelector('[data-step="payment"]').classList.add('active');
+                }
+            }
+
+            // Step clicks
+            steps.forEach(step => {
+                step.addEventListener('click', function () {
+                    const stepName = this.dataset.step;
+                    switch (stepName) {
+                        case 'cart':
+                            currentStep = 'cart';
+                            showSection('cart');
+                            updateSteps('cart');
+                            break;
+                        case 'order':
+                            if (currentStep !== 'cart') {
+                                currentStep = 'delivery';
+                                showSection('delivery');
+                                updateSteps('delivery');
+                            }
+                            break;
+                        case 'payment':
+                            if (currentStep === 'delivery' || currentStep === 'addAddress2') {
+                                currentStep = 'payment';
+                                showSection('payment');
+                                updateSteps('payment');
+                            }
+                            break;
                     }
                 });
             });
 
-            // Initialize the page
-            hideAllSections();
-            if (cartSection) {
-                cartSection.classList.remove('d-none');
-            }
+            // Button clicks
+            document.querySelector('.proceed-btn').addEventListener('click', function (e) {
+                e.preventDefault();
+                currentStep = 'delivery';
+                showSection('delivery');
+                updateSteps('delivery');
+            });
+
+            document.querySelector('.add-address-btn').addEventListener('click', function (e) {
+                e.preventDefault();
+                currentStep = 'addAddress';
+                showSection('addAddress');
+                updateSteps('addAddress');
+                stepsec.classList.add('d-none')
+            });
+
+            document.querySelector('.use-location-btn').addEventListener('click', function (e) {
+                e.preventDefault();
+                currentStep = 'addAddress2';
+                showSection('addAddress2');
+                updateSteps('addAddress2');
+            });
+
+            document.querySelectorAll('.save-address-btn').forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    currentStep = 'payment';
+                    showSection('payment');
+                    updateSteps('payment');
+                    stepsec.classList.remove('d-none')
+                });
+            });
+            // Initialize
+            showSection('cart');
+            updateSteps('cart');
         });
     </script>
 
@@ -762,7 +856,35 @@
         });
     </script>
 
+    <!-- Empty delivery address  -->
 
+    <script>
+
+        let deliveryaddStatus = 1;
+
+        function toggledeliveryaddDisplay() {
+            const d_deliveryaddresscount = document.getElementById('d_deliveryaddresscount');
+            const d_emptydeliveryadd = document.getElementById('d_emptydeliveryadd');
+
+            if (deliveryaddStatus === 0) {
+                if (d_deliveryaddresscount) {
+                    d_deliveryaddresscount.classList.add('d-none');
+                }
+                if (d_emptydeliveryadd) {
+                    d_emptydeliveryadd.classList.remove('d-none');
+                }
+            } else {
+                if (d_deliveryaddresscount) {
+                    d_deliveryaddresscount.classList.remove('d-none');
+                }
+                if (d_emptydeliveryadd) {
+                    d_emptydeliveryadd.classList.add('d-none');
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', toggledeliveryaddDisplay);
+    </script>
 
 </body>
 

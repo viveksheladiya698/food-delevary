@@ -47,6 +47,13 @@ h6 {
     background-color: transparent;
 }
 
+.d_flex {
+    display: flex;
+}
+
+.d_align-center {
+    align-items: center;
+}
 
 .d_container {
     margin-right: auto;
@@ -871,7 +878,8 @@ hr {
     font-weight: 500;
     color: #000;
 }
-.d_tab .d_info li:last-child{
+
+.d_tab .d_info li:last-child {
     border-bottom: 0;
 }
 
@@ -914,6 +922,7 @@ hr {
     font-weight: 500;
     color: #000;
 }
+
 .d_tab .d_cusreview .d_left .d_one {
     margin-right: 12px !important;
 }
@@ -1013,8 +1022,8 @@ hr {
 }
 
 .d_cart .d_img {
-    width: 200px;
-    height: 230px;
+    width: 215px;
+    height: 190px;
 }
 
 .d_cart .d_img img {
@@ -1249,6 +1258,14 @@ hr {
 }
 
 .d_tab1 .d_account .d_box .d_result {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000;
+}
+
+.d_tab1 .d_account .d_box .editable-input {
+    border: none;
+    padding: 0;
     font-size: 15px;
     font-weight: 500;
     color: #000;
@@ -2056,6 +2073,14 @@ hr {
     font-weight: 500;
 }
 
+.d_deliveryadd .d_emptyadd .d_emptyaddhead {
+    font-weight: 600;
+    color: #7e7e7e;
+    font-size: 22px;
+    margin-bottom: 40px;
+}
+
+
 /* add address */
 .d_addaddress {
     padding: 30px;
@@ -2261,7 +2286,69 @@ input:focus-visible {
 }
 
 
+/* step css start */
 
+.d_progress-line {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 50px;
+    border-bottom: 2px dashed #7e7e7e;
+    z-index: 1;
+}
+
+/* .d_progress-line {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    right: 50px;
+    border-top: 2px dashed #7e7e7e;
+    z-index: 1;
+    background-image: linear-gradient(to right, #7e7e7e 50%, rgba(255, 255, 255, 0) 0%);
+    background-position: top;
+    background-size: 22px 1px;
+    background-repeat: repeat-x;
+    height: 1px;
+  } */
+.d_progress-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.d_step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* flex: 1; */
+}
+
+.d_step-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6a6a6a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.d_step.active .d_step-circle {
+    background: #041527;
+}
+
+.d_step.active .d_step-label {
+    color: #000;
+}
+
+
+.d_step-label {
+    font-size: 16px;
+    color: #6a6a6a;
+    font-weight: 500;
+}
 
 @media(max-width:1920px) {
     .d_banner2 {
@@ -2528,6 +2615,11 @@ input:focus-visible {
 
     .d_cart .d_billlist .d_proceedbtn a {
         padding: 10px 0;
+    }
+
+    .d_deliveryadd .d_emptyadd .d_emptyaddhead {
+        font-size: 20px;
+        margin-bottom: 30px;
     }
 }
 
@@ -2848,7 +2940,7 @@ input:focus-visible {
 
     .d_cart .d_img {
         width: 100%;
-        height: 100%;
+        height: 250px;
     }
 
     .d_cart .d_text {
@@ -3054,6 +3146,24 @@ input:focus-visible {
     .d_help .d_helpacchead i {
         align-self: self-start;
         margin-top: 6px;
+    }
+
+    .d_deliveryadd .d_emptyadd .d_emptyaddhead {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    .d_progress-line {
+        left: 30px;
+        right: 30px;
+        top: 15px;
+    }
+
+    .d_step-circle {
+        width: 30px;
+        height: 30px;
+    }
+    .d_step-label {
+        font-size: 12px;
     }
 }
 
