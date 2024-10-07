@@ -26,9 +26,8 @@ async function VK_update_data() {
     }
 
     let address = JSON.parse(localStorage.getItem('address'))
-    if(address)
-    {
-        let user_address = `${address.house_no } ${"" +address.address}, ${address.sector}, ${address.area}`;
+    if (address) {
+        let user_address = `${address.house_no} ${"" + address.address}, ${address.sector}, ${address.area}`;
         document.getElementById('VK_address').innerText = user_address
     }
 
@@ -237,6 +236,8 @@ function VK_address(event) {
     };
 
     localStorage.setItem('address', JSON.stringify(user_location))
+
+    VK_update_data();
 
     const modal = bootstrap.Modal.getInstance(document.getElementById('address'));
     modal.hide();

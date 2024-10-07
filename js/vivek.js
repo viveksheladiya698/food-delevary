@@ -12,6 +12,22 @@ window.onload = function () {
 }
 
 
+
+// ----------------------------------------------- home page ------------------------------------------
+
+function VK_set_category(category) {
+    localStorage.setItem('category', category)
+    if (category == 'food') {
+        window.location = 'Food_home.html'
+    } else if (category == 'groceries') {
+        window.location = 'groceryhome.html'
+    }
+}
+
+
+
+
+
 async function VK_update_data1() {
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (wishlist.length > 0) {
@@ -176,326 +192,689 @@ var VK_main_data = [
         id: 301,
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
+        address: "vesu, Surat",
         review_cnt: 5,
         review: 4,
         offer: "Items At $60",
         img: "hotel1.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn1.png"
     },
     {
         id: 302,
         name: "Radhe Punjabi Dhaba",
         description: "Gujarati dish, Biryani Adajan, Surat",
+        address: "Adajan, Surat",
         review_cnt: 5,
         review: 2,
         offer: null,
         img: "hotel2.png",
         typ: "vage",
         price: 700,
+        search_icn: "icn2.png"
     },
     {
         id: 303,
         name: "La pino’z ",
         description: "Pizza , Dessert, French fri... Pal, Surat",
+        address: "Pal, Surat",
         review_cnt: 5,
         review: 3,
         offer: null,
         img: "hotel3.png",
         typ: "non-vage",
         price: 300,
+        search_icn: "icn3.png"
     },
     {
         id: 304,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 4,
         offer: null,
         img: "hotel4.png",
         typ: "vage",
         price: 200,
+        search_icn: "icn1.png"
     },
     {
         id: 305,
         name: "Taste of Bhagwati",
         description: "Indian, Pastas ved road, Mumbai",
+        address: "Ved Road, Mumbai",
         review_cnt: 5,
         review: 5,
         offer: null,
         img: "hotel5.png",
         typ: "non-vage",
         price: 1000,
+        search_icn: "icn2.png"
     },
     {
         id: 306,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 4,
         offer: null,
         img: "hotel6.png",
         typ: "vage",
         price: 800,
+        search_icn: "icn3.png"
     },
     {
         id: 307,
         name: "Burger King",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 3,
         offer: "Items At $60",
         img: "hotel7.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn1.png"
     },
     {
         id: 308,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 4,
         offer: null,
         img: "hotel6.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn2.png"
     },
     {
         id: 309,
         name: "Taste of Bhagwati",
         description: "Indian, Pastas ved road, Mumbai",
+        address: "Ved Road, Mumbai",
         review_cnt: 5,
         review: 2,
         offer: "10% OFF",
         img: "hotel5.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn3.png"
     },
     {
         id: 310,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 4,
         offer: null,
         img: "hotel6.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn1.png"
     },
     {
         id: 311,
         name: "Radhe Punjabi Dhaba",
         description: "Gujarati dish, Biryani Adajan, Surat",
+        address: "Adajan, Surat",
         review_cnt: 5,
         review: 1,
         offer: null,
         img: "hotel2.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn2.png"
     },
     {
         id: 312,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 3,
         offer: null,
         img: "hotel6.png",
         typ: "vage",
         price: 500,
+        search_icn: "icn3.png"
     },
     {
         id: 313,
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
+        address: "Vesu, Surat",
         review_cnt: 5,
         review: 5,
         offer: "Items At $60",
         img: "hotel1.png",
         typ: "vage",
-        price: 200
+        price: 200,
+        search_icn: "icn1.png"
     },
     {
         id: 314,
         name: "Radhe Punjabi Dhaba",
         description: "Gujarati dish, Biryani Adajan, Surat",
+        address: "Adajan, Surat",
         review_cnt: 5,
         review: 5,
         offer: null,
         img: "hotel2.png",
         typ: "non-vage",
-        price: 200
+        price: 200,
+        search_icn: "icn2.png"
     },
     {
         id: 315,
         name: "La pino’z ",
         description: "Pizza , Dessert, French fri... Pal, Surat",
+        address: "Pal, Surat",
         review_cnt: 5,
         review: 5,
         offer: null,
         img: "hotel3.png",
         typ: "non-vage",
-        price: 250
+        price: 250,
+        search_icn: "icn3.png"
     },
     {
         id: 316,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
         offer: null,
-        img: "hotel4.png"
+        img: "hotel4.png",
+        typ: "vage",
+        price: 300,
+        search_icn: "icn1.png"
     },
     {
         id: 317,
         name: "Taste of Bhagwati",
         description: "Indian, Pastas ved road, Mumbai",
+        address: "Ved Road, Mumbai",
         review_cnt: 5,
         review: 5,
         offer: null,
         img: "hotel5.png",
         typ: "non-vage",
-        price: 200
+        price: 200,
+        search_icn: "icn2.png"
     },
     {
         id: 318,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
         offer: null,
         img: "hotel6.png",
         typ: "vage",
-        price: 400
+        price: 400,
+        search_icn: "icn3.png"
     },
     {
         id: 319,
         name: "Burger King",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
         offer: "Items At $60",
         img: "hotel7.png",
         typ: "non-vage",
-        price: 600
+        price: 600,
+        search_icn: "icn1.png"
     },
     {
         id: 320,
         name: "Avadh Hotel",
         description: "Punjabi, south Indian Gokul Road, Navsari",
+        address: "Gokul Road, Navsari",
         review_cnt: 5,
         review: 5,
         offer: null,
         img: "hotel6.png",
         typ: "vage",
-        price: 700
+        price: 700,
+        search_icn: "icn2.png"
     },
     {
         id: 321,
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
+        address: "Vesu, Surat",
         review_cnt: 5,
         review: 4,
         offer: "Items At $60",
         img: "hotel1.png",
         typ: "vage",
-        price: 450
+        price: 450,
+        search_icn: "icn3.png"
 
     },
     {
         id: 322,
         name: "McDonald’s",
         description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
+        address: "Mota Varachaa, Surat",
         review_cnt: 5,
         review: 3,
         img: "mcdonald.png",
         typ: "non-vage",
-        price: 200
+        price: 200,
+        search_icn: "icn1.png"
     },
     {
         id: 323,
         name: "Burger House",
         description: "Burgers, Pizzas, fast food Aaimata Road, Surat",
+        address: "Aaimata Road, Surat",
         review_cnt: 5,
         review: 2,
         img: "hotel8.png",
         typ: "vage",
-        price: 600
+        price: 600,
+        search_icn: "icn2.png"
     },
     {
         id: 324,
         name: "Veggie House",
         description: "Burgers, Beverages, Cafe... Pal, Surat",
+        address: "Pal, Surat",
         review_cnt: 5,
         review: 5,
         img: "hotel9.png",
         typ: "vage",
-        price: 500
+        price: 500,
+        search_icn: "icn3.png"
     },
     {
         id: 325,
         name: "Load Petrick",
         description: "Burgers, Pizzas, fast food Yogichowk, Surat",
+        address: "YogiChowk, Suart",
         review_cnt: 5,
         review: 5,
         img: "hotel9.png",
         typ: "vage",
-        price: 900
+        price: 900,
+        search_icn: "icn1.png"
     },
     {
         id: 326,
         name: "McDonald’s",
         description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
+        address: "Mota Varachaa, Surat",
         review_cnt: 5,
         offer: "50% OFF UPTO $20",
         review: 1,
         img: "mcdonald.png",
         typ: "non-vage",
-        price: 200
+        price: 200,
+        search_icn: "icn2.png"
     },
     {
         id: 327,
         name: "Burger King",
         description: "Burger, Fast Food, Dessert Vesu, Surat",
+        address: "Vesu, Surat",
         review_cnt: 5,
         offer: "Items At $60",
         review: 3,
         img: "hotel7.png",
         typ: "non-vage",
-        price: 500
+        price: 500,
+        search_icn: "icn3.png"
     },
     {
         id: 328,
         name: "Veggie House",
         description: "Burgers, Beverages, Cafe... Pal, Surat",
+        address: "Pal, Surat",
         review_cnt: 5,
         review: 2,
         img: "hotel9.png",
         typ: "non-vage",
-        price: 100
+        price: 100,
+        search_icn: "icn1.png"
     },
     {
         id: 329,
         name: "Load Petrick",
         description: "Burgers, Pizzas, fast food Yogichowk, Surat",
+        address: "YogiChowk, Suart",
         review_cnt: 5,
         review: 5,
         img: "hotel9.png",
         typ: "vage",
-        price: 400
+        price: 400,
+        search_icn: "icn2.png"
     },
     {
         id: 330,
         name: "McDonald’s",
         description: "Burgers, Beverages, Cafe, Mota Varachaa, Surat",
+        address: "Mota Varachaa, Surat",
         review_cnt: 5,
         review: 5,
         img: "mcdonald.png",
         typ: "vage",
-        price: 500
+        price: 500,
+        search_icn: "icn3.png"
     },
 ]
 
+
+// grocery data 
+const product = [
+    {
+        id: 1,
+        img: "item1.png",
+        name: "Tomato",
+        price: 20,
+        review: 4,
+        type: "Grocery",
+
+    },
+    {
+        id: 2,
+        img: "item2.png",
+        name: "Pineapple",
+        price: 60,
+        review: 4,
+        type: "Grocery",
+    },
+    {
+        id: 3,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 5,
+        type: "Grocery",
+    },
+    {
+        id: 4,
+        img: "item4.png",
+        name: "Atta",
+        price: 100,
+        review: 5,
+        type: "Grocery",
+    },
+    {
+        id: 5,
+        img: "item1.png",
+        name: "Tomato",
+        price: 20,
+        review: 5,
+        type: "Grocery",
+    },
+    {
+        id: 6,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 5,
+        type: "Grocery",
+    },
+    {
+        id: 7,
+        img: "item1.png",
+        name: "Tomato",
+        price: 20,
+        review: 5,
+        type: "Grocery",
+    },
+    {
+        id: 8,
+        img: "item2.png",
+        name: "Pineapple",
+        price: 60,
+        review: 5,
+        type: "Grocery",
+    },
+    {
+        id: 9,
+        img: "item5.png",
+        name: "Tea and Coffee",
+        price: 20,
+        review: 4,
+        discount: 'Get 30',
+        type: "Grocery",
+    },
+    {
+        id: 10,
+        img: "item2.png",
+        name: "Pineapple",
+        price: 60,
+        review: 4,
+        discount: '',
+        type: "Grocery",
+    },
+    {
+        id: 11,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 4,
+        discount: '40',
+        type: "Grocery",
+    },
+    {
+        id: 12,
+        img: "item4.png",
+        name: "Atta",
+        price: 110,
+        review: 4,
+        discount: '30',
+        type: "Grocery",
+    },
+    {
+        id: 13,
+        img: "item6.png",
+        name: "Sauces and Spreads",
+        price: 120,
+        review: 4,
+        discount: 'Get 30',
+        type: "Grocery",
+    },
+    {
+        id: 14,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 4,
+        discount: '10',
+        type: "Grocery",
+    },
+    {
+        id: 15,
+        img: "item7.png",
+        name: "Cold Drinks & Juices",
+        price: 20,
+        review: 4,
+        discount: '',
+        type: "Grocery",
+    },
+    {
+        id: 16,
+        img: "item1.png",
+        name: "Tomato",
+        price: 20,
+        review: 4,
+        discount: '',
+        type: "Grocery",
+    },
+    {
+        id: 17,
+        img: "item5.png",
+        name: "Tea and Coffee",
+        price: 20,
+        review: 4,
+        discount: '30',
+        category: "tea and coffee",
+        type: "Grocery",
+    },
+    {
+        id: 18,
+        img: "item2.png",
+        name: "Pineapple",
+        price: 60,
+        review: 4,
+        discount: '',
+        category: "Fresh Fruits",
+        type: "Grocery",
+    },
+    {
+        id: 19,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 4,
+        discount: '40',
+        category: "Dairy, Bread and Eggs",
+        type: "Grocery",
+    },
+    {
+        id: 20,
+        img: "item4.png",
+        name: "Atta",
+        price: 110,
+        review: 4,
+        discount: '30',
+        category: "Atta, Rice and Dals",
+        type: "Grocery",
+    },
+    {
+        id: 21,
+        img: "item6.png",
+        name: "Sauces and Spreads",
+        price: 120,
+        review: 4,
+        discount: '30',
+        category: "Sauces and Spreads",
+        type: "Grocery",
+    },
+    {
+        id: 22,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 4,
+        discount: '10',
+        category: "Dairy, Bread and Eggs",
+        type: "Grocery",
+    },
+    {
+        id: 23,
+        img: "item7.png",
+        name: "Cold Drinks & Juices",
+        price: 20,
+        review: 4,
+        discount: '',
+        category: "Cold Drinks and Juices",
+        type: "Grocery",
+    },
+    {
+        id: 24,
+        img: "item1.png",
+        name: "Tomato",
+        price: 20,
+        review: 4,
+        discount: '',
+        category: "Fresh Vegetables",
+        type: "Grocery",
+    },
+    {
+        id: 25,
+        img: "item5.png",
+        name: "Tea and Coffee",
+        price: 20,
+        review: 4,
+        discount: '30',
+        category: "tea and coffee",
+        type: "Grocery",
+    },
+    {
+        id: 26,
+        img: "item2.png",
+        name: "Pineapple",
+        price: 60,
+        review: 4,
+        discount: '',
+        category: "Fresh Fruits",
+        type: "Grocery",
+    },
+    {
+        id: 27,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 4,
+        discount: '40',
+        category: "Dairy, Bread and Eggs",
+        type: "Grocery",
+    },
+    {
+        id: 28,
+        img: "item4.png",
+        name: "Atta",
+        price: 110,
+        review: 4,
+        discount: '30',
+        category: "Atta, Rice and Dals",
+        type: "Grocery",
+    },
+    {
+        id: 29,
+        img: "item6.png",
+        name: "Sauces and Spreads",
+        price: 120,
+        review: 4,
+        discount: '30',
+        category: "Sauces and Spreads",
+        type: "Grocery",
+    },
+    {
+        id: 30,
+        img: "item3.png",
+        name: "Breads",
+        price: 70,
+        review: 4,
+        discount: '10',
+        category: "Dairy, Bread and Eggs",
+        type: "Grocery",
+    },
+    {
+        id: 31,
+        img: "item7.png",
+        name: "Cold Drinks & Juices",
+        price: 20,
+        review: 4,
+        discount: '',
+        category: "Cold Drinks and Juices",
+        type: "Grocery",
+    },
+    {
+        id: 32,
+        img: "item1.png",
+        name: "Tomato",
+        price: 20,
+        review: 4,
+        discount: '',
+        category: "Fresh Vegetables",
+        type: "Grocery",
+    },
+]
 
 
 
@@ -534,7 +913,7 @@ function regular_menu_card_display() {
 
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
-                <div class="overflow-hidden VK_regular_menu_img mx-md-4">
+                <div class="overflow-hidden VK_regular_menu_img">
                     <a href="/Popular_food.html?id=${ele.id}">
                         <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="${ele.name}">
                         <div class="VK_regular_cart">
@@ -656,7 +1035,7 @@ function VK_resturent_data_display() {
             let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
 
             return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole ">
                 <div class="overflow-hidden VK_resturent_food">
                     <a href="/Restaurants.html?r_id=${ele.id}">
                         <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
@@ -1582,7 +1961,7 @@ function VK_item_delivery() {
             let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
             return `
             <div class="col-xxl-3 col-lg-4 col-sm-6 my-4">
-                <div class="overflow-hidden VK_regular_menu_img mx-md-4">
+                <div class="overflow-hidden VK_regular_menu_img">
                     <a href="items.html?item_id=${ele.id}">
                         <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="${ele.name}">
                         <div class="VK_regular_cart">
@@ -1660,39 +2039,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
 // ------------------------------------------------------- search page -------------------------------------------------------
 
 // search function
 function VK_search() {
+    let close = document.querySelector('.VK_input_cancel.d-none');
+    close?.classList.remove('d-none');
 
-    let close = document.querySelector('.VK_input_cancel.d-none')
-    close?.classList.remove('d-none')
+    let search_text = document.getElementById('VK_search_box').value;
 
-    let search_text = document.getElementById('VK_search_box').value
+    let category = localStorage.getItem('category')
+    console.log(category);
 
     if (search_text.length > 0) {
-        let search_restro = VK_main_data.filter((ele) => {
-            return ele.name.toLowerCase().includes(search_text.toLowerCase())
-        })
+        if (category == "food") {
+            let search_restro = VK_main_data.filter((ele) => {
+                return ele.name.toLowerCase().includes(search_text.toLowerCase());
+            });
 
-        let item_search = VK_item_main_data.filter((ele) => {
-            return ele.name.toLowerCase().includes(search_text.toLowerCase())
-        })
-        document.getElementById('VK_popular_dishes').classList.add('d-none')
-        document.getElementById('VK_search_history').classList.add('d-none')
-        document.getElementById('VK_megnifine').classList.add('d-none')
-        document.getElementById('VK_search_results').classList.remove('d-none')
+            let item_search = VK_item_main_data.filter((ele) => {
+                return ele.name.toLowerCase().includes(search_text.toLowerCase());
+            });
 
-        VK_print_search_result(item_search)
-    }else{
-        document.getElementById('VK_popular_dishes').classList.remove('d-none')
-        document.getElementById('VK_search_history').classList.remove('d-none')
-        document.getElementById('VK_megnifine').classList.remove('d-none')
+            document.getElementById('VK_popular_dishes').classList.add('d-none');
+            document.getElementById('VK_search_history').classList.add('d-none');
+            document.getElementById('VK_megnifine').classList.add('d-none');
+            document.getElementById('VK_results').classList.remove('d-none');
+            document.getElementById('VK_search_results').classList.remove('d-none')
+
+            VK_print_search_result(search_restro, item_search);
+        } else if (category == "groceries") {
+            console.log("groceries");
+        }
+    } else {
+        document.getElementById('VK_popular_dishes').classList.remove('d-none');
+        document.getElementById('VK_search_history').classList.remove('d-none');
+        document.getElementById('VK_megnifine').classList.remove('d-none');
+        document.getElementById('VK_results').classList.add('d-none');
         document.getElementById('VK_search_results').classList.add('d-none')
-    }
 
+    }
 }
+
 
 // clear search btn
 function VK_clear() {
@@ -1707,11 +2095,54 @@ function VK_clear() {
 }
 
 // Print Search Results
-function VK_print_search_result(search_arr) {
-    let div = document.getElementById('VK_search_result_div')
-    if (div) {
+function VK_print_search_result(restaurants, foodItems) {
+    let restaurantDiv = document.getElementById('VK_restro_result_div');
+    let itemDiv = document.getElementById('VK_item_result_div');
 
-        let html = search_arr.map((ele) => {
+    restaurantDiv.innerHTML = "";
+    itemDiv.innerHTML = "";
+
+    let search_txt = document.getElementById('VK_search_box').value
+
+    if (restaurants.length > 0) {
+        let restaurantHTML = `<h5>Restaurants for ${search_txt}</h5>`;
+        restaurantHTML += restaurants.map((ele) => {
+            return `
+                <div class="d-flex align-items-center my-3">
+                    <div class="VK_search_img">
+                        <img src="/images/assets/${ele.search_icn}" class="object_cover w-100" alt="">
+                    </div>
+                    <div class="VK_search_item_desc py-2 ps-4">
+                        <h6 class="VK_inter fw-bold text-black">
+                            ${ele.name}
+                        </h6>
+                        <div class="d-flex align-items-center flex-wrap">
+                            <p class="VK_inter font_14 VK_search_text_desc m-0">
+                                <span class="font_14 VK_review_star">
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                                ${ele.review}
+                                <ul class="m-0 VK_search_ul">
+                                    <li>
+                                        20-25 mins
+                                    </li>
+                                </ul>
+                                <ul class="m-0 VK_search_ul">
+                                    <li>
+                                        ${ele.address}
+                                    </li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>`;
+        }).join("");
+        restaurantDiv.innerHTML = restaurantHTML;
+    }
+
+    if (foodItems.length > 0) {
+        let itemHTML = `<h5>Food Items</h5>`;
+        itemHTML += foodItems.map((ele) => {
             return `
                 <div class="d-flex align-items-center my-3">
                     <div class="VK_search_img">
@@ -1725,17 +2156,15 @@ function VK_print_search_result(search_arr) {
                             Dish
                         </p>
                     </div>
-                </div>`
-        }).join("")
-
-        div.innerHTML = html
-
-    } else {
-        return;
+                </div>`;
+        }).join("");
+        itemDiv.innerHTML = itemHTML;
     }
+
 }
 
 
+// food data
 let VK_popular_dishes = [
     {
         name: "Burger",
@@ -1767,13 +2196,49 @@ let VK_popular_dishes = [
     },
 ]
 
+// grocery data
+var groceries = [
+    {
+        name: "Fruits",
+        image: "icn10.png"
+    },
+    {
+        name: "Atta & Dal",
+        image: "icn11.png"
+    },
+    {
+        name: "Dairy & Breads",
+        image: "icn12.png"
+    },
+    {
+        name: "Cold Drinks",
+        image: "icn13.png"
+    },
+    {
+        name: "Fruits",
+        image: "icn10.png"
+    },
+    {
+        name: "Cold Drinks",
+        image: "icn13.png"
+    },
+    {
+        name: "Atta & Dal",
+        image: "icn12.png"
+    },
+]
+
 // popular dish
 function VK_popular_dish_data() {
     let div = document.getElementById('VK_popular_dish_div')
 
+    let category = localStorage.getItem('category')
+
     if (div) {
-        let html = VK_popular_dishes.map((el) => {
-            return `
+        if (category == "food") {
+            document.getElementById('VK_search_popular').innerText = " Popular Dishes"
+            let html = VK_popular_dishes.map((el) => {
+                return `
                 <div class="VK_popular_item d-flex flex-column">
                     <div class="VK_popular_food_image align-self-center">
                         <img src="/images/assets/${el.image}" class="w-100 object_cover popular_img" alt="">
@@ -1782,9 +2247,24 @@ function VK_popular_dish_data() {
                         ${el.name}
                     </p>
                 </div>`
-        }).join("")
+            }).join("")
 
-        div.innerHTML = html;
+            div.innerHTML = html;
+        } else if (category == "groceries") {
+            document.getElementById('VK_search_popular').innerText = "Groceries"
+            let html = groceries.map((el) => {
+                return `
+                <div class="VK_popular_item d-flex flex-column">
+                    <div class="VK_popular_food_image align-self-center">
+                        <img src="/images/assets/${el.image}" class="w-100 object_cover popular_img" alt="">
+                    </div>
+                    <p class="text-center text-black fw-600 VK_inter mt-auto">
+                        ${el.name}
+                    </p>
+                </div>`
+            }).join("")
+            div.innerHTML = html;
+        }
     } else {
         return
     }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://tiles.locationiq.com/v3/libs/maplibre-gl/1.15.2/maplibre-gl.js"></script>
+    <link href="https://tiles.locationiq.com/v3/libs/maplibre-gl/1.15.2/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://tiles.locationiq.com/v3/js/liq-styles-ctrl-libre-gl.js?v=0.1.8"></script>
+    <link href="https://tiles.locationiq.com/v3/css/liq-styles-ctrl-libre-gl.css?v=0.1.8" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        #map {
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+</head>
+
+<body>
+
+    <div id="map"></div>
+    <pre id="coordinates" class="coordinates"></pre>
+
+    <script>
+
+        //Add your LocationIQ Maps Access Token here (not the API token!)
+        locationiq.key = 'pk.5fa89f58fd1bcf34bca5928cf578a43c';
+        //Define the map and configure the map's theme
+        var map = new maplibregl.Map({
+            container: 'map',
+            style: locationiq.getLayer("Streets"),
+            zoom: 12,
+            center: [-122.42, 37.779]
+        });
+
+        var el = document.createElement('div');
+        el.className = 'marker';
+        el.style.backgroundImage = 'url(https://tiles.locationiq.com/static/images/marker50px.png)';
+        el.style.width = '50px';
+        el.style.height = '50px';
+
+        map.on('click', function (e) {
+            var marker = new maplibregl.Marker(el)
+                .setLngLat(e.lngLat.wrap())
+                .addTo(map);
+
+            var lngLat = marker.getLngLat();
+            coordinates.style.display = 'block';
+            coordinates.innerHTML =
+                'Latitude: ' + lngLat.lat + '<br />Longitude: ' + lngLat.lng;
+                console.log(lngLat.lat);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
