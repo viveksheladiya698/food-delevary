@@ -9,6 +9,19 @@ window.onload = function () {
     VK_item_delivery();
     VK_popular_dish_data();
 
+    get_location();
+}
+
+function location1(loc) {
+    console.log(loc);
+}
+
+function fail() {
+    console.log("fail to ");
+}
+
+function get_location() {
+    navigator.geolocation.getCurrentPosition(location1, fail)
 }
 
 
@@ -46,6 +59,7 @@ async function VK_update_data1() {
 
 
 // -------------------------------- hide or show menu -------------------------------
+
 function VK_cart_list_menu() {
     if (document.getElementById('VK_add_item_menu')) {
         let data = JSON.parse(localStorage.getItem('cart')) || [];
@@ -199,6 +213,7 @@ var VK_main_data = [
         img: "hotel1.png",
         typ: "vage",
         price: 500,
+        time: 20,
         search_icn: "icn1.png"
     },
     {
@@ -212,6 +227,7 @@ var VK_main_data = [
         img: "hotel2.png",
         typ: "vage",
         price: 700,
+        time: 25,
         search_icn: "icn2.png"
     },
     {
@@ -225,6 +241,7 @@ var VK_main_data = [
         img: "hotel3.png",
         typ: "non-vage",
         price: 300,
+        time: 26,
         search_icn: "icn3.png"
     },
     {
@@ -238,6 +255,7 @@ var VK_main_data = [
         img: "hotel4.png",
         typ: "vage",
         price: 200,
+        time: 30,
         search_icn: "icn1.png"
     },
     {
@@ -251,6 +269,7 @@ var VK_main_data = [
         img: "hotel5.png",
         typ: "non-vage",
         price: 1000,
+        time: 35,
         search_icn: "icn2.png"
     },
     {
@@ -264,6 +283,7 @@ var VK_main_data = [
         img: "hotel6.png",
         typ: "vage",
         price: 800,
+        time: 25,
         search_icn: "icn3.png"
     },
     {
@@ -277,6 +297,7 @@ var VK_main_data = [
         img: "hotel7.png",
         typ: "vage",
         price: 500,
+        time: 35,
         search_icn: "icn1.png"
     },
     {
@@ -290,6 +311,7 @@ var VK_main_data = [
         img: "hotel6.png",
         typ: "vage",
         price: 500,
+        time: 30,
         search_icn: "icn2.png"
     },
     {
@@ -303,6 +325,7 @@ var VK_main_data = [
         img: "hotel5.png",
         typ: "vage",
         price: 500,
+        time: 25,
         search_icn: "icn3.png"
     },
     {
@@ -316,6 +339,7 @@ var VK_main_data = [
         img: "hotel6.png",
         typ: "vage",
         price: 500,
+        time: 35,
         search_icn: "icn1.png"
     },
     {
@@ -329,6 +353,7 @@ var VK_main_data = [
         img: "hotel2.png",
         typ: "vage",
         price: 500,
+        time: 35,
         search_icn: "icn2.png"
     },
     {
@@ -342,6 +367,7 @@ var VK_main_data = [
         img: "hotel6.png",
         typ: "vage",
         price: 500,
+        time: 40,
         search_icn: "icn3.png"
     },
     {
@@ -355,6 +381,7 @@ var VK_main_data = [
         img: "hotel1.png",
         typ: "vage",
         price: 200,
+        time: 30,
         search_icn: "icn1.png"
     },
     {
@@ -368,6 +395,7 @@ var VK_main_data = [
         img: "hotel2.png",
         typ: "non-vage",
         price: 200,
+        time: 25,
         search_icn: "icn2.png"
     },
     {
@@ -381,6 +409,7 @@ var VK_main_data = [
         img: "hotel3.png",
         typ: "non-vage",
         price: 250,
+        time: 30,
         search_icn: "icn3.png"
     },
     {
@@ -394,6 +423,7 @@ var VK_main_data = [
         img: "hotel4.png",
         typ: "vage",
         price: 300,
+        time: 25,
         search_icn: "icn1.png"
     },
     {
@@ -407,6 +437,7 @@ var VK_main_data = [
         img: "hotel5.png",
         typ: "non-vage",
         price: 200,
+        time: 35,
         search_icn: "icn2.png"
     },
     {
@@ -420,6 +451,7 @@ var VK_main_data = [
         img: "hotel6.png",
         typ: "vage",
         price: 400,
+        time: 25,
         search_icn: "icn3.png"
     },
     {
@@ -433,6 +465,7 @@ var VK_main_data = [
         img: "hotel7.png",
         typ: "non-vage",
         price: 600,
+        time: 25,
         search_icn: "icn1.png"
     },
     {
@@ -446,6 +479,7 @@ var VK_main_data = [
         img: "hotel6.png",
         typ: "vage",
         price: 700,
+        time: 30,
         search_icn: "icn2.png"
     },
     {
@@ -459,6 +493,7 @@ var VK_main_data = [
         img: "hotel1.png",
         typ: "vage",
         price: 450,
+        time: 35,
         search_icn: "icn3.png"
 
     },
@@ -472,6 +507,7 @@ var VK_main_data = [
         img: "mcdonald.png",
         typ: "non-vage",
         price: 200,
+        time: 20,
         search_icn: "icn1.png"
     },
     {
@@ -484,6 +520,7 @@ var VK_main_data = [
         img: "hotel8.png",
         typ: "vage",
         price: 600,
+        time: 30,
         search_icn: "icn2.png"
     },
     {
@@ -496,6 +533,7 @@ var VK_main_data = [
         img: "hotel9.png",
         typ: "vage",
         price: 500,
+        time: 35,
         search_icn: "icn3.png"
     },
     {
@@ -508,6 +546,7 @@ var VK_main_data = [
         img: "hotel9.png",
         typ: "vage",
         price: 900,
+        time: 30,
         search_icn: "icn1.png"
     },
     {
@@ -521,6 +560,7 @@ var VK_main_data = [
         img: "mcdonald.png",
         typ: "non-vage",
         price: 200,
+        time: 25,
         search_icn: "icn2.png"
     },
     {
@@ -534,6 +574,7 @@ var VK_main_data = [
         img: "hotel7.png",
         typ: "non-vage",
         price: 500,
+        time: 20,
         search_icn: "icn3.png"
     },
     {
@@ -546,6 +587,7 @@ var VK_main_data = [
         img: "hotel9.png",
         typ: "non-vage",
         price: 100,
+        time: 20,
         search_icn: "icn1.png"
     },
     {
@@ -558,6 +600,7 @@ var VK_main_data = [
         img: "hotel9.png",
         typ: "vage",
         price: 400,
+        time: 20,
         search_icn: "icn2.png"
     },
     {
@@ -570,6 +613,7 @@ var VK_main_data = [
         img: "mcdonald.png",
         typ: "vage",
         price: 500,
+        time: 20,
         search_icn: "icn3.png"
     },
 ]
@@ -929,13 +973,13 @@ function regular_menu_card_display() {
                     </a>
                 </div>
                 <div class="mt-4 text-center">
-                    <p class="VK_inter text-black fw-600 mb-1 font_18">${ele.name}</p>
-                    <p class="VK_inter text-black fw-400 mb-1">Price: $${ele.price}</p>
+                    <p class="VK_inter text-black fw-600 mb-1 font_24">${ele.name}</p>
+                    <p class="VK_inter text-black fw-400 mb-1 font_22">Price: $${ele.price}</p>
                     <div>
                         <div class="d-flex justify-content-center align-items-center">
                             ${stars}
                             <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter font_14">${ele.review_cnt} Reviews</p>
+                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
                             </div>
                         </div>
                     </div>
@@ -1005,6 +1049,7 @@ function VK_add_to_cart(event, item) {
 
 
 
+
 // food home page (Resturent data)
 var VK_resturent_data = VK_main_data.slice(0, 12)
 
@@ -1022,7 +1067,7 @@ function VK_resturent_data_display() {
             const generateStars = (rating) => {
                 return Array.from({ length: 5 }, (_, index) => {
                     return `
-                        <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                        <span class="font_16 me-1 ${index < rating ? "VK_review_star" : "VK_star"}">
                             <i class="fa-solid fa-star"></i>
                         </span>`;
                 }).join("");
@@ -1035,7 +1080,7 @@ function VK_resturent_data_display() {
             let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
 
             return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole ">
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
                 <div class="overflow-hidden VK_resturent_food">
                     <a href="/Restaurants.html?r_id=${ele.id}">
                         <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
@@ -1053,18 +1098,18 @@ function VK_resturent_data_display() {
                     : ""}
                     </a>
                 </div>
-                <div class="px-2 mt-3">
-                    <p class="VK_inter text-black fw-600 mb-1 font_20">
+                <div class="px-2 mt-3 VK_resturent_food h-auto">
+                    <p class="VK_inter text-black fw-600 mb-1 font_24">
                         ${ele.name}
                     </p>
-                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt">
+                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
                         ${ele.description}
                     </p>
                     <div class="mt-2">
                         <div class="d-flex align-items-center">
                             ${stars}
                             <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter">${ele.review_cnt} Reviews</p>
+                                <p class="m-0 fw-500 font_20 VK_inter">${ele.review_cnt} Reviews</p>
                             </div>
                         </div>
                     </div>
@@ -1077,7 +1122,6 @@ function VK_resturent_data_display() {
         return;
     }
 }
-
 
 // food wishlist function
 function VK_whshlist(event, item) {
@@ -1149,7 +1193,7 @@ function VK_filter_restrorent(ele) {
             filteredRestros = VK_resturents.filter(restro => restro.review >= 3);
             break;
         case 4:
-            // Apply fast delivery filter here
+            filteredRestros = VK_resturents.sort((a, b) => a.time - b.time)
             break;
         default:
             break;
@@ -1276,18 +1320,18 @@ function VK_popular_restro_data_display() {
                     : ""}
                     </a>
                 </div>
-                <div class="px-2 mt-3">
-                    <p class="VK_inter text-black fw-600 mb-1 font_20">
+                <div class="px-2 mt-3 VK_resturent_food h-auto">
+                    <p class="VK_inter text-black fw-600 mb-1 font_24">
                         ${ele.name}
                     </p>
-                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt">
+                    <p class="VK_inter text-black fw-400 m-0 font_20 VK_resturent_txt">
                         ${ele.description}
                     </p>
                     <div class="mt-2">
                         <div class="d-flex align-items-center">
                             ${stars}
                             <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter">${ele.review_cnt} Reviews</p>
+                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
                             </div>
                         </div>
                     </div>
@@ -1355,18 +1399,18 @@ function VK_our_restro_data_display() {
                     : ""}
                     </div>
                 </a>
-                <div class="px-2 mt-3">
-                    <p class="VK_inter text-black fw-600 mb-1 font_20">
+                <div class="px-2 mt-3 VK_resturent_food h-auto">
+                    <p class="VK_inter text-black fw-600 mb-1 font_24">
                         ${ele.name}
                     </p>
-                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt">
+                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
                         ${ele.description}
                     </p>
                     <div class="mt-2">
                         <div class="d-flex align-items-center">
                             ${stars}
                             <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter">${ele.review_cnt} Reviews</p>
+                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
                             </div>
                         </div>
                     </div>
@@ -1564,7 +1608,7 @@ function recommended_data() {
             const generateStars = (rating) => {
                 return Array.from({ length: 5 }, (_, index) => {
                     return `
-                    <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                    <span class="${index < rating ? "VK_review_star" : "VK_star"}">
                         <i class="fa-solid fa-star"></i>
                     </span>`;
                 }).join("");
@@ -1590,32 +1634,32 @@ function recommended_data() {
                     </a>
                 </div>
                 <div class="col-md-8 ps-4 pt-3">
-                    <h5 class="text-black VK_inter VK_food_heading fw-600">
+                    <h5 class="text-black VK_inter VK_food_heading fw-500">
                        ${ele.name}
                     </h5>
-                    <p class="font_18 VK_inter text-black fw-400">
+                    <p class="font_18 VK_inter text-black fw-400 font_24">
                         Price : $${ele.price}
                     </p>
-                    <div class="d-flex gap-1">
+                    <div class="d-flex gap-1 align-items-center">
                         ${stars}
-                        <span class="d-inline-block VK_inter ps-2">
+                        <span class="d-inline-block VK_inter ps-2 font_20">
                             ${ele.review_cnt} Reviews
                         </span>
                     </div>
-                    <p class="VK_inter font_14 text-black mt-2">
+                    <p class="VK_inter font_18 VK_restro_desc mt-2">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <div>
                         ${quantity > 0 ? `
                             <span class="VK_shadow d-inline-flex align-items-center VK_round_lg" id="VK_restro_btn_${ele.id}">
-                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="decrementQuantity(${ele.id})">-</button>
-                                <p class="m-0 fw-bold">${quantity}</p>
-                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="incrementQuantity(${ele.id})">+</button>
+                                <button class="bg-white border-0 px-4 py-1 font_20 VK_inter fw-bold" onclick="decrementQuantity(${ele.id})">-</button>
+                                <p class="m-0 fw-bold font_20">${quantity}</p>
+                                <button class="bg-white border-0 px-4 py-1 font_20 VK_inter fw-bold" onclick="incrementQuantity(${ele.id})">+</button>
                             </span>
                         ` : `
                             <span class="VK_shadow d-inline-flex align-items-center VK_round_lg">
-                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">ADD</button>
+                                <button class="bg-white border-0 px-4 py-1 font_20 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">ADD</button>
                             </span>
                         `}
                     </div>
@@ -2047,54 +2091,70 @@ function VK_search() {
     close?.classList.remove('d-none');
 
     let search_text = document.getElementById('VK_search_box').value;
-
-    let category = localStorage.getItem('category')
-    console.log(category);
+    let category = localStorage.getItem('category');
 
     if (search_text.length > 0) {
-        if (category == "food") {
-            let search_restro = VK_main_data.filter((ele) => {
-                return ele.name.toLowerCase().includes(search_text.toLowerCase());
-            });
-
-            let item_search = VK_item_main_data.filter((ele) => {
-                return ele.name.toLowerCase().includes(search_text.toLowerCase());
-            });
-
-            document.getElementById('VK_popular_dishes').classList.add('d-none');
-            document.getElementById('VK_search_history').classList.add('d-none');
-            document.getElementById('VK_megnifine').classList.add('d-none');
-            document.getElementById('VK_results').classList.remove('d-none');
-            document.getElementById('VK_search_results').classList.remove('d-none')
-
-            VK_print_search_result(search_restro, item_search);
-        } else if (category == "groceries") {
-            console.log("groceries");
+        if (category === "food") {
+            VK_search_food(search_text);
+        } else if (category === "groceries") {
+            VK_search_grocery(search_text);
         }
     } else {
-        document.getElementById('VK_popular_dishes').classList.remove('d-none');
-        document.getElementById('VK_search_history').classList.remove('d-none');
-        document.getElementById('VK_megnifine').classList.remove('d-none');
-        document.getElementById('VK_results').classList.add('d-none');
-        document.getElementById('VK_search_results').classList.add('d-none')
-
+        VK_reset_search();
     }
 }
 
+// Handle food search
+function VK_search_food(search_text) {
+    let search_restro = VK_main_data.filter((ele) => {
+        return ele.name.toLowerCase().includes(search_text.toLowerCase());
+    });
+
+    let item_search = VK_item_main_data.filter((ele) => {
+        return ele.name.toLowerCase().includes(search_text.toLowerCase());
+    });
+
+    VK_update_search_display();
+    VK_print_search_result(search_restro, item_search);
+}
+
+// Handle grocery search
+function VK_search_grocery(search_text) {
+    let search_grocery = groceries.filter((ele) => {
+        return ele.name.toLowerCase().includes(search_text.toLowerCase());
+    });
+
+    VK_update_search_display();
+    VK_print_grocery_results(search_grocery);
+    console.log(search_grocery);
+}
+
+// Clear search results and reset UI
+function VK_reset_search() {
+    document.getElementById('VK_popular_dishes').classList.remove('d-none');
+    document.getElementById('VK_search_history').classList.remove('d-none');
+    document.getElementById('VK_megnifine').classList.remove('d-none');
+    document.getElementById('VK_results').classList.add('d-none');
+    document.getElementById('VK_search_results').classList.add('d-none');
+}
+
+// Update UI when search results are displayed
+function VK_update_search_display() {
+    document.getElementById('VK_popular_dishes').classList.add('d-none');
+    document.getElementById('VK_search_history').classList.add('d-none');
+    document.getElementById('VK_megnifine').classList.add('d-none');
+    document.getElementById('VK_results').classList.remove('d-none');
+    document.getElementById('VK_search_results').classList.remove('d-none');
+}
 
 // clear search btn
 function VK_clear() {
-
-    document.getElementById('VK_popular_dishes').classList.remove('d-none')
-    document.getElementById('VK_search_history').classList.remove('d-none')
-    document.getElementById('VK_megnifine').classList.remove('d-none')
-    document.getElementById('VK_search_results').classList.add('d-none')
-    document.querySelector('.VK_input_cancel').classList.add('d-none')
-
-    document.getElementById('VK_search_box').value = ""
+    VK_reset_search();
+    document.querySelector('.VK_input_cancel').classList.add('d-none');
+    document.getElementById('VK_search_box').value = "";
 }
 
-// Print Search Results
+// Print Food Search Results
 function VK_print_search_result(restaurants, foodItems) {
     let restaurantDiv = document.getElementById('VK_restro_result_div');
     let itemDiv = document.getElementById('VK_item_result_div');
@@ -2102,7 +2162,7 @@ function VK_print_search_result(restaurants, foodItems) {
     restaurantDiv.innerHTML = "";
     itemDiv.innerHTML = "";
 
-    let search_txt = document.getElementById('VK_search_box').value
+    let search_txt = document.getElementById('VK_search_box').value;
 
     if (restaurants.length > 0) {
         let restaurantHTML = `<h5>Restaurants for ${search_txt}</h5>`;
@@ -2113,9 +2173,7 @@ function VK_print_search_result(restaurants, foodItems) {
                         <img src="/images/assets/${ele.search_icn}" class="object_cover w-100" alt="">
                     </div>
                     <div class="VK_search_item_desc py-2 ps-4">
-                        <h6 class="VK_inter fw-bold text-black">
-                            ${ele.name}
-                        </h6>
+                        <h6 class="VK_inter fw-bold text-black">${ele.name}</h6>
                         <div class="d-flex align-items-center flex-wrap">
                             <p class="VK_inter font_14 VK_search_text_desc m-0">
                                 <span class="font_14 VK_review_star">
@@ -2123,14 +2181,10 @@ function VK_print_search_result(restaurants, foodItems) {
                                 </span>
                                 ${ele.review}
                                 <ul class="m-0 VK_search_ul">
-                                    <li>
-                                        20-25 mins
-                                    </li>
+                                    <li>20-25 mins</li>
                                 </ul>
                                 <ul class="m-0 VK_search_ul">
-                                    <li>
-                                        ${ele.address}
-                                    </li>
+                                    <li>${ele.address}</li>
                                 </ul>
                             </p>
                         </div>
@@ -2149,18 +2203,36 @@ function VK_print_search_result(restaurants, foodItems) {
                         <img src="/images/assets/${ele.search_icn}" class="w-100" alt="">
                     </div>
                     <div class="VK_search_item_desc py-2 ps-4">
-                        <h6 class="VK_inter fw-bold text-black">
-                            ${ele.name}
-                        </h6>
-                        <p class="VK_inter font_14 VK_search_text_desc m-0">
-                            Dish
-                        </p>
+                        <h6 class="VK_inter fw-bold text-black">${ele.name}</h6>
+                        <p class="VK_inter font_14 VK_search_text_desc m-0">Dish</p>
                     </div>
                 </div>`;
         }).join("");
         itemDiv.innerHTML = itemHTML;
     }
+}
 
+// Print Grocery Search Results
+function VK_print_grocery_results(groceryItems) {
+    let groceryDiv = document.getElementById('VK_restro_result_div');
+    groceryDiv.innerHTML = "";
+
+    let search_txt = document.getElementById('VK_search_box').value;
+
+    if (groceryItems.length > 0) {
+        let groceryHTML = groceryItems.map((ele) => {
+            return `
+                <div class="d-flex align-items-center my-3">
+                    <div class="VK_search_img">
+                        <img src="/images/assets/${ele.image}" class="w-100" alt="">
+                    </div>
+                    <div class="VK_search_item_desc py-2 ps-4">
+                        <h6 class="VK_inter fw-bold text-black">${ele.name}</h6>
+                    </div>
+                </div>`;
+        }).join("");
+        groceryDiv.innerHTML = groceryHTML;
+    }
 }
 
 
@@ -2230,42 +2302,34 @@ var groceries = [
 
 // popular dish
 function VK_popular_dish_data() {
-    let div = document.getElementById('VK_popular_dish_div')
-
-    let category = localStorage.getItem('category')
+    let div = document.getElementById('VK_popular_dish_div');
+    let category = localStorage.getItem('category');
 
     if (div) {
-        if (category == "food") {
-            document.getElementById('VK_search_popular').innerText = " Popular Dishes"
+        if (category === "food") {
+            document.getElementById('VK_search_popular').innerText = "Popular Dishes";
             let html = VK_popular_dishes.map((el) => {
                 return `
                 <div class="VK_popular_item d-flex flex-column">
                     <div class="VK_popular_food_image align-self-center">
                         <img src="/images/assets/${el.image}" class="w-100 object_cover popular_img" alt="">
                     </div>
-                    <p class="text-center text-black fw-600 VK_inter mt-auto">
-                        ${el.name}
-                    </p>
-                </div>`
-            }).join("")
-
+                    <p class="text-center text-black fw-600 VK_inter mt-auto">${el.name}</p>
+                </div>`;
+            }).join("");
             div.innerHTML = html;
-        } else if (category == "groceries") {
-            document.getElementById('VK_search_popular').innerText = "Groceries"
+        } else if (category === "groceries") {
+            document.getElementById('VK_search_popular').innerText = "Groceries";
             let html = groceries.map((el) => {
                 return `
                 <div class="VK_popular_item d-flex flex-column">
                     <div class="VK_popular_food_image align-self-center">
                         <img src="/images/assets/${el.image}" class="w-100 object_cover popular_img" alt="">
                     </div>
-                    <p class="text-center text-black fw-600 VK_inter mt-auto">
-                        ${el.name}
-                    </p>
-                </div>`
-            }).join("")
+                    <p class="text-center text-black fw-600 VK_inter mt-auto">${el.name}</p>
+                </div>`;
+            }).join("");
             div.innerHTML = html;
         }
-    } else {
-        return
     }
 }

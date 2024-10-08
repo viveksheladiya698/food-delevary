@@ -514,7 +514,7 @@
 }
 
 .VK_food_heading {
-    font-size: clamp(18px, 2vw, 22px);
+    font-size: clamp(18px, 2vw, 26px);
 }
 
 .VK_shadow {
@@ -587,6 +587,9 @@
     height: 100%;
 }
 
+.VK_restro_desc{
+    color: #4C4C4C;
+}
 
 
 /* ------------------------------------------ items ---------------------------------------------- */
@@ -730,9 +733,22 @@ input[type="search"]::-webkit-search-cancel-button {
     top: -2px;
 }
 
-.VK_search_ul{
+.VK_search_ul {
     color: #7E7E7E;
 }
+
+.font_24 {
+    font-size: 24px;
+}
+
+.font_22 {
+    font-size: 22px;
+}
+
+.font_20 {
+    font-size: 20px;
+}
+
 
 /* ---------------------------------------------- media query ----------------------------------------------- */
 
@@ -803,7 +819,8 @@ input[type="search"]::-webkit-search-cancel-button {
     .VK_popular_food_img {
         height: 300px;
     }
-    .VK_caro_img{
+
+    .VK_caro_img {
         height: 250px;
     }
 }
