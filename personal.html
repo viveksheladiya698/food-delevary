@@ -229,7 +229,7 @@
                                                                     alt=""></div>
                                                             <div class="d_process me-3">
                                                                 <div class="d_bar"
-                                                                style="width:20px; background-color: #DA5353;">
+                                                                    style="width:20px; background-color: #DA5353;">
                                                                 </div>
                                                             </div>
                                                             <div class="d_ratenumber">40</div>
@@ -320,11 +320,11 @@
         </div>
     </div>
 
-      <!-- footer -->
-      <footer></footer>
+    <!-- footer -->
+    <footer></footer>
 
 
- 
+
     <!-- Jquery js file -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
@@ -345,7 +345,7 @@
                 .then(data => {
                     document.querySelector('.nav-bar').innerHTML = data;
                     login_chk();
-                    // VK_update_data();
+                    VK_update_data();
                 })
                 .catch(error => console.error('Error loading navbar:', error));
 

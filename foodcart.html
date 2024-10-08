@@ -301,7 +301,7 @@
                             </div>
                             <div class="row g-3 d_pay">
                                 <div class="col-12 col-lg-12">
-                                    <form>
+                                    <form id="paymentForm">
                                         <div class="d_formgroup">
                                             <div class="d-flex justify-content-between align-items-center">
                                                 <div class="d-flex align-items-center">
@@ -320,19 +320,22 @@
                                         <div id="cardForm" class="d_cardform">
                                             <div class="row g-2">
                                                 <div class="col-12">
-                                                    <input type="text" placeholder="Card number">
+                                                    <input type="text" id="cardNumber" placeholder="Card number"
+                                                        required>
                                                 </div>
                                                 <div class="col-6">
-                                                    <input type="text" placeholder="Expiration date (MM/YY)">
+                                                    <input type="text" id="expiryDate"
+                                                        placeholder="Expiration date (MM/YY)" required>
                                                 </div>
                                                 <div class="col-6">
-                                                    <input type="text" placeholder="CVV">
+                                                    <input type="text" id="cvv" placeholder="CVV" required>
                                                 </div>
                                                 <div class="col-12">
-                                                    <input type="text" placeholder="Name on card">
+                                                    <input type="text" id="cardName" placeholder="Name on card"
+                                                        required>
                                                 </div>
                                             </div>
-                                            <div class="d_cta mt-4"><a href="#"
+                                            <div class="d_cta mt-4"><a href="#" id="submitButton"
                                                     class="text-decoration-none d-block text-center"
                                                     data-bs-toggle="modal" data-bs-target="#paymentmodal">Place Order &
                                                     Pay</a>
@@ -884,6 +887,61 @@
         }
 
         document.addEventListener('DOMContentLoaded', toggledeliveryaddDisplay);
+    </script>
+
+    <!-- When all input filed pay button  -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const form = document.getElementById('paymentForm');
+            const inputs = form.querySelectorAll('input[required]');
+            const submitButton = document.getElementById('submitButton');
+
+            function checkInputs() {
+                let allFilled = true;
+                inputs.forEach(input => {
+                    if (!input.value.trim()) {
+                        allFilled = false;
+                    }
+                });
+
+                if (allFilled) {
+                    submitButton.classList.add('active');
+                } else {
+                    submitButton.classList.remove('active');
+                }
+            }
+
+            inputs.forEach(input => {
+                input.addEventListener('input', checkInputs);
+            });
+
+            // // Optional: Basic input validation
+            // const cardNumber = document.getElementById('cardNumber');
+            // const expiryDate = document.getElementById('expiryDate');
+            // const cvv = document.getElementById('cvv');
+
+            // if (cardNumber) {
+            //     cardNumber.addEventListener('input', function (e) {
+            //         this.value = this.value.replace(/\D/g, '').substring(0, 16);
+            //     });
+            // }
+
+            // if (expiryDate) {
+            //     expiryDate.addEventListener('input', function (e) {
+            //         this.value = this.value.replace(/\D/g, '').substring(0, 4);
+            //         if (this.value.length >= 2) {
+            //             this.value = this.value.substring(0, 2) + '/' + this.value.substring(2);
+            //         }
+            //     });
+            // }
+
+            // if (cvv) {
+            //     cvv.addEventListener('input', function (e) {
+            //         this.value = this.value.replace(/\D/g, '').substring(0, 3);
+            //     });
+            // }
+        });
     </script>
 
 </body>
