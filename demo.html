@@ -33,37 +33,53 @@
     <pre id="coordinates" class="coordinates"></pre>
 
     <script>
+        const url = 'https://us1.locationiq.com/v1/reverse?key=pk.5fa89f58fd1bcf34bca5928cf578a43c&lat=21.213852&lon=72.889617&format=json&';
+        // const options = {
+        //     method: 'GET',
+        //     headers: {
+        //         'x-rapidapi-key': '341c5d4126mshf1485d546b81215p1124f8jsnd0cccfe985e7',
+        //         'x-rapidapi-host': 'trueway-geocoding.p.rapidapi.com'
+        //     }
+        // };
 
-        //Add your LocationIQ Maps Access Token here (not the API token!)
-        locationiq.key = 'pk.5fa89f58fd1bcf34bca5928cf578a43c';
-        //Define the map and configure the map's theme
-        var map = new maplibregl.Map({
-            container: 'map',
-            style: locationiq.getLayer("Streets"),
-            zoom: 12,
-            center: [-122.42, 37.779]
-        });
+        demo();
 
-        var el = document.createElement('div');
-        el.className = 'marker';
-        el.style.backgroundImage = 'url(https://tiles.locationiq.com/static/images/marker50px.png)';
-        el.style.width = '50px';
-        el.style.height = '50px';
+        async function demo() {
+            try {
+                const response = await fetch(url);
+                const result = await response.json();
+                console.log(result);
+            } catch (error) {
+                console.error(error);
+            }
+        }
 
-        map.on('click', function (e) {
-            var marker = new maplibregl.Marker(el)
-                .setLngLat(e.lngLat.wrap())
-                .addTo(map);
+        const url1 = 'https://trueway-geocoding.p.rapidapi.com/ReverseGeocode?location=21.218177%2C72.895219&language=en';
+        const options = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': '341c5d4126mshf1485d546b81215p1124f8jsnd0cccfe985e7',
+                'x-rapidapi-host': 'trueway-geocoding.p.rapidapi.com'
+            }
+        };
 
-            var lngLat = marker.getLngLat();
-            coordinates.style.display = 'block';
-            coordinates.innerHTML =
-                'Latitude: ' + lngLat.lat + '<br />Longitude: ' + lngLat.lng;
-                console.log(lngLat.lat);
+        classes();
+        async function classes(){
 
-        });
+            
+            try {
+                const response = await fetch(url1, options);
+                const result = await response.json();
+                console.log(result);
+            } catch (error) {
+                console.error(error);
+            }
+        }
+
+
 
     </script>
+
 
 </body>
 

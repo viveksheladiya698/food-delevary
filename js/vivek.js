@@ -8,21 +8,23 @@ window.onload = function () {
     VK_Beverages();
     VK_item_delivery();
     VK_popular_dish_data();
+    VK_offer_restro_data_display();
 
-    get_location();
+
+    // get_location();
 }
 
-function location1(loc) {
-    console.log(loc);
-}
+// function location1(loc) {
+//     console.log(loc);
+// }
 
-function fail() {
-    console.log("fail to ");
-}
+// function fail() {
+//     console.log("fail to ");
+// }
 
-function get_location() {
-    navigator.geolocation.getCurrentPosition(location1, fail)
-}
+// function get_location() {
+//     navigator.geolocation.getCurrentPosition(location1, fail)
+// }
 
 
 
@@ -45,12 +47,14 @@ async function VK_update_data1() {
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
     if (wishlist.length > 0) {
         document.getElementById('VK_wishlist_count').innerHTML = wishlist.length;
+        document.getElementById('VK_wishlist_count').classList.remove('d-none')
     } else {
         document.getElementById('VK_wishlist_count').classList.add('d-none')
     }
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length > 0) {
         document.getElementById('VK_cart_count').innerHTML = cart.length
+        document.getElementById('VK_cart_count').classList.remove('d-none')
     } else {
         document.getElementById('VK_cart_count').classList.add('d-none')
     }
@@ -66,6 +70,8 @@ function VK_cart_list_menu() {
         if (data.length > 0) {
             document.getElementById('VK_add_item_menu').classList.remove('d-none')
             document.getElementById('VK_item_cnt').innerText = data.length
+        } else {
+            document.getElementById('VK_add_item_menu').classList.add('d-none')
         }
     }
 }
@@ -628,7 +634,7 @@ const product = [
         price: 20,
         review: 4,
         type: "Grocery",
-
+        search_icn: "icn10.png"
     },
     {
         id: 2,
@@ -637,6 +643,7 @@ const product = [
         price: 60,
         review: 4,
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 3,
@@ -645,6 +652,7 @@ const product = [
         price: 70,
         review: 5,
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 4,
@@ -653,6 +661,7 @@ const product = [
         price: 100,
         review: 5,
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 5,
@@ -661,6 +670,7 @@ const product = [
         price: 20,
         review: 5,
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 6,
@@ -669,6 +679,7 @@ const product = [
         price: 70,
         review: 5,
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 7,
@@ -677,6 +688,7 @@ const product = [
         price: 20,
         review: 5,
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 8,
@@ -685,6 +697,7 @@ const product = [
         price: 60,
         review: 5,
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 9,
@@ -694,6 +707,7 @@ const product = [
         review: 4,
         discount: 'Get 30',
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 10,
@@ -703,6 +717,7 @@ const product = [
         review: 4,
         discount: '',
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 11,
@@ -712,6 +727,7 @@ const product = [
         review: 4,
         discount: '40',
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 12,
@@ -721,6 +737,7 @@ const product = [
         review: 4,
         discount: '30',
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 13,
@@ -730,6 +747,7 @@ const product = [
         review: 4,
         discount: 'Get 30',
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 14,
@@ -739,6 +757,7 @@ const product = [
         review: 4,
         discount: '10',
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 15,
@@ -748,6 +767,7 @@ const product = [
         review: 4,
         discount: '',
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 16,
@@ -757,6 +777,7 @@ const product = [
         review: 4,
         discount: '',
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 17,
@@ -767,6 +788,7 @@ const product = [
         discount: '30',
         category: "tea and coffee",
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 18,
@@ -777,6 +799,7 @@ const product = [
         discount: '',
         category: "Fresh Fruits",
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 19,
@@ -787,6 +810,7 @@ const product = [
         discount: '40',
         category: "Dairy, Bread and Eggs",
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 20,
@@ -797,6 +821,7 @@ const product = [
         discount: '30',
         category: "Atta, Rice and Dals",
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 21,
@@ -807,6 +832,7 @@ const product = [
         discount: '30',
         category: "Sauces and Spreads",
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 22,
@@ -817,6 +843,7 @@ const product = [
         discount: '10',
         category: "Dairy, Bread and Eggs",
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 23,
@@ -827,6 +854,7 @@ const product = [
         discount: '',
         category: "Cold Drinks and Juices",
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 24,
@@ -837,6 +865,7 @@ const product = [
         discount: '',
         category: "Fresh Vegetables",
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 25,
@@ -847,6 +876,7 @@ const product = [
         discount: '30',
         category: "tea and coffee",
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 26,
@@ -857,6 +887,7 @@ const product = [
         discount: '',
         category: "Fresh Fruits",
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 27,
@@ -867,6 +898,7 @@ const product = [
         discount: '40',
         category: "Dairy, Bread and Eggs",
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 28,
@@ -877,6 +909,7 @@ const product = [
         discount: '30',
         category: "Atta, Rice and Dals",
         type: "Grocery",
+        search_icn: "icn13.png"
     },
     {
         id: 29,
@@ -887,6 +920,7 @@ const product = [
         discount: '30',
         category: "Sauces and Spreads",
         type: "Grocery",
+        search_icn: "icn10.png"
     },
     {
         id: 30,
@@ -897,6 +931,7 @@ const product = [
         discount: '10',
         category: "Dairy, Bread and Eggs",
         type: "Grocery",
+        search_icn: "icn11.png"
     },
     {
         id: 31,
@@ -907,6 +942,7 @@ const product = [
         discount: '',
         category: "Cold Drinks and Juices",
         type: "Grocery",
+        search_icn: "icn12.png"
     },
     {
         id: 32,
@@ -917,6 +953,7 @@ const product = [
         discount: '',
         category: "Fresh Vegetables",
         type: "Grocery",
+        search_icn: "icn13.png"
     },
 ]
 
@@ -963,9 +1000,9 @@ function regular_menu_card_display() {
                         <div class="VK_regular_cart">
                             <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
                                 <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
-                                    <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
+                                    <img src="/images/vivek/cart.png" alt="Add to cart">
                                 </button>
-                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_wishlist(event,${currnt_record})">
+                                <button class="border-0 rounded-circle VK_cart_btn font_20" onclick="VK_add_wishlist(event,${currnt_record})">
                                     <i class="${heartIcon}"></i>
                                 </button>
                             </div>
@@ -1518,26 +1555,26 @@ function VK_clear_filter_restro(ele) {
 }
 
 // Popular Food page 
-function VK_restro_filt() {
+function VK_popular_restro_sort() {
 
-    let sort = document.querySelectorAll('#restro_filter')
+    let sort = document.querySelectorAll('#sort_by')
     let sort_order = Array.from(sort).find(el => el.checked)
 
     switch (sort_order.value) {
         case 'Relevance':
-            VK_resturents = main_data
+            VK_our_restros = VK_our_resturent_data
             break;
         case 'Price (low to high)':
-            VK_resturents = VK_resturents.sort((a, b) => a.price - b.price)
+            VK_our_restros = VK_our_restros.sort((a, b) => a.price - b.price)
             break;
         case 'Price (high to low)':
-            VK_resturents = VK_resturents.sort((a, b) => b.price - a.price)
+            VK_our_restros = VK_our_restros.sort((a, b) => b.price - a.price)
             break;
         case 'Rating 3+':
-            VK_resturents = VK_resturents.filter(el => el.review > 3)
+            VK_our_restros = VK_our_restros.filter(el => el.review >= 3)
             break;
     }
-    VK_resturent_data_display();
+    VK_our_restro_data_display();
 }
 
 // popular food
@@ -1550,6 +1587,203 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('VK_popular_food_heading').innerText = data.name;
     }
 })
+
+
+
+
+
+// -------------------------------------------------- offers page ------------------------------------------------------
+
+// offer restro data
+var VK_offre_restro_Data = VK_main_data
+
+var VK_offer_restor = VK_offre_restro_Data
+
+
+//  offer page (Restraunts)
+function VK_offer_restro_data_display() {
+    let div = document.getElementById('VK_offer_resturent');
+    if (div) {
+
+        let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+        let html = VK_offer_restor.map((ele) => {
+            const generateStars = (rating) => {
+                return Array.from({ length: 5 }, (_, index) => {
+                    return `
+                        <span class="font_14 ${index < rating ? "VK_review_star" : "VK_star"}">
+                            <i class="fa-solid fa-star"></i>
+                        </span>`;
+                }).join("");
+            };
+
+            const stars = generateStars(ele.review);
+            let currnt_record = JSON.stringify(ele).replace(/"/g, '&quot;');
+
+            let isInWishlist = wishlist.some(item => item.id === ele.id);
+            let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
+
+            return `
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
+                <a href="/Restaurants.html?r_id=${ele.id}">
+                    <div class="overflow-hidden VK_resturent_food">
+                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
+                        <div class="VK_resturent_btn">
+                            <button class="" onclick="VK_whshlist(event,${currnt_record})">
+                                <i class="${heartIcon}"></i>
+                            </button>
+                        </div>
+                        ${ele.offer != null ?
+                    `<div class="VK_resturent_alert">
+                            <p class="m-0 VK_inter">
+                                ${ele.offer}
+                            </p>
+                        </div>`
+                    : ""}
+                    </div>
+                </a>
+                <div class="px-2 mt-3 VK_resturent_food h-auto">
+                    <p class="VK_inter text-black fw-600 mb-1 font_24">
+                        ${ele.name}
+                    </p>
+                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
+                        ${ele.description}
+                    </p>
+                    <div class="mt-2">
+                        <div class="d-flex align-items-center">
+                            ${stars}
+                            <div class="ms-2">
+                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+        }).join("");
+
+        div.innerHTML = html;
+    } else {
+        return;
+    }
+}
+
+//  offer page (Restrunts filter)
+let activeFilters1 = [];
+
+//  offer page (Restrunts filter)
+function VK_filter_offer_restro(ele) {
+    const buttons = document.querySelectorAll('.VK_food_filter_btn');
+    const active = document.querySelectorAll('.VK_food_filter_active_btn');
+
+    // Add to active filters if not already present
+    if (!activeFilters1.includes(ele)) {
+        activeFilters1.push(ele);
+    }
+
+    // Hide all active buttons
+    active.forEach(btn => btn.classList.add('d-none'));
+
+    // Show all filter buttons
+    buttons.forEach(button => button.classList.remove('d-none'));
+
+    // Update the UI for active filters
+    activeFilters1.forEach(el => {
+        buttons[el].classList.add('d-none');
+        active[el].classList.remove('d-none');
+    });
+
+    let filteredRestros = VK_offer_restor;
+
+    // Apply filter logic
+    switch (ele) {
+        case 0:
+            filteredRestros = VK_offer_restor.filter(restro => restro.typ === "vage");
+            break;
+        case 1:
+            // Apply price range filter here
+            break;
+        case 2:
+            filteredRestros = VK_offer_restor.filter(restro => restro.offer);
+            break;
+        case 3:
+            filteredRestros = VK_offer_restor.filter(restro => restro.review >= 3);
+            break;
+        case 4:
+            // Apply fast delivery filter here
+            break;
+        default:
+            break;
+    }
+
+    VK_offer_restor = filteredRestros;
+    VK_offer_restro_data_display();
+}
+
+//  offer page (our Restrunts)
+function VK_clear_filter_offer_restro(ele) {
+    const buttons = document.querySelectorAll('.VK_food_filter_btn');
+    const active = document.querySelectorAll('.VK_food_filter_active_btn');
+
+    activeFilters1 = activeFilters1.filter(filter => filter !== ele);
+
+    active[ele].classList.add('d-none');
+
+    buttons[ele].classList.remove('d-none');
+
+    let filteredRestros = VK_offre_restro_Data;
+
+
+    // Reapply all active filters
+    activeFilters1.forEach(activeFilter => {
+        switch (activeFilter) {
+            case 0:
+                filteredRestros = filteredRestros.filter(restro => restro.typ === "vage");
+                break;
+            case 1:
+                // Reapply price range filter
+                break;
+            case 2:
+                filteredRestros = filteredRestros.filter(restro => restro.offer);
+                break;
+            case 3:
+                filteredRestros = filteredRestros.filter(restro => restro.review >= 3);
+                break;
+            case 4:
+                // Reapply fast delivery filter
+                break;
+            default:
+                break;
+        }
+    });
+
+    VK_offer_restor = filteredRestros;
+    VK_offer_restro_data_display();
+}
+
+// offer Food page (Sort By) 
+function VK_offer_sort_by() {
+
+    let sort = document.querySelectorAll('#offer_sort_by')
+    let sort_order = Array.from(sort).find(el => el.checked)
+
+    switch (sort_order.value) {
+        case 'Relevance':
+            VK_offer_restor = VK_offre_restro_Data
+            break;
+        case 'Price (low to high)':
+            VK_offer_restor = VK_offer_restor.sort((a, b) => a.price - b.price)
+            break;
+        case 'Price (high to low)':
+            VK_offer_restor = VK_offer_restor.sort((a, b) => b.price - a.price)
+            break;
+        case 'Rating 3+':
+            VK_offer_restor = VK_offer_restor.filter(el => el.review >= 3)
+            break;
+    }
+    VK_offer_restro_data_display();
+}
+
+
 
 
 
@@ -2011,9 +2245,9 @@ function VK_item_delivery() {
                         <div class="VK_regular_cart">
                             <div class="d-flex justify-content-center align-items-end gap-2 h-100 pb-3">
                                 <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_to_cart(event,${currnt_record})">
-                                    <img src="/images/vivek/cart.png" alt="Add to cart" width="20px">
+                                    <img src="/images/vivek/cart.png" alt="Add to cart">
                                 </button>
-                                <button class="border-0 rounded-circle VK_cart_btn" onclick="VK_add_wishlist(event,${currnt_record})">
+                                <button class="border-0 rounded-circle VK_cart_btn font_20" onclick="VK_add_wishlist(event,${currnt_record})">
                                     <i class="${heartIcon}"></i>
                                 </button>
                             </div>
@@ -2120,13 +2354,12 @@ function VK_search_food(search_text) {
 
 // Handle grocery search
 function VK_search_grocery(search_text) {
-    let search_grocery = groceries.filter((ele) => {
+    let search_grocery = product.filter((ele) => {
         return ele.name.toLowerCase().includes(search_text.toLowerCase());
     });
 
     VK_update_search_display();
     VK_print_grocery_results(search_grocery);
-    console.log(search_grocery);
 }
 
 // Clear search results and reset UI
@@ -2224,7 +2457,7 @@ function VK_print_grocery_results(groceryItems) {
             return `
                 <div class="d-flex align-items-center my-3">
                     <div class="VK_search_img">
-                        <img src="/images/assets/${ele.image}" class="w-100" alt="">
+                        <img src="/images/assets/${ele.search_icn}" class="w-100" alt="">
                     </div>
                     <div class="VK_search_item_desc py-2 ps-4">
                         <h6 class="VK_inter fw-bold text-black">${ele.name}</h6>
@@ -2331,5 +2564,65 @@ function VK_popular_dish_data() {
             }).join("");
             div.innerHTML = html;
         }
+    }
+}
+
+
+// food search 
+let food_search = [
+    {
+        search:"Somnath Restaurant"
+    },
+    {
+        search:"Burger"
+    },
+    {
+        search:"Pizza Hut"
+    },
+    {
+        search:"Burger King"
+    },
+    {
+        search:"Pizza"
+    },
+    {
+        search:"McDonald’s"
+    },
+    {
+        search:"Burger King"
+    },
+    {
+        search:"Burger House"
+    },
+]
+
+// recently search
+function VK_recently_search() {
+
+    let category = localStorage.getItem('category');
+    let div = document.getElementById('VK_recent_search')
+
+    if (div) {
+        if (category === "food") {
+            let html = food_search.map((ele)=>{
+                return `
+                    <div class="VK_black_border VK_round py-1 px-3 mb-2 mx-3">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="VK_icn">
+                                <img src="/images/vivek/timer.png" alt="">
+                            </div>
+                            <p class="m-0">
+                               ${ele.search}
+                            </p>
+                        </div>
+                    </div>`
+            })
+            VK_search_food(search_text);
+        } else if (category === "groceries") {
+            VK_search_grocery(search_text);
+        }
+        VK_reset_search();
+    } else {
+        return
     }
 }

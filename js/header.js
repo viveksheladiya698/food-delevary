@@ -19,16 +19,23 @@ function login_chk() {
 
 async function VK_update_data() {
     let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+    let wishlists = document.querySelectorAll('#VK_wishlist_count')
     if (wishlist.length > 0) {
-        document.getElementById('VK_wishlist_count').innerHTML = wishlist.length;
+        wishlists.forEach((el) => {
+            el.innerHTML = wishlist.length
+        })
     } else {
-        document.getElementById('VK_wishlist_count').classList.add('d-none')
+        wishlists.forEach((el) => {
+            el.classList
+        })
     }
 
     let address = JSON.parse(localStorage.getItem('address'))
     if (address) {
         let user_address = `${address.house_no} ${"" + address.address}, ${address.sector}, ${address.area}`;
         document.getElementById('VK_address').innerText = user_address
+    } else {
+        document.getElementById('VK_address').innerText = 'Location'
     }
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -37,6 +44,28 @@ async function VK_update_data() {
     } else {
         document.getElementById('VK_cart_count').classList.add('d-none')
     }
+
+
+    const currentPath = window.location.pathname;
+
+    const wishlistIcon = document.querySelector('.VK_wishlist_icn a');
+    const cartIcon = document.querySelector('.VK_cart_icn a');
+
+
+    if (currentPath.includes('/wishlist.html')) {
+        wishlistIcon.innerHTML = `<img src="/images/vivek/active_wishlist.png" height="25px" alt="">`;
+    } else {
+        wishlistIcon.innerHTML = `<img src="/images/vivek/watchlist.png" height="25px" alt="">`;
+    }
+
+    if (currentPath.includes('/foodcart.html')) {
+        cartIcon.innerHTML = `<img src="/images/vivek/acticve_cart.png" height="25px" alt="">`;
+    } else {
+        cartIcon.innerHTML = `<img src="/images/vivek/card.png" height="25px" alt="">`;
+    }
+
+
+
 }
 
 
@@ -204,11 +233,15 @@ function VK_otp(event) {
 
 function VK_logout() {
     localStorage.removeItem('login')
+    localStorage.removeItem('cart')
+    localStorage.removeItem('wishlist')
+    localStorage.removeItem('address')
+    VK_update_data();
+    login_chk();
 
     const modal = bootstrap.Modal.getInstance(document.getElementById('logoutModal'));
     modal.hide();
 
-    login_chk()
 }
 
 

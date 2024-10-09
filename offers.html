@@ -77,10 +77,12 @@
                                     <div class="radio-container">
                                         <div class="radio-wrapper m-0">
                                             <label class="radio-button">
-                                                <input id="option1" name="radio-group" type="radio">
+                                                <input id="offer_sort_by" value="Relevance (default)" name="radio-group"
+                                                    type="radio" onclick="VK_offer_sort_by()">
                                                 <span class="radio-checkmark"></span>
-                                                <span class="radio-label text-black fw-normal">Relevance
-                                                    (default)</span>
+                                                <span class="radio-label text-black fw-normal">
+                                                    Relevance (default)
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -89,10 +91,12 @@
                                     <div class="radio-container">
                                         <div class="radio-wrapper m-0">
                                             <label class="radio-button">
-                                                <input id="option1" name="radio-group" type="radio">
+                                                <input id="offer_sort_by" value="Price (low to high)" name="radio-group"
+                                                    type="radio" onclick="VK_offer_sort_by()">
                                                 <span class="radio-checkmark"></span>
-                                                <span class="radio-label text-black fw-normal">Price (low to
-                                                    high)</span>
+                                                <span class="radio-label text-black fw-normal">
+                                                    Price (low to high)
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -101,10 +105,12 @@
                                     <div class="radio-container">
                                         <div class="radio-wrapper m-0">
                                             <label class="radio-button">
-                                                <input id="option1" name="radio-group" type="radio">
+                                                <input id="offer_sort_by" value="Price (high to low)" name="radio-group"
+                                                    type="radio" onclick="VK_offer_sort_by()">
                                                 <span class="radio-checkmark"></span>
-                                                <span class="radio-label text-black fw-normal">Price (high to
-                                                    low)</span>
+                                                <span class="radio-label text-black fw-normal">
+                                                    Price (high to low)
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -113,9 +119,12 @@
                                     <div class="radio-container">
                                         <div class="radio-wrapper m-0">
                                             <label class="radio-button">
-                                                <input id="option1" name="radio-group" type="radio">
+                                                <input id="offer_sort_by" value="Rating 3+" name="radio-group"
+                                                    type="radio" onclick="VK_offer_sort_by()">
                                                 <span class="radio-checkmark"></span>
-                                                <span class="radio-label text-black fw-normal">Rating 3+</span>
+                                                <span class="radio-label text-black fw-normal">
+                                                    Rating 3+
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -124,10 +133,12 @@
                                     <div class="radio-container">
                                         <div class="radio-wrapper m-0">
                                             <label class="radio-button">
-                                                <input id="option1" name="radio-group" type="radio">
+                                                <input id="offer_sort_by" value="Discount (high to low)"
+                                                    name="radio-group" type="radio" onclick="VK_offer_sort_by()">
                                                 <span class="radio-checkmark"></span>
-                                                <span class="radio-label text-black fw-normal">Discount (high to
-                                                    low)</span>
+                                                <span class="radio-label text-black fw-normal">
+                                                    Discount (high to low)
+                                                </span>
                                             </label>
                                         </div>
                                     </div>
@@ -136,53 +147,53 @@
                         </div>
                         <div class="d-flex flex-wrap gap-2 VK_filters_buttons" id="VK_food_filt_btn">
                             <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
-                                id="VK_active_pure_veg" onclick="VK_clear_filter_restro(0)">
+                                id="VK_active_pure_veg" onclick="VK_clear_filter_offer_restro(0)">
                                 Pure Veg
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                             <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
-                                id="VK_active_price_range" onclick="VK_clear_filter_restro(1)">
+                                id="VK_active_price_range" onclick="VK_clear_filter_offer_restro(1)">
                                 Rs. 300 - Rs. 600
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                             <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
-                                id="VK_active_offers" onclick="VK_clear_filter_restro(2)">
+                                id="VK_active_offers" onclick="VK_clear_filter_offer_restro(2)">
                                 Offers
                                 <i class="fa-solid fa-xmark"></i>
                             </button>
                             <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
-                                id="VK_active_rating" onclick="VK_clear_filter_restro(3)">
+                                id="VK_active_rating" onclick="VK_clear_filter_offer_restro(3)">
                                 Rating 3+ <i class="fa-solid fa-xmark"></i>
                             </button>
                             <button class="VK_food_filter_active_btn d-none VK_round bg-transparent VK_inter"
-                                id="VK_active_fast_delivery" onclick="VK_clear_filter_restro(4)">
+                                id="VK_active_fast_delivery" onclick="VK_clear_filter_offer_restro(4)">
                                 Fast Delivery <i class="fa-solid fa-xmark"></i>
                             </button>
                             <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_pure_veg"
-                                onclick="VK_filter_restro(0)">
+                                onclick="VK_filter_offer_restro(0)">
                                 Pure Veg
                             </button>
                             <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_price_range"
-                                onclick="VK_filter_restro(1)">
+                                onclick="VK_filter_offer_restro(1)">
                                 Rs. 300 - Rs. 600
                             </button>
                             <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_offers"
-                                onclick="VK_filter_restro(2)">
+                                onclick="VK_filter_offer_restro(2)">
                                 Offers
                             </button>
                             <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_rating"
-                                onclick="VK_filter_restro(3)">
+                                onclick="VK_filter_offer_restro(3)">
                                 Rating 3+
                             </button>
                             <button class="VK_food_filter_btn VK_round bg-transparent VK_inter" id="VK_fast_delivery"
-                                onclick="VK_filter_restro(4)">
+                                onclick="VK_filter_offer_restro(4)">
                                 Fast Delivery
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-md-5" id="VK_our_resturent">
+            <div class="row mt-md-5" id="VK_offer_resturent">
             </div>
         </div>
     </section>
