@@ -9,7 +9,8 @@
     <!-- font family css file -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
         rel="stylesheet">
 
     <!-- bootstrap css file -->
@@ -31,10 +32,33 @@
     <div class="nav-bar"></div>
 
     <section>
-        <div class="d_livetracking" >
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d929.841018997397!2d72.86623116959322!3d21.2174067489767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f11ae376f7f%3A0xfd28cef82d926e8b!2sVarachha%20Flyway%2C%20GEB%20Colony%2C%20Adarsh%20Society%2C%20Ram%20Nagar%2C%20Kodiyar%20Nagar%2C%20Surat%2C%20Gujarat%20395006!5e0!3m2!1sen!2sin!4v1727956359252!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <div class="d_livetracking">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d929.841018997397!2d72.86623116959322!3d21.2174067489767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04f11ae376f7f%3A0xfd28cef82d926e8b!2sVarachha%20Flyway%2C%20GEB%20Colony%2C%20Adarsh%20Society%2C%20Ram%20Nagar%2C%20Kodiyar%20Nagar%2C%20Surat%2C%20Gujarat%20395006!5e0!3m2!1sen!2sin!4v1727956359252!5m2!1sen!2sin"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="d_trackpopup">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="d_tracking-info">
+                            <div class="d_arrival-time">ARRIVING IN</div>
+                            <div class="d_time">5 mins</div>
+                            <div class="d_progress-bar">
+                                <div class="d_progress">
+                                    <img src="/darshan_img/track.png" alt="">
+                                </div>
+                            </div>
+                            <div class="d_status">Your order is on the way</div>
+                            <div class="d_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                ei
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </section>
+
+    <!-- <div id="map"></div>  -->
 
     <!-- Jquery js file -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -61,6 +85,44 @@
                 .catch(error => console.error('Error loading navbar:', error));
         });
     </script>
+
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
+    <!-- <script>
+        function initMap() {
+            // Define origin and destination
+            const origin = { lat: 37.7749, lng: -122.4194 }; // San Francisco
+            const destination = { lat: 34.0522, lng: -118.2437 }; // Los Angeles
+
+            // Create a map centered at the origin
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 7,
+                center: origin,
+            });
+
+            // Create a DirectionsService instance to use the route service
+            const directionsService = new google.maps.DirectionsService();
+
+            // Create a DirectionsRenderer instance to display the route
+            const directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map); // Set the map for the DirectionsRenderer
+
+            // Request a route
+            const request = {
+                origin: origin,
+                destination: destination,
+                travelMode: google.maps.TravelMode.DRIVING,
+            };
+
+            // Use the DirectionsService to calculate the route
+            directionsService.route(request, (result, status) => {
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsRenderer.setDirections(result); // Display the route on the map
+                } else {
+                    console.error('Directions request failed due to ' + status);
+                }
+            });
+        }
+    </script> -->
 
 </body>
 

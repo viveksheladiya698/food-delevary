@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
 
-
     <!-- font family css file -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -129,9 +128,9 @@
                                                 style="display: none;">
                                         </div>
                                         <div class="d_editbtn d_flex .d_align-center" id="editBtn">
-                                            <div >
+                                            <div>
                                                 <img src="/darshan_img/edit.png" class="me-2" alt="">
-                                            <a class="mb-0 text-decoration-none">Edit</a>
+                                                <a class="mb-0 text-decoration-none">Edit</a>
                                             </div>
                                         </div>
                                     </div>
@@ -500,8 +499,6 @@
 
         // Call toggleOrderDisplay when the page loads
         document.addEventListener('DOMContentLoaded', toggleOrderDisplay);
-
-
     </script>
 
     <script>
@@ -535,7 +532,7 @@
             let isEditing = false;
 
             function toggleEdit() {
-                isEditing = true;
+                isEditing = !isEditing; // Toggle the state
 
                 fields.forEach(field => {
                     const resultEl = document.getElementById(field.result);
@@ -556,22 +553,36 @@
             }
 
             function saveChanges() {
+                isEditing = false; // Set editing state to false
+
                 fields.forEach(field => {
                     const resultEl = document.getElementById(field.result);
                     const inputEl = document.getElementById(field.input);
                     resultEl.textContent = inputEl.value;
+                    resultEl.style.display = 'block';
+                    inputEl.style.display = 'none';
                 });
-                toggleEdit();
+
+                // Show edit button and hide save button
+                editBtn.style.display = 'block';
+                saveBtn.style.display = 'none';
             }
 
             if (editBtn) {
                 editBtn.addEventListener('click', toggleEdit);
             }
             if (saveBtn) {
-                saveBtn.querySelector('a').addEventListener('click', function (e) {
-                    e.preventDefault();
-                    saveChanges();
-                });
+                // Check if saveBtn has an anchor tag inside
+                const saveAnchor = saveBtn.querySelector('a');
+                if (saveAnchor) {
+                    saveAnchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        saveChanges();
+                    });
+                } else {
+                    // If no anchor, add click event to the button itself
+                    saveBtn.addEventListener('click', saveChanges);
+                }
             }
         });
     </script>

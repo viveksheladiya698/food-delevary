@@ -857,17 +857,18 @@ function updateWishlistUI(filteredWishlist) {
 
 // Function to generate HTML for the wishlist
 function generateWishlistHTML(wishlist) {
+    console.log(wishlist);
     return wishlist.map(item => `
         <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="d_item" >
-            <a href="personal.html">
-                <div class="d_img">
-                    <img src="/images/assets/${item.img}" alt="${item.name}">
-                    <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(event,${JSON.stringify(item).replace(/"/g, '&quot;')})">
-                        <i class="fa-solid fa-heart"></i>
+            <div class="d_item">
+                <a href="${item.type === 'food' ? `items.html?item_id=${item.id}` : (item.type === 'Grocery' ? `personal.html?item_id=${item.id}` : `Restaurants.html?id=${item.id}`)}">
+                    <div class="d_img">
+                        <img src="/images/assets/${item.img}" alt="${item.name}">
+                        <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(event, ${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
                     </div>
-                </div>
-                </a>
+                </a>    
                 <div class="d_con">
                     <div class="d_proname">${item.name}</div>
                     <div class="d_add">Price: $${item.price}</div>
@@ -882,6 +883,9 @@ function generateWishlistHTML(wishlist) {
         </div>
     `).join('');
 }
+
+
+
 
 // Function to update grocery items UI
 
@@ -1007,16 +1011,21 @@ function displayCart() {
     const itemCountSpan = document.getElementById('itemCount');
     const billCountSpan = document.getElementById('billitemCount');
     const d_cartfooter = document.getElementById('d_cartfooter');
+    const d_stepsec = document.getElementById('d_stepsec');
     
     if (cartItems.length > 0) {
         if (emptyCartMessage) {
             emptyCartMessage.classList.add('d-none');
+            
         }
         if (cartlist) {
             cartlist.classList.remove('d-none');
         }
         if(d_cartfooter){
             d_cartfooter.classList.add('d-none');
+        }
+        if(d_stepsec){
+            d_stepsec.classList.remove('d-none');
         }
 
         if (cartContent) {
@@ -1071,6 +1080,9 @@ function displayCart() {
         }
         if (cartlist) {
             cartlist.classList.add('d-none');
+        }
+        if(d_stepsec){
+            d_stepsec.classList.add('d-none');
         }
     }
 }
