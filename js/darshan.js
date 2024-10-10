@@ -763,7 +763,7 @@ function generateRelatedProductHTML(item) {
                         </a>
                         <div class="d_iconoverlay">
                             <div class="d-flex justify-content-center align-items-center">
-                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}">
+                                <div class="d_icon d-flex align-items-center justify-content-center cart-icon" data-id="${item.id}" onclick="addToCart(${itemJSON})">
                                     <img src="/darshan_img/cart.png" alt="Cart">
                                 </div>
                                 <div class="d_heart d_icon d-flex align-items-center justify-content-center" onclick="toggleWishlistItem(event,${itemJSON})">
