@@ -26,7 +26,7 @@ async function VK_update_data() {
         })
     } else {
         wishlists.forEach((el) => {
-            el.classList
+            el.classList.add('d-none')
         })
     }
 
@@ -39,10 +39,15 @@ async function VK_update_data() {
     }
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let carts = document.querySelectorAll('#VK_cart_count')
     if (cart.length > 0) {
-        document.getElementById('VK_cart_count').innerHTML = cart.length
+        carts.forEach((el) => {
+            el.innerHTML = cart.length
+        })
     } else {
-        document.getElementById('VK_cart_count').classList.add('d-none')
+        carts.forEach((el) => {
+            el.classList.add('d-none')
+        })
     }
 
 

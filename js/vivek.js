@@ -9,6 +9,7 @@ window.onload = function () {
     VK_item_delivery();
     VK_popular_dish_data();
     VK_offer_restro_data_display();
+    VK_recently_search();
 
 
     // get_location();
@@ -2571,28 +2572,50 @@ function VK_popular_dish_data() {
 // food search 
 let food_search = [
     {
-        search:"Somnath Restaurant"
+        search: "Somnath Restaurant"
     },
     {
-        search:"Burger"
+        search: "Burger"
     },
     {
-        search:"Pizza Hut"
+        search: "Pizza Hut"
     },
     {
-        search:"Burger King"
+        search: "Burger King"
     },
     {
-        search:"Pizza"
+        search: "Pizza"
     },
     {
-        search:"McDonald’s"
+        search: "McDonald’s"
     },
     {
-        search:"Burger King"
+        search: "Burger King"
     },
     {
-        search:"Burger House"
+        search: "Burger House"
+    },
+]
+
+// grocery search 
+let Grocery_search = [
+    {
+        search: "Vegetables"
+    },
+    {
+        search: "Atta"
+    },
+    {
+        search: "Fruits"
+    },
+    {
+        search: "Beverages"
+    },
+    {
+        search: "Bread"
+    },
+    {
+        search: "Biscuits"
     },
 ]
 
@@ -2604,24 +2627,36 @@ function VK_recently_search() {
 
     if (div) {
         if (category === "food") {
-            let html = food_search.map((ele)=>{
+            let html = food_search.map((ele) => {
                 return `
-                    <div class="VK_black_border VK_round py-1 px-3 mb-2 mx-3">
+                    <div class="VK_black_border VK_round py-1 px-3 me-2 my-2">
                         <div class="d-flex align-items-center gap-2">
                             <div class="VK_icn">
                                 <img src="/images/vivek/timer.png" alt="">
                             </div>
-                            <p class="m-0">
+                            <p class="m-0 font_14">
                                ${ele.search}
                             </p>
                         </div>
                     </div>`
-            })
-            VK_search_food(search_text);
+            }).join("")
+            div.innerHTML = html
         } else if (category === "groceries") {
-            VK_search_grocery(search_text);
+            let html = Grocery_search.map((ele) => {
+                return `
+                    <div class="VK_black_border VK_round py-1 px-3 me-2 my-2">
+                        <div class="d-flex align-items-center gap-2">
+                            <div class="VK_icn">
+                                <img src="/images/vivek/timer.png" alt="">
+                            </div>
+                            <p class="m-0 font_14">
+                               ${ele.search}
+                            </p>
+                        </div>
+                    </div>`
+            }).join("")
+            div.innerHTML = html
         }
-        VK_reset_search();
     } else {
         return
     }
