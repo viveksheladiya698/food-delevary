@@ -93,7 +93,7 @@
     font-size: clamp(28px, 5vw, 60px);
 }
 
-.VK_food_Dish_heading{
+.VK_food_Dish_heading {
     font-size: 42px;
 }
 
@@ -376,6 +376,18 @@
     position: relative;
 }
 
+.VK_regular_menu_div {
+    position: relative;
+}
+
+.VK_regular_menu_icn {
+    position: absolute;
+    top: 60%;
+    width: 170px;
+    z-index: -1;
+    right: 0%;
+}
+
 .VK_regular_cart {
     position: absolute;
     height: 100%;
@@ -442,6 +454,24 @@
     display: none;
 }
 
+.VK_resturent_food_delivery {
+    position: relative;
+}
+
+.VK_resturent_food_icn1 {
+    position: absolute;
+    top: 15%;
+    width: 150px;
+    z-index: -1;
+    left: 0%;
+}
+.VK_resturent_food_icn2 {
+    position: absolute;
+    top: 80%;
+    width: 150px;
+    z-index: -1;
+    right: 0%;
+}
 
 /* flat off */
 .VK_flat_off {
@@ -456,8 +486,22 @@
     border-bottom: 1px solid #ddd;
 }
 
+
+/* popular resturent */
 .VK_resturent_txt {
     text-overflow: ellipsis;
+}
+
+.VK_popular_restrorunts_div{
+    position: relative;
+}
+
+.VK_popular_restrorunt_icn{
+    position: absolute;
+    top: 8%;
+    width: 150px;
+    left: 0;
+
 }
 
 .VK_resturent_food {
@@ -774,7 +818,7 @@ input[type="search"]::-webkit-search-cancel-button {
         height: 400px;
     }
 
-    .VK_food_Dish_heading{
+    .VK_food_Dish_heading {
         font-size: 28px;
     }
 
@@ -863,7 +907,7 @@ input[type="search"]::-webkit-search-cancel-button {
         height: 450px;
     }
 
-    .VK_food_Dish_heading{
+    .VK_food_Dish_heading {
         font-size: 28px;
     }
 
@@ -950,7 +994,7 @@ input[type="search"]::-webkit-search-cancel-button {
         height: 500px;
     }
 
-    .VK_food_Dish_heading{
+    .VK_food_Dish_heading {
         font-size: 38px;
     }
 
@@ -1085,6 +1129,7 @@ input[type="search"]::-webkit-search-cancel-button {
     .VK_popular_food_img {
         height: 350px;
     }
+
     .VK_text_p {
         font-size: 20px;
     }
