@@ -180,8 +180,8 @@ h6 {
 
 .d_grocerylist h2 {
     color: #000;
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 28px;
+    line-height: 36px;
     font-weight: 700;
 }
 
@@ -198,7 +198,7 @@ h6 {
 
 .d_grocerylist .d_item .d_img {
     width: 100%;
-    height: 400px;
+    height: 370px;
     position: relative;
 }
 
@@ -227,16 +227,16 @@ h6 {
 }
 
 .d_grocerylist .d_item .d_title {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 22px;
+    line-height: 26px;
     font-weight: 600;
     color: #000;
     margin-bottom: 6px;
 }
 
 .d_grocerylist .d_item .d_price {
-    font-size: 22px;
-    line-height: 32px;
+    font-size: 20px;
+    line-height: 24px;
     font-weight: 400;
     color: #000;
     margin-bottom: 6px;
@@ -253,8 +253,9 @@ h6 {
 }
 
 .d_grocerylist .d_item .d_review {
+    margin-top: 3px;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 32px;
     color: #000;
 }
@@ -721,13 +722,13 @@ hr {
 
 .d_toast {
     background-color: #66B043;
-    padding: 22px 30px;
+    padding: 8px 16px;
     border-radius: 4px;
 }
 
 .d_toast .d_img {
-    width: 26px;
-    height: 26px;
+    width: 22px;
+    height: 22px;
     margin-right: 18px;
 }
 
@@ -743,13 +744,13 @@ hr {
 }
 
 .d_toast .d_link {
-    padding: 4px 16px;
+    padding: 4px 10px;
     border: 1px solid #FFFFFF;
     border-radius: 52px;
 }
 
 .d_toast .d_link a {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: #fff;
 }
@@ -1001,8 +1002,8 @@ hr {
 
 
 .d_carthead .d_img {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     margin-right: 14px;
 }
 
@@ -1012,7 +1013,7 @@ hr {
 }
 
 .d_carthead p {
-    font-size: 22px;
+    font-size: 20px;
     line-height: 30px;
     font-weight: 500;
 }
@@ -1038,7 +1039,7 @@ hr {
 }
 
 .d_cart .d_text .d_name {
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     color: #000;
     margin-bottom: 5px;
@@ -1057,7 +1058,7 @@ hr {
 }
 
 .d_cart .d_text .d_remove {
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 400;
     color: #000;
     text-decoration: underline;
@@ -1074,7 +1075,7 @@ hr {
 }
 
 .d_cart .d_text .d_increbtn .d_itemnum {
-    font-size: 26px;
+    font-size: 24px;
     color: #000;
     font-weight: 500;
 }
@@ -1159,7 +1160,7 @@ hr {
     font-size: 20px;
     font-weight: 500;
     color: #fff;
-    padding: 15px 0;
+    padding: 12px 0;
     border-radius: 8px;
     display: block;
 }
@@ -1734,25 +1735,25 @@ hr {
 /* help page css start */
 
 .d_helphead h5 {
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     color: #000;
 }
 
 .d_helphead p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: #323232;
     max-width: 630px;
-    line-height: 30px;
+    line-height: 22px;
     margin: auto;
 }
 
 .d_help .d_helpheading {
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
     color: #000;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
 }
 
 .d_help .d_helpacc {
@@ -1761,7 +1762,7 @@ hr {
 
 .d_help .d_helpacchead {
     background-color: transparent;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #000;
     cursor: pointer;
@@ -1778,7 +1779,7 @@ hr {
 
 .d_help .d_helpacccon {
     max-width: 1290px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: #323232;
     padding-left: 22px;
@@ -1817,7 +1818,7 @@ hr {
 }
 
 .d_contactmodal .modal-body .d_head {
-    font-size: 32px;
+    font-size: 28px;
     letter-spacing: 1px;
     font-weight: 600;
     color: #000;
@@ -1825,15 +1826,15 @@ hr {
 }
 
 .d_contactmodal .modal-body p {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     color: #323232;
-    line-height: 30px;
+    line-height: 24px;
 }
 
 .d_contactmodal .modal-body input {
     width: 100%;
-    padding: 14px 14px;
+    padding: 10px;
     border: 0.84px solid #000000;
     border-radius: 8px;
     color: #000;
@@ -1841,7 +1842,7 @@ hr {
 
 .d_contactmodal .modal-body textarea {
     width: 100%;
-    padding: 14px 14px;
+    padding: 10px;
     border: 0.84px solid #000000;
     border-radius: 8px;
 }
@@ -2043,7 +2044,7 @@ hr {
 /* Delivery address  */
 
 .d_title .d_head {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     color: #000;
 }
@@ -2442,11 +2443,11 @@ input:focus-visible {
 
 @media(max-width:1920px) {
     .d_banner2 {
-        padding: 50px 0;
+        padding: 75px 0;
     }
 
     .d_banner2 .d_discounttext {
-        top: 35px;
+        top: 61px;
         right: 595px;
     }
 
@@ -2454,19 +2455,19 @@ input:focus-visible {
 
 @media(max-width:1880px) {
     .d_banner2 .d_discounttext {
-        top: 40px;
-        right: 570px;
+        top: 65px;
+        right: 485px;
     }
 }
 
 @media(max-width:1440px) {
     .d_grocerylist .d_item .d_img {
-        height: 350px;
+        height: 330px;
     }
 
     .d_banner2 .d_discounttext {
-        top: 45px;
-        right: 410px;
+        top: 65px;
+        right: 370px;
     }
 
     .d_category .d_lgwidth {
@@ -2518,6 +2519,9 @@ input:focus-visible {
     .d_livetracking .d_trackpopup{
         bottom: 50px;
     }
+    .d_grocerylist .d_item .d_content{
+        padding-top: 12px;
+    }
 }
 
 @media(max-width:1199px) {
@@ -2534,7 +2538,7 @@ input:focus-visible {
     }
 
     .d_grocerylist .d_item .d_img {
-        height: 350px;
+        height: 310px;
     }
 
     .d_banner2 .d_text h3 {
@@ -2547,8 +2551,8 @@ input:focus-visible {
     }
 
     .d_banner2 .d_discounttext {
-        top: 45px;
-        right: 266px;
+        top: 58px;
+        right: 230px;
     }
 
     .d_category .d_lgwidth {
@@ -2774,8 +2778,8 @@ input:focus-visible {
     }
 
     .d_banner2 .d_discounttext {
-        top: 45px;
-        right: 140px;
+        top: 60px;
+        right: 103px;
     }
 
     .d_category .d_lgwidth {
@@ -2937,8 +2941,8 @@ input:focus-visible {
     }
 
     .d_banner2 .d_discounttext {
-        font-size: 24px;
-        line-height: 30px;
+        font-size: 22px;
+        line-height: 24px;
     }
 
     .d_searchlist .d_search {
@@ -2995,8 +2999,8 @@ input:focus-visible {
     }
 
     .d_banner2 .d_discounttext {
-        top: 28px;
-        right: 54px;
+        top: 30px;
+        right: 57px;
     }
 
     .d_personal .d_content .d_cta1 {
@@ -3301,7 +3305,7 @@ input:focus-visible {
 
 @media(max-width:375px) {
     .d_banner2 .d_discounttext {
-        top: 25px;
+        top: 31px;
         right: 32px;
     }
 
@@ -3358,13 +3362,13 @@ input:focus-visible {
     }
 
     .d_banner2 .d_discounttext {
-        font-size: 20px;
-        line-height: 22px;
+        font-size: 18px;
+        line-height: 20px;
     }
 
     .d_banner2 .d_discounttext {
-        top: 23px;
-        right: 35px;
+        top: 24px;
+        right: 38px;
     }
 
     .d_banner2 .d_text .d_cta a {

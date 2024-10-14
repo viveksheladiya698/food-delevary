@@ -1069,10 +1069,10 @@ function displayCart() {
         // Update totals
         const { subtotal, total } = calculateTotals(cartItems);
         if (document.getElementById('subTotal')) {
-            document.getElementById('subTotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('subTotal').textContent = `$${subtotal}`;
         }
         if (document.getElementById('totalAmount')) {
-            document.getElementById('totalAmount').textContent = `$${total.toFixed(2)}`;
+            document.getElementById('totalAmount').textContent = `$${total}`;
         }
     } else {
         if (emptyCartMessage) {
