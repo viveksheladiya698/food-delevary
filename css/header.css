@@ -384,7 +384,14 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 100% !important;
     }
+
+    .VK_head_offcanvas.offcanvas-end {
+        width: 280px !important;
+    }
+
 }
+
+
 
 @media(max-width:991px) {
     .d_logoutmodel .modal-body {

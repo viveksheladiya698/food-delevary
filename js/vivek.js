@@ -1011,13 +1011,13 @@ function regular_menu_card_display() {
                     </a>
                 </div>
                 <div class="mt-4 text-center">
-                    <p class="VK_inter text-black fw-600 mb-1 font_24">${ele.name}</p>
-                    <p class="VK_inter text-black fw-400 mb-1 font_22">Price: $${ele.price}</p>
+                    <p class="VK_inter text-black fw-600 mb-1 font_22">${ele.name}</p>
+                    <p class="VK_inter text-black fw-400 mb-1 font_18">Price: $${ele.price}</p>
                     <div>
                         <div class="d-flex justify-content-center align-items-center">
                             ${stars}
                             <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
+                                <p class="m-0 fw-500 VK_inter font_18">${ele.review_cnt} Reviews</p>
                             </div>
                         </div>
                     </div>
@@ -1118,36 +1118,38 @@ function VK_resturent_data_display() {
             let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
 
             return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
-                <div class="overflow-hidden VK_resturent_food">
-                    <a href="/Restaurants.html?r_id=${ele.id}">
-                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
-                        <div class="VK_resturent_btn">
-                            <button class="" onclick="VK_whshlist(event,${currnt_record})">
-                                <i class="${heartIcon}"></i>
-                            </button>
-                        </div>
-                        ${ele.offer != null ?
-                    `<div class="VK_resturent_alert">
-                                    <p class="m-0 VK_inter">
-                                        ${ele.offer}
-                                    </p>
-                                </div>`
-                    : ""}
-                    </a>
-                </div>
-                <div class="px-2 mt-3 VK_resturent_food h-auto">
-                    <p class="VK_inter text-black fw-600 mb-1 font_24">
-                        ${ele.name}
-                    </p>
-                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
-                        ${ele.description}
-                    </p>
-                    <div class="mt-2">
-                        <div class="d-flex align-items-center">
-                            ${stars}
-                            <div class="ms-2">
-                                <p class="m-0 fw-500 font_20 VK_inter">${ele.review_cnt} Reviews</p>
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole d-flex justify-content-center">
+                <div class="">
+                    <div class="overflow-hidden VK_resturent_food">
+                        <a href="/Restaurants.html?r_id=${ele.id}">
+                            <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
+                            <div class="VK_resturent_btn">
+                                <button class="" onclick="VK_whshlist(event,${currnt_record})">
+                                    <i class="${heartIcon}"></i>
+                                </button>
+                            </div>
+                            ${ele.offer != null ?
+                        `<div class="VK_resturent_alert">
+                                        <p class="m-0 VK_inter">
+                                            ${ele.offer}
+                                        </p>
+                                    </div>`
+                        : ""}
+                        </a>
+                    </div>
+                    <div class="px-2 mt-3 VK_resturent_food h-auto">
+                        <p class="VK_inter text-black fw-600 mb-1 font_22">
+                            ${ele.name}
+                        </p>
+                        <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_18">
+                            ${ele.description}
+                        </p>
+                        <div class="mt-2">
+                            <div class="d-flex align-items-center">
+                                ${stars}
+                                <div class="ms-2">
+                                    <p class="m-0 fw-500 font_18 VK_inter">${ele.review_cnt} Reviews</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1340,36 +1342,38 @@ function VK_popular_restro_data_display() {
             let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
 
             return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
-                <div class="overflow-hidden VK_resturent_food">
-                    <a href="/Restaurants.html?r_id=${ele.id}">
-                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
-                        <div class="VK_resturent_btn">
-                            <button class="" onclick="VK_whshlist(event,${currnt_record})">
-                                <i class="${heartIcon}"></i>
-                            </button>
-                        </div>
-                        ${ele.offer != null ?
-                    `<div class="VK_resturent_alert">
-                                    <p class="m-0 VK_inter">
-                                        ${ele.offer}
-                                    </p>
-                                </div>`
-                    : ""}
-                    </a>
-                </div>
-                <div class="px-2 mt-3 VK_resturent_food h-auto">
-                    <p class="VK_inter text-black fw-600 mb-1 font_24">
-                        ${ele.name}
-                    </p>
-                    <p class="VK_inter text-black fw-400 m-0 font_20 VK_resturent_txt">
-                        ${ele.description}
-                    </p>
-                    <div class="mt-2">
-                        <div class="d-flex align-items-center">
-                            ${stars}
-                            <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole d-flex justify-content-center">
+                <div>
+                    <div class="overflow-hidden VK_resturent_food">
+                        <a href="/Restaurants.html?r_id=${ele.id}">
+                            <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
+                            <div class="VK_resturent_btn">
+                                <button class="" onclick="VK_whshlist(event,${currnt_record})">
+                                    <i class="${heartIcon}"></i>
+                                </button>
+                            </div>
+                            ${ele.offer != null ?
+                        `<div class="VK_resturent_alert">
+                                        <p class="m-0 VK_inter">
+                                            ${ele.offer}
+                                        </p>
+                                    </div>`
+                        : ""}
+                        </a>
+                    </div>
+                    <div class="px-2 mt-3 VK_resturent_food h-auto">
+                        <p class="VK_inter text-black fw-600 mb-1 font_22">
+                            ${ele.name}
+                        </p>
+                        <p class="VK_inter text-black fw-400 m-0 font_18 VK_resturent_txt">
+                            ${ele.description}
+                        </p>
+                        <div class="mt-2">
+                            <div class="d-flex align-items-center">
+                                ${stars}
+                                <div class="ms-2">
+                                    <p class="m-0 fw-500 VK_inter font_18">${ele.review_cnt} Reviews</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1419,36 +1423,38 @@ function VK_our_restro_data_display() {
             let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
 
             return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
-                <a href="/Restaurants.html?r_id=${ele.id}">
-                    <div class="overflow-hidden VK_resturent_food">
-                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
-                        <div class="VK_resturent_btn">
-                            <button class="" onclick="VK_whshlist(event,${currnt_record})">
-                                <i class="${heartIcon}"></i>
-                            </button>
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole d-flex justify-content-center">
+                <div>
+                    <a href="/Restaurants.html?r_id=${ele.id}">
+                        <div class="overflow-hidden VK_resturent_food">
+                            <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
+                            <div class="VK_resturent_btn">
+                                <button class="" onclick="VK_whshlist(event,${currnt_record})">
+                                    <i class="${heartIcon}"></i>
+                                </button>
+                            </div>
+                            ${ele.offer != null ?
+                        `<div class="VK_resturent_alert">
+                                <p class="m-0 VK_inter">
+                                    ${ele.offer}
+                                </p>
+                            </div>`
+                        : ""}
                         </div>
-                        ${ele.offer != null ?
-                    `<div class="VK_resturent_alert">
-                            <p class="m-0 VK_inter">
-                                ${ele.offer}
-                            </p>
-                        </div>`
-                    : ""}
-                    </div>
-                </a>
-                <div class="px-2 mt-3 VK_resturent_food h-auto">
-                    <p class="VK_inter text-black fw-600 mb-1 font_24">
-                        ${ele.name}
-                    </p>
-                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
-                        ${ele.description}
-                    </p>
-                    <div class="mt-2">
-                        <div class="d-flex align-items-center">
-                            ${stars}
-                            <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
+                    </a>
+                    <div class="px-2 mt-3 VK_resturent_food h-auto">
+                        <p class="VK_inter text-black fw-600 mb-1 font_22">
+                            ${ele.name}
+                        </p>
+                        <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_18">
+                            ${ele.description}
+                        </p>
+                        <div class="mt-2">
+                            <div class="d-flex align-items-center">
+                                ${stars}
+                                <div class="ms-2">
+                                    <p class="m-0 fw-500 VK_inter font_18">${ele.review_cnt} Reviews</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1625,36 +1631,38 @@ function VK_offer_restro_data_display() {
             let heartIcon = isInWishlist ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart';
 
             return `
-            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole">
-                <a href="/Restaurants.html?r_id=${ele.id}">
-                    <div class="overflow-hidden VK_resturent_food">
-                        <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
-                        <div class="VK_resturent_btn">
-                            <button class="" onclick="VK_whshlist(event,${currnt_record})">
-                                <i class="${heartIcon}"></i>
-                            </button>
+            <div class="col-xxl-3 col-lg-4 col-sm-6 my-4 VK_cole d-flex justify-content-center">
+                <div>
+                    <a href="/Restaurants.html?r_id=${ele.id}">
+                        <div class="overflow-hidden VK_resturent_food">
+                            <img src="/images/assets/${ele.img}" class="w-100 h-100 object_cover" alt="">
+                            <div class="VK_resturent_btn">
+                                <button class="" onclick="VK_whshlist(event,${currnt_record})">
+                                    <i class="${heartIcon}"></i>
+                                </button>
+                            </div>
+                            ${ele.offer != null ?
+                        `<div class="VK_resturent_alert">
+                                <p class="m-0 VK_inter">
+                                    ${ele.offer}
+                                </p>
+                            </div>`
+                        : ""}
                         </div>
-                        ${ele.offer != null ?
-                    `<div class="VK_resturent_alert">
-                            <p class="m-0 VK_inter">
-                                ${ele.offer}
-                            </p>
-                        </div>`
-                    : ""}
-                    </div>
-                </a>
-                <div class="px-2 mt-3 VK_resturent_food h-auto">
-                    <p class="VK_inter text-black fw-600 mb-1 font_24">
-                        ${ele.name}
-                    </p>
-                    <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
-                        ${ele.description}
-                    </p>
-                    <div class="mt-2">
-                        <div class="d-flex align-items-center">
-                            ${stars}
-                            <div class="ms-2">
-                                <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
+                    </a>
+                    <div class="px-2 mt-3 VK_resturent_food h-auto">
+                        <p class="VK_inter text-black fw-600 mb-1 font_24">
+                            ${ele.name}
+                        </p>
+                        <p class="VK_inter text-black fw-400 m-0 VK_resturent_txt font_20">
+                            ${ele.description}
+                        </p>
+                        <div class="mt-2">
+                            <div class="d-flex align-items-center">
+                                ${stars}
+                                <div class="ms-2">
+                                    <p class="m-0 fw-500 VK_inter font_20">${ele.review_cnt} Reviews</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -1869,10 +1877,10 @@ function recommended_data() {
                     </a>
                 </div>
                 <div class="col-md-8 ps-4 pt-3">
-                    <h5 class="text-black VK_inter VK_food_heading fw-500">
+                    <h5 class="text-black VK_inter font_24 fw-500">
                        ${ele.name}
                     </h5>
-                    <p class="font_18 VK_inter text-black fw-400 font_24">
+                    <p class="font_22 VK_inter text-black fw-400">
                         Price : $${ele.price}
                     </p>
                     <div class="d-flex gap-1 align-items-center">
@@ -2060,32 +2068,32 @@ function VK_Beverages() {
                     </a>
                 </div>
                 <div class="col-md-8 ps-4 pt-3">
-                    <h5 class="text-black VK_inter VK_food_heading fw-600">
+                    <h5 class="text-black VK_inter font_24 fw-600">
                        ${ele.name}
                     </h5>
-                    <p class="font_18 VK_inter text-black fw-400">
+                    <p class="font_22 VK_inter text-black fw-400">
                         Price : $${ele.price}
                     </p>
                     <div class="d-flex gap-1">
                         ${stars}
-                        <span class="d-inline-block VK_inter ps-2">
+                        <span class="d-inline-block VK_inter ps-2 font_20">
                             ${ele.review_cnt} Reviews
                         </span>
                     </div>
-                    <p class="VK_inter font_14 text-black mt-2">
+                    <p class="VK_inter font_18 text-black mt-2">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                         eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                     <div>
                         ${quantity > 0 ? `
                             <span class="VK_shadow d-inline-flex align-items-center VK_round_lg" id="VK_restro_btn_${ele.id}">
-                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="decrementQuantity(${ele.id})">-</button>
+                                <button class="bg-white border-0 px-4 py-1 font_20 VK_inter fw-bold" onclick="decrementQuantity(${ele.id})">-</button>
                                 <p class="m-0 fw-bold">${quantity}</p>
-                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="incrementQuantity(${ele.id})">+</button>
+                                <button class="bg-white border-0 px-4 py-1 font_20 VK_inter fw-bold" onclick="incrementQuantity(${ele.id})">+</button>
                             </span>
                         ` : `
                             <span class="VK_shadow d-inline-flex align-items-center VK_round_lg">
-                                <button class="bg-white border-0 px-4 py-1 font_18 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">ADD</button>
+                                <button class="bg-white border-0 px-4 py-1 font_20 VK_inter fw-bold" onclick="VK_Recommended_model_opn(${id})">ADD</button>
                             </span>
                         `}
                     </div>
