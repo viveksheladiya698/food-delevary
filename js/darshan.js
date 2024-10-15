@@ -848,9 +848,13 @@ function toggleWishlistItem(event, item) {
 
 // Function to update the wishlist UI
 const wishlistContainer = document.getElementById('wishlist-container');
+const wishlistprofileContainer = document.getElementById('wishlistprofile-container');
 function updateWishlistUI(filteredWishlist) {
     if (wishlistContainer) {
         wishlistContainer.innerHTML = generateWishlistHTML(filteredWishlist);
+    }
+    if (wishlistprofileContainer) {
+        wishlistprofileContainer.innerHTML = generateWishlistProfileHTML(filteredWishlist);
     }
     updateGroceryItemsUI(filteredWishlist);
 }
@@ -884,6 +888,33 @@ function generateWishlistHTML(wishlist) {
     `).join('');
 }
 
+function generateWishlistProfileHTML(wishlist) {
+    console.log(wishlist);
+    return wishlist.map(item => `
+        <div class="col-12 col-sm-6 col-lg-6 col-xl-4">
+            <div class="d_item">
+                <a href="${item.type === 'food' ? `items.html?item_id=${item.id}` : (item.type === 'Grocery' ? `personal.html?item_id=${item.id}` : `Restaurants.html?id=${item.id}`)}">
+                    <div class="d_img">
+                        <img src="/images/assets/${item.img}" alt="${item.name}">
+                        <div class="d_heart d-flex justify-content-center align-items-center" onclick="toggleWishlistItem(event, ${JSON.stringify(item).replace(/"/g, '&quot;')})">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                    </div>
+                </a>    
+                <div class="d_con">
+                    <div class="d_proname">${item.name}</div>
+                    <div class="d_add">Price: $${item.price}</div>
+                    <div class="d-flex">
+                        <div class="d_star align-items-center me-3">
+                            ${generateStars(item.review)}
+                        </div>
+                        <div class="d_review align-self-center">${item.review} Review</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
 
 
 
