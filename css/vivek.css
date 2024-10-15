@@ -74,6 +74,9 @@
     border: 1px solid black;
 }
 
+.VK_light_clr {
+    color: #d0cccd;
+}
 
 /* --------------------------------------------- home page ----------------------------------------------- */
 
@@ -203,8 +206,7 @@
 }
 
 .VK_food_color {
-    background-image: url('/images/vivek/Mask\ group.png');
-    background-position: center;
+    background-image: url('/images/vivek/poster.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -465,6 +467,7 @@
     z-index: -1;
     left: 0%;
 }
+
 .VK_resturent_food_icn2 {
     position: absolute;
     top: 80%;
@@ -492,11 +495,11 @@
     text-overflow: ellipsis;
 }
 
-.VK_popular_restrorunts_div{
+.VK_popular_restrorunts_div {
     position: relative;
 }
 
-.VK_popular_restrorunt_icn{
+.VK_popular_restrorunt_icn {
     position: absolute;
     top: 8%;
     width: 150px;
@@ -814,16 +817,18 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /*  extra small device */
 @media (max-width:480px) {
+
+    .VK_item_btn {
+        padding: 10px 30px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.14);
+    }
+
     .VK_home_slider {
         height: 400px;
     }
 
     .VK_food_Dish_heading {
         font-size: 28px;
-    }
-
-    .VK_service_div {
-        width: 100%;
     }
 
     .VK_delivery_txt {
@@ -923,10 +928,6 @@ input[type="search"]::-webkit-search-cancel-button {
         right: -15px;
     }
 
-    .VK_service_div {
-        width: 100%;
-    }
-
     .VK_delivery_txt {
         font-size: 18px;
     }
@@ -1010,9 +1011,6 @@ input[type="search"]::-webkit-search-cancel-button {
         right: -15px;
     }
 
-    .VK_service_div {
-        width: 50%;
-    }
 
     .VK_delivery_txt {
         font-size: 18px;
@@ -1073,16 +1071,13 @@ input[type="search"]::-webkit-search-cancel-button {
         padding: 40px 0px;
     }
 
-    .VK_service_div {
-        width: 33.33%;
-    }
 
     .VK_delivery_txt {
         font-size: 18px;
     }
 
     .VK_border_dash:last-child,
-    .VK_border_dash:nth-last-child(2) {
+    .VK_border_dash:nth-last-child(3) {
         border-right: none !important;
     }
 
@@ -1141,10 +1136,6 @@ input[type="search"]::-webkit-search-cancel-button {
         left: -25px;
     }
 
-
-    .VK_service_div {
-        width: 25%;
-    }
 
     .VK_delivery_txt {
         font-size: 18px;
@@ -1240,6 +1231,10 @@ input[type="search"]::-webkit-search-cancel-button {
 
 /* 3xl device */
 @media (min-width:1441px) {
+    .VK_sort_pading {
+        padding-left: 50px;
+    }
+
     .VK_best_food_caro .owl-nav .owl-prev {
         left: -25px;
     }
@@ -1297,6 +1292,50 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 
+/* food home media query */
+
+
+/*  extra small device */
+@media (max-width:480px) {
+    .VK_service_div {
+        width: 100%;
+    }
+}
+
+
+/* small device */
+@media (max-width:575px) and (min-width:481px) {
+    .VK_service_div {
+        width: 100%;
+    }
+
+}
+
+
+/* medium device */
+@media (max-width:766px) and (min-width:576px) {
+    .VK_service_div {
+        width: 50%;
+    }
+}
+
+
+/* lg device */
+@media (max-width:991px) and (min-width:767px) {
+    .VK_service_div {
+        width: 50%;
+    }
+}
+
+
+/* xl device */
+@media (max-width:1199px) and (min-width:992px) {
+    .VK_service_div {
+        width: 25%;
+    }
+}
+
+
 
 
 
@@ -1309,9 +1348,6 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 @media (min-width:1650px) {
-    .VK_cole:nth-child(4n+1) {
-        padding-right: 50px;
-    }
 
     .VK_service_col {
         width: 75%;
@@ -1369,10 +1405,6 @@ input[type="search"]::-webkit-search-cancel-button {
         padding: 0px 10px;
     }
 }
-
-
-
-
 
 
 

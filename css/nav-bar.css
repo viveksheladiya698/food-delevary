@@ -294,6 +294,7 @@ input[type="number"]::-webkit-inner-spin-button {
     background-color: #f2e9dc;
     border: 1px solid #f2e9dc;
 }
+
 /* Logout modal */
 
 .d_logoutmodel .modal-dialog {
@@ -361,6 +362,10 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 100% !important;
     }
+
+    .VK_header_offcanvas.offcanvas-end {
+        width: 280px !important;
+    }
 }
 
 /* small device */
@@ -401,7 +406,8 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 90% !important;
     }
-    .VK_address_span{
+
+    .VK_address_span {
         max-width: 150px;
     }
 
@@ -420,7 +426,8 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 80% !important;
     }
-    .VK_address_span{
+
+    .VK_address_span {
         max-width: 200px;
     }
 }
@@ -442,7 +449,8 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 65% !important;
     }
-    .VK_address_span{
+
+    .VK_address_span {
         max-width: 200px;
     }
 }
@@ -464,7 +472,8 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 55% !important;
     }
-    .VK_address_span{
+
+    .VK_address_span {
         max-width: 250px;
     }
 
@@ -491,7 +500,8 @@ input[type="number"]::-webkit-inner-spin-button {
     .VK_signup_model .modal-dialog {
         max-width: 45% !important;
     }
-    .VK_address_span{
+
+    .VK_address_span {
         max-width: 250px;
     }
 
