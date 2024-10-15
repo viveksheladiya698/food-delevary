@@ -2,6 +2,10 @@
     background-color: #041527;
 }
 
+.pointer{
+    cursor: pointer;
+}
+
 .VK_follow_us {
     font-size: 18px;
 }
@@ -15,6 +19,9 @@
 }
 
 .VK_light_color{
+    color: #b4b9be;
+}
+.VK_light_color:hover{
     color: #b4b9be;
 }
 
