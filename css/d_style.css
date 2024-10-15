@@ -321,11 +321,11 @@ h6 {
 }
 
 .d_banner2 .d_text {
-    max-width: 540px;
+    max-width: 525px;
 }
 
 .d_banner2 .d_text h3 {
-    font-size: 58px;
+    font-size: 50px;
     color: #000;
     line-height: 68px;
     font-weight: 700;
@@ -2774,7 +2774,7 @@ input:focus-visible {
     }
 
     .d_banner2 .d_text .d_cta a {
-        padding: 13px 20px;
+        padding: 10px 17px;
     }
 
     .d_banner2 .d_discounttext {
@@ -2901,6 +2901,9 @@ input:focus-visible {
 
     .d_personal .d_content {
         padding-left: 8px;
+    }
+    .d_p-100{
+        padding: 30px 0;
     }
 }
 
@@ -3299,6 +3302,9 @@ input:focus-visible {
     }
     .d_livetracking .d_trackpopup {
         width: 350px;
+    }
+    .d_banner2 .d_text .d_cta a{
+        font-size: 14px;
     }
 }
 
