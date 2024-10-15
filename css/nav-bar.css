@@ -175,6 +175,24 @@
     padding: 10px;
 }
 
+.fw-900{
+    font-weight: 900;
+}
+
+.fw-500{
+    font-weight: 500;
+}
+
+
+.VK_nav_a{
+    color: #666666;
+    font-weight: 500;
+}
+
+.VK_active{
+    color: black !important;
+    font-weight: 600 !important;
+}
 
 /* sign in model */
 .VK_signin_model .modal-dialog {

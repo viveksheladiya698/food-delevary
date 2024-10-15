@@ -70,6 +70,18 @@ async function VK_update_data() {
     }
 
 
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const currentUrl = window.location.pathname;
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentUrl) {
+            link.classList.add('VK_active');
+        } else {
+            link.classList.remove('VK_active');
+        }
+    });
+
+
 
 }
 
